@@ -1,0 +1,227 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "04_wayfarer"
+	group: "0000000000002261"
+	id: "000000000000202B"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["000000000000202A"]
+			id: "000000000000202C"
+			rewards: [{
+				id: "0000000000002119"
+				type: "xp"
+				xp: 25
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000002118"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000000202C"]
+			id: "000000000000202D"
+			rewards: [{
+				id: "000000000000211B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000211A"
+				item: { count: 1, id: "explorerscompass:explorerscompass" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000000202C"]
+			id: "000000000000202E"
+			rewards: [{
+				id: "000000000000211D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000211C"
+				item: { count: 1, id: "naturescompass:naturescompass" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000000202D"]
+			id: "000000000000202F"
+			rewards: [{
+				id: "000000000000211F"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000211E"
+				item: { count: 1, id: "waystones:waystone" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000000202F"]
+			id: "0000000000002030"
+			rewards: [{
+				id: "0000000000002121"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000002120"
+				item: { count: 1, id: "waystones:warp_stone" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000000202F"]
+			id: "0000000000002031"
+			rewards: [{
+				id: "0000000000002123"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000002122"
+				item: { count: 1, id: "waystones:warp_scroll" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000000202E"]
+			id: "0000000000002032"
+			rewards: [{
+				id: "0000000000002125"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000002124"
+				item: { count: 1, id: "artifacts:umbrella" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000002032"]
+			id: "0000000000002033"
+			rewards: [{
+				id: "0000000000002127"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000002126"
+				item: { count: 1, id: "artifacts:night_vision_goggles" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002032"]
+			id: "0000000000002034"
+			rewards: [{
+				id: "0000000000002129"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000002128"
+				item: { count: 1, id: "artifacts:cloud_in_a_bottle" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002034"]
+			id: "0000000000002035"
+			rewards: [{
+				id: "000000000000212B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000000212A"
+				item: { count: 1, id: "quark:ancient_tome" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000002031"]
+			id: "0000000000002036"
+			rewards: [{
+				id: "000000000000212D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000212C"
+				item: { count: 1, id: "supplementaries:globe" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"0000000000002036"
+				"0000000000002035"
+			]
+			id: "0000000000002037"
+			rewards: [
+				{
+					count: 3
+					id: "000000000000212F"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000002130"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0000000000002131"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				count: 3L
+				id: "000000000000212E"
+				item: { count: 1, id: "waystones:waystone" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+	]
+}

@@ -1,0 +1,111 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "horror_03_ward_it_off"
+	group: "000000000090000A"
+	id: "0000000000C0000E"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000C0000F"
+			rewards: [{
+				id: "0000000000C0003E"
+				type: "xp"
+				xp: 200
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C0003F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000C0000F"]
+			id: "0000000000C00010"
+			rewards: [{
+				id: "0000000000C00040"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000C00041"
+				item: { count: 1, id: "minecraft:iron_ingot" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0000F"]
+			id: "0000000000C00011"
+			rewards: [{
+				id: "0000000000C00042"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000C00043"
+				item: { count: 1, id: "minecraft:shield" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0000F"]
+			id: "0000000000C00012"
+			rewards: [{
+				id: "0000000000C00044"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				id: "0000000000C00045"
+				item: { count: 1, id: "minecraft:iron_chestplate" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0000F"]
+			id: "0000000000C00013"
+			rewards: [{
+				id: "0000000000C00046"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000C00047"
+				item: { count: 1, id: "minecraft:bread" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000C0000F"]
+			id: "0000000000C00014"
+			rewards: [{
+				id: "0000000000C00048"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000C00049"
+				item: { count: 1, id: "minecraft:tripwire_hook" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+	]
+}

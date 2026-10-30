@@ -1,0 +1,85 @@
+[
+ {
+  "dim": "aether:the_aether",
+  "jar": "aether-1.21.1-1.5.10-neoforge.jar",
+  "owners": [
+   "survival",
+   "lostcities",
+   "gauntlet"
+  ]
+ },
+ {
+  "dim": "arphex:the_crawling",
+  "jar": "ArPhEx-5.0.2-neoforge-1.21.1.jar",
+  "owners": [
+   "horror"
+  ]
+ },
+ {
+  "dim": "arphex:the_webrooms",
+  "jar": "ArPhEx-5.0.2-neoforge-1.21.1.jar",
+  "owners": [
+   "horror"
+  ]
+ },
+ {
+  "dim": "irons_spellbooks:pocket_dimension",
+  "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+  "owners": [
+   "survival",
+   "lostcities",
+   "gauntlet"
+  ]
+ },
+ {
+  "dim": "lostcities:lostcity",
+  "jar": "lostcities-1.21-8.4.6.jar",
+  "owners": [
+   "lostcities"
+  ]
+ },
+ {
+  "dim": "oneblock:overworld",
+  "jar": "oneblock-5.1.6-neoforge+1.21.1.jar",
+  "owners": [
+   "oneblock"
+  ]
+ },
+ {
+  "dim": "the_obsessed:obsessed_lair",
+  "jar": "the_obsessed-1.5.2g-neoforge-1.21.1.jar",
+  "owners": [
+   "horror"
+  ]
+ },
+ {
+  "dim": "twilightforest:twilight_forest",
+  "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+  "owners": [
+   "survival",
+   "lostcities",
+   "gauntlet"
+  ]
+ },
+ {
+  "dim": "undergarden:undergarden",
+  "jar": "The_Undergarden-1.21.1-0.9.6.jar",
+  "owners": [
+   "survival",
+   "lostcities",
+   "gauntlet"
+  ]
+ },
+ {
+  "dim": "woot:tartarus",
+  "jar": "woot-1.0.2.jar",
+  "owners": [
+   "skyblock",
+   "caveblock",
+   "netherbound",
+   "oceanblock",
+   "onechunk",
+   "oneblock"
+  ]
+ }
+]

@@ -1,0 +1,179 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_03_scavenging"
+	group: "0000000000900004"
+	id: "000000000040003F"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000400040"
+			rewards: [
+				{
+					count: 8
+					id: "0000000000400049"
+					item: {
+						count: 1
+						id: "minecraft:gold_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000040004A"
+					type: "xp"
+					xp: 50
+				}
+			]
+			size: 1.5d
+			tasks: [{
+				count: 4L
+				id: "0000000000400048"
+				item: { count: 1, id: "minecraft:obsidian" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000400040"]
+			id: "0000000000400041"
+			rewards: [{
+				id: "000000000040004C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000040004B"
+				item: { count: 1, id: "minecraft:gilded_blackstone" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000400041"]
+			id: "0000000000400042"
+			rewards: [{
+				id: "000000000040004E"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000040004D"
+				item: { count: 1, id: "minecraft:netherite_upgrade_smithing_template" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000400040"]
+			id: "0000000000400043"
+			rewards: [
+				{
+					count: 4
+					id: "0000000000400050"
+					item: {
+						count: 1
+						id: "minecraft:nether_wart"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400051"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "000000000040004F"
+				item: { count: 1, id: "minecraft:blaze_rod" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000400043"]
+			id: "0000000000400044"
+			rewards: [{
+				id: "0000000000400053"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000400052"
+				item: { count: 1, id: "minecraft:nether_wart" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000400043"]
+			id: "0000000000400045"
+			rewards: [{
+				id: "0000000000400055"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000400054"
+				item: { count: 1, id: "minecraft:wither_skeleton_skull" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000400040"]
+			id: "0000000000400046"
+			rewards: [
+				{
+					count: 32
+					id: "0000000000400057"
+					item: {
+						count: 1
+						id: "minecraft:bone_meal"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400058"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "0000000000400056"
+				item: { count: 1, id: "minecraft:bone_block" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000400046"]
+			id: "0000000000400047"
+			rewards: [{
+				id: "000000000040005A"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000400059"
+				item: { count: 1, id: "minecraft:ancient_debris" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+	]
+}

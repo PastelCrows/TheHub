@@ -1,0 +1,48 @@
+{
+  "_comment": [
+    "Per-POCKET-DIMENSION difficulty, applied by PocketQuests (PocketDifficulty).",
+    "",
+    "Minecraft difficulty is a property of the WORLD - one value in level.dat for everything - so",
+    "this cannot be configured per dimension and is instead applied as you travel, on the",
+    "dimension change and re-checked once a second in case a command moves it.",
+    "",
+    "WHY HARD IS THE MAJORITY, and it is mechanical rather than taste: a villager killed by a",
+    "zombie converts to a zombie villager 100% of the time on HARD, only sometimes on NORMAL and",
+    "never on EASY - and curing a converted villager is what grants the permanent trading",
+    "discount that a trading hall is built around. So every pocket dimension where a villager",
+    "hall is viable is HARD.",
+    "",
+    "The three on NORMAL are the ones whose premise fights a trading hall rather than the ones",
+    "that are meant to be easy: skyblock starts in the void, onechunk is a single 16x16 chunk,",
+    "and oneblock is one regenerating block. Hard buys nothing there and only punishes the",
+    "opening. Move any of them to hard freely - it is one word here.",
+    "",
+    "The hub and redstone land are creative sandboxes, so PEACEFUL: no hostiles, no hunger.",
+    "",
+    "A real dimension with no entry of its own INHERITS its pocket dimension's difficulty, so",
+    "hub:survival_nether follows hub:survival. List one explicitly only to differ deliberately.",
+    "",
+    "Single player is the designed case. The setting is global, so with several players spread",
+    "across pocket dimensions there is only one value available; it follows whoever changed",
+    "dimension last. Remove an entry, or the whole file, to leave difficulty alone entirely."
+  ],
+
+  "default": "normal",
+
+  "byDimension": {
+    "hub:hub": "peaceful",
+    "hub:redstone": "peaceful",
+
+    "hub:survival": "hard",
+    "hub:lostcities": "hard",
+    "hub:netherbound": "hard",
+    "hub:caveblock": "hard",
+    "hub:oceanblock": "hard",
+    "hub:gauntlet": "hard",
+    "hub:horror": "hard",
+
+    "hub:skyblock": "normal",
+    "hub:onechunk": "normal",
+    "hub:oneblock": "normal"
+  }
+}

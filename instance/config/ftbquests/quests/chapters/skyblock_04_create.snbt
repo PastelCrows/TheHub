@@ -1,0 +1,195 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skyblock_04_create"
+	group: "0000000000900001"
+	id: "0000000000100084"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000100085"
+			rewards: [{
+				id: "0000000000100091"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000100090"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000100085"]
+			id: "0000000000100086"
+			rewards: [{
+				id: "0000000000100093"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100092"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000100086"]
+			id: "0000000000100087"
+			rewards: [{
+				id: "0000000000100095"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000100094"
+				item: { count: 1, id: "create:cogwheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000100087"]
+			id: "0000000000100088"
+			rewards: [{
+				id: "0000000000100097"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000100096"
+				item: { count: 1, id: "create:water_wheel" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100087"]
+			id: "0000000000100089"
+			rewards: [{
+				id: "0000000000100099"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000100098"
+				item: { count: 1, id: "create:millstone" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100089"]
+			id: "000000000010008A"
+			rewards: [{
+				id: "000000000010009B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000010009A"
+				item: { count: 1, id: "create:mechanical_press" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000100088"]
+			id: "000000000010008B"
+			rewards: [{
+				id: "000000000010009D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000010009C"
+				item: { count: 1, id: "create:encased_fan" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000010008A"]
+			id: "000000000010008C"
+			rewards: [{
+				id: "000000000010009F"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000010009E"
+				item: { count: 1, id: "create:mechanical_mixer" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: [
+				"000000000010008B"
+				"000000000010008A"
+			]
+			id: "000000000010008D"
+			rewards: [{
+				id: "00000000001000A1"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 2L
+				id: "00000000001000A0"
+				item: { count: 1, id: "create:crushing_wheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000010008C"]
+			id: "000000000010008E"
+			rewards: [{
+				id: "00000000001000A3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000001000A2"
+				item: { count: 1, id: "create:steam_engine" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000010008D"]
+			id: "000000000010008F"
+			rewards: [{
+				id: "00000000001000A5"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000001000A4"
+				item: { count: 1, id: "create:mechanical_crafter" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+	]
+}

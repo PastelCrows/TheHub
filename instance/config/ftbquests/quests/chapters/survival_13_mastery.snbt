@@ -1,0 +1,195 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_13_mastery"
+	group: "0000000000900002"
+	id: "00000000002000BC"
+	images: [ ]
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["00000000002000BB"]
+			id: "00000000002000BD"
+			rewards: [{
+				id: "000000000020024C"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "000000000020024B"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000002000BD"]
+			id: "00000000002000BE"
+			rewards: [{
+				id: "000000000020024E"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000020024D"
+				item: { count: 1, id: "minecraft:beacon" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000002000BD"]
+			id: "00000000002000BF"
+			rewards: [{
+				id: "0000000000200250"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000020024F"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000002000BD"]
+			id: "00000000002000C0"
+			rewards: [{
+				id: "0000000000200252"
+				type: "xp"
+				xp: 400
+			}]
+			tasks: [{
+				id: "0000000000200251"
+				item: { count: 1, id: "ars_nouveau:archmage_spell_book" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000002000BF"]
+			id: "00000000002000C1"
+			rewards: [{
+				id: "0000000000200254"
+				type: "xp"
+				xp: 400
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000200253"
+				item: { count: 1, id: "apothic_enchanting:draconic_endshelf" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000BE"]
+			id: "00000000002000C2"
+			rewards: [{
+				id: "0000000000200256"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000200255"
+				item: { count: 1, id: "simplyswords:runic_forge" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000C2"]
+			id: "00000000002000C3"
+			rewards: [{
+				id: "0000000000200258"
+				type: "xp"
+				xp: 400
+			}]
+			tasks: [{
+				id: "0000000000200257"
+				item: { count: 1, id: "simplyswords:runic_claymore" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000C1"]
+			id: "00000000002000C4"
+			rewards: [{
+				id: "000000000020025A"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "0000000000200259"
+				item: { count: 1, id: "create_enchantment_industry:apotheotic_affix_template" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000C0"]
+			id: "00000000002000C5"
+			rewards: [{
+				id: "000000000020025C"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000020025B"
+				item: { count: 1, id: "minecraft:totem_of_undying" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"00000000002000C4"
+				"00000000002000C3"
+				"00000000002000C5"
+			]
+			id: "00000000002000C6"
+			rewards: [
+				{
+					id: "000000000020025E"
+					item: {
+						count: 1
+						id: "minecraft:beacon"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000020025F"
+					type: "xp"
+					xp: 2000
+				}
+				{
+					id: "0000000000200260"
+					type: "random"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000020025D"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+	]
+}

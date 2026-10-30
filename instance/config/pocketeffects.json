@@ -1,0 +1,36 @@
+{
+  "_comment": [
+    "Ambience allow-lists, enforced by PocketQuests.PocketEffects.",
+    "",
+    "pocketmobs.json fences horror CREATURES. It cannot touch the mods that have no entity at",
+    "all and work by acting on the world or the chat - a message from nobody, a torch that goes",
+    "out, a house that burns down. Those were global, which is how the words 'Help me' appeared",
+    "in chat in redstone land, a creative redstone sandbox.",
+    "",
+    "A listed effect runs ONLY in the listed dimensions. An effect listed here with an empty",
+    "array is off everywhere; an effect NOT listed here is never touched at all.",
+    "",
+    "horror_messages  - the Horror Messages mod. Gated per level by a mixin on the single",
+    "                   private procedure both its timer and its command funnel through, so the",
+    "                   message is dropped only for the level it was headed to.",
+    "",
+    "serversidehorror - Server-Side Horror. It has no gateable funnel: its effects are inlined",
+    "                   into its own mixins on the server, level and player ticks. Instead its",
+    "                   per-effect enable switches are held down unless a player is in one of",
+    "                   these dimensions. Side benefit: a horror base is no longer burned down",
+    "                   or stripped of torches while you are away in another pocket dimension.",
+    "",
+    "Each real dimension needs listing separately, exactly as in pocketmobs.json, or the",
+    "ambience would stop at the edge of the horror overworld."
+  ],
+  "horror_messages": [
+    "hub:horror",
+    "hub:horror_nether",
+    "hub:horror_end"
+  ],
+  "serversidehorror": [
+    "hub:horror",
+    "hub:horror_nether",
+    "hub:horror_end"
+  ]
+}

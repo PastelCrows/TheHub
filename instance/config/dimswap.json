@@ -1,0 +1,92 @@
+{
+  "groups": {
+    "skyblock": [
+      "hub:skyblock",
+      "hub:skyblock_nether",
+      "hub:skyblock_end"
+    ],
+    "survival": [
+      "hub:survival",
+      "hub:survival_nether",
+      "hub:survival_end"
+    ],
+    "caveblock": [
+      "hub:caveblock",
+      "hub:caveblock_nether",
+      "hub:caveblock_end"
+    ],
+    "netherbound": [
+      "hub:netherbound",
+      "hub:netherbound_nether",
+      "hub:netherbound_end"
+    ],
+    "oceanblock": [
+      "hub:oceanblock",
+      "hub:oceanblock_nether",
+      "hub:oceanblock_end"
+    ],
+    "lostcities": [
+      "hub:lostcities",
+      "hub:lostcities_nether",
+      "hub:lostcities_end"
+    ],
+    "onechunk": [
+      "hub:onechunk",
+      "hub:onechunk_nether",
+      "hub:onechunk_end"
+    ],
+    "gauntlet": [
+      "hub:gauntlet",
+      "hub:gauntlet_nether",
+      "hub:gauntlet_end"
+    ],
+    "hub": [
+      "hub:hub",
+      "minecraft:overworld",
+      "minecraft:the_nether",
+      "minecraft:the_end",
+      "hub:redstone"
+    ],
+    "oneblock": [
+      "hub:oneblock",
+      "hub:oneblock_nether",
+      "hub:oneblock_end"
+    ],
+    "horror": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ]
+  },
+  "save": {
+    "position": true,
+    "enderChest": true,
+    "xp": true,
+    "effects": true,
+    "food": true,
+    "air": true,
+    "fire": true,
+    "curios": true,
+    "health": false,
+    "gamemode": false
+  },
+  "aliases": [],
+  "tabLabels": {
+    "skyblock": "Skyblock",
+    "survival": "Survival",
+    "caveblock": "Caveblock",
+    "netherbound": "Netherbound",
+    "oceanblock": "Oceanblock",
+    "lostcities": "Lostcities",
+    "onechunk": "Onechunk",
+    "gauntlet": "Gauntlet",
+    "hub": "Hub",
+    "oneblock": "Oneblock",
+    "horror": "Horror"
+  },
+  "overrides": {
+    "hub": {
+      "position": false
+    }
+  }
+}

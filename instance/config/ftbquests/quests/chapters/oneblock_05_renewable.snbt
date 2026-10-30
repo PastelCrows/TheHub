@@ -1,0 +1,116 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_05_renewable"
+	group: "0000000000900009"
+	id: "0000000000B00021"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00022"
+			rewards: [{
+				id: "0000000000B00076"
+				type: "xp"
+				xp: 200
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B00077"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00022"]
+			id: "0000000000B00023"
+			rewards: [{
+				count: 8
+				id: "0000000000B00078"
+				item: {
+					count: 1
+					id: "minecraft:bread"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000B00079"
+				item: { count: 1, id: "minecraft:wheat" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00022"]
+			id: "0000000000B00024"
+			rewards: [{
+				id: "0000000000B0007A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000B0007B"
+				item: { count: 1, id: "minecraft:leather" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00022"]
+			id: "0000000000B00025"
+			rewards: [{
+				id: "0000000000B0007C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000B0007D"
+				item: { count: 1, id: "minecraft:oak_sapling" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00022"]
+			id: "0000000000B00026"
+			rewards: [{
+				id: "0000000000B0007E"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 256L
+				id: "0000000000B0007F"
+				item: { count: 1, id: "minecraft:cobblestone" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00022"]
+			id: "0000000000B00027"
+			rewards: [{
+				id: "0000000000B00080"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000B00081"
+				item: { count: 1, id: "minecraft:composter" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+	]
+}

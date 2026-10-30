@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "layers": [],
+      "biome": "minecraft:plains",
+      "features": true,
+      "lakes": false,
+      "structure_overrides": [
+        "minecraft:ancient_cities",
+        "minecraft:strongholds",
+        "minecraft:mineshafts",
+        "minecraft:trial_chambers",
+        "minecraft:woodland_mansions",
+        "minecraft:desert_pyramids",
+        "minecraft:jungle_temples",
+        "minecraft:ocean_monuments"
+      ]
+    }
+  }
+}

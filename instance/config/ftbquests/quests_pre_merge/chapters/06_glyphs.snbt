@@ -1,0 +1,247 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "06_glyphs"
+	group: "0000000000002262"
+	id: "0000000000002047"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["000000000000202A"]
+			id: "0000000000002048"
+			rewards: [{
+				id: "0000000000002151"
+				type: "xp"
+				xp: 25
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000002150"
+				item: { count: 1, id: "ars_nouveau:worn_notebook" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000002048"]
+			id: "0000000000002049"
+			rewards: [{
+				id: "0000000000002153"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000002152"
+				item: { count: 1, id: "ars_nouveau:source_gem" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000002049"]
+			id: "000000000000204A"
+			rewards: [{
+				id: "0000000000002155"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000002154"
+				item: { count: 1, id: "ars_nouveau:novice_spell_book" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000000204A"]
+			id: "000000000000204B"
+			rewards: [{
+				id: "0000000000002157"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000002156"
+				item: { count: 1, id: "ars_nouveau:scribes_table" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000000204A"]
+			id: "000000000000204C"
+			rewards: [{
+				id: "0000000000002159"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000002158"
+				item: { count: 1, id: "ars_nouveau:imbuement_chamber" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000000204C"]
+			id: "000000000000204D"
+			rewards: [{
+				id: "000000000000215B"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "000000000000215A"
+				item: { count: 1, id: "ars_nouveau:source_jar" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000000204D"]
+			id: "000000000000204E"
+			rewards: [{
+				id: "000000000000215D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 2L
+				id: "000000000000215C"
+				item: { count: 1, id: "ars_nouveau:relay" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000000204B"]
+			id: "000000000000204F"
+			rewards: [{
+				id: "000000000000215F"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000000215E"
+				item: { count: 1, id: "ars_nouveau:arcane_pedestal" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000000204F"]
+			id: "0000000000002050"
+			rewards: [{
+				id: "0000000000002161"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000002160"
+				item: { count: 1, id: "ars_nouveau:enchanting_apparatus" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000002050"]
+			id: "0000000000002051"
+			rewards: [{
+				id: "0000000000002163"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000002162"
+				item: { count: 1, id: "ars_nouveau:magebloom_fiber" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["0000000000002050"]
+			id: "0000000000002052"
+			rewards: [{
+				id: "0000000000002165"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000002164"
+				item: { count: 1, id: "ars_nouveau:ritual_brazier" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["0000000000002052"]
+			id: "0000000000002053"
+			rewards: [{
+				id: "0000000000002167"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000002166"
+				item: { count: 1, id: "ars_nouveau:apprentice_spell_book" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 17.5d
+		}
+		{
+			dependencies: [
+				"0000000000002053"
+				"000000000000204E"
+			]
+			id: "0000000000002054"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000002169"
+					item: {
+						count: 1
+						id: "ars_nouveau:source_gem"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000000216A"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "000000000000216B"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				count: 32L
+				id: "0000000000002168"
+				item: { count: 1, id: "ars_nouveau:source_gem" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

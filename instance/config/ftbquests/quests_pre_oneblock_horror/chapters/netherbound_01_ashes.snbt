@@ -1,0 +1,214 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_01_ashes"
+	group: "0000000000900004"
+	id: "0000000000400001"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000400002"
+			rewards: [
+				{
+					count: 16
+					id: "000000000040000E"
+					item: {
+						count: 1
+						id: "minecraft:netherrack"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000040000F"
+					type: "xp"
+					xp: 10
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000040000D"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000400002"]
+			id: "0000000000400003"
+			rewards: [{
+				id: "0000000000400011"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				count: 64L
+				id: "0000000000400010"
+				item: { count: 1, id: "minecraft:netherrack" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000400002"]
+			id: "0000000000400004"
+			rewards: [{
+				id: "0000000000400013"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000400012"
+				item: { count: 1, id: "minecraft:crimson_stem" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000400004"]
+			id: "0000000000400005"
+			rewards: [{
+				id: "0000000000400015"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "0000000000400014"
+				item: { count: 1, id: "minecraft:crafting_table" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000400005"]
+			id: "0000000000400006"
+			rewards: [{
+				count: 16
+				id: "0000000000400017"
+				item: {
+					count: 1
+					id: "minecraft:blackstone"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000400016"
+				item: { count: 1, id: "minecraft:blackstone" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000400006"]
+			id: "0000000000400007"
+			rewards: [{
+				id: "0000000000400019"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000400018"
+				item: { count: 1, id: "minecraft:stone_pickaxe" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000400003"]
+			id: "0000000000400008"
+			rewards: [{
+				id: "000000000040001B"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000040001A"
+				item: { count: 1, id: "minecraft:glowstone" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000400003"]
+			id: "0000000000400009"
+			rewards: [{
+				id: "000000000040001D"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000040001C"
+				item: { count: 1, id: "minecraft:cooked_porkchop" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000400007"]
+			id: "000000000040000A"
+			rewards: [{
+				id: "000000000040001F"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000040001E"
+				item: { count: 1, id: "minecraft:flint" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000400007"]
+			id: "000000000040000B"
+			rewards: [{
+				id: "0000000000400021"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000400020"
+				item: { count: 1, id: "minecraft:quartz" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000400007"]
+			id: "000000000040000C"
+			rewards: [{
+				id: "0000000000400023"
+				item: {
+					count: 1
+					id: "minecraft:golden_boots"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000400022"
+				item: { count: 1, id: "minecraft:gold_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+	]
+}

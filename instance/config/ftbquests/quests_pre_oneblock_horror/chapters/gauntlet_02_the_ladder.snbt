@@ -1,0 +1,176 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_02_the_ladder"
+	group: "0000000000900008"
+	id: "0000000000800018"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800019"
+			rewards: [{
+				id: "0000000000800021"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "0000000000800020"
+				item: { count: 1, id: "gateways:gate_pearl" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800019"]
+			id: "000000000080001A"
+			rewards: [
+				{
+					count: 8
+					id: "0000000000800023"
+					item: {
+						count: 1
+						id: "minecraft:gold_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000800024"
+					type: "xp"
+					xp: 200
+				}
+			]
+			size: 1.5d
+			tasks: [{
+				id: "0000000000800022"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000080001A"]
+			id: "000000000080001B"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000800026"
+					item: {
+						count: 1
+						id: "minecraft:lapis_lazuli"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000800027"
+					type: "xp"
+					xp: 400
+				}
+			]
+			tasks: [{
+				id: "0000000000800025"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000080001B"]
+			id: "000000000080001C"
+			rewards: [
+				{
+					count: 6
+					id: "0000000000800029"
+					item: {
+						count: 1
+						id: "minecraft:blaze_rod"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000080002A"
+					type: "xp"
+					xp: 800
+				}
+			]
+			tasks: [{
+				id: "0000000000800028"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["000000000080001C"]
+			id: "000000000080001D"
+			rewards: [
+				{
+					count: 4
+					id: "000000000080002C"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000080002D"
+					type: "xp"
+					xp: 1500
+				}
+			]
+			tasks: [{
+				id: "000000000080002B"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["000000000080001D"]
+			id: "000000000080001E"
+			rewards: [
+				{
+					count: 2
+					id: "000000000080002F"
+					item: {
+						count: 1
+						id: "minecraft:netherite_scrap"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000800030"
+					type: "xp"
+					xp: 4000
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000080002E"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["000000000080001E"]
+			id: "000000000080001F"
+			rewards: [{
+				id: "0000000000800032"
+				type: "xp"
+				xp: 1000
+			}]
+			tasks: [{
+				id: "0000000000800031"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+	]
+}

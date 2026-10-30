@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:the_end",
+  "generator": {
+    "type": "oneblock:oneblock",
+    "biome_source": {
+      "type": "minecraft:the_end"
+    },
+    "generate_structures": false
+  }
+}

@@ -1,0 +1,189 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skyblock_05_mekanism"
+	group: "0000000000900001"
+	id: "00000000001000A6"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "00000000001000A7"
+			rewards: [{
+				id: "00000000001000B3"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "00000000001000B2"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000001000A7"]
+			id: "00000000001000A8"
+			rewards: [{
+				id: "00000000001000B5"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000001000B4"
+				item: { count: 1, id: "mekanism:steel_casing" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000001000A8"]
+			id: "00000000001000A9"
+			rewards: [{
+				id: "00000000001000B7"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000001000B6"
+				item: { count: 1, id: "mekanismgenerators:heat_generator" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000001000A8"]
+			id: "00000000001000AA"
+			rewards: [{
+				id: "00000000001000B9"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "00000000001000B8"
+				item: { count: 1, id: "mekanism:energy_tablet" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000001000AA"]
+			id: "00000000001000AB"
+			rewards: [{
+				id: "00000000001000BB"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000001000BA"
+				item: { count: 1, id: "mekanism:basic_energy_cube" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000001000A9"]
+			id: "00000000001000AC"
+			rewards: [{
+				id: "00000000001000BD"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000001000BC"
+				item: { count: 1, id: "mekanism:enrichment_chamber" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000001000AC"]
+			id: "00000000001000AD"
+			rewards: [{
+				id: "00000000001000BF"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000001000BE"
+				item: { count: 1, id: "mekanism:crusher" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000001000AC"]
+			id: "00000000001000AE"
+			rewards: [{
+				id: "00000000001000C1"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000001000C0"
+				item: { count: 1, id: "mekanism:metallurgic_infuser" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000001000AE"]
+			id: "00000000001000AF"
+			rewards: [{
+				id: "00000000001000C3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000001000C2"
+				item: { count: 1, id: "mekanism:electrolytic_separator" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000001000AF"]
+			id: "00000000001000B0"
+			rewards: [{
+				id: "00000000001000C5"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "00000000001000C4"
+				item: { count: 1, id: "mekanism:ultimate_control_circuit" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["00000000001000B0"]
+			id: "00000000001000B1"
+			rewards: [{
+				id: "00000000001000C7"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "00000000001000C6"
+				item: { count: 1, id: "mekanism:digital_miner" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+	]
+}

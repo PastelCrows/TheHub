@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="pocketquests"
+version="1.13.0"
+displayName="PocketQuests"
+description="Blocks FTB Quests progress for chapters belonging to a pocket dimension you are not currently in."
+
+[[mixins]]
+config="pocketquests.mixins.json"
+
+[[dependencies.pocketquests]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pocketquests]]
+modId="ftbquests"
+type="required"
+versionRange="[2101,)"
+ordering="AFTER"
+side="BOTH"

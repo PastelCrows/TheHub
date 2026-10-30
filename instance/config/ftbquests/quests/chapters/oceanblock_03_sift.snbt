@@ -1,0 +1,183 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oceanblock_03_sift"
+	group: "0000000000900005"
+	id: "0000000000500037"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000500038"
+			rewards: [{
+				count: 32
+				id: "0000000000500041"
+				item: {
+					count: 1
+					id: "minecraft:cobblestone"
+				}
+				type: "item"
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "0000000000500040"
+				item: { count: 1, id: "exdeorum:wooden_hammer" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000500038"]
+			id: "0000000000500039"
+			rewards: [{
+				count: 4
+				id: "0000000000500043"
+				item: {
+					count: 1
+					id: "minecraft:oak_sapling"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000500042"
+				item: { count: 1, id: "exdeorum:crook" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000500039"]
+			id: "000000000050003A"
+			rewards: [
+				{
+					count: 3
+					id: "0000000000500045"
+					item: {
+						count: 1
+						id: "minecraft:white_wool"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000500046"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				count: 16L
+				id: "0000000000500044"
+				item: { count: 1, id: "minecraft:string" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000050003A"]
+			id: "000000000050003B"
+			rewards: [{
+				id: "0000000000500048"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000500047"
+				item: { count: 1, id: "minecraft:white_bed" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000500038"]
+			id: "000000000050003C"
+			rewards: [
+				{
+					count: 16
+					id: "000000000050004A"
+					item: {
+						count: 1
+						id: "exdeorum:dust"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000050004B"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "0000000000500049"
+				item: { count: 1, id: "exdeorum:oak_sieve" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000050003C"]
+			id: "000000000050003D"
+			rewards: [{
+				id: "000000000050004D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000050004C"
+				item: { count: 1, id: "exdeorum:iron_mesh" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000050003C"]
+			id: "000000000050003E"
+			rewards: [
+				{
+					count: 16
+					id: "000000000050004F"
+					item: {
+						count: 1
+						id: "minecraft:dirt"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000500050"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "000000000050004E"
+				item: { count: 1, id: "exdeorum:oak_barrel" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000050003E"]
+			id: "000000000050003F"
+			rewards: [{
+				id: "0000000000500052"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 64L
+				id: "0000000000500051"
+				item: { count: 1, id: "minecraft:dirt" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+	]
+}

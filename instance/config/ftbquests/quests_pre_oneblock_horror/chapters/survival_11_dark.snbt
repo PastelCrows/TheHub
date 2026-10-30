@@ -1,0 +1,352 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_11_dark"
+	group: "0000000000900002"
+	id: "0000000000200099"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"0000000000200084"
+				"0000000000200098"
+			]
+			id: "000000000020009A"
+			rewards: [{
+				id: "00000000002001FC"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "00000000002001FB"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000020009A"]
+			id: "000000000020009B"
+			rewards: [{
+				id: "00000000002001FE"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000002001FD"
+				item: { count: 1, id: "malum:encyclopedia_arcana" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000020009B"]
+			id: "000000000020009C"
+			rewards: [{
+				id: "0000000000200200"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "00000000002001FF"
+				item: { count: 1, id: "malum:arcane_charcoal" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000020009C"]
+			id: "000000000020009D"
+			rewards: [{
+				id: "0000000000200202"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000200201"
+				item: { count: 1, id: "malum:revealed_runewood_log" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000020009C"]
+			id: "000000000020009E"
+			rewards: [{
+				id: "0000000000200205"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [
+				{
+					count: 4L
+					id: "0000000000200203"
+					item: { count: 1, id: "malum:arcane_spirit" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "0000000000200204"
+					item: { count: 1, id: "malum:earthen_spirit" }
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000020009E"]
+			id: "000000000020009F"
+			rewards: [{
+				id: "0000000000200207"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000200206"
+				item: { count: 1, id: "malum:revealed_soulwood_log" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000020009F"]
+			id: "00000000002000A0"
+			rewards: [{
+				id: "0000000000200209"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000200208"
+				item: { count: 1, id: "malum:eldritch_spirit" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000020009F"]
+			id: "00000000002000A1"
+			rewards: [{
+				id: "000000000020020B"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "000000000020020A"
+				item: { count: 1, id: "malum:block_of_soul_stained_steel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000020009A"]
+			id: "00000000002000A2"
+			rewards: [{
+				id: "000000000020020D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000020020C"
+				item: { count: 1, id: "cataclysm:ancient_metal_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000002000A2"]
+			id: "00000000002000A3"
+			rewards: [{
+				id: "000000000020020F"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000020020E"
+				item: { count: 1, id: "cataclysm:black_steel_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000A3"]
+			id: "00000000002000A4"
+			rewards: [{
+				id: "0000000000200211"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000200210"
+				item: { count: 1, id: "cataclysm:infernal_forge" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000A3"]
+			id: "00000000002000A5"
+			rewards: [{
+				id: "0000000000200213"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000200212"
+				item: { count: 1, id: "cataclysm:ignitium_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000A5"]
+			id: "00000000002000A6"
+			rewards: [{
+				id: "0000000000200215"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000200214"
+				item: { count: 1, id: "cataclysm:monstrous_helm" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000002000A6"]
+			id: "00000000002000A7"
+			rewards: [{
+				id: "0000000000200217"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "0000000000200216"
+				item: { count: 1, id: "cataclysm:bone_reptile_helmet" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000002000A6"]
+			id: "00000000002000A8"
+			rewards: [{
+				id: "0000000000200219"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000200218"
+				item: { count: 1, id: "born_in_chaos_v1:dark_metal_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000002000A8"]
+			id: "00000000002000A9"
+			rewards: [{
+				id: "000000000020021B"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000020021A"
+				item: { count: 1, id: "born_in_chaos_v1:soulbane" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"00000000002000A1"
+				"00000000002000A9"
+			]
+			id: "00000000002000AA"
+			rewards: [
+				{
+					count: 32
+					id: "000000000020021D"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000020021E"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [{
+				id: "000000000020021C"
+				item: { count: 1, id: "gateways:gate_pearl" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["00000000002000AA"]
+			id: "00000000002000AB"
+			rewards: [
+				{
+					id: "0000000000200220"
+					item: {
+						count: 1
+						id: "minecraft:netherite_block"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000200221"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "0000000000200222"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				count: 4L
+				id: "000000000020021F"
+				item: { count: 1, id: "cataclysm:ignitium_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

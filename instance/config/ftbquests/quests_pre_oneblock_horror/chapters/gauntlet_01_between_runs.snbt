@@ -1,0 +1,120 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_01_between_runs"
+	group: "0000000000900008"
+	id: "0000000000800004"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800005"
+			rewards: [
+				{
+					count: 8
+					id: "000000000080000C"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000080000D"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000080000B"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800005"]
+			id: "0000000000800006"
+			rewards: [{
+				id: "000000000080000F"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "000000000080000E"
+				item: { count: 1, id: "minecraft:white_bed" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800006"]
+			id: "0000000000800007"
+			rewards: [{
+				id: "0000000000800011"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000800010"
+				item: { count: 1, id: "minecraft:cooked_beef" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000800006"]
+			id: "0000000000800008"
+			rewards: [{
+				id: "0000000000800013"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000800012"
+				item: { count: 1, id: "sophisticatedstorage:barrel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000800005"]
+			id: "0000000000800009"
+			rewards: [{
+				id: "0000000000800015"
+				type: "xp"
+				xp: 200
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "0000000000800014"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800005"]
+			id: "000000000080000A"
+			rewards: [{
+				id: "0000000000800017"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000800016"
+				item: { count: 1, id: "minecraft:iron_chestplate" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+	]
+}

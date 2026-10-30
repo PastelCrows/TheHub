@@ -1,0 +1,94 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "onechunk_07_essence"
+	group: "0000000000900007"
+	id: "000000000070008A"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000070008B"
+			rewards: [{
+				id: "0000000000700091"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 16L
+				id: "0000000000700090"
+				item: { count: 1, id: "mysticalagriculture:prosperity_shard" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000070008B"]
+			id: "000000000070008C"
+			rewards: [{
+				id: "0000000000700093"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 64L
+				id: "0000000000700092"
+				item: { count: 1, id: "mysticalagriculture:inferium_essence" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000070008C"]
+			id: "000000000070008D"
+			rewards: [{
+				id: "0000000000700095"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000700094"
+				item: { components: { "ftbquests:missing_item": "mysticalagriculture:mystical_seeds" }, count: 1, id: "ftbquests:missing_item" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000070008D"]
+			id: "000000000070008E"
+			rewards: [{
+				id: "0000000000700097"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000700096"
+				item: { count: 1, id: "mysticalagriculture:prudentium_essence" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000070008E"]
+			id: "000000000070008F"
+			rewards: [{
+				id: "0000000000700099"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000700098"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+	]
+}

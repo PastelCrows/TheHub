@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Entity allow-lists, enforced by PocketQuests on EntityJoinLevelEvent.",
+    "A listed entity pattern may exist ONLY in the listed dimensions and is refused everywhere",
+    "else. An entity matching no pattern is never touched.",
+    "",
+    "This is what makes a Horror pocket dimension possible at all: mods are global in the hub, so",
+    "without this the Cave Dweller and ArPhEx's bestiary would stalk you in the skyblock pocket",
+    "dimension and in the hub itself. Note that each real dimension is a separate id - the horror",
+    "nether and end are listed explicitly, or the mobs would be confined to the overworld only.",
+    "",
+    "A trailing * wildcards, so arphex:* covers 147 entities without naming them."
+  ],
+  "restrictToDimensions": {
+    "arphex:*": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ],
+    "cave_dweller:*": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ],
+    "the_obsessed:*": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ],
+    "mnightmares:*": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ],
+    "serversidehorror:*": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ]
+  }
+}

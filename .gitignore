@@ -1,0 +1,28 @@
+# Build output from tools/build_mod.py and the jar-scanning validators
+tools/_build/
+tools/_jarjar/
+tools/_fabricjars/
+
+# Python
+__pycache__/
+*.pyc
+
+# Partial downloads and the backups my own tools leave beside files they edit
+*.part
+*.prehubfix
+*.prehubtune
+
+# Deliberately NOT tracked, and it matters:
+#   mods/          869 MB, 251 third-party jars, all re-downloadable from Modrinth
+#   resourcepacks/ 603 MB of third-party packs - someone else's licence to redistribute
+#   shaderpacks/   same
+#   saves/         worlds are disposable by design; see tools/snapshot_world.py
+# instance/resourcepacks/horror-desaturated IS tracked, because it is generated from vanilla
+# by tools/build_desaturated_pack.py and is therefore ours.
+instance/mods/
+instance/saves/
+instance/logs/
+instance/crash-reports/
+instance/shaderpacks/
+instance/resourcepacks/*
+!instance/resourcepacks/horror-desaturated/

@@ -1,0 +1,116 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_03_water_and_lava"
+	group: "0000000000900009"
+	id: "0000000000B00012"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00013"
+			rewards: [{
+				id: "0000000000B0005C"
+				type: "xp"
+				xp: 150
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B0005D"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00013"]
+			id: "0000000000B00014"
+			rewards: [{
+				id: "0000000000B0005E"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 3L
+				id: "0000000000B0005F"
+				item: { count: 1, id: "minecraft:iron_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00013"]
+			id: "0000000000B00015"
+			rewards: [{
+				id: "0000000000B00060"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000B00061"
+				item: { count: 1, id: "minecraft:bucket" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00013"]
+			id: "0000000000B00016"
+			rewards: [{
+				count: 4
+				id: "0000000000B00062"
+				item: {
+					count: 1
+					id: "minecraft:ice"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000B00063"
+				item: { count: 1, id: "minecraft:water_bucket" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00013"]
+			id: "0000000000B00017"
+			rewards: [{
+				id: "0000000000B00064"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				id: "0000000000B00065"
+				item: { count: 1, id: "minecraft:lava_bucket" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00013"]
+			id: "0000000000B00018"
+			rewards: [{
+				id: "0000000000B00066"
+				type: "xp"
+				xp: 200
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				count: 10L
+				id: "0000000000B00067"
+				item: { count: 1, id: "minecraft:obsidian" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+	]
+}

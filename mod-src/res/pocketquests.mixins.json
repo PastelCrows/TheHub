@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "pocketquests.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "QuestScreenMixin"
+  ],
+  "mixins": [
+    "TeamDataMixin",
+    "CraftingMenuMixin",
+    "HorrorMessagesMixin",
+    "TFPortalMixin",
+    "AetherPortalMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

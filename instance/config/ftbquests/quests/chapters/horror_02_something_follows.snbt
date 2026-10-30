@@ -1,0 +1,93 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "horror_02_something_follows"
+	group: "000000000090000A"
+	id: "0000000000C00008"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000C00009"
+			rewards: [{
+				id: "0000000000C00034"
+				type: "xp"
+				xp: 150
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C00035"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000C00009"]
+			id: "0000000000C0000A"
+			rewards: [{
+				id: "0000000000C00036"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000C00037"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00009"]
+			id: "0000000000C0000B"
+			rewards: [{
+				id: "0000000000C00038"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000C00039"
+				item: { count: 1, id: "minecraft:ladder" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00009"]
+			id: "0000000000C0000C"
+			rewards: [{
+				id: "0000000000C0003A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000C0003B"
+				item: { count: 1, id: "minecraft:iron_door" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00009"]
+			id: "0000000000C0000D"
+			rewards: [{
+				id: "0000000000C0003C"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000C0003D"
+				item: { count: 1, id: "minecraft:lantern" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

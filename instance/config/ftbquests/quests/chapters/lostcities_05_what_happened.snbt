@@ -1,0 +1,106 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lostcities_05_what_happened"
+	group: "0000000000900006"
+	id: "0000000000600063"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000600064"
+			rewards: [{
+				id: "000000000060006B"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 64L
+				id: "000000000060006A"
+				item: { count: 1, id: "minecraft:cobbled_deepslate" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000600064"]
+			id: "0000000000600065"
+			rewards: [{
+				id: "000000000060006D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000060006C"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000600065"]
+			id: "0000000000600066"
+			rewards: [{
+				id: "000000000060006F"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000060006E"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000600066"]
+			id: "0000000000600067"
+			rewards: [{
+				id: "0000000000600071"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000600070"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000600064"]
+			id: "0000000000600068"
+			rewards: [{
+				id: "0000000000600073"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "0000000000600072"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000600068"]
+			id: "0000000000600069"
+			rewards: [{
+				id: "0000000000600075"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000600074"
+				item: { count: 1, id: "apotheosis:gem_dust" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+	]
+}

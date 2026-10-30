@@ -1,0 +1,319 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "09_engine"
+	group: "0000000000002262"
+	id: "0000000000002073"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"0000000000002046"
+				"0000000000002072"
+			]
+			id: "0000000000002074"
+			rewards: [{
+				id: "00000000000021AE"
+				type: "xp"
+				xp: 50
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "00000000000021AD"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000002074"]
+			id: "0000000000002075"
+			rewards: [{
+				id: "00000000000021B0"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021AF"
+				item: { count: 1, id: "createaddition:alternator" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000002075"]
+			id: "0000000000002076"
+			rewards: [{
+				id: "00000000000021B2"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021B1"
+				item: { count: 1, id: "createaddition:electric_motor" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000002076"]
+			id: "0000000000002077"
+			rewards: [{
+				id: "00000000000021B4"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021B3"
+				item: { count: 1, id: "createaddition:capacitor" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002076"]
+			id: "0000000000002078"
+			rewards: [{
+				id: "00000000000021B6"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021B5"
+				item: { count: 1, id: "createaddition:rolling_mill" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002078"]
+			id: "0000000000002079"
+			rewards: [{
+				id: "00000000000021B8"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000000021B7"
+				item: { count: 1, id: "createaddition:tesla_coil" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000002079"]
+			id: "000000000000207A"
+			rewards: [{
+				id: "00000000000021BA"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				id: "00000000000021B9"
+				item: { count: 1, id: "create_enchantment_industry:blaze_enchanter" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000000207A"]
+			id: "000000000000207B"
+			rewards: [{
+				id: "00000000000021BC"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000000021BB"
+				item: { count: 1, id: "create_enchantment_industry:apotheotic_essence_bucket" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000000207B"]
+			id: "000000000000207C"
+			rewards: [
+				{
+					id: "00000000000021BE"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_supremacy"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000000021BF"
+					type: "xp"
+					xp: 250
+				}
+			]
+			tasks: [{
+				id: "00000000000021BD"
+				item: { count: 1, id: "create_enchantment_industry:affix_augmentor" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["0000000000002074"]
+			id: "000000000000207D"
+			rewards: [{
+				id: "00000000000021C1"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021C0"
+				item: { count: 1, id: "occultism:brush" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000000207D"]
+			id: "000000000000207E"
+			rewards: [{
+				id: "00000000000021C3"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000000021C2"
+				item: { count: 1, id: "occultism:otherworld_sapling_natural" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000000207E"]
+			id: "000000000000207F"
+			rewards: [{
+				id: "00000000000021C5"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000000021C4"
+				item: { count: 1, id: "occultism:spirit_attuned_crystal" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000000207E"]
+			id: "0000000000002080"
+			rewards: [{
+				id: "00000000000021C7"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000000021C6"
+				item: { count: 1, id: "occultism:magic_lamp_empty" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002080"]
+			id: "0000000000002081"
+			rewards: [{
+				id: "00000000000021C9"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 2L
+				id: "00000000000021C8"
+				item: { count: 1, id: "occultism:iesnium_ingot" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000002081"]
+			id: "0000000000002082"
+			rewards: [{
+				id: "00000000000021CB"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000000021CA"
+				item: { count: 1, id: "occultism:storage_controller" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000002082"]
+			id: "0000000000002083"
+			rewards: [{
+				id: "00000000000021CD"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "00000000000021CC"
+				item: { count: 1, id: "occultism:stable_wormhole" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"000000000000207C"
+				"0000000000002083"
+			]
+			id: "0000000000002084"
+			rewards: [
+				{
+					id: "00000000000021CF"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000000021D0"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "00000000000021D1"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				count: 8L
+				id: "00000000000021CE"
+				item: { count: 1, id: "occultism:iesnium_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

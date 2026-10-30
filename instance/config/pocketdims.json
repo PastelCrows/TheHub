@@ -1,0 +1,110 @@
+{
+  "_comment": [
+    "Two separate jobs for modded dimensions.",
+    "",
+    "restrictToPockets - ACCESS. Which pocket dimensions may enter each modded dimension at all.",
+    "Keys are dimension ids, values are POCKET DIMENSION NAMES: entering the Twilight Forest from",
+    "the survival nether is still entering it from the survival pocket dimension. Ownership was",
+    "derived by diffing each standalone pack against the hub, not guessed.",
+    "",
+    "regionOffsets - SEPARATION. Survival, Lost Cities and Gauntlet all legitimately own Twilight",
+    "Forest, and gating access does not stop them sharing its chunks. Duplicating the dimension per",
+    "pocket dimension breaks the mods (Twilight Forest alone has 16 classes comparing against its",
+    "own DIMENSION_KEY - portal return, progression gating, structure protection), so each pocket",
+    "dimension gets its own REGION instead: a million blocks apart, on a diagonal so no two share",
+    "an x or z band. The dimension stays genuinely twilightforest:twilight_forest, so every check",
+    "the mod makes still passes, while separate spawns, separate terrain and mutually invisible",
+    "builds all follow from the distance. World coordinates reach 30,000,000; ten pockets use a",
+    "third of one axis.",
+    "",
+    "The offset is applied on arrival and removed on the way back, so a return portal does not",
+    "strand you a million blocks from your base. [0,0] means a pocket dimension uses the origin."
+  ],
+  "restrictToPockets": {
+    "aether:the_aether": [
+      "survival",
+      "lostcities",
+      "gauntlet"
+    ],
+    "arphex:the_crawling": [
+      "horror"
+    ],
+    "arphex:the_webrooms": [
+      "horror"
+    ],
+    "irons_spellbooks:pocket_dimension": [
+      "survival",
+      "lostcities",
+      "gauntlet"
+    ],
+    "lostcities:lostcity": [
+      "lostcities"
+    ],
+    "oneblock:overworld": [
+      "oneblock"
+    ],
+    "the_obsessed:obsessed_lair": [
+      "horror"
+    ],
+    "twilightforest:twilight_forest": [
+      "survival",
+      "lostcities",
+      "gauntlet"
+    ],
+    "undergarden:undergarden": [
+      "survival",
+      "lostcities",
+      "gauntlet"
+    ],
+    "woot:tartarus": [
+      "skyblock",
+      "caveblock",
+      "netherbound",
+      "oceanblock",
+      "onechunk",
+      "oneblock"
+    ]
+  },
+  "regionOffsets": {
+    "survival": [
+      0,
+      0
+    ],
+    "lostcities": [
+      1000000,
+      1000000
+    ],
+    "gauntlet": [
+      2000000,
+      2000000
+    ],
+    "skyblock": [
+      3000000,
+      3000000
+    ],
+    "caveblock": [
+      4000000,
+      4000000
+    ],
+    "netherbound": [
+      5000000,
+      5000000
+    ],
+    "oceanblock": [
+      6000000,
+      6000000
+    ],
+    "onechunk": [
+      7000000,
+      7000000
+    ],
+    "oneblock": [
+      8000000,
+      8000000
+    ],
+    "horror": [
+      9000000,
+      9000000
+    ]
+  }
+}

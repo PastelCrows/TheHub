@@ -1,0 +1,329 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_12_eyes"
+	group: "0000000000900002"
+	id: "00000000002000AC"
+	images: [ ]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["00000000002000AB"]
+			id: "00000000002000AD"
+			rewards: [{
+				id: "0000000000200224"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000200223"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000002000AD"]
+			id: "00000000002000AE"
+			rewards: [{
+				id: "0000000000200226"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000200225"
+				item: { count: 1, id: "endrem:old_eye" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000002000AE"]
+			id: "00000000002000AF"
+			rewards: [{
+				id: "0000000000200229"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "0000000000200227"
+					item: { count: 1, id: "endrem:nether_eye" }
+					type: "item"
+				}
+				{
+					id: "0000000000200228"
+					item: { count: 1, id: "endrem:undead_eye" }
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000AE"]
+			id: "00000000002000B0"
+			rewards: [{
+				id: "000000000020022C"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "000000000020022A"
+					item: { count: 1, id: "endrem:cold_eye" }
+					type: "item"
+				}
+				{
+					id: "000000000020022B"
+					item: { count: 1, id: "endrem:corrupted_eye" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000AE"]
+			id: "00000000002000B1"
+			rewards: [{
+				id: "000000000020022F"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "000000000020022D"
+					item: { count: 1, id: "endrem:guardian_eye" }
+					type: "item"
+				}
+				{
+					id: "000000000020022E"
+					item: { count: 1, id: "endrem:witch_eye" }
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000002000AF"]
+			id: "00000000002000B2"
+			rewards: [{
+				id: "0000000000200232"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "0000000000200230"
+					item: { count: 1, id: "endrem:cryptic_eye" }
+					type: "item"
+				}
+				{
+					id: "0000000000200231"
+					item: { count: 1, id: "endrem:cursed_eye" }
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000B0"]
+			id: "00000000002000B3"
+			rewards: [{
+				id: "0000000000200235"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "0000000000200233"
+					item: { count: 1, id: "endrem:evil_eye" }
+					type: "item"
+				}
+				{
+					id: "0000000000200234"
+					item: { count: 1, id: "endrem:rogue_eye" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000B1"]
+			id: "00000000002000B4"
+			rewards: [{
+				id: "0000000000200238"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [
+				{
+					id: "0000000000200236"
+					item: { count: 1, id: "endrem:exotic_eye" }
+					type: "item"
+				}
+				{
+					id: "0000000000200237"
+					item: { count: 1, id: "endrem:lost_eye" }
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000002000B3"]
+			id: "00000000002000B5"
+			rewards: [{
+				id: "000000000020023B"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [
+				{
+					id: "0000000000200239"
+					item: { count: 1, id: "endrem:wither_eye" }
+					type: "item"
+				}
+				{
+					id: "000000000020023A"
+					item: { count: 1, id: "endrem:black_eye" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000002000B5"]
+			id: "00000000002000B6"
+			rewards: [{
+				id: "000000000020023D"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "000000000020023C"
+				item: { count: 1, id: "endrem:magical_eye" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000002000B6"]
+			id: "00000000002000B7"
+			rewards: [{
+				id: "000000000020023F"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000020023E"
+				item: { count: 1, id: "endrem:ancient_portal_frame" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["00000000002000B6"]
+			id: "00000000002000B8"
+			rewards: [{
+				id: "0000000000200241"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				dimension: "minecraft:the_end"
+				id: "0000000000200240"
+				type: "dimension"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["00000000002000B8"]
+			id: "00000000002000B9"
+			rewards: [
+				{
+					id: "0000000000200243"
+					item: {
+						count: 1
+						id: "minecraft:dragon_egg"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000200244"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				id: "0000000000200242"
+				type: "kill"
+				value: 1L
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["00000000002000B9"]
+			id: "00000000002000BA"
+			rewards: [{
+				id: "0000000000200246"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000200245"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 20.0d
+		}
+		{
+			dependencies: ["00000000002000B9"]
+			id: "00000000002000BB"
+			rewards: [
+				{
+					id: "0000000000200248"
+					item: {
+						count: 1
+						id: "minecraft:nether_star"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000200249"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "000000000020024A"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000200247"
+				item: { count: 1, id: "minecraft:dragon_egg" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

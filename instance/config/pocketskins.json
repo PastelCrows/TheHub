@@ -1,0 +1,154 @@
+{
+  "_comment": [
+    "Per-POCKET-DIMENSION shaders and textures, applied by PocketQuests (PocketSkins).",
+    "",
+    "THE TWO HALVES COST VERY DIFFERENT AMOUNTS, so they are scheduled differently.",
+    "",
+    "",
+    "Textures are not. reloadResourcePacks() re-stitches every atlas, re-parses GeckoLib,",
+    "regenerates Every Compat textures and rebuilds the whole JEI index, on the render thread.",
+    "Running that DURING a dimension change, on top of terrain loading, is what produced the old",
+    "thirty-minute hang. It is now DEFERRED: queued on the dimension change, then fired only once",
+    "the terrain screen is gone, no loading overlay is up, the player is alive, their chunk is",
+    "loaded, and all of that has held for switchDelayTicks consecutive ticks.",
+    "",
+    "Deferring does not make the reload FASTER. It makes it a defined pause after you have landed",
+    "instead of an open-ended hang mid-teleport. The real duration is now timed and reported in",
+    "chat and the log, because the figure written in this file before was badly wrong.",
+    "",
+    "COST SCALES WITH TRANSITIONS, NOT WITH THE NUMBER OF PACKS. A reload happens only when the",
+    "desired pack set DIFFERS from what is already selected, so two pocket dimensions sharing a",
+    "pack switch between each other for free. An empty list means vanilla, which is a perfectly",
+    "",
+    "",
+    "",
+    "ONE SHADER PER TEXTURE PACK. Shaders are cheap (Iris just recompiles the pack, seconds) and",
+    "apply IMMEDIATELY on the dimension change, so they are the instant feedback stepping through",
+    "an arch. Pairing them 1:1 with the texture packs means a transit changes BOTH or NEITHER, so",
+    "no transit becomes slow that was not already - the five free ones stay free.",
+    "",
+    "   Faithful 64x        -> Complementary Reimagined   vanilla-like, matches crisp vanilla art",
+    "   Excalibur           -> BSL (perf tag: low)        warm and contrasty, medieval stone/fire",
+    "   JICKLUS             -> Nostalgia (medium)         warm vanilla-like fantasy, same palette",
+    "   horror-desaturated  -> Spooklementary             purpose-built horror, Complementary-based",
+    "",
+    "Redstone land is the one exception: same Faithful textures, but MakeUp Ultra Fast (modrinth",
+    "perf tag 'potato', the cheapest available) because FPS while building large contraptions",
+    "matters more there than atmosphere. Set shadersEnabled false if even that is unwelcome.",
+    "",
+    "Nothing here is heavier than what was already running everywhere (Complementary Reimagined),",
+    "so this costs no performance relative to before - two of the five are explicitly lighter.",
+    "",
+    "FOUR packs cover everything; no pocket dimension is left on bare vanilla. The hub carries",
+    "Faithful 64x because it is the most widely shared one, which makes the most transits free.",
+    "",
+    "All four were chosen on MEASURED coverage against all 1617 vanilla 1.21.1 block and item",
+    "textures, not on pack_format or on a sample: Faithful 64x 100%, Excalibur 97%, JICKLUS 96%.",
+    "Majestica was dropped at 69% - a third of its blocks fall back to vanilla 16x right beside",
+    "its 32x work, which defeats the point. Re-measure with tools/get_texture_packs.py.",
+    "64x is the agreed ceiling: higher multiplies atlas cost and so lengthens the switch pause,",
+    "while the 247 mods stay 16x regardless.",
+    "",
+    "A real dimension with no entry of its own INHERITS its pocket dimension's packs and shader",
+    "(PocketSkins.skinFor), so hub:skyblock_nether follows hub:skyblock automatically. Give one",
+    "an explicit entry only when it should deliberately differ from its own overworld.",
+    "",
+    "switchDelayTicks: 60 = three seconds of calm after landing. Raise it if the pause still lands",
+    "while chunks are streaming in; lower it if three seconds feels like dead air."
+  ],
+  "allowResourcePackSwitching": true,
+  "switchDelayTicks": 60,
+  "default": {
+    "shader": "ComplementaryReimagined_r5.9.3.zip",
+    "shadersEnabled": true,
+    "resourcePacks": [
+      "file/Faithful 64x - Release 6.zip"
+    ]
+  },
+  "byDimension": {
+    "hub:hub": {
+      "shader": "ComplementaryReimagined_r5.9.3.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:skyblock": {
+      "shader": "ComplementaryReimagined_r5.9.3.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:onechunk": {
+      "shader": "ComplementaryReimagined_r5.9.3.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:oneblock": {
+      "shader": "ComplementaryReimagined_r5.9.3.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:lostcities": {
+      "shader": "ComplementaryReimagined_r5.9.3.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:redstone": {
+      "shader": "MakeUp-UltraFast-9.6.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Faithful 64x - Release 6.zip"
+      ]
+    },
+    "hub:caveblock": {
+      "shader": "BSL_v10.1.8.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Excalibur_V26.3_01.zip"
+      ]
+    },
+    "hub:netherbound": {
+      "shader": "BSL_v10.1.8.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Excalibur_V26.3_01.zip"
+      ]
+    },
+    "hub:gauntlet": {
+      "shader": "BSL_v10.1.8.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/Excalibur_V26.3_01.zip"
+      ]
+    },
+    "hub:survival": {
+      "shader": "Nostalgia_v5.1.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/JICKLUS.zip"
+      ]
+    },
+    "hub:oceanblock": {
+      "shader": "Nostalgia_v5.1.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/JICKLUS.zip"
+      ]
+    },
+    "hub:horror": {
+      "shader": "Spooklementary_v2.0.4.zip",
+      "shadersEnabled": true,
+      "resourcePacks": [
+        "file/horror-desaturated"
+      ]
+    }
+  }
+}

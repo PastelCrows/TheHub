@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:the_end",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "hub:gauntlet_end_terrain",
+    "biome_source": {
+      "type": "minecraft:the_end"
+    }
+  }
+}
