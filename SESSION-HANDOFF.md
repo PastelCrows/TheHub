@@ -15,7 +15,11 @@ transcript is 32 MB and it now answers every prompt with `Prompt is too long`, i
 Final state at the break: `pocketquests-1.13.0.jar`, 251 jars, difficulty 7 hard / 3 normal /
 2 peaceful, `verify_all.py` 8/8 PASS, pushed to `PastelCrows/TheHub` (`cf46f76`, `963eac3`).
 
-## Open queue — the user's 2026-10-29 smoke test
+## Status: all six addressed in 58b1409 (PocketQuests 1.14.0)
+
+Nothing below is outstanding except the re-test itself. Kept as the record of what was found.
+
+## The queue as reported — the user's 2026-10-29 smoke test
 
 1. **Hub didn't spawn** on a fresh world; had to be seeded manually.
 2. **Motion blur** in the shaderpack is awful — must be **off by default** in every shader config.
@@ -40,3 +44,18 @@ Final state at the break: `pocketquests-1.13.0.jar`, 251 jars, difficulty 7 hard
 - A **duplicate reload** fired at 20:32:55 and again at 20:34:34 for the *same* pack set
   (`[vanilla, Faithful 64x]`), costing a second 80 s pause for no change.
 - Stack traces originate at `PocketSkins.applyShader` lines 240/249.
+
+## What was done
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Hub didn't spawn | `placeRoom` takes its own forceload window again (`hub_setup.js`) |
+| 2 | Motion blur | pinned off in all six shaderpacks (`tools/tune_shaders.py`) |
+| 3 | Ex Deorum gate leaked | `FastBenchMixin` - the vanilla hook was dead code under FastWorkbench |
+| 4 | TF portal | was already correct |
+| 5 | Horror chat | was already correct |
+| 6 | Two advancements | Cyclic's stale `placed_block` shape, repaired (`tools/fix_advancements.py`) |
+| + | Every transit reloaded textures | `PocketSkins` compared against the required mod packs too |
+
+`verify_all.py` is 10/10. None of it has been in-game yet - the next launch is the re-test.
+After it, check the log for `[pocketquests] crafting gate:` and `crafting rules:`, which are new.
