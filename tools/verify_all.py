@@ -8,6 +8,7 @@ WHAT THEY COVER
   verify_skins         every pack/shader name resolves; inheritance; the 1:1 pairing
   verify_effects       the ambience gate binds and decides correctly
   verify_balance       difficulty map, and no recipe denial collides with a quest
+  verify_testkits      /tftest and /extest, the starter-kit decisions, the forceload
   tune_settings        the client settings are still what was set
 
 WHAT THEY DO NOT COVER, and this is the important part: **none of this runs the game.** Every
@@ -35,6 +36,7 @@ CHECKS = [
     ("verify_skins", ["verify_skins.py"], "ALL CHECKS PASSED"),
     ("verify_effects", ["verify_effects.py"], "ALL CHECKS PASSED"),
     ("verify_balance", ["verify_balance.py"], "ALL CHECKS PASSED"),
+    ("verify_testkits", ["verify_testkits.py"], "ALL CHECKS PASSED"),
     ("tune_settings", ["tune_settings.py"], "ALL CHECKS PASSED"),
 ]
 

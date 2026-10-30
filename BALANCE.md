@@ -104,11 +104,49 @@ horror        91 patterns,  6 chapters -> no quest references any denial
 
 95 deny patterns across 10 pocket dimensions, zero collisions with the 699-quest book.
 
+## 5. Starter kits — most pockets get nothing
+
+| Pocket dimension | Start | Why |
+|---|---|---|
+| the hub · redstone | nothing | Creative sandboxes |
+| **survival** | nothing | A survival start is supposed to be a survival start. It used to hand out stone tools, bread, torches and saplings; that is gone. |
+| **gauntlet** | nothing | Explicitly empty. The briefing still prints — that is *information*, not equipment. Everything the first Gate Pearl needs (redstone, two mushrooms, an ender pearl, three bottles) is obtainable in its own amplified terrain, so an empty start is a grind rather than a dead end. |
+| horror | nothing | Its premise is being under-equipped |
+| oneblock | nothing | Standard for the gamemode — the block is the only source |
+| skyblock · caveblock · oceanblock · onechunk | stocked chest in the starting structure | A kit *as well* would double the start |
+| lostcities | iron pickaxe, stone sword, torches, bread, ladders | Kept. You spawn in a ruined city to scavenge, and the ladders in particular are what make a tower descendable. |
+| netherbound | stone pickaxe, crafting table, cooked porkchop, torches | Kept, deliberately thin. Its premise is scavenging, but arriving empty-handed somewhere with no trees is a dead end rather than a challenge. |
+
+One implementation note worth keeping: `give <player> minecraft:air` is an **invalid item**, so
+writing it as a way of saying "no kit" fails silently through `runCommandSilent`. The gauntlet
+branch is genuinely empty instead, and it no longer announces a kit it did not give.
+
+## Smoke-test commands
+
+Two op-only KubeJS commands exist purely so the gates above can be tested without grinding for
+materials, since that is the only reason a test would get skipped:
+
+- **`/tftest`** — exactly fills the hotbar with a Twilight Forest portal: an iron shovel, four
+  water buckets (they do not stack), 64 grass blocks, 16 saplings, 16 poppies, 3 diamonds. Every
+  item was read out of the mod's own tags — `portal/fluid.json`, `portal/edge.json`,
+  `portal/decoration.json`, `portal/activator.json` — not remembered.
+- **`/extest`** — crafting table, oak planks, slabs, sticks, string and dirt: the inputs to
+  `exdeorum:oak_sieve` (4 planks + 1 slab + 2 rods) and `exdeorum:string_mesh` (9 string), read
+  from the recipe JSONs. It also prints whether the *current* dimension should DENY or ALLOW the
+  craft — and `verify_testkits.py` asserts that inline prediction still matches
+  `pocketrules.json`, because a test command that confidently lies is worse than none.
+
+`commandRegistry` only fires at **server start**, so a full restart is needed after editing —
+`/kubejs reload server_scripts` leaves the old commands registered and lies about it.
+
 ## Still open
 
 - **Quest reward economy.** 699 quests across 83 chapters, rewards inherited from eleven separate
-  books. Nothing has been normalised, and under decision 1 that is arguably correct — but it has
-  not been *looked at*, which is different from having been decided.
-- **Starter kit generosity** per pocket, same situation.
-- Difficulty here is the vanilla setting only. Per-pocket mob health/damage scaling (via the mob
-  config of individual mods) has not been touched.
+  books. Deliberately left alone: they were balanced when each pack was built, inventories are
+  already fully separated per pocket, so them behaving exactly as they did standalone *is* the
+  intended outcome under decision 1.
+- **Mob health and damage scaling** — left to the vanilla difficulty setting by decision, rather
+  than per-mod mob configs.
+- **onechunk and netherbound starts** were the two nobody was certain about. onechunk keeps its
+  stocked chest and netherbound its thin kit; both are one line to change if they feel wrong in
+  play.
