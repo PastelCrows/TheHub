@@ -114,6 +114,33 @@ public final class PocketRules {
         return false;
     }
 
+    /**
+     * Says at server start which path is expected to enforce these rules, and loads them.
+     *
+     * Worth a line in the log because the gate has now failed silently once. CraftingMenuMixin
+     * targets vanilla's CraftingMenu.slotChangedCraftingGrid, which FastWorkbench replaces
+     * wholesale, so with FastWorkbench installed the vanilla injector is inert and FastBenchMixin
+     * is the one doing the work. Both carry require = 0, so neither announces itself.
+     *
+     * Calling loadIfNeeded() here also means "crafting rules: N dimensions, M patterns" appears
+     * at boot rather than on the first craft, which is when it is actually useful.
+     */
+    public static void logGatePath() {
+        loadIfNeeded();
+        boolean fastbench = classPresent("dev.shadowsoffire.fastbench.util.FastBenchUtil");
+        System.out.println("[pocketquests] crafting gate: "
+                + (fastbench ? "fastbench path (FastWorkbench present)" : "vanilla path"));
+    }
+
+    private static boolean classPresent(String name) {
+        try {
+            Class.forName(name, false, PocketRules.class.getClassLoader());
+            return true;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     /** Test seam: lets the patterns be exercised without a running game. */
     static void loadForTest(Map<String, Set<String>> rules) {
         denyByDim = rules;

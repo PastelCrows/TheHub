@@ -96,6 +96,15 @@ public final class PocketSkins {
 
     private static Map<String, Skin> byDim = null;
     private static Skin fallback = null;
+
+    /**
+     * Every pack id this file is allowed to switch between, plus vanilla.
+     *
+     * The selection in the repository is NOT just these: it also holds every mod's own resource
+     * pack and KubeJS's virtual packs, 250-odd required entries that are always on. Those have to
+     * be filtered out before the current selection can be compared with the desired one.
+     */
+    private static Set<String> managed = null;
     private static boolean allowPackSwitch = false;
     private static int switchDelayTicks = 60;      // 3 seconds of calm after landing
 
@@ -163,6 +172,18 @@ public final class PocketSkins {
         } catch (Exception ex) {
             System.out.println("[pocketquests] pocketskins.json unreadable, skins off: " + ex);
         }
+        Set<String> owned = new LinkedHashSet<>();
+        owned.add("vanilla");
+        for (Skin s : built.values()) {
+            if (s.packs != null) {
+                owned.addAll(s.packs);
+            }
+        }
+        if (def != null && def.packs != null) {
+            owned.addAll(def.packs);
+        }
+        managed = owned;
+
         byDim = built;
         fallback = def;
         System.out.println("[pocketquests] skins: " + built.size() + " dimensions configured"
@@ -200,8 +221,21 @@ public final class PocketSkins {
                 System.out.println("[pocketquests] resource pack not installed, skipped: " + id);
             }
         }
-        Set<String> current = new LinkedHashSet<>(repo.getSelectedIds());
-        if (current.equals(desired)) {
+        // Compare only the packs this file controls. getSelectedIds() returns the REQUIRED packs
+        // too - every mod's own assets, KubeJS's virtual packs - which setSelected() re-adds by
+        // itself and which no config here ever names. Comparing the raw selection meant the sets
+        // could never be equal, so the early return never fired and EVERY transit paid a full
+        // reload, including the ones between two pocket dimensions sharing a pack that this file
+        // promises are free. The 2026-10-29 log shows it plainly: [vanilla, Faithful 64x] loaded
+        // at 20:32:55 in 92850 ms, then loaded AGAIN at 20:34:34 in 80448 ms, to arrive at
+        // exactly what was already on screen.
+        Set<String> currentManaged = new LinkedHashSet<>();
+        for (String id : repo.getSelectedIds()) {
+            if (managed.contains(id)) {
+                currentManaged.add(id);
+            }
+        }
+        if (currentManaged.equals(desired)) {
             return false;                             // already correct - no reload, no pause
         }
 

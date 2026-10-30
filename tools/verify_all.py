@@ -10,6 +10,8 @@ WHAT THEY COVER
   verify_balance       difficulty map, and no recipe denial collides with a quest
   verify_testkits      /tftest and /extest, the starter-kit decisions, the forceload
   tune_settings        the client settings are still what was set
+  tune_shaders         motion blur is pinned off in every shaderpack
+  fix_advancements     no mod ships a pre-1.20.2 placed_block advancement unrepaired
 
 WHAT THEY DO NOT COVER, and this is the important part: **none of this runs the game.** Every
 check here is static analysis of jars and configs, or the mod's own logic executed outside
@@ -38,6 +40,8 @@ CHECKS = [
     ("verify_balance", ["verify_balance.py"], "ALL CHECKS PASSED"),
     ("verify_testkits", ["verify_testkits.py"], "ALL CHECKS PASSED"),
     ("tune_settings", ["tune_settings.py"], "ALL CHECKS PASSED"),
+    ("tune_shaders", ["tune_shaders.py"], "Motion blur pinned off"),
+    ("fix_advancements", ["fix_advancements.py"], "override"),
 ]
 
 # What to grep for in logs/latest.log after the first real launch. Each of these is a line the
@@ -48,6 +52,8 @@ EXPECTED_LOG_LINES = [
     ("[pocketquests] modded dimensions:", "PocketWorlds read pocketdims.json"),
     ("[pocketquests] difficulty:", "PocketDifficulty read pocketdifficulty.json"),
     ("[pocketquests] skins:", "PocketSkins read pocketskins.json"),
+    ("[pocketquests] crafting gate:", "which of the two crafting mixins is live - see FastBenchMixin"),
+    ("[pocketquests] crafting rules:", "PocketRules read pocketrules.json"),
     ("Mixin apply", "look for FAILED/ERROR near pocketquests mixins"),
 ]
 

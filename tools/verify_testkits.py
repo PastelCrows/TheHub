@@ -153,9 +153,19 @@ print("   chest-based starts : skyblock, caveblock, oceanblock, onechunk")
 # ---------------------------------------------------------------- 3. forceload
 print("\n3. the hub no longer pins chunks forever")
 hs = io.open(os.path.join(SCRIPTS, "hub_setup.js"), encoding="utf-8").read()
-check("hub:hub forceload is a REMOVE, not an add",
-      "in hub:hub run forceload remove" in hs
-      and "in hub:hub run forceload add" not in hs)
+# The invariant is "the hub does not stay pinned", NOT "the hub is never pinned". The lobby is
+# placed with `place template`, which needs its chunks to exist, so it takes the same temporary
+# window every pocket seed takes: add, place, remove. The first draft of this check asserted that
+# the string "forceload add" never appeared for hub:hub at all, and that is what the fix for the
+# missing lobby had to violate - so the check now counts pairs instead of banning the word.
+hub_add = hs.count("in hub:hub run forceload add")
+hub_remove = hs.count("in hub:hub run forceload remove")
+check("the hub is released, not permanently pinned",
+      hub_remove == hub_add + 1,
+      "%d add / %d remove (the extra remove is the unconditional cleanup at load)"
+      % (hub_add, hub_remove))
+check("the lobby still gets a window to be placed in",
+      "forceload add ' + ROOM_AREA" in hs and "place template hub:hub_room" in hs)
 check("the seeding forceloads are still paired add/remove",
       hs.count("forceload add") == hs.count("forceload remove") - 1,
       "%d add / %d remove (one extra remove is the hub cleanup)"

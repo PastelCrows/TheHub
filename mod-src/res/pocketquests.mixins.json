@@ -9,6 +9,7 @@
   "mixins": [
     "TeamDataMixin",
     "CraftingMenuMixin",
+    "FastBenchMixin",
     "HorrorMessagesMixin",
     "TFPortalMixin",
     "AetherPortalMixin"

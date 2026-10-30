@@ -32,6 +32,8 @@
   // loads, so anything appended to it is silently skipped forever.
   var EXTRAS_FLAG = 'hubExtrasVersion2';
   var AREA = '-16 -16 16 16';
+  // The lobby's own window, wide enough for the 65x29 room at -32,64,-14.
+  var ROOM_AREA = '-32 -32 32 32';
 
   // Verified against each template's own block data: feet in air, 2 blocks of headroom,
   // solid ground below, inside the island footprint. Do not hand-edit - re-run the checker.
@@ -46,10 +48,28 @@
     });
   }
 
+  // The lobby needs its chunks to EXIST while `place template` runs, exactly like every pocket
+  // seed does - see the note at the top of this file about the Oceanblock island.
+  //
+  // It used to get that for free: the hub was permanently forceloaded, so at world load the
+  // chunks were already there. Releasing that pin (correctly - 25 chunks of permanent random
+  // ticks for a room nobody stands in while away) took the guarantee with it, and the next
+  // fresh world came up with no lobby at all: "hub didnt spawn for some reason, had to seed it
+  // on this fresh world". /hubseed worked because by then the player was standing in it.
+  //
+  // So the room gets the same temporary window the pockets get: pin at tick 0, place at 40,
+  // release at 120. The blocks are on disk once written, so nothing stays pinned.
+  //
+  // hub_room.nbt is 65x8x29 placed at -32,64,-14, so it spans x -32..32, z -14..14 - inside
+  // ROOM_AREA's chunks either way.
   function placeRoom(server) {
+    server.runCommandSilent('execute in hub:hub run forceload add ' + ROOM_AREA);
     server.scheduleInTicks(40, () => {
       server.runCommandSilent('execute in hub:hub run place template hub:hub_room -32 64 -14');
       console.info('[hub] placed the hub room');
+    });
+    server.scheduleInTicks(120, () => {
+      server.runCommandSilent('execute in hub:hub run forceload remove ' + ROOM_AREA);
     });
   }
 
@@ -155,7 +175,7 @@
     // tick. It cost 25 chunks of permanent random ticks and block-entity ticks on a CPU whose
     // single-thread throughput is the bottleneck. Issued as a REMOVE rather than deleted so
     // that worlds created before this change get cleaned up on load too.
-    server.runCommandSilent('execute in hub:hub run forceload remove -32 -32 32 32');
+    server.runCommandSilent('execute in hub:hub run forceload remove ' + ROOM_AREA);
 
     if (!server.persistentData.getBoolean(ROOM_FLAG)) {
       server.persistentData.putBoolean(ROOM_FLAG, true);

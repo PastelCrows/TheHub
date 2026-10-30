@@ -5,6 +5,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 /**
@@ -43,6 +44,13 @@ public class PocketQuests {
         NeoForge.EVENT_BUS.addListener(PocketDifficulty::onChangedDimension);
         NeoForge.EVENT_BUS.addListener(
                 (ServerTickEvent.Post e2) -> PocketDifficulty.onServerTick(e2.getServer()));
+
+        // The crafting gate is two mixins, either of which can be the live one depending on
+        // whether FastWorkbench is installed, and both carry require = 0. This prints which path
+        // is in control and how many rules loaded, so "the gate is not working" is one grep
+        // rather than a craft-and-see. It cost a whole smoke test to learn that.
+        NeoForge.EVENT_BUS.addListener(
+                (ServerStartedEvent event) -> PocketRules.logGatePath());
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             NeoForge.EVENT_BUS.addListener(
