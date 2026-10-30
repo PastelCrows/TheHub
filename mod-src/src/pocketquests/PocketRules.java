@@ -96,6 +96,14 @@ public final class PocketRules {
         return pattern.equals(itemId);
     }
 
+    /**
+     * Has the gate ever actually stopped anything? The boot lines say the CONFIG loaded, which
+     * two smoke tests proved is a different question from whether the MIXIN fired. This prints
+     * once, the first time a craft is really denied, and is therefore the only line in the log
+     * that is evidence of the gate working rather than of it existing.
+     */
+    private static boolean announced = false;
+
     /** True when this item must not be craftable in this dimension. */
     public static boolean denied(String dimensionId, String itemId) {
         loadIfNeeded();
@@ -108,6 +116,11 @@ public final class PocketRules {
         }
         for (String pattern : pats) {
             if (matches(pattern, itemId)) {
+                if (!announced) {
+                    announced = true;
+                    System.out.println("[pocketquests] crafting gate LIVE: denied " + itemId
+                            + " in " + dimensionId + " (pattern " + pattern + ")");
+                }
                 return true;
             }
         }
@@ -127,18 +140,8 @@ public final class PocketRules {
      */
     public static void logGatePath() {
         loadIfNeeded();
-        boolean fastbench = classPresent("dev.shadowsoffire.fastbench.util.FastBenchUtil");
-        System.out.println("[pocketquests] crafting gate: "
-                + (fastbench ? "fastbench path (FastWorkbench present)" : "vanilla path"));
-    }
-
-    private static boolean classPresent(String name) {
-        try {
-            Class.forName(name, false, PocketRules.class.getClassLoader());
-            return true;
-        } catch (Throwable t) {
-            return false;
-        }
+        System.out.println("[pocketquests] crafting gate: RecipeManager.getRecipeFor,"
+                + " require=1 (a descriptor mismatch would have crashed startup)");
     }
 
     /** Test seam: lets the patterns be exercised without a running game. */

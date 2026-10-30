@@ -8,8 +8,7 @@
   ],
   "mixins": [
     "TeamDataMixin",
-    "CraftingMenuMixin",
-    "FastBenchMixin",
+    "RecipeManagerMixin",
     "HorrorMessagesMixin",
     "TFPortalMixin",
     "AetherPortalMixin"

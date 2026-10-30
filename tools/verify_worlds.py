@@ -247,5 +247,43 @@ print("   %d shared dimensions, %d with a non-default scale" % (len(shared), len
 check("the two known non-1.0 dimensions are both covered",
       set(SCALES) == {"twilightforest:twilight_forest", "undergarden:undergarden"})
 
+# ---------------------------------------------------------------- 5. live config paths
+#
+# Lost Cities generated no city because its profile mapping was written to
+# config/lostcities-common.toml while the mod actually reads config/lostcities/common.toml. The
+# flat file is left behind by an older version of the mod, so it looks exactly right - right mod,
+# right section, right key - and editing it is silently a no-op. The player spawns in an ordinary
+# forest in a dimension whose entire premise is a ruined city.
+#
+# McJty mods moved their configs into a per-mod FOLDER. Where both spellings exist the folder is
+# live and the flat file is a decoy. This flags every such pair, not just this mod's, because the
+# trap is the pair rather than Lost Cities.
+print("")
+print("5. mod configs are being written where the mod reads them")
+decoys = []
+for flat in sorted(glob.glob(os.path.join(MC, "config", "*-*.toml"))):
+    stem = os.path.basename(flat)[:-5]
+    mod, _, kind = stem.rpartition("-")
+    if not mod:
+        continue
+    if os.path.exists(os.path.join(MC, "config", mod, kind + ".toml")):
+        decoys.append(stem + ".toml is dead, " + mod + "/" + kind + ".toml is live")
+check("no edits are sitting in a config the mod has superseded",
+      not decoys, "; ".join(decoys))
+
+lc = os.path.join(MC, "config", "lostcities", "common.toml")
+lc_text = io.open(lc, encoding="utf-8").read() if os.path.exists(lc) else ""
+check("lost cities maps hub:lostcities to a profile",
+      "hub:lostcities=" in lc_text,
+      "without it the pocket generates plain terrain and the premise is simply absent")
+profile = ""
+for piece in lc_text.replace(chr(34), " ").replace(",", " ").split():
+    if piece.startswith("hub:lostcities="):
+        profile = piece.split("=", 1)[1]
+check("that profile exists on disk",
+      bool(profile) and os.path.exists(
+          os.path.join(MC, "config", "lostcities", "profiles", profile + ".json")),
+      ("profile " + profile) if profile else "no profile named")
+
 print("\n%s" % ("ALL CHECKS PASSED" if not failures else "FAILURES: " + ", ".join(failures)))
 sys.exit(1 if failures else 0)

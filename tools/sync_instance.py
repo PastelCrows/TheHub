@@ -58,6 +58,14 @@ FILES = [
     (os.path.join("minecraft", "config", "modernfix-mixins.properties"),
      "config/modernfix-mixins.properties"),
     (os.path.join("minecraft", "config", "dimswap.json"), "config/dimswap.json"),
+    # Lost Cities decides whether hub:lostcities is a city or an ordinary forest, and the
+    # setting that does it lived only in the instance until it was found to be in the WRONG
+    # FILE entirely (config/lostcities-common.toml, which the mod stopped reading). Tracked
+    # now so the live path is the one under review.
+    (os.path.join("minecraft", "config", "lostcities", "common.toml"),
+     "config/lostcities/common.toml"),
+    (os.path.join("minecraft", "config", "lostcities-server.toml"),
+     "config/lostcities-server.toml"),
 ]
 SKIP_SUFFIX = (".prehubfix", ".prehubtune", ".part")
 
