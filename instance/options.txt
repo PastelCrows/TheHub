@@ -48,7 +48,7 @@ mouseSensitivity:0.5
 damageTiltStrength:0.5
 highContrast:false
 narratorHotkey:true
-resourcePacks:["vanilla","file/JICKLUS.zip","generated/fragmentum_layer","mod_resources","moonlight:merged_pack"]
+resourcePacks:["vanilla","file/Faithful 64x - Release 6.zip","generated/fragmentum_layer","mod_resources","moonlight:merged_pack"]
 incompatibleResourcePacks:[]
 lastServer:
 lang:en_us

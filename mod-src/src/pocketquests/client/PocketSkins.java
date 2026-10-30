@@ -240,7 +240,11 @@ public final class PocketSkins {
         }
 
         repo.setSelected(desired);
-        notice(mc, "applying textures for this pocket dimension - brief pause");
+        // NOT "brief". It was measured at 80-98 seconds on this pack (92850, 80448, 97930 ms),
+        // and a message promising a brief pause before a minute and a half of frozen client is
+        // worse than no message: it reads as a hang. Say the real number.
+        notice(mc, "swapping textures for this pocket dimension - about a minute and a half,"
+                + " the client will not respond until it finishes");
         System.out.println("[pocketquests] resource packs -> " + desired);
 
         final long t0 = System.nanoTime();
@@ -250,7 +254,7 @@ public final class PocketSkins {
             reloading = false;
             System.out.println("[pocketquests] resource reload completed in " + ms + " ms");
             // chat must be touched on the client thread
-            mc.execute(() -> notice(mc, "textures applied in " + (ms / 1000.0) + "s"));
+            mc.execute(() -> notice(mc, "textures applied in " + (ms / 1000L) + "s"));
         });
         return true;
     }

@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="pocketquests"
-version="1.14.0"
+version="1.14.1"
 displayName="PocketQuests"
 description="Blocks FTB Quests progress for chapters belonging to a pocket dimension you are not currently in."
 

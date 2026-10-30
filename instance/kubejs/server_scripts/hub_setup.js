@@ -104,8 +104,13 @@
       + ' 33 ' + block + ' replace');
   }
 
+  // The two forceload windows below are sized to the templates, not rounded outwards. They were
+  // a chunk wider on each side, which on a FRESH world means generating 25 chunks of terrain
+  // nobody asked for - and the gauntlet's is AMPLIFIED terrain, the most expensive kind in the
+  // pack. Coliseum: 67x67 at -33,-33 is chunks -3..2 = 36. Showcase: 73x71 at 120,-30 is chunks
+  // x 7..12, z -2..2 = 30. Was 49 and 42.
   function seedColiseum(server) {
-    server.runCommandSilent('execute in hub:gauntlet run forceload add -48 -48 48 48');
+    server.runCommandSilent('execute in hub:gauntlet run forceload add -33 -33 33 33');
     server.scheduleInTicks(40, () => {
       cut(server, 63, 69, 'minecraft:air');
       cut(server, 70, 76, 'minecraft:air');
@@ -131,7 +136,7 @@
       console.info('[hub] placed the Coliseum at -33 63 -33');
     });
     server.scheduleInTicks(200, () => {
-      server.runCommandSilent('execute in hub:gauntlet run forceload remove -48 -48 48 48');
+      server.runCommandSilent('execute in hub:gauntlet run forceload remove -33 -33 33 33');
     });
   }
 
@@ -140,13 +145,13 @@
   // windows, a path, a garden, a tree, water and lava). Swap packs in the resource pack menu and
   // walk it - swatches alone do not tell you how a pack reads in an actual build.
   function seedShowcase(server) {
-    server.runCommandSilent('execute in hub:redstone run forceload add 112 -40 200 48');
+    server.runCommandSilent('execute in hub:redstone run forceload add 120 -30 192 40');
     server.scheduleInTicks(60, () => {
       server.runCommandSilent('execute in hub:redstone run place template hub:showcase 120 63 -30');
       console.info('[hub] placed the texture showcase in redstone land at 120 63 -30');
     });
     server.scheduleInTicks(160, () => {
-      server.runCommandSilent('execute in hub:redstone run forceload remove 112 -40 200 48');
+      server.runCommandSilent('execute in hub:redstone run forceload remove 120 -30 192 40');
     });
   }
 
