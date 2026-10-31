@@ -189,9 +189,9 @@ check("the return portal is the hub portal block",
 check("return portals are placed once per world, not every visit",
       "persistentData.getBoolean(flag)" in pjs and "putBoolean(flag, true)" in pjs)
 check("the void pockets get no frame and no platform",
-      all(("%s'," % name) not in pjs.replace(" ", "") or True for name in ()) and
       pjs.count(", null]") >= 4,
-      "%d of the entries place bare portal blocks" % pjs.count(", null]"))
+      "%d entries place bare portal blocks - skyblock, oceanblock, onechunk, oneblock"
+      % pjs.count(", null]"))
 
 print("\n%s" % ("ALL CHECKS PASSED" if not failures
                 else "FAILURES: " + ", ".join(failures)))
