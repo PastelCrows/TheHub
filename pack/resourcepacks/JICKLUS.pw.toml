@@ -1,0 +1,8 @@
+name = "JICKLUS"
+filename = "JICKLUS.zip"
+side = "client"
+
+[download]
+hash-format = "sha512"
+hash = "16004cb30e90059f547ec3c270833c28443ae8fe5dd4cf7f52b5ca96d099bff2dc9b298f20437aea679db74a655aae8862e9ccfb7a09fa151c7fc3c85d73d927"
+url = "https://cdn.modrinth.com/data/E4PmmlqX/versions/ZFJ0cqI1/JICKLUS.zip"

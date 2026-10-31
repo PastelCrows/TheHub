@@ -74,9 +74,35 @@ FTB = {
 RELEASE = "https://github.com/PastelCrows/TheHub/releases/download/mods-v1/%s"
 SELF_HOSTED = ("pocketquests", "twilightforest")
 
-# Our own files, shipped with the pack. Paths are relative to the instance's minecraft folder
-# and keep that shape inside the pack, which is what packwiz-installer expects.
-OURS = ["kubejs", "config", "defaultconfigs"]
+# Texture and shader packs. These are third-party and are NOT in this repository - 603 MB that
+# is not ours to redistribute - but packwiz does not redistribute anything: it hands the client a
+# URL and the client fetches from Modrinth itself. The licensing reason to keep them out of git
+# was never a reason to keep them out of the pack, and leaving them out meant a fresh install
+# rendered vanilla in every pocket dimension.
+#
+# Only the ones pocketskins.json actually references. The instance also holds a dozen more from
+# the evaluation pass that nothing uses.
+FETCH = [
+    ("resourcepacks", "Faithful 64x - Release 6.zip"),
+    ("resourcepacks", "Excalibur_V26.3_01.zip"),
+    ("resourcepacks", "JICKLUS.zip"),
+    ("shaderpacks", "BSL_v10.1.8.zip"),
+    ("shaderpacks", "ComplementaryReimagined_r5.9.3.zip"),
+    ("shaderpacks", "MakeUp-UltraFast-9.6.zip"),
+    ("shaderpacks", "Nostalgia_v5.1.zip"),
+    ("shaderpacks", "Spooklementary_v2.0.4.zip"),
+]
+
+# Our own files, shipped with the pack. Paths are relative to the instance's minecraft folder and
+# keep that shape inside the pack, which is what packwiz-installer expects.
+#
+# horror-desaturated is GENERATED from vanilla by build_desaturated_pack.py, so it is ours and
+# ships as files. The shaderpack .zip.txt files are the per-pack settings tune_shaders.py writes
+# - they are what pin motion blur off, and without them a fresh install gets Nostalgia's default,
+# which is the thing that was complained about in the first place.
+OURS = ["kubejs", "config", "defaultconfigs",
+        os.path.join("resourcepacks", "horror-desaturated")]
+OWN_GLOBS = [("shaderpacks", ".zip.txt")]
 
 
 def sha(path, algo):
@@ -162,7 +188,34 @@ def main():
         print("   Both are allowed to be self-hosted (pocketquests is ours; twilightforest is")
         print("   LGPL-2.1). They need a GitHub release asset to point at.")
 
+    packs = {}
+    pack_paths = []
+    for folder, name in FETCH:
+        full = os.path.join(MC, folder, name)
+        if os.path.exists(full):
+            pack_paths.append((folder, name, full))
+        else:
+            print("   NOT INSTALLED, skipped: %s/%s" % (folder, name))
+    if pack_paths:
+        _by, _found = modrinth_lookup([f for _f, _n, f in pack_paths])
+        rev = {v: k for k, v in _by.items()}
+        for folder, name, full in pack_paths:
+            v = _found.get(rev[full])
+            if not v:
+                missing.append("%s/%s" % (folder, name))
+                continue
+            f = next((x for x in v["files"] if x.get("primary")), v["files"][0])
+            packs[(folder, name)] = (v.get("name") or name, f["url"],
+                                     f["hashes"]["sha512"], name)
+    print("texture + shader packs resolved: %d of %d" % (len(packs), len(FETCH)))
+
     own_files = []
+    for folder, suffix in OWN_GLOBS:
+        root = os.path.join(MC, folder)
+        if os.path.isdir(root):
+            for f in sorted(os.listdir(root)):
+                if f.endswith(suffix):
+                    own_files.append((folder + "/" + f, os.path.join(root, f)))
     for top in OURS:
         root = os.path.join(MC, top)
         if not os.path.isdir(root):
@@ -190,6 +243,15 @@ def main():
         full = os.path.join(PACK, rel)
         io.open(full, "w", encoding="utf-8", newline="\n").write(
             metafile(name, filename, url, h512))
+        index_rows.append((rel, sha(full, "sha256"), True))
+
+    for (folder, name), (disp, url, h512, filename) in sorted(packs.items()):
+        slug = os.path.splitext(name)[0].replace(" ", "_")
+        rel = "%s/%s.pw.toml" % (folder, slug)
+        full = os.path.join(PACK, rel)
+        os.makedirs(os.path.dirname(full), exist_ok=True)
+        io.open(full, "w", encoding="utf-8", newline=chr(10)).write(
+            metafile(disp, filename, url, h512, side="client"))
         index_rows.append((rel, sha(full, "sha256"), True))
 
     for rel, full in own_files:
@@ -231,6 +293,7 @@ def main():
     print("pack/pack.toml        written")
     print("pack/index.toml       %d entries" % len(index_rows))
     print("pack/mods/*.pw.toml   %d metafiles" % (len(resolved) + len(extra)))
+    print("texture + shader      %d metafiles" % len(packs))
     print("")
     print("Install URL once pushed:")
     print("  https://raw.githubusercontent.com/PastelCrows/TheHub/main/pack/pack.toml")
