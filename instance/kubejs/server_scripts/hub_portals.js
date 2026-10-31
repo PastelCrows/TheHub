@@ -165,6 +165,46 @@
     if (name === 'horror')      { surfaceLand(event, player, name, 'hub:horror', false); return; }
   }
 
+  // ------------------------------------------------------------------ hubgo
+  //
+  // The command the PORTAL BLOCKS call. PocketPortal registers one block per destination and
+  // each one runs `hubgo <destination> <player>` when a player walks into it.
+  //
+  // The block deliberately does not teleport by itself. Arrival is a whole procedure - seeding,
+  // landing spot, gamemode, DimSwap inventory group, kit, briefing - and every bit of it already
+  // lives in enter() below. Reimplementing it in Java would be a second source of truth for the
+  // same rules, which is exactly how the crafting gate went wrong twice. So the block is a
+  // trigger and this is the one door it knocks on.
+  //
+  // Permission 2, same as the test commands, and it takes an explicit player name because the
+  // block runs it as the SERVER - there is no "sender" to infer a player from.
+  ServerEvents.commandRegistry(event => {
+    const { commands: Commands, arguments: Arguments } = event;
+    event.register(Commands.literal('hubgo')
+      .requires(src => src.hasPermission(2))
+      .then(Commands.argument('destination', Arguments.STRING.create(event))
+        .then(Commands.argument('who', Arguments.STRING.create(event))
+          .executes(ctx => {
+            var dest = Arguments.STRING.getResult(ctx, 'destination');
+            var who = Arguments.STRING.getResult(ctx, 'who');
+            var server = ctx.source.server;
+            var player = server.getPlayer(who);
+            if (!player) {
+              console.warn('[hub] hubgo: no player named ' + who);
+              return 0;
+            }
+            if (dest === 'hub') {
+              // Going home is hub_return.js's job; run its command as the player so the
+              // return path stays in one place too.
+              server.runCommandSilent('execute as ' + who + ' at ' + who + ' run hub');
+              return 1;
+            }
+            // enter() only ever uses event.server, so a shim with that one field is enough.
+            enter({ server: server }, player, dest);
+            return 1;
+          }))));
+  });
+
   PlayerEvents.tick(event => {
     var player = event.player;
     ticks = ticks + 1;
