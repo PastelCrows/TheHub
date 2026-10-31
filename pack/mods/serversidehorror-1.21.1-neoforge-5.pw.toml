@@ -1,0 +1,8 @@
+name = "serversidehorror-1.21.1-neoforge-5"
+filename = "serversidehorror-1.21.1-neoforge-5.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "28b5ae4788f9a795fe8d038a886daa62e64296343f4bf9eff28f6d138a94c6bf538c69450ae7178e744b6e513bd330848b51b67d6d156762061391b028b90fbd"
+url = "https://cdn.modrinth.com/data/RJ4U0qmn/versions/da1UqKns/serversidehorror-1.21.1-neoforge-5.jar"

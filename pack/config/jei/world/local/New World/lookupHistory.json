@@ -1,0 +1,5 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"minecraft:birch_wood"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:stripped_birch_log"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

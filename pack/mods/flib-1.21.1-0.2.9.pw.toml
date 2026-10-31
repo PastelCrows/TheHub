@@ -1,0 +1,8 @@
+name = "1.21.1-0.2.9"
+filename = "flib-1.21.1-0.2.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "af545a1bf9db7ff1f4b99d33ae568bdf5305e09739f5af408482dc0731a04dd50494baab66744701726874f8202ab23d1c6ddf6d0d580c5477984f51cd86f829"
+url = "https://cdn.modrinth.com/data/FAUSd09K/versions/i46U23pv/flib-1.21.1-0.2.9.jar"

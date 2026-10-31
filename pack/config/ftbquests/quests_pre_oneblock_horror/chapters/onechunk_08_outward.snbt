@@ -1,0 +1,144 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "onechunk_08_outward"
+	group: "0000000000900007"
+	id: "000000000070009A"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000070009B"
+			rewards: [
+				{
+					count: 10
+					id: "00000000007000A2"
+					item: {
+						count: 1
+						id: "minecraft:obsidian"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000007000A3"
+					type: "xp"
+					xp: 100
+				}
+			]
+			size: 1.5d
+			tasks: [{
+				id: "00000000007000A1"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000070009B"]
+			id: "000000000070009C"
+			rewards: [{
+				id: "00000000007000A5"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 8L
+				id: "00000000007000A4"
+				item: { count: 1, id: "minecraft:blaze_rod" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000070009C"]
+			id: "000000000070009D"
+			rewards: [
+				{
+					id: "00000000007000A7"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000007000A8"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [{
+				id: "00000000007000A6"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000070009C"]
+			id: "000000000070009E"
+			rewards: [{
+				id: "00000000007000AA"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 12L
+				id: "00000000007000A9"
+				item: { count: 1, id: "minecraft:ender_eye" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"000000000070009E"
+				"000000000070009D"
+			]
+			id: "000000000070009F"
+			rewards: [
+				{
+					id: "00000000007000AC"
+					item: {
+						count: 1
+						id: "minecraft:dragon_egg"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000007000AD"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "00000000007000AB"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["000000000070009F"]
+			id: "00000000007000A0"
+			rewards: [{
+				id: "00000000007000AF"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "00000000007000AE"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+	]
+}

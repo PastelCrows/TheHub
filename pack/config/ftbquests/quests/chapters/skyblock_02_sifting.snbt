@@ -1,0 +1,322 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skyblock_02_sifting"
+	group: "0000000000900001"
+	id: "000000000010002F"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000100030"
+			rewards: [{
+				id: "0000000000100040"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "000000000010003F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000100030"]
+			id: "0000000000100031"
+			rewards: [{
+				count: 8
+				id: "0000000000100042"
+				item: {
+					count: 1
+					id: "minecraft:flint"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000100041"
+				item: { count: 1, id: "exdeorum:flint_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000100031"]
+			id: "0000000000100032"
+			rewards: [
+				{
+					count: 4
+					id: "0000000000100044"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000100045"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "0000000000100043"
+				item: { count: 1, id: "exdeorum:iron_ore_chunk" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000100032"]
+			id: "0000000000100033"
+			rewards: [
+				{
+					count: 6
+					id: "0000000000100047"
+					item: {
+						count: 1
+						id: "exdeorum:iron_ore_chunk"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000100048"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				id: "0000000000100046"
+				item: { count: 1, id: "exdeorum:iron_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000100033"]
+			id: "0000000000100034"
+			rewards: [{
+				count: 4
+				id: "000000000010004A"
+				item: {
+					count: 1
+					id: "minecraft:copper_ingot"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100049"
+				item: { count: 1, id: "exdeorum:copper_ore_chunk" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100033"]
+			id: "0000000000100035"
+			rewards: [{
+				id: "000000000010004C"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000010004B"
+				item: { count: 1, id: "exdeorum:osmium_ore_chunk" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100033"]
+			id: "0000000000100036"
+			rewards: [
+				{
+					count: 4
+					id: "000000000010004E"
+					item: {
+						count: 1
+						id: "minecraft:gold_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000010004F"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "000000000010004D"
+				item: { count: 1, id: "exdeorum:golden_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100036"]
+			id: "0000000000100037"
+			rewards: [
+				{
+					count: 2
+					id: "0000000000100051"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000100052"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "0000000000100050"
+				item: { count: 1, id: "exdeorum:diamond_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000100037"]
+			id: "0000000000100038"
+			rewards: [{
+				id: "0000000000100054"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "0000000000100053"
+				item: { count: 1, id: "exdeorum:netherite_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000100033"]
+			id: "0000000000100039"
+			rewards: [
+				{
+					count: 4
+					id: "0000000000100056"
+					item: {
+						count: 1
+						id: "exdeorum:compressed_dirt"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000100057"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "0000000000100055"
+				item: { count: 1, id: "exdeorum:oak_compressed_sieve" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100039"]
+			id: "000000000010003A"
+			rewards: [{
+				id: "0000000000100059"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000100058"
+				item: { count: 1, id: "exdeorum:mechanical_sieve" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000010003A"]
+			id: "000000000010003B"
+			rewards: [{
+				id: "000000000010005B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000010005A"
+				item: { count: 1, id: "exdeorum:mechanical_hammer" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000100039"]
+			id: "000000000010003C"
+			rewards: [{
+				id: "000000000010005D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000010005C"
+				item: { count: 1, id: "exdeorum:witch_water_bucket" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100030"]
+			id: "000000000010003D"
+			rewards: [{
+				count: 16
+				id: "000000000010005F"
+				item: {
+					count: 1
+					id: "minecraft:bone_meal"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "000000000010005E"
+				item: { count: 1, id: "exdeorum:wooden_watering_can" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000010003D"]
+			id: "000000000010003E"
+			rewards: [{
+				id: "0000000000100061"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000100060"
+				item: { count: 1, id: "exdeorum:iron_watering_can" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 5.0d
+		}
+	]
+}

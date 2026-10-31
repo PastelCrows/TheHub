@@ -1,0 +1,8 @@
+name = "MysticalCustomization-1.21.1-6.0.2.jar"
+filename = "MysticalCustomization-1.21.1-6.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "40283780eed9fd66c92dccd767f4dcb468ce8af1ef95f30d57ef5eba2a383fe3484c3cb7791835eb198c97e8940f2564dd15b487432b7b4e6b09f2962af4276c"
+url = "https://cdn.modrinth.com/data/lNK9A4rh/versions/ACBylvtB/MysticalCustomization-1.21.1-6.0.2.jar"

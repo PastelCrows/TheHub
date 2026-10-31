@@ -1,0 +1,9 @@
+// Compost colors for yungscavebiomes. You may add your own colors, change existing ones, or remove colors that aren't needed.
+ancient_armor_trim_smithing_template, #eedc9a
+clock_pottery_sherd, #985444
+frost_lily, #c3d0ff
+hourglass_pottery_sherd, #965444
+ice_sheet, #cfffff
+icicle, #c9f1ff
+prickly_peach, #fb9355
+prickly_vines, #729e1e

@@ -1,0 +1,137 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "onechunk_02_finite"
+	group: "0000000000900007"
+	id: "000000000070001D"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000070001E"
+			rewards: [{
+				id: "0000000000700025"
+				type: "xp"
+				xp: 25
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 16L
+				id: "0000000000700024"
+				item: { count: 1, id: "minecraft:coal" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000070001E"]
+			id: "000000000070001F"
+			rewards: [
+				{
+					count: 2
+					id: "0000000000700027"
+					item: {
+						count: 1
+						id: "minecraft:oak_sapling"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000700028"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "0000000000700026"
+				item: { count: 1, id: "minecraft:charcoal" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000070001E"]
+			id: "0000000000700020"
+			rewards: [{
+				id: "000000000070002A"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 12L
+				id: "0000000000700029"
+				item: { count: 1, id: "minecraft:iron_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000700020"]
+			id: "0000000000700021"
+			rewards: [{
+				id: "000000000070002C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 3L
+				id: "000000000070002B"
+				item: { count: 1, id: "minecraft:diamond" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000700021"]
+			id: "0000000000700022"
+			rewards: [
+				{
+					count: 2
+					id: "000000000070002E"
+					item: {
+						count: 1
+						id: "minecraft:emerald"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000070002F"
+					type: "xp"
+					xp: 200
+				}
+			]
+			tasks: [{
+				id: "000000000070002D"
+				item: { count: 1, id: "minecraft:emerald" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"0000000000700020"
+				"000000000070001F"
+			]
+			id: "0000000000700023"
+			rewards: [{
+				id: "0000000000700031"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "0000000000700030"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+	]
+}

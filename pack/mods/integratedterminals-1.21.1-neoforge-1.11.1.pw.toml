@@ -1,0 +1,8 @@
+name = "1.11.1 for NeoForge 1.21.1"
+filename = "integratedterminals-1.21.1-neoforge-1.11.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "dc1fd9b473b4a8e765398ff56c2ad1fe0e6c9ea2ea8c121ee4422ba9f8b715e9a28ff7d6fabd8676bfb991a38ed90a024a46ea00af4f07e7ac5d018028eba671"
+url = "https://cdn.modrinth.com/data/HmLJoQ1K/versions/yU5A0JiC/integratedterminals-1.21.1-neoforge-1.11.1.jar"

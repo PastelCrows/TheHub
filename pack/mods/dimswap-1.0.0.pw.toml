@@ -1,0 +1,8 @@
+name = "DimSwap 1.0.0"
+filename = "dimswap-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "2589b1ed75fed7890ef60ec0315e720ae587e33f5fcc52d62501ca67fc88a06ffa6ae934c7d44ed027be497f3cd6103b8b37d29cc0f844b33fc125ee9cac8d04"
+url = "https://cdn.modrinth.com/data/OwABkYVR/versions/3KD6FSQY/dimswap-1.0.0.jar"

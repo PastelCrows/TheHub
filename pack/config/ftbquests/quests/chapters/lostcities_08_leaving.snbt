@@ -1,0 +1,131 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lostcities_08_leaving"
+	group: "0000000000900006"
+	id: "0000000000600093"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000600094"
+			rewards: [{
+				id: "000000000060009B"
+				type: "xp"
+				xp: 200
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 8L
+				id: "000000000060009A"
+				item: { count: 1, id: "minecraft:blaze_rod" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000600094"]
+			id: "0000000000600095"
+			rewards: [
+				{
+					id: "000000000060009D"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000060009E"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [{
+				id: "000000000060009C"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000600094"]
+			id: "0000000000600096"
+			rewards: [{
+				id: "00000000006000A0"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "000000000060009F"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000600096"]
+			id: "0000000000600097"
+			rewards: [{
+				id: "00000000006000A2"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "00000000006000A1"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"0000000000600097"
+				"0000000000600095"
+			]
+			id: "0000000000600098"
+			rewards: [
+				{
+					id: "00000000006000A4"
+					item: {
+						count: 1
+						id: "minecraft:dragon_egg"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000006000A5"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "00000000006000A3"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000600098"]
+			id: "0000000000600099"
+			rewards: [{
+				id: "00000000006000A7"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "00000000006000A6"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+	]
+}

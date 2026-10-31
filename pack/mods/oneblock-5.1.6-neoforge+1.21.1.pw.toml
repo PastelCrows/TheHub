@@ -1,0 +1,8 @@
+name = "OneBlock 5.1.6 — NeoForge 1.21.1"
+filename = "oneblock-5.1.6-neoforge+1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "c4237fcdf580f168cb30e1835142e549cecdc049c6066a410dccc03b2e353c4c201847fd064107d793eae6015841a7ff8bb7ba6d2a0ea372193f87814b2837a3"
+url = "https://cdn.modrinth.com/data/necbGNtT/versions/2UDl7c9x/oneblock-5.1.6-neoforge%2B1.21.1.jar"

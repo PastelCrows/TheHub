@@ -1,0 +1,95 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_06_arcana"
+	group: "0000000000900008"
+	id: "0000000000800066"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800067"
+			rewards: [{
+				id: "000000000080006D"
+				type: "xp"
+				xp: 50
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000080006C"
+				item: { count: 1, id: "ars_nouveau:worn_notebook" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800067"]
+			id: "0000000000800068"
+			rewards: [{
+				id: "000000000080006F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000080006E"
+				item: { count: 1, id: "ars_nouveau:source_gem" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000800068"]
+			id: "0000000000800069"
+			rewards: [{
+				id: "0000000000800071"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000800070"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000800068"]
+			id: "000000000080006A"
+			rewards: [{
+				id: "0000000000800073"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000800072"
+				item: { count: 1, id: "irons_spellbooks:arcane_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"0000000000800069"
+				"000000000080006A"
+			]
+			id: "000000000080006B"
+			rewards: [{
+				id: "0000000000800075"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000800074"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+	]
+}

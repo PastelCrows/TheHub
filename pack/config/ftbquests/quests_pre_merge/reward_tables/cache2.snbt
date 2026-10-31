@@ -1,0 +1,17 @@
+{
+	id: "0000000000002002"
+	loot_size: 2
+	order_index: 1
+	rewards: [
+		{ id: "70475C3B5FA813D4", weight: 18.0f }
+		{ id: "09D678E6A55A0F38", weight: 16.0f }
+		{ id: "586A34C4EC59C255", weight: 12.0f }
+		{ id: "00BDCCD4D06D708F", weight: 10.0f }
+		{ id: "1920AB16FD1A80D1", weight: 16.0f }
+		{ id: "73CDC056953A72AD", weight: 6.0f }
+		{ id: "1A43836958BE41EE", weight: 6.0f }
+		{ id: "0DD1D667BC3F5882", weight: 5.0f }
+		{ id: "4D604CF1D01D8A04", weight: 5.0f }
+		{ id: "5FE44B820885AFA2", weight: 6.0f }
+	]
+}

@@ -1,0 +1,23 @@
+// Compost colors for advancedperipherals. You may add your own colors, change existing ones, or remove colors that aren't needed.
+ae_disk_cell_16m, #def5bc
+ae_disk_cell_1m, #def5bc
+ae_disk_cell_256m, #def5bc
+ae_disk_cell_4m, #def5bc
+ae_disk_cell_64m, #def5bc
+chunk_controller, #ffd0cd
+computer_tool, #c3ccda
+end_automata_core, #ffffff
+hotkey_module, #f5faff
+husbandry_automata_core, #ffffff
+keyboard, #bfc8cd
+memory_card, #d4d6cf
+nightvision_module, #fcffff
+overlay_module, #f8fcff
+overpowered_end_automata_core, #ffffff
+overpowered_husbandry_automata_core, #ffffff
+overpowered_weak_automata_core, #ffffff
+smart_glasses, #fffefa
+smart_glasses_interface, #c2ddd9
+smart_glasses_netherite, #e4e0e1
+smart_rail, #e1754d
+weak_automata_core, #ffffff

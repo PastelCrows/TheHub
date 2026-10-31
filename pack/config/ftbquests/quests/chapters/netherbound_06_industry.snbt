@@ -1,0 +1,157 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_06_industry"
+	group: "0000000000900004"
+	id: "0000000000400081"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000400082"
+			rewards: [{
+				id: "000000000040008B"
+				type: "xp"
+				xp: 50
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 32L
+				id: "000000000040008A"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000400082"]
+			id: "0000000000400083"
+			rewards: [{
+				id: "000000000040008D"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000040008C"
+				item: { count: 1, id: "create:cogwheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000400083"]
+			id: "0000000000400084"
+			rewards: [{
+				id: "000000000040008F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "000000000040008E"
+				item: { count: 1, id: "create:mechanical_pump" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000400083"]
+			id: "0000000000400085"
+			rewards: [{
+				id: "0000000000400091"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000400090"
+				item: { count: 1, id: "create:mechanical_press" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000400085"]
+			id: "0000000000400086"
+			rewards: [
+				{
+					count: 32
+					id: "0000000000400093"
+					item: {
+						count: 1
+						id: "exdeorum:dust"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400094"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 2L
+				id: "0000000000400092"
+				item: { count: 1, id: "create:crushing_wheel" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000400084"]
+			id: "0000000000400087"
+			rewards: [{
+				id: "0000000000400096"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000400095"
+				item: { count: 1, id: "immersiveengineering:coke_oven" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000400087"]
+			id: "0000000000400088"
+			rewards: [{
+				id: "0000000000400098"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000400097"
+				item: { count: 1, id: "immersiveengineering:ingot_steel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"0000000000400086"
+				"0000000000400088"
+			]
+			id: "0000000000400089"
+			rewards: [{
+				id: "000000000040009A"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000400099"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+	]
+}

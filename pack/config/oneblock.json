@@ -1,0 +1,15 @@
+{
+  "readme": "All OneBlock settings in one file. Edit in-game (/oneblock admin), or edit this file / upload it to the codx website and run /oneblock table reload to apply. /oneblock export fills the dropTable blocks/items/mobs lists with every id known to this server (including modded ones) and snapshots settings + players. The players section is informational only and is never read back. Custom-table progression: dropTable.tiers is a list of break thresholds (tier 0 = first entry); any block/item/mob entry may set \"tier\" (an index into that list) or \"breaks\" (a direct threshold) and will only spawn once the player has broken that many blocks. Entries with neither spawn from the start. Any entry may also set \"biomes\": a list of ids from the biomes section. It then only spawns while one of those biomes is active, and its weight goes to the rest of the table while it isn't — so one log per biome, all at the same weight, keeps a constant combined chance and gives each biome its own wood. Entries with no \"biomes\" list spawn everywhere. The biomes section picks the active biome (mode OFF/CYCLE/WEIGHTED/SCHEDULE/FIXED/VOTE) and can give each biome its own block and mob pools; the waves section decides which mobs come at which break counts and in which biomes, and holds the \"lock during waves\" option; the dungeons section is the optional Structure Dungeon mode.",
+  "dropTable": {
+    "customTableEnabled": false,
+    "tableName": "Custom OneBlock Table",
+    "disabledBlocks": [],
+    "disabledItems": [],
+    "disabledMobs": [],
+    "tiers": [],
+    "blocks": [],
+    "items": [],
+    "mobs": []
+  },
+  "players": []
+}

@@ -1,0 +1,8 @@
+name = "ftb-quests-neoforge"
+filename = "ftb-quests-neoforge-2101.1.37.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "d89b053bc87d0272d770dc24f1be3497910097205136df60c0251529151c4faf400718abae0ed429a596e43877e3d033928b0a227a30759660067d9e276fc5f8"
+url = "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-quests-neoforge/2101.1.37/ftb-quests-neoforge-2101.1.37.jar"

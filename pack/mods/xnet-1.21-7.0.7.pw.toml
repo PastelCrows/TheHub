@@ -1,0 +1,8 @@
+name = "XNet - 1.21-7.0.7"
+filename = "xnet-1.21-7.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "128e13585d1036c4bc3f8cd7a373a8e1e16ce19181f2e4afbeb6a1eefd43c811fa58555f461dbdae99d1e831eb171945285b6dabe267cbed8fd5027a1632e283"
+url = "https://cdn.modrinth.com/data/iu1jkWqa/versions/lvCo0M5N/xnet-1.21-7.0.7.jar"

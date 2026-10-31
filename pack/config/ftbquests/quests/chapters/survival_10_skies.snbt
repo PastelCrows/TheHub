@@ -1,0 +1,358 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_10_skies"
+	group: "0000000000900002"
+	id: "0000000000200085"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0000000000200064"]
+			id: "0000000000200086"
+			rewards: [{
+				id: "00000000002001D3"
+				type: "xp"
+				xp: 50
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "00000000002001D2"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000200086"]
+			id: "0000000000200087"
+			rewards: [{
+				id: "00000000002001D5"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000002001D4"
+				item: { count: 1, id: "aether:skyroot_bucket" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000200087"]
+			id: "0000000000200088"
+			rewards: [
+				{
+					count: 8
+					id: "00000000002001D7"
+					item: {
+						count: 1
+						id: "aether:ambrosium_shard"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000002001D8"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				dimension: "aether:the_aether"
+				id: "00000000002001D6"
+				type: "dimension"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000200088"]
+			id: "0000000000200089"
+			rewards: [{
+				id: "00000000002001DA"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 16L
+				id: "00000000002001D9"
+				item: { count: 1, id: "aether:ambrosium_shard" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000200088"]
+			id: "000000000020008A"
+			rewards: [{
+				id: "00000000002001DC"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 32L
+				id: "00000000002001DB"
+				item: { count: 1, id: "aether:holystone" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000020008A"]
+			id: "000000000020008B"
+			rewards: [{
+				id: "00000000002001DE"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000002001DD"
+				item: { count: 1, id: "aether:golden_amber" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000020008B"]
+			id: "000000000020008C"
+			rewards: [{
+				id: "00000000002001E0"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "00000000002001DF"
+				item: { count: 1, id: "aether:icestone" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000020008B"]
+			id: "000000000020008D"
+			rewards: [{
+				id: "00000000002001E2"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000002001E1"
+				item: { count: 1, id: "aether:enchanted_gravitite" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000020008D"]
+			id: "000000000020008E"
+			rewards: [{
+				id: "00000000002001E4"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000002001E3"
+				item: { count: 1, id: "aether:gravitite_chestplate" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000020008E"]
+			id: "000000000020008F"
+			rewards: [{
+				id: "00000000002001E6"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				id: "00000000002001E5"
+				item: { count: 1, id: "aether:flaming_sword" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["000000000020008E"]
+			id: "0000000000200090"
+			rewards: [{
+				id: "00000000002001E8"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000002001E7"
+				item: { count: 1, id: "aether:cloud_staff" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["0000000000200086"]
+			id: "0000000000200091"
+			rewards: [{
+				id: "00000000002001EA"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000002001E9"
+				item: { count: 1, id: "undergarden:catalyst" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000200091"]
+			id: "0000000000200092"
+			rewards: [{
+				id: "00000000002001EC"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				dimension: "undergarden:undergarden"
+				id: "00000000002001EB"
+				type: "dimension"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000200092"]
+			id: "0000000000200093"
+			rewards: [{
+				id: "00000000002001EE"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000002001ED"
+				item: { count: 1, id: "undergarden:cloggrum_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000200093"]
+			id: "0000000000200094"
+			rewards: [{
+				id: "00000000002001F0"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 4L
+				id: "00000000002001EF"
+				item: { count: 1, id: "undergarden:froststeel_ingot" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000200093"]
+			id: "0000000000200095"
+			rewards: [{
+				id: "00000000002001F2"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 2L
+				id: "00000000002001F1"
+				item: { count: 1, id: "undergarden:utherium_crystal" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000200095"]
+			id: "0000000000200096"
+			rewards: [{
+				id: "00000000002001F4"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				count: 2L
+				id: "00000000002001F3"
+				item: { count: 1, id: "undergarden:forgotten_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000200096"]
+			id: "0000000000200097"
+			rewards: [{
+				id: "00000000002001F6"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "00000000002001F5"
+				item: { count: 1, id: "undergarden:regalium_crystal" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"0000000000200090"
+				"0000000000200097"
+			]
+			id: "0000000000200098"
+			rewards: [
+				{
+					count: 2
+					id: "00000000002001F8"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000002001F9"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "00000000002001FA"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				count: 4L
+				id: "00000000002001F7"
+				item: { count: 1, id: "undergarden:forgotten_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

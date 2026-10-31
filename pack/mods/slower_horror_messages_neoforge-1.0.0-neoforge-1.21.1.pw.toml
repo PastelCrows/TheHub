@@ -1,0 +1,8 @@
+name = "Slower horror messages 1.0.0"
+filename = "slower_horror_messages_neoforge-1.0.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "6b046ac3e6fc9a7d50329d38c3975f2b434d2ee6c0b9051ac630e615743a925ee376bbeb871c1a597c5a98d22c92da1e962515539e78316555476524018399d3"
+url = "https://cdn.modrinth.com/data/dxrOAhj5/versions/VW4m5lat/slower_horror_messages_neoforge-1.0.0-neoforge-1.21.1.jar"

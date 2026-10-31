@@ -1,0 +1,5 @@
+// Compost colors for utilitarian. You may add your own colors, change existing ones, or remove colors that aren't needed.
+fluid_hopper, #ffffff
+tiny_charcoal, #faf8f4
+tiny_coal, #ffffff
+trowel, #ffffff

@@ -1,0 +1,8 @@
+name = "Let Me Despawn 1.3.2"
+filename = "letmedespawn-1.3.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "ef7005d3ebbc2b3bdce6cc8a2bfb5a3d75e2b1dbf27407add23e64ad31b7127ca83744a1ed875ae0298b9187466aeb4cf553a8f37d96025e1df521022f28f11a"
+url = "https://cdn.modrinth.com/data/vE2FN5qn/versions/Cwn6J6QW/letmedespawn-1.3.2.jar"

@@ -1,0 +1,142 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_08_beyond"
+	group: "0000000000900009"
+	id: "0000000000B00035"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00036"
+			rewards: [{
+				id: "0000000000B00098"
+				type: "xp"
+				xp: 500
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B00099"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B00037"
+			rewards: [{
+				id: "0000000000B0009A"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000B0009B"
+				item: { count: 1, id: "minecraft:flint_and_steel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B00038"
+			rewards: [{
+				id: "0000000000B0009C"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 6L
+				id: "0000000000B0009D"
+				item: { count: 1, id: "minecraft:blaze_rod" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B00039"
+			rewards: [{
+				id: "0000000000B0009E"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 12L
+				id: "0000000000B0009F"
+				item: { count: 1, id: "minecraft:ender_pearl" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B0003A"
+			rewards: [{
+				id: "0000000000B000A0"
+				type: "xp"
+				xp: 400
+			}]
+			tasks: [{
+				count: 12L
+				id: "0000000000B000A1"
+				item: { count: 1, id: "minecraft:ender_eye" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B0003B"
+			rewards: [
+				{
+					id: "0000000000B000A2"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					count: 2
+					id: "0000000000B000A3"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B000A4"
+				item: { count: 1, id: "minecraft:dragon_egg" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000B00036"]
+			id: "0000000000B0003C"
+			rewards: [{
+				id: "0000000000B000A5"
+				type: "xp"
+				xp: 1000
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000B000A6"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+	]
+}

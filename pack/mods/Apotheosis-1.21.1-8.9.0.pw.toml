@@ -1,0 +1,8 @@
+name = "Apotheosis 1.21.1-8.9.0"
+filename = "Apotheosis-1.21.1-8.9.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "b3022bc31f4e9f99d298c36486e09cad308d4aa87e2aa65a341809aeca41f0067e744086768884959036a46685d4c0babc4274600884ad8962fe9d080d8ef3ee"
+url = "https://cdn.modrinth.com/data/rqFWfVlz/versions/veL1ccTb/Apotheosis-1.21.1-8.9.0.jar"

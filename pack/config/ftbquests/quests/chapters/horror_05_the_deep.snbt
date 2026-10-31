@@ -1,0 +1,96 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "horror_05_the_deep"
+	group: "000000000090000A"
+	id: "0000000000C0001C"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000C0001D"
+			rewards: [{
+				id: "0000000000C00056"
+				type: "xp"
+				xp: 300
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C00057"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000C0001D"]
+			id: "0000000000C0001E"
+			rewards: [{
+				id: "0000000000C00058"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 6L
+				id: "0000000000C00059"
+				item: { count: 1, id: "minecraft:diamond" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0001D"]
+			id: "0000000000C0001F"
+			rewards: [{
+				id: "0000000000C0005A"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000C0005B"
+				item: { count: 1, id: "minecraft:diamond_chestplate" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0001D"]
+			id: "0000000000C00020"
+			rewards: [{
+				id: "0000000000C0005C"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000C0005D"
+				item: { count: 1, id: "minecraft:white_wool" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C0001D"]
+			id: "0000000000C00021"
+			rewards: [{
+				id: "0000000000C0005E"
+				type: "xp"
+				xp: 500
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000C0005F"
+				item: { count: 1, id: "minecraft:totem_of_undying" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

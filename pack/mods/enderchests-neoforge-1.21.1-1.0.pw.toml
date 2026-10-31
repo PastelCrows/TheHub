@@ -1,0 +1,8 @@
+name = "EnderChests 1.21.1-1.0"
+filename = "enderchests-neoforge-1.21.1-1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "511749a3f7c3398fd193d198cecffdda6f9aa911946ebf86b3d64a9fbde096a9bae5a090b80ae3a7a9910f4cf3d877625dad373f8485d467dee6eed0ece604f1"
+url = "https://cdn.modrinth.com/data/gxSiDoVF/versions/h1wflNQi/enderchests-neoforge-1.21.1-1.0.jar"

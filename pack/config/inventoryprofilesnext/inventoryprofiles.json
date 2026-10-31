@@ -1,0 +1,11 @@
+{
+    "ModSettings": {
+        "first_run": false
+    },
+    "AutoRefillSettings": {
+        "auto_refill_enable_horbar_indicator_icons": false
+    },
+    "GuiSettings": {
+        "show_continuous_crafting_checkbox": false
+    }
+}

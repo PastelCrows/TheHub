@@ -1,0 +1,13 @@
+name = "The Hub"
+author = "PastelCrows"
+version = "0.1.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "03e40d67d0aff9ef8be19da42349d6a46768f4e982b4d899413b46065f7d930a"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

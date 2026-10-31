@@ -1,0 +1,60 @@
+# Don't change this! Version used to track needed updates.
+version = 0
+
+[timers]
+surfaceTimeMultiplier = 1.0
+
+[timers.spawn]
+canSpawnMin = 300
+canSpawnMax = 600
+canSpawnCooldownChance = 0.4
+canSpawnCooldown = 1200
+
+[timers.noise]
+resetNoiseMin = 240
+resetNoiseMax = 360
+
+[timers.leave]
+timeUntilLeave = 300
+timeUntilLeaveChase = 30
+
+[spawnConditions]
+spawnChancePerTick = 0.005
+spawnHeight = 40
+allowSurfaceSpawn = false
+skyLightLevel = 8
+blockLightLevel = 15
+maximumAmount = 3
+spawnDistance = 16
+checkPathToSpawn = true
+dimensionWhitelist = [
+    "hub:horror"
+]
+
+[spawnConditions.biomes]
+overrideBiomeDatapackConfig = false
+surfaceBiomesIsWhitelist = true
+surfaceBiomes = [  ]
+
+[behaviour]
+spottingRange = 60
+shouldAvoidArmor = true
+canDisableShields = true
+canClimb = true
+canBreakDoor = true
+doorBreakTime = 3
+allowRiding = false
+targetInvisible = true
+
+[attributes]
+maxHealth = 450.0
+attackDamage = 4.0
+attackSpeed = 0.35
+movementSpeed = 0.5
+swimSpeed = 0.9
+stepHeight = 1.6
+waterMovementEfficiency = 0.8
+knockbackResistance = 0.8
+
+[misc]
+onlyPlayNoiseToTarget = false

@@ -1,0 +1,55 @@
+[auto_link]
+	exact_the_nether_path = ""
+	exact_overworld_path = ""
+	exact_the_end_path = ""
+
+[[worlds]]
+	overworld = "hub:skyblock"
+	the_nether = "hub:skyblock_nether"
+	the_end = "hub:skyblock_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:survival"
+	the_nether = "hub:survival_nether"
+	the_end = "hub:survival_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:caveblock"
+	the_nether = "hub:caveblock_nether"
+	the_end = "hub:caveblock_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:netherbound"
+	the_nether = "hub:netherbound_nether"
+	the_end = "hub:netherbound_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:oceanblock"
+	the_nether = "hub:oceanblock_nether"
+	the_end = "hub:oceanblock_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:lostcities"
+	the_nether = "hub:lostcities_nether"
+	the_end = "hub:lostcities_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:onechunk"
+	the_nether = "hub:onechunk_nether"
+	the_end = "hub:onechunk_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:gauntlet"
+	the_nether = "hub:gauntlet_nether"
+	the_end = "hub:gauntlet_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:oneblock"
+	the_nether = "hub:oneblock_nether"
+	the_end = "hub:oneblock_end"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:horror"
+	the_nether = "hub:horror_nether"
+	the_end = "hub:horror_end"
+	disable_end_respawn = false

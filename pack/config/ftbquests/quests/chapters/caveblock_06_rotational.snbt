@@ -1,0 +1,157 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "caveblock_06_rotational"
+	group: "0000000000900003"
+	id: "00000000003000A7"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "00000000003000A8"
+			rewards: [{
+				id: "00000000003000B1"
+				type: "xp"
+				xp: 25
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 32L
+				id: "00000000003000B0"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000003000A8"]
+			id: "00000000003000A9"
+			rewards: [{
+				id: "00000000003000B3"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "00000000003000B2"
+				item: { count: 1, id: "create:cogwheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000003000A9"]
+			id: "00000000003000AA"
+			rewards: [{
+				id: "00000000003000B5"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000003000B4"
+				item: { count: 1, id: "create:water_wheel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000003000AA"]
+			id: "00000000003000AB"
+			rewards: [{
+				id: "00000000003000B7"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000003000B6"
+				item: { count: 1, id: "create:mechanical_press" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000003000AB"]
+			id: "00000000003000AC"
+			rewards: [
+				{
+					count: 32
+					id: "00000000003000B9"
+					item: {
+						count: 1
+						id: "exdeorum:dust"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000003000BA"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 2L
+				id: "00000000003000B8"
+				item: { count: 1, id: "create:crushing_wheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000003000AC"]
+			id: "00000000003000AD"
+			rewards: [{
+				id: "00000000003000BC"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000003000BB"
+				item: { count: 1, id: "create:mechanical_mixer" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000003000AC"]
+			id: "00000000003000AE"
+			rewards: [{
+				id: "00000000003000BE"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "00000000003000BD"
+				item: { count: 1, id: "create:belt_connector" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: [
+				"00000000003000AE"
+				"00000000003000AD"
+			]
+			id: "00000000003000AF"
+			rewards: [{
+				id: "00000000003000C0"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000003000BF"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+	]
+}

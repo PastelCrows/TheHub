@@ -1,0 +1,8 @@
+name = "1.38.1 for NeoForge 1.21.1"
+filename = "integrateddynamics-1.21.1-neoforge-1.38.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "59435d00141668f1758e43d536eeb8a6f9f286f22ec902b7502390ca38dbab3674d954e4bc547b51530fa06bc9f4b17c3036ee7c06171ce516056a1de0470eca"
+url = "https://cdn.modrinth.com/data/yYzdQHJI/versions/Hmh0d3qf/integrateddynamics-1.21.1-neoforge-1.38.1.jar"

@@ -1,0 +1,113 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_06_rotational"
+	group: "0000000000900009"
+	id: "0000000000B00028"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00029"
+			rewards: [{
+				id: "0000000000B00082"
+				type: "xp"
+				xp: 300
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B00083"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00029"]
+			id: "0000000000B0002A"
+			rewards: [{
+				id: "0000000000B00084"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000B00085"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00029"]
+			id: "0000000000B0002B"
+			rewards: [{
+				id: "0000000000B00086"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000B00087"
+				item: { count: 1, id: "create:cogwheel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00029"]
+			id: "0000000000B0002C"
+			rewards: [{
+				id: "0000000000B00088"
+				type: "xp"
+				xp: 500
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000B00089"
+				item: { count: 1, id: "create:mechanical_drill" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00029"]
+			id: "0000000000B0002D"
+			rewards: [{
+				id: "0000000000B0008A"
+				type: "xp"
+				xp: 150
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000B0008B"
+				item: { count: 1, id: "create:belt_connector" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00029"]
+			id: "0000000000B0002E"
+			rewards: [{
+				id: "0000000000B0008C"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000B0008D"
+				item: { count: 1, id: "create:mechanical_crafter" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+	]
+}

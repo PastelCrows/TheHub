@@ -1,0 +1,55 @@
+{
+  "_comment": "Chapter filenames starting with a prefix below only progress while a team member stands in one of that prefix's dimensions. Chapters matching no prefix are never blocked.",
+  "chapterPrefixes": {
+    "skyblock_": [
+      "hub:skyblock",
+      "hub:skyblock_nether",
+      "hub:skyblock_end"
+    ],
+    "survival_": [
+      "hub:survival",
+      "hub:survival_nether",
+      "hub:survival_end"
+    ],
+    "caveblock_": [
+      "hub:caveblock",
+      "hub:caveblock_nether",
+      "hub:caveblock_end"
+    ],
+    "netherbound_": [
+      "hub:netherbound",
+      "hub:netherbound_nether",
+      "hub:netherbound_end"
+    ],
+    "oceanblock_": [
+      "hub:oceanblock",
+      "hub:oceanblock_nether",
+      "hub:oceanblock_end"
+    ],
+    "lostcities_": [
+      "hub:lostcities",
+      "hub:lostcities_nether",
+      "hub:lostcities_end"
+    ],
+    "onechunk_": [
+      "hub:onechunk",
+      "hub:onechunk_nether",
+      "hub:onechunk_end"
+    ],
+    "gauntlet_": [
+      "hub:gauntlet",
+      "hub:gauntlet_nether",
+      "hub:gauntlet_end"
+    ],
+    "oneblock_": [
+      "hub:oneblock",
+      "hub:oneblock_nether",
+      "hub:oneblock_end"
+    ],
+    "horror_": [
+      "hub:horror",
+      "hub:horror_nether",
+      "hub:horror_end"
+    ]
+  }
+}

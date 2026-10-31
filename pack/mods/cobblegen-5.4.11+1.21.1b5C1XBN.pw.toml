@@ -1,0 +1,8 @@
+name = "[NEOFORGE MC1.21.1+] v5.4.11-BETA"
+filename = "cobblegen-5.4.11+1.21.1b5C1XBN.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "77abc2d14db8707e3d440ec35ce78eae5ea9845bef4f239d4897c05313bf64ac161f3784caeb2a2ac4d7bd2f0e7f3719ae516eaf42d61fc04f34a4cb4c522152"
+url = "https://cdn.modrinth.com/data/qRogT5Gy/versions/K4IinUMI/cobblegen-5.4.11%2B1.21.1b5C1XBN.jar"

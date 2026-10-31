@@ -1,0 +1,8 @@
+name = "Wireless Chargers 1.0.9a"
+filename = "wirelesschargers-1.0.9a-neoforge-mc1.21.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "00d14ed0e63c18ea5566cc691efe2a49f9eb024701251f212a78541b545926a72d3d6f85ef0c578117150a445f9b95944569094e899110daa8e5aac3d6dddffb"
+url = "https://cdn.modrinth.com/data/nCk7Sfz8/versions/WXZ06Rhq/wirelesschargers-1.0.9a-neoforge-mc1.21.jar"

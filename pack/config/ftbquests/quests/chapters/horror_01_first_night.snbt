@@ -1,0 +1,118 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "horror_01_first_night"
+	group: "000000000090000A"
+	id: "0000000000C00001"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000C00002"
+			rewards: [{
+				id: "0000000000C00028"
+				type: "xp"
+				xp: 50
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C00029"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000C00002"]
+			id: "0000000000C00003"
+			rewards: [{
+				id: "0000000000C0002A"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000C0002B"
+				item: { count: 1, id: "minecraft:oak_log" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00002"]
+			id: "0000000000C00004"
+			rewards: [{
+				id: "0000000000C0002C"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000C0002D"
+				item: { count: 1, id: "minecraft:oak_door" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00002"]
+			id: "0000000000C00005"
+			rewards: [{
+				count: 8
+				id: "0000000000C0002E"
+				item: {
+					count: 1
+					id: "minecraft:coal"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000C0002F"
+				item: { count: 1, id: "minecraft:torch" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00002"]
+			id: "0000000000C00006"
+			rewards: [{
+				id: "0000000000C00030"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 128L
+				id: "0000000000C00031"
+				item: { count: 1, id: "minecraft:cobblestone" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000C00002"]
+			id: "0000000000C00007"
+			rewards: [{
+				id: "0000000000C00032"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000C00033"
+				item: { count: 1, id: "minecraft:white_bed" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+	]
+}

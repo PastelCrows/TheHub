@@ -1,0 +1,8 @@
+name = "RFToolsBuilder - 1.21-7.0.7"
+filename = "rftoolsbuilder-1.21-7.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "f0e466aa57ac85feb09ef4aae8065cb4d257b9dd9237fcec8e93f59f26773c7852d5b874a2058501a0e09ab9ba7e25db50d9fe367d8303f5b91ebb9945b4b3ab"
+url = "https://cdn.modrinth.com/data/e0IclJLr/versions/iO2nU0ky/rftoolsbuilder-1.21-7.0.7.jar"

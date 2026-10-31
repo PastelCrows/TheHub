@@ -1,0 +1,173 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "caveblock_04_buried"
+	group: "0000000000900003"
+	id: "0000000000300076"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000300077"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000300080"
+					item: {
+						count: 1
+						id: "minecraft:rail"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300081"
+					type: "xp"
+					xp: 50
+				}
+			]
+			size: 1.5d
+			tasks: [{
+				id: "000000000030007F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000300077"]
+			id: "0000000000300078"
+			rewards: [{
+				id: "0000000000300083"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000300082"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300077"]
+			id: "0000000000300079"
+			rewards: [
+				{
+					count: 4
+					id: "0000000000300085"
+					item: {
+						count: 1
+						id: "minecraft:emerald"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300086"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "0000000000300084"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300078"]
+			id: "000000000030007A"
+			rewards: [{
+				id: "0000000000300088"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000300087"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000300078"]
+			id: "000000000030007B"
+			rewards: [{
+				id: "000000000030008A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000300089"
+				item: { count: 1, id: "minecraft:trial_key" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"000000000030007A"
+				"000000000030007B"
+			]
+			id: "000000000030007C"
+			rewards: [
+				{
+					count: 8
+					id: "000000000030008C"
+					item: {
+						count: 1
+						id: "minecraft:sculk"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000030008D"
+					type: "xp"
+					xp: 200
+				}
+			]
+			tasks: [{
+				count: 2L
+				id: "000000000030008B"
+				item: { count: 1, id: "minecraft:echo_shard" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000030007C"]
+			id: "000000000030007D"
+			rewards: [{
+				id: "000000000030008F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 32L
+				id: "000000000030008E"
+				item: { count: 1, id: "minecraft:sculk" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000030007C"]
+			id: "000000000030007E"
+			rewards: [{
+				id: "0000000000300091"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000300090"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+	]
+}

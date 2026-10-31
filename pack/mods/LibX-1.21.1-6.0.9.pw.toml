@@ -1,0 +1,8 @@
+name = "LibX-1.21.1-6.0.9.jar"
+filename = "LibX-1.21.1-6.0.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "6d80cb2457454c9b4177bc0ce71769332e8da953c87eac1d86ee3b8c1a21fd5bf02e704ca70b1d7a5057800a278112d663d3384ce420240ba0833a5db45b7056"
+url = "https://cdn.modrinth.com/data/qEH6GYul/versions/CLe8cTHs/LibX-1.21.1-6.0.9.jar"

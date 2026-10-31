@@ -1,0 +1,236 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "03_iron"
+	group: "0000000000002261"
+	id: "000000000000201E"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["000000000000200F"]
+			id: "000000000000201F"
+			rewards: [{
+				id: "00000000000020FF"
+				type: "xp"
+				xp: 25
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "00000000000020FE"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000000201F"]
+			id: "0000000000002020"
+			rewards: [{
+				id: "0000000000002101"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 3L
+				id: "0000000000002100"
+				item: { count: 1, id: "minecraft:diamond" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000002020"]
+			id: "0000000000002021"
+			rewards: [{
+				count: 16
+				id: "0000000000002103"
+				item: {
+					count: 1
+					id: "minecraft:lapis_lazuli"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000002102"
+				item: { count: 1, id: "apothic_enchanting:apothic_enchanting_table" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000002021"]
+			id: "0000000000002022"
+			rewards: [{
+				id: "0000000000002105"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000002104"
+				item: { count: 1, id: "apothic_enchanting:basic_bookshelf" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002021"]
+			id: "0000000000002023"
+			rewards: [{
+				id: "0000000000002107"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				dimension: "minecraft:the_nether"
+				id: "0000000000002106"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000002023"]
+			id: "0000000000002024"
+			rewards: [{
+				count: 8
+				id: "0000000000002109"
+				item: {
+					count: 1
+					id: "minecraft:blaze_powder"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000002108"
+				item: { count: 1, id: "minecraft:blaze_rod" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000002024"]
+			id: "0000000000002025"
+			rewards: [{
+				id: "000000000000210B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 2L
+				id: "000000000000210A"
+				item: { count: 1, id: "apothic_enchanting:hellshelf" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000002022"]
+			id: "0000000000002026"
+			rewards: [{
+				id: "000000000000210D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000210C"
+				item: { count: 1, id: "apotheosis:sigil_of_socketing" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000002026"]
+			id: "0000000000002027"
+			rewards: [{
+				id: "000000000000210F"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000000210E"
+				item: { count: 1, id: "apotheosis:salvaging_table" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000002020"]
+			id: "0000000000002028"
+			rewards: [{
+				id: "0000000000002111"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000002110"
+				item: { count: 1, id: "simplyswords:iron_longsword" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000002028"]
+			id: "0000000000002029"
+			rewards: [{
+				id: "0000000000002113"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000002112"
+				item: { count: 1, id: "simplyswords:iron_glaive" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"0000000000002026"
+				"0000000000002023"
+			]
+			id: "000000000000202A"
+			rewards: [
+				{
+					id: "0000000000002115"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_enhancement"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000002116"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0000000000002117"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000002114"
+				item: { count: 1, id: "minecraft:diamond_sword" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+	]
+}

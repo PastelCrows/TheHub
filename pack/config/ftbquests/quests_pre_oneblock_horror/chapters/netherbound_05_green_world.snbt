@@ -1,0 +1,154 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_05_green_world"
+	group: "0000000000900004"
+	id: "0000000000400069"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000040006A"
+			rewards: [
+				{
+					count: 4
+					id: "0000000000400072"
+					item: {
+						count: 1
+						id: "minecraft:oak_sapling"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400073"
+					type: "xp"
+					xp: 200
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				count: 16L
+				id: "0000000000400071"
+				item: { count: 1, id: "minecraft:dirt" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000040006A"]
+			id: "000000000040006B"
+			rewards: [{
+				id: "0000000000400075"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000400074"
+				item: { count: 1, id: "minecraft:water_bucket" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000040006A"]
+			id: "000000000040006C"
+			rewards: [{
+				id: "0000000000400077"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000400076"
+				item: { count: 1, id: "minecraft:white_bed" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000040006B"]
+			id: "000000000040006D"
+			rewards: [
+				{
+					count: 8
+					id: "0000000000400079"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000040007A"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 16L
+				id: "0000000000400078"
+				item: { count: 1, id: "minecraft:wheat" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000040006A"]
+			id: "000000000040006E"
+			rewards: [{
+				id: "000000000040007C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 32L
+				id: "000000000040007B"
+				item: { count: 1, id: "minecraft:oak_log" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000040006E"]
+			id: "000000000040006F"
+			rewards: [{
+				id: "000000000040007E"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 5L
+				id: "000000000040007D"
+				item: { count: 1, id: "minecraft:diamond" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"000000000040006F"
+				"000000000040006C"
+				"000000000040006D"
+			]
+			id: "0000000000400070"
+			rewards: [{
+				id: "0000000000400080"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "000000000040007F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+	]
+}

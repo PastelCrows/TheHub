@@ -1,0 +1,8 @@
+name = "Compressed Blocks 1.3.0"
+filename = "compressed_blocks-1.2.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "aeaba36eda520e0e465f1a92b861fbc51b20574fd529ea9cd79acb562977aa73aa779c1d14054b51ba5243f8ede4b1a05e925ec63dd6806750826d89dcde0af3"
+url = "https://cdn.modrinth.com/data/KqGarsTT/versions/pei92x0V/compressed_blocks-1.2.0-neoforge-1.21.1.jar"

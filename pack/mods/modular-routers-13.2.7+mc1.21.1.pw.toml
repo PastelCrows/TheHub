@@ -1,0 +1,8 @@
+name = "\"Modular Routers\" 13.2.7 MC-1.21.1"
+filename = "modular-routers-13.2.7+mc1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "d5f560dadcc5c622fd41ab39ff5aad52503b57dfd8cee9213884b4772f9a73efc3135ddc3e129e5d915bf694d0cde2c1f630233bfd4b5a2b28b9044a5c59c22e"
+url = "https://cdn.modrinth.com/data/EuTS81Z3/versions/6qMDJ0mn/modular-routers-13.2.7%2Bmc1.21.1.jar"

@@ -1,0 +1,29 @@
+[auto_link]
+	exact_the_nether_path = ""
+	exact_overworld_path = ""
+	exact_the_end_path = ""
+
+[[worlds]]
+	overworld = "hub:skyblock"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:survival"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:caveblock"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:netherbound"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:oceanblock"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:lostcities"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:onechunk"
+	disable_end_respawn = false
+[[worlds]]
+	overworld = "hub:gauntlet"
+	disable_end_respawn = false

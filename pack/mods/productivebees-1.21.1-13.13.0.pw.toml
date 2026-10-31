@@ -1,0 +1,8 @@
+name = "Productive Bees 1.21.1-13.13.0"
+filename = "productivebees-1.21.1-13.13.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "a1d539ccfed5213ab561a774e178d8f56ee6bc7e0cb4a2b4abed683a30433ceb2af3210283fbbf0d53ae7a6b63feb059522c70d41e4c320e0ee91b2c0364293c"
+url = "https://cdn.modrinth.com/data/jH6iiqkd/versions/hpPcu64f/productivebees-1.21.1-13.13.0.jar"

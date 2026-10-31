@@ -1,0 +1,202 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oceanblock_01_castaway"
+	group: "0000000000900005"
+	id: "0000000000500001"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000500002"
+			rewards: [
+				{
+					count: 2
+					id: "000000000050000C"
+					item: {
+						count: 1
+						id: "minecraft:oak_sapling"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000050000D"
+					type: "xp"
+					xp: 10
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000050000B"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000500002"]
+			id: "0000000000500003"
+			rewards: [{
+				count: 2
+				id: "000000000050000F"
+				item: {
+					count: 1
+					id: "minecraft:oak_sapling"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 6L
+				id: "000000000050000E"
+				item: { count: 1, id: "minecraft:oak_log" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000500003"]
+			id: "0000000000500004"
+			rewards: [{
+				id: "0000000000500011"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 64L
+				id: "0000000000500010"
+				item: { count: 1, id: "minecraft:cobblestone" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000500004"]
+			id: "0000000000500005"
+			rewards: [{
+				count: 32
+				id: "0000000000500013"
+				item: {
+					count: 1
+					id: "minecraft:cobblestone"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000500012"
+				item: { count: 1, id: "minecraft:furnace" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000500005"]
+			id: "0000000000500006"
+			rewards: [{
+				id: "0000000000500015"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000500014"
+				item: { count: 1, id: "minecraft:glass" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000500002"]
+			id: "0000000000500007"
+			rewards: [
+				{
+					id: "0000000000500017"
+					item: {
+						count: 1
+						id: "minecraft:fishing_rod"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000500018"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "0000000000500016"
+				item: { count: 1, id: "minecraft:cooked_cod" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000500007"]
+			id: "0000000000500008"
+			rewards: [{
+				id: "000000000050001A"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000500019"
+				item: { count: 1, id: "minecraft:dried_kelp_block" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000500007"]
+			id: "0000000000500009"
+			rewards: [
+				{
+					count: 8
+					id: "000000000050001C"
+					item: {
+						count: 1
+						id: "minecraft:paper"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000050001D"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				count: 16L
+				id: "000000000050001B"
+				item: { count: 1, id: "minecraft:sugar_cane" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000500003"]
+			id: "000000000050000A"
+			rewards: [{
+				id: "000000000050001F"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "000000000050001E"
+				item: { count: 1, id: "minecraft:oak_boat" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+	]
+}

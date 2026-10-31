@@ -1,0 +1,107 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_04_scouting"
+	group: "0000000000900008"
+	id: "0000000000800046"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800047"
+			rewards: [{
+				id: "000000000080004E"
+				type: "xp"
+				xp: 50
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000080004D"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800047"]
+			id: "0000000000800048"
+			rewards: [{
+				id: "0000000000800050"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000080004F"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800047"]
+			id: "0000000000800049"
+			rewards: [{
+				id: "0000000000800052"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000800051"
+				item: { count: 1, id: "explorerscompass:explorerscompass" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800049"]
+			id: "000000000080004A"
+			rewards: [{
+				id: "0000000000800054"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000800053"
+				item: { count: 1, id: "waystones:waystone" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000800048"]
+			id: "000000000080004B"
+			rewards: [{
+				id: "0000000000800056"
+				type: "xp"
+				xp: 800
+			}]
+			tasks: [{
+				id: "0000000000800055"
+				item: { count: 1, id: "minecraft:nether_star" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000080004B"]
+			id: "000000000080004C"
+			rewards: [{
+				id: "0000000000800058"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000800057"
+				item: { count: 1, id: "minecraft:echo_shard" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+	]
+}

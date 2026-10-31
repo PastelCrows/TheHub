@@ -1,0 +1,109 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_03_gear_up"
+	group: "0000000000900008"
+	id: "0000000000800033"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800034"
+			rewards: [{
+				id: "000000000080003B"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000080003A"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800034"]
+			id: "0000000000800035"
+			rewards: [{
+				id: "000000000080003D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000080003C"
+				item: { count: 1, id: "apotheosis:gem_dust" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800035"]
+			id: "0000000000800036"
+			rewards: [{
+				id: "000000000080003F"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "000000000080003E"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000800034"]
+			id: "0000000000800037"
+			rewards: [{
+				id: "0000000000800041"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000800040"
+				item: { count: 1, id: "minecraft:enchanting_table" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800037"]
+			id: "0000000000800038"
+			rewards: [{
+				id: "0000000000800043"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000800042"
+				item: { count: 1, id: "minecraft:anvil" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"0000000000800036"
+				"0000000000800038"
+			]
+			id: "0000000000800039"
+			rewards: [{
+				id: "0000000000800045"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "0000000000800044"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+	]
+}

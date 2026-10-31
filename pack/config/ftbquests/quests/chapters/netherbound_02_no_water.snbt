@@ -1,0 +1,180 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_02_no_water"
+	group: "0000000000900004"
+	id: "0000000000400024"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000400025"
+			rewards: [
+				{
+					count: 8
+					id: "000000000040002D"
+					item: {
+						count: 1
+						id: "minecraft:glowstone"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000040002E"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "000000000040002C"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000400025"]
+			id: "0000000000400026"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000400030"
+					item: {
+						count: 1
+						id: "minecraft:glowstone"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400031"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "000000000040002F"
+				item: { count: 1, id: "minecraft:respawn_anchor" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000400026"]
+			id: "0000000000400027"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000400033"
+					item: {
+						count: 1
+						id: "minecraft:gold_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400034"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				count: 4L
+				id: "0000000000400032"
+				item: { count: 1, id: "minecraft:ender_pearl" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000400025"]
+			id: "0000000000400028"
+			rewards: [
+				{
+					id: "0000000000400036"
+					item: {
+						count: 1
+						id: "minecraft:water_bucket"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000400037"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "0000000000400035"
+				item: { count: 1, id: "exdeorum:oak_crucible" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000400028"]
+			id: "0000000000400029"
+			rewards: [{
+				id: "0000000000400039"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000400038"
+				item: { count: 1, id: "exdeorum:oak_barrel" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000400029"]
+			id: "000000000040002A"
+			rewards: [
+				{
+					count: 16
+					id: "000000000040003B"
+					item: {
+						count: 1
+						id: "exdeorum:dust"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000040003C"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "000000000040003A"
+				item: { count: 1, id: "exdeorum:oak_sieve" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["000000000040002A"]
+			id: "000000000040002B"
+			rewards: [{
+				id: "000000000040003E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 16L
+				id: "000000000040003D"
+				item: { count: 1, id: "minecraft:iron_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.0d
+		}
+	]
+}

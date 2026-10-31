@@ -1,0 +1,96 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "horror_06_endure"
+	group: "000000000090000A"
+	id: "0000000000C00022"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000C00023"
+			rewards: [{
+				id: "0000000000C00060"
+				type: "xp"
+				xp: 400
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C00061"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000C00023"]
+			id: "0000000000C00024"
+			rewards: [{
+				id: "0000000000C00062"
+				type: "xp"
+				xp: 400
+			}]
+			tasks: [{
+				id: "0000000000C00063"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00023"]
+			id: "0000000000C00025"
+			rewards: [{
+				id: "0000000000C00064"
+				type: "xp"
+				xp: 600
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000C00065"
+				item: { count: 1, id: "minecraft:beacon" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00023"]
+			id: "0000000000C00026"
+			rewards: [{
+				id: "0000000000C00066"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000C00067"
+				item: { count: 1, id: "minecraft:enchanted_golden_apple" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000C00023"]
+			id: "0000000000C00027"
+			rewards: [{
+				id: "0000000000C00068"
+				type: "xp"
+				xp: 800
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000C00069"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

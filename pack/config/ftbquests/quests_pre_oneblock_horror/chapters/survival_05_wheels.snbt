@@ -1,0 +1,265 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_05_wheels"
+	group: "0000000000900002"
+	id: "0000000000200038"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["000000000020001D"]
+			id: "0000000000200039"
+			rewards: [{
+				id: "0000000000200133"
+				type: "xp"
+				xp: 25
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000200132"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000200039"]
+			id: "000000000020003A"
+			rewards: [{
+				id: "0000000000200135"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000200134"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000020003A"]
+			id: "000000000020003B"
+			rewards: [{
+				id: "0000000000200137"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000200136"
+				item: { count: 1, id: "create:cogwheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000020003B"]
+			id: "000000000020003C"
+			rewards: [{
+				id: "0000000000200139"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000200138"
+				item: { count: 1, id: "create:water_wheel" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000020003B"]
+			id: "000000000020003D"
+			rewards: [{
+				id: "000000000020013B"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "000000000020013A"
+				item: { count: 1, id: "create:millstone" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000020003D"]
+			id: "000000000020003E"
+			rewards: [{
+				id: "000000000020013D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000020013C"
+				item: { count: 1, id: "create:mechanical_press" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000020003C"]
+			id: "000000000020003F"
+			rewards: [{
+				id: "000000000020013F"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000020013E"
+				item: { count: 1, id: "create:encased_fan" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000020003E"]
+			id: "0000000000200040"
+			rewards: [{
+				id: "0000000000200141"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000200140"
+				item: { count: 1, id: "create:mechanical_mixer" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000200040"]
+			id: "0000000000200041"
+			rewards: [{
+				id: "0000000000200143"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000200142"
+				item: { count: 1, id: "create:brass_ingot" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["0000000000200040"]
+			id: "0000000000200042"
+			rewards: [{
+				id: "0000000000200145"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000200144"
+				item: { count: 1, id: "create:blaze_burner" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"000000000020003F"
+				"000000000020003E"
+			]
+			id: "0000000000200043"
+			rewards: [{
+				id: "0000000000200147"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000200146"
+				item: { count: 1, id: "create:crushing_wheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["0000000000200041"]
+			id: "0000000000200044"
+			rewards: [{
+				id: "0000000000200149"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000200148"
+				item: { count: 1, id: "create:steam_engine" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["0000000000200043"]
+			id: "0000000000200045"
+			rewards: [{
+				id: "000000000020014B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000020014A"
+				item: { count: 1, id: "create:mechanical_crafter" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+		{
+			dependencies: [
+				"0000000000200045"
+				"0000000000200044"
+			]
+			id: "0000000000200046"
+			rewards: [
+				{
+					count: 16
+					id: "000000000020014D"
+					item: {
+						count: 1
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000020014E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "000000000020014F"
+					type: "random"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "000000000020014C"
+				item: { count: 1, id: "create:precision_mechanism" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 20.0d
+		}
+	]
+}

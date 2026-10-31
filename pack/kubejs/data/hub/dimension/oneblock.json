@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "oneblock:oneblock",
+    "biome_source": {
+      "type": "oneblock:oneblock_biomes",
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:desert",
+        "minecraft:jungle",
+        "minecraft:taiga",
+        "minecraft:swamp",
+        "minecraft:savanna",
+        "minecraft:mushroom_fields",
+        "minecraft:cherry_grove",
+        "minecraft:badlands",
+        "minecraft:dark_forest",
+        "minecraft:forest",
+        "minecraft:snowy_plains",
+        "minecraft:beach",
+        "minecraft:birch_forest",
+        "minecraft:flower_forest",
+        "minecraft:windswept_hills",
+        "minecraft:frozen_peaks",
+        "minecraft:meadow",
+        "minecraft:sparse_jungle",
+        "minecraft:bamboo_jungle",
+        "minecraft:old_growth_birch_forest",
+        "minecraft:old_growth_pine_taiga",
+        "minecraft:old_growth_spruce_taiga",
+        "minecraft:snowy_taiga",
+        "minecraft:ice_spikes",
+        "minecraft:grove",
+        "minecraft:snowy_slopes",
+        "minecraft:jagged_peaks",
+        "minecraft:stony_peaks",
+        "minecraft:windswept_forest",
+        "minecraft:windswept_gravelly_hills",
+        "minecraft:windswept_savanna",
+        "minecraft:wooded_badlands",
+        "minecraft:eroded_badlands",
+        "minecraft:sunflower_plains",
+        "minecraft:mangrove_swamp"
+      ]
+    },
+    "generate_island": true,
+    "generate_structures": false
+  }
+}

@@ -1,0 +1,8 @@
+name = "1.21-3.6.27"
+filename = "industrialforegoing-1.21-3.6.27.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "2bbf101c323a71623ec48e745a2b798d83baf1b5d0c146a1816e6d1ecf4dd4299791d2a54a60a70ee8c0293c14029b7c5f1c40bf36e2838f38ff8bffa3326f04"
+url = "https://cdn.modrinth.com/data/lWxpUd04/versions/erRsRPki/industrialforegoing-1.21-3.6.27.jar"

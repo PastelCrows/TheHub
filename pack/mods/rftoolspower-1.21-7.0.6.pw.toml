@@ -1,0 +1,8 @@
+name = "RFToolsPower - 1.21-7.0.6"
+filename = "rftoolspower-1.21-7.0.6.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "727be847e0a698138a6f34f17ac31c6337e6a9ff7066bbe2a6ddb628283b2f8666ecce995f56ab0bfed6d24d56bd1b9fc2043ea456efe7d6368ea5d0a8e1ca0b"
+url = "https://cdn.modrinth.com/data/YWbLuPa1/versions/Ujyiiyqz/rftoolspower-1.21-7.0.6.jar"

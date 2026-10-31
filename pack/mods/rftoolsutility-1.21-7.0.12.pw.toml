@@ -1,0 +1,8 @@
+name = "RFToolsUtility - 1.21-7.0.12"
+filename = "rftoolsutility-1.21-7.0.12.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "ab46b45e8b867fbdeb8c8b69a219088d748727d34c1fa947383ed24370fd2111863f3cf373c100647406fcde8dc51522f2ceb02ccf1dbe0e827aa17fb1a323aa"
+url = "https://cdn.modrinth.com/data/7n3HbHSE/versions/xOoMr4zS/rftoolsutility-1.21-7.0.12.jar"

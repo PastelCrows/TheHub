@@ -1,0 +1,8 @@
+name = "1.21.1-1.14.2"
+filename = "cyclic-1.21.1-1.14.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "59edb5e2e87f14349021753ea518017748f1510ffad2bf02b7f73c33f7c615a6c30066fc2c6e70dda7b60883ceb27b6b2c234fb247871b7286b766792c86fcad"
+url = "https://cdn.modrinth.com/data/UcVTWyCI/versions/9pH2ddA0/cyclic-1.21.1-1.14.2.jar"

@@ -1,0 +1,259 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "caveblock_03_rock_and_water"
+	group: "0000000000900003"
+	id: "000000000030004E"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000030004F"
+			rewards: [{
+				count: 32
+				id: "000000000030005C"
+				item: {
+					count: 1
+					id: "minecraft:cobblestone"
+				}
+				type: "item"
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000030005B"
+				item: { count: 1, id: "exdeorum:wooden_hammer" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000030004F"]
+			id: "0000000000300050"
+			rewards: [{
+				id: "000000000030005E"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				count: 32L
+				id: "000000000030005D"
+				item: { count: 1, id: "minecraft:gravel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300050"]
+			id: "0000000000300051"
+			rewards: [{
+				id: "0000000000300060"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				count: 32L
+				id: "000000000030005F"
+				item: { count: 1, id: "minecraft:sand" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000300051"]
+			id: "0000000000300052"
+			rewards: [
+				{
+					count: 16
+					id: "0000000000300062"
+					item: {
+						count: 1
+						id: "minecraft:bone_meal"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300063"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				count: 32L
+				id: "0000000000300061"
+				item: { count: 1, id: "exdeorum:dust" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000030004F"]
+			id: "0000000000300053"
+			rewards: [{
+				count: 4
+				id: "0000000000300065"
+				item: {
+					count: 1
+					id: "minecraft:oak_sapling"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000300064"
+				item: { count: 1, id: "exdeorum:crook" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300053"]
+			id: "0000000000300054"
+			rewards: [{
+				count: 4
+				id: "0000000000300067"
+				item: {
+					count: 1
+					id: "minecraft:string"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000300066"
+				item: { count: 1, id: "exdeorum:silkworm" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000300054"]
+			id: "0000000000300055"
+			rewards: [{
+				id: "0000000000300069"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000300068"
+				item: { count: 1, id: "exdeorum:string_mesh" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"0000000000300055"
+				"0000000000300052"
+			]
+			id: "0000000000300056"
+			rewards: [
+				{
+					count: 16
+					id: "000000000030006B"
+					item: {
+						count: 1
+						id: "exdeorum:dust"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000030006C"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				id: "000000000030006A"
+				item: { count: 1, id: "exdeorum:oak_sieve" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000300056"]
+			id: "0000000000300057"
+			rewards: [{
+				id: "000000000030006E"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "000000000030006D"
+				item: { count: 1, id: "exdeorum:oak_barrel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000300056"]
+			id: "0000000000300058"
+			rewards: [{
+				id: "0000000000300070"
+				item: {
+					count: 1
+					id: "minecraft:lava_bucket"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "000000000030006F"
+				item: { count: 1, id: "exdeorum:oak_crucible" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000300056"]
+			id: "0000000000300059"
+			rewards: [{
+				id: "0000000000300072"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000300071"
+				item: { count: 1, id: "exdeorum:iron_mesh" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["0000000000300059"]
+			id: "000000000030005A"
+			rewards: [
+				{
+					id: "0000000000300074"
+					item: {
+						count: 1
+						id: "exdeorum:iron_mesh"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300075"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 512L
+				id: "0000000000300073"
+				item: { count: 1, id: "minecraft:cobblestone" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+	]
+}

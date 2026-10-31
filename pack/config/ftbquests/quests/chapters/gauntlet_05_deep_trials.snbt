@@ -1,0 +1,77 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_05_deep_trials"
+	group: "0000000000900008"
+	id: "0000000000800059"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000080005A"
+			rewards: [{
+				id: "000000000080005F"
+				type: "xp"
+				xp: 800
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000080005E"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000080005A"]
+			id: "000000000080005B"
+			rewards: [{
+				id: "0000000000800061"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000800060"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000080005A"]
+			id: "000000000080005C"
+			rewards: [{
+				id: "0000000000800063"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "0000000000800062"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"000000000080005B"
+				"000000000080005C"
+			]
+			id: "000000000080005D"
+			rewards: [{
+				id: "0000000000800065"
+				type: "xp"
+				xp: 1000
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000800064"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

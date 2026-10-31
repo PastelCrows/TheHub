@@ -1,0 +1,212 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skyblock_07_essence"
+	group: "0000000000900001"
+	id: "00000000001000F3"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			id: "00000000001000F4"
+			rewards: [{
+				id: "0000000000100101"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000100100"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000001000F4"]
+			id: "00000000001000F5"
+			rewards: [{
+				id: "0000000000100103"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000100102"
+				item: { count: 1, id: "mysticalagriculture:inferium_essence" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["00000000001000F5"]
+			id: "00000000001000F6"
+			rewards: [{
+				id: "0000000000100105"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100104"
+				item: { count: 1, id: "mysticalagriculture:prosperity_shard" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["00000000001000F6"]
+			id: "00000000001000F7"
+			rewards: [{
+				id: "0000000000100107"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000100106"
+				item: { count: 1, id: "mysticalagriculture:infusion_altar" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["00000000001000F7"]
+			id: "00000000001000F8"
+			rewards: [{
+				id: "0000000000100109"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000100108"
+				item: { count: 1, id: "mysticalagriculture:inferium_ingot" }
+				type: "item"
+			}]
+			x: -5.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000001000F7"]
+			id: "00000000001000F9"
+			rewards: [{
+				id: "000000000010010B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000010010A"
+				item: { count: 1, id: "mysticalagriculture:inferium_growth_accelerator" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["00000000001000F7"]
+			id: "00000000001000FA"
+			rewards: [{
+				id: "000000000010010D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 4L
+				id: "000000000010010C"
+				item: { count: 1, id: "mysticalagriculture:soulium_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000001000F9"]
+			id: "00000000001000FB"
+			rewards: [{
+				id: "000000000010010F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 16L
+				id: "000000000010010E"
+				item: { count: 1, id: "mysticalagriculture:imperium_essence" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["00000000001000FB"]
+			id: "00000000001000FC"
+			rewards: [{
+				id: "0000000000100111"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000100110"
+				item: { count: 1, id: "mysticalagriculture:supremium_essence" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["00000000001000FC"]
+			id: "00000000001000FD"
+			rewards: [{
+				id: "0000000000100113"
+				type: "xp"
+				xp: 250
+			}]
+			tasks: [{
+				id: "0000000000100112"
+				item: { count: 1, id: "mysticalagriculture:awakening_altar" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["00000000001000FD"]
+			id: "00000000001000FE"
+			rewards: [{
+				id: "0000000000100115"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100114"
+				item: { count: 1, id: "mysticalagriculture:awakened_supremium_essence" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 20.0d
+		}
+		{
+			dependencies: ["00000000001000F4"]
+			id: "00000000001000FF"
+			rewards: [{
+				id: "0000000000100117"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000100116"
+				item: { count: 1, id: "productivebees:advanced_oak_beehive" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+	]
+}

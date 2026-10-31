@@ -1,0 +1,8 @@
+name = "1.21.1-2.4.9"
+filename = "ExtremeReactors2-1.21.1-2.4.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "4b934d4479751796a8c26327517f6a31a9f8a299023950947768deb7b9d8c77ac106e07024e0b88109f65fbb13d38b28d7d6a9026ae426c0b8f13a7fd0b33dea"
+url = "https://cdn.modrinth.com/data/idkvShUy/versions/wABJBBTd/ExtremeReactors2-1.21.1-2.4.9.jar"

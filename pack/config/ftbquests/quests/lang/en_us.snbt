@@ -1,0 +1,2522 @@
+{
+	chapter.0000000000100001.title: "Welcome to the Void"
+	chapter.000000000010002F.title: "Sifting for Riches"
+	chapter.0000000000100062.title: "Steam and Steel"
+	chapter.0000000000100084.title: "Rotational Force"
+	chapter.00000000001000A6.title: "Industrial Age"
+	chapter.00000000001000C8.title: "The Digital Age"
+	chapter.00000000001000F3.title: "Essence Farming"
+	chapter.0000000000100118.title: "Endgame"
+	chapter.0000000000200004.title: "Landfall"
+	chapter.0000000000200010.title: "Hearth \\& Home"
+	chapter.000000000020001E.title: "Iron \\& Enchantment"
+	chapter.000000000020002B.title: "The Wayfarer"
+	chapter.0000000000200038.title: "Wheels \\& Water"
+	chapter.0000000000200047.title: "First Glyphs"
+	chapter.0000000000200055.title: "Into the Twilight"
+	chapter.0000000000200065.title: "Schools of Magic"
+	chapter.0000000000200073.title: "The Arcane Engine"
+	chapter.0000000000200085.title: "Other Skies"
+	chapter.0000000000200099.title: "The Long Dark"
+	chapter.00000000002000AC.title: "The Eye Hunt"
+	chapter.00000000002000BC.title: "Mastery"
+	chapter.0000000000300001.title: "First Light"
+	chapter.0000000000300023.title: "Digging Out"
+	chapter.000000000030004E.title: "Rock and Water"
+	chapter.0000000000300076.title: "Buried Things"
+	chapter.0000000000300092.title: "Forge and Furnace"
+	chapter.00000000003000A7.title: "Rotational Force"
+	chapter.00000000003000C1.title: "Industrial Age"
+	chapter.00000000003000DA.title: "The Deep End"
+	chapter.0000000000400001.title: "Ashes"
+	chapter.0000000000400024.title: "No Water"
+	chapter.000000000040003F.title: "Scavenging"
+	chapter.000000000040005B.title: "The Way Out"
+	chapter.0000000000400069.title: "A Green World"
+	chapter.0000000000400081.title: "Industry in Hell"
+	chapter.000000000040009B.title: "Deeper Powers"
+	chapter.00000000004000B5.title: "The End"
+	chapter.0000000000500001.title: "Castaway"
+	chapter.0000000000500020.title: "Below"
+	chapter.0000000000500037.title: "Sift the Seabed"
+	chapter.0000000000500053.title: "The Deep"
+	chapter.000000000050006A.title: "Breathing Room"
+	chapter.0000000000500077.title: "Rotational Force"
+	chapter.000000000050008B.title: "Industrial Age"
+	chapter.00000000005000A1.title: "Beyond the Sea"
+	chapter.0000000000600004.title: "Ground Zero"
+	chapter.000000000060001F.title: "Scavenger"
+	chapter.0000000000600039.title: "Claim a Building"
+	chapter.000000000060004D.title: "Restore the Grid"
+	chapter.0000000000600063.title: "What Happened Here"
+	chapter.0000000000600076.title: "Arcana"
+	chapter.0000000000600086.title: "Industry"
+	chapter.0000000000600093.title: "Leaving"
+	chapter.0000000000700001.title: "Sixteen by Sixteen"
+	chapter.000000000070001D.title: "Finite"
+	chapter.0000000000700032.title: "Renewable"
+	chapter.0000000000700052.title: "Make More Room"
+	chapter.0000000000700063.title: "Rotational Force"
+	chapter.0000000000700077.title: "Industrial Age"
+	chapter.000000000070008A.title: "Essence"
+	chapter.000000000070009A.title: "Outward"
+	chapter.0000000000800004.title: "Between Runs"
+	chapter.0000000000800018.title: "The Ladder"
+	chapter.0000000000800033.title: "Gear Up"
+	chapter.0000000000800046.title: "Scouting"
+	chapter.0000000000800059.title: "Deeper Trials"
+	chapter.0000000000800066.title: "Arcana"
+	chapter.0000000000800076.title: "Supply Lines"
+	chapter.0000000000800086.title: "Eternity"
+	chapter.0000000000B00001.title: "The Block"
+	chapter.0000000000B0000A.title: "Hold The Line"
+	chapter.0000000000B00012.title: "Water And Lava"
+	chapter.0000000000B00019.title: "Ore And Armour"
+	chapter.0000000000B00021.title: "Renewable"
+	chapter.0000000000B00028.title: "Rotational Force"
+	chapter.0000000000B0002F.title: "Industry"
+	chapter.0000000000B00035.title: "Beyond The Block"
+	chapter.0000000000C00001.title: "The First Night"
+	chapter.0000000000C00008.title: "Something Follows"
+	chapter.0000000000C0000E.title: "Ward It Off"
+	chapter.0000000000C00015.title: "Fight Back"
+	chapter.0000000000C0001C.title: "The Deep"
+	chapter.0000000000C00022.title: "Endure"
+	chapter_group.0000000000900001.title: "Skyblock"
+	chapter_group.0000000000900002.title: "Survival"
+	chapter_group.0000000000900003.title: "Caveblock"
+	chapter_group.0000000000900004.title: "Netherbound"
+	chapter_group.0000000000900005.title: "Oceanblock"
+	chapter_group.0000000000900006.title: "Lost Cities"
+	chapter_group.0000000000900007.title: "One Chunk"
+	chapter_group.0000000000900008.title: "The Gauntlet"
+	chapter_group.0000000000900009.title: "One Block"
+	chapter_group.000000000090000A.title: "Horror"
+	quest.0000000000100002.quest_desc: [
+		"A single dirt platform, one oak tree, and a chest. Everything you will ever build starts here."
+		""
+		"Open the chest: inside are ice (your first water), a lava bucket, and a few seeds. Guard the lava carefully - it is your only one until you can make more."
+		""
+		"Press the quest book key any time to reopen this book."
+	]
+	quest.0000000000100002.quest_subtitle: "You, a tree, and nothing else"
+	quest.0000000000100002.title: "Marooned"
+	quest.0000000000100003.quest_desc: ["Break the oak tree. Do not let the leaves despawn without harvesting them - saplings and apples are finite until you get a crook."]
+	quest.0000000000100003.quest_subtitle: "The oldest tradition"
+	quest.0000000000100003.title: "Punch Wood"
+	quest.0000000000100004.quest_desc: [
+		"The crook breaks leaves faster and multiplies sapling and apple drops. It also yields silkworms."
+		""
+		"Without this, a bad run of sapling RNG can end your world. Make it first."
+	]
+	quest.0000000000100004.quest_subtitle: "Double your saplings"
+	quest.0000000000100004.title: "A Crooked Start"
+	quest.0000000000100005.quest_desc: [
+		"Right-click leaves with a silkworm to infest them. Infested leaves slowly turn to string - break them to collect it."
+		""
+		"String is how you get your first sieve mesh, and eventually wool and beds."
+	]
+	quest.0000000000100005.quest_subtitle: "Infest the leaves"
+	quest.0000000000100005.title: "Silky Business"
+	quest.0000000000100006.quest_desc: ["Your first mesh. Place it in a sieve to start sifting. It only catches the easy stuff - pebbles, seeds, saplings."]
+	quest.0000000000100006.quest_subtitle: "The coarsest filter"
+	quest.0000000000100006.title: "String Mesh"
+	quest.0000000000100007.quest_desc: [
+		"The wooden hammer turns cobblestone into gravel, gravel into sand, and sand into dust."
+		""
+		"This chain is the backbone of the whole pack. Hammers wear out - upgrade to stone, iron, gold, diamond, then netherite."
+	]
+	quest.0000000000100007.quest_subtitle: "Smash rock into profit"
+	quest.0000000000100007.title: "Hammer Time"
+	quest.0000000000100008.quest_desc: [
+		"A barrel left open to the sky fills with rain. Fill it with water and you have a renewable source."
+		""
+		"Put lava in a barrel instead and drop water on it to make cobblestone - or use a crucible."
+	]
+	quest.0000000000100008.quest_subtitle: "Infinite water, finally"
+	quest.0000000000100008.title: "Barrel of Water"
+	quest.0000000000100009.quest_desc: [
+		"Place the sieve, insert a mesh, then right-click with dust, sand, gravel or dirt."
+		""
+		"This is where ore, seeds and resources come from in a world with no ground to mine."
+	]
+	quest.0000000000100009.quest_subtitle: "Everything comes from here"
+	quest.0000000000100009.title: "Your First Sieve"
+	quest.000000000010000A.quest_desc: [
+		"Lava next to water makes cobblestone. Hammer it down to gravel, sand and dust and feed your sieves forever."
+		""
+		"The CobbleGen mod makes generators produce varied stone - check JEI for what each one yields."
+	]
+	quest.000000000010000A.quest_subtitle: "Lava plus water"
+	quest.000000000010000A.title: "Infinite Cobblestone"
+	quest.000000000010000B.quest_desc: [
+		"A crucible melts cobblestone into lava (stone crucible) or wood into water (wooden one). Heat it with torches, lava or fire underneath."
+		""
+		"This is your renewable lava - and your path off the single starter bucket."
+	]
+	quest.000000000010000B.quest_subtitle: "Wood and stone into lava"
+	quest.000000000010000B.title: "The Crucible"
+	quest.000000000010000C.quest_desc: ["Dust is the end of the hammer chain and holds the best sieve drops - including ores with better meshes."]
+	quest.000000000010000C.quest_subtitle: "The finest siftable"
+	quest.000000000010000C.title: "Dust to Dust"
+	quest.000000000010000D.quest_desc: ["Sieve grass seeds from dirt and use them on dirt to spread grass. Now animals can spawn and saplings grow faster."]
+	quest.000000000010000D.quest_subtitle: "Grow a real island"
+	quest.000000000010000D.title: "Make It Green"
+	quest.000000000010000E.quest_desc: ["Porcelain buckets survive lava and let you carry witch water. The porcelain crucible is the best early melter."]
+	quest.000000000010000E.quest_subtitle: "Better buckets"
+	quest.000000000010000E.title: "Porcelain Work"
+	quest.0000000000100030.quest_desc: [
+		"Each mesh tier unlocks new sieve drops. You cannot get iron from a string mesh - climb the ladder."
+		""
+		"Check JEI: look up any mesh to see exactly what it yields from each material."
+	]
+	quest.0000000000100030.quest_subtitle: "Better mesh, better loot"
+	quest.0000000000100030.title: "The Mesh Ladder"
+	quest.0000000000100031.quest_desc: ["Sift gravel with a string mesh to get flint, then upgrade. Flint mesh unlocks the first ore chunks."]
+	quest.0000000000100031.quest_subtitle: "Tier 2"
+	quest.0000000000100031.title: "Flint Mesh"
+	quest.0000000000100032.quest_desc: ["Ore chunks smelt into ingots in any furnace. This is your only iron source - sift relentlessly."]
+	quest.0000000000100032.quest_subtitle: "Smelt it down"
+	quest.0000000000100032.title: "First Ore Chunk"
+	quest.0000000000100033.quest_desc: ["Now that you have iron, make an iron mesh. It opens up gold, copper, tin, osmium, lead and more."]
+	quest.0000000000100033.quest_subtitle: "Tier 3"
+	quest.0000000000100033.title: "Iron Mesh"
+	quest.0000000000100034.quest_desc: ["Copper, tin, lead, osmium, zinc, nickel and silver all come from sieving with the right mesh. Tech mods need all of them."]
+	quest.0000000000100034.quest_subtitle: "Industry needs more than iron"
+	quest.0000000000100034.title: "Copper and Friends"
+	quest.0000000000100035.quest_desc: ["Osmium is the base of every Mekanism machine. You will want a lot of it."]
+	quest.0000000000100035.quest_subtitle: "Mekanism's foundation"
+	quest.0000000000100035.title: "Osmium"
+	quest.0000000000100036.quest_desc: ["Gold mesh unlocks the rarer drops - including diamonds and deeper ores."]
+	quest.0000000000100036.quest_subtitle: "Tier 4"
+	quest.0000000000100036.title: "Golden Mesh"
+	quest.0000000000100037.quest_desc: ["The diamond mesh gets you the best drops in the pack short of netherite."]
+	quest.0000000000100037.quest_subtitle: "Tier 5"
+	quest.0000000000100037.title: "Diamond Mesh"
+	quest.0000000000100038.quest_desc: ["The final mesh. Everything the sieve can give, it gives."]
+	quest.0000000000100038.quest_subtitle: "Tier 6 - the top"
+	quest.0000000000100038.title: "Netherite Mesh"
+	quest.0000000000100039.quest_desc: ["A compressed sieve processes compressed blocks - nine times the throughput per click."]
+	quest.0000000000100039.quest_subtitle: "Sift nine at once"
+	quest.0000000000100039.title: "Compressed Sieve"
+	quest.000000000010003A.quest_desc: ["The mechanical sieve runs on FE power and sifts automatically. This is the single biggest quality-of-life jump in the pack."]
+	quest.000000000010003A.quest_subtitle: "Stop clicking"
+	quest.000000000010003A.title: "Mechanical Sieve"
+	quest.000000000010003B.quest_desc: ["Pair it with the mechanical sieve and your cobble-to-dust chain runs itself."]
+	quest.000000000010003B.quest_subtitle: "Automate the crushing"
+	quest.000000000010003B.title: "Mechanical Hammer"
+	quest.000000000010003C.quest_desc: [
+		"Witch water spawns hostile mobs and converts blocks. It is how you get mob drops before you have a proper mob farm."
+		""
+		"Made in a barrel - check JEI for the recipe."
+	]
+	quest.000000000010003C.quest_subtitle: "Mob spawning in the void"
+	quest.000000000010003C.title: "Witch Water"
+	quest.000000000010003D.quest_desc: ["A watering can speeds up crop and sapling growth in an area. Essential before you have real farms."]
+	quest.000000000010003D.quest_subtitle: "Grow faster"
+	quest.000000000010003D.title: "Watering Can"
+	quest.000000000010003E.quest_subtitle: "Bigger radius"
+	quest.000000000010003E.title: "Iron Watering Can"
+	quest.0000000000100063.quest_desc: [
+		"Immersive Engineering is your first proper tech chain: coke, steel, and multiblock machines driven by water and wind."
+		""
+		"It wants space - build out your island platform first."
+	]
+	quest.0000000000100063.quest_subtitle: "Real machines, real multiblocks"
+	quest.0000000000100063.title: "Immersive Engineering"
+	quest.0000000000100064.quest_desc: ["Treated wood needs creosote oil from the coke oven. Almost every IE recipe uses it."]
+	quest.0000000000100064.quest_subtitle: "Creosote-soaked planks"
+	quest.0000000000100064.title: "Treated Wood"
+	quest.0000000000100065.quest_desc: ["A 3x3x3 multiblock. Turns coal into coal coke (a better fuel) and creosote oil."]
+	quest.0000000000100065.quest_subtitle: "Coal into coke and creosote"
+	quest.0000000000100065.title: "Coke Oven"
+	quest.0000000000100066.quest_subtitle: "Burns twice as long"
+	quest.0000000000100066.title: "Coal Coke"
+	quest.0000000000100067.quest_desc: ["Feed it iron and coal coke to produce steel - the gateway metal for mid-game tech."]
+	quest.0000000000100067.quest_subtitle: "Make steel"
+	quest.0000000000100067.title: "Blast Furnace"
+	quest.0000000000100068.quest_subtitle: "The mid-game metal"
+	quest.0000000000100068.title: "Steel Ingot"
+	quest.0000000000100069.quest_desc: ["Water wheels generate power from flowing water - and you have infinite water from barrels."]
+	quest.0000000000100069.quest_subtitle: "Free rotational power"
+	quest.0000000000100069.title: "Water Wheel"
+	quest.000000000010006A.quest_desc: ["The higher you build it, the more it makes. In a void world you can go very high."]
+	quest.000000000010006A.quest_subtitle: "Free power, higher up"
+	quest.000000000010006A.title: "Windmill"
+	quest.000000000010006B.quest_subtitle: "Store your first FE"
+	quest.000000000010006B.title: "LV Capacitor"
+	quest.000000000010006C.quest_desc: ["A big multiblock that crushes ore chunks and blocks. Combined with Almost Unified, your ores all stack together neatly."]
+	quest.000000000010006C.quest_subtitle: "Ore doubling at scale"
+	quest.000000000010006C.title: "IE Crusher"
+	quest.000000000010006D.quest_desc: ["Hemp seeds come from sieving. Grow them for rope, fabric and hempcrete."]
+	quest.000000000010006D.quest_subtitle: "Rope and cloth"
+	quest.000000000010006D.title: "Hemp Fiber"
+	quest.0000000000100085.quest_desc: ["Create is about rotation, belts and contraptions. It automates the tedious parts of skyblock beautifully - especially crushing, washing and tree farming."]
+	quest.0000000000100085.quest_subtitle: "Build machines that move"
+	quest.0000000000100085.title: "Create"
+	quest.0000000000100086.quest_desc: ["Andesite plus iron nugget in a mixer, or by hand early on. Everything in Create starts here."]
+	quest.0000000000100086.quest_subtitle: "Create's starter material"
+	quest.0000000000100086.title: "Andesite Alloy"
+	quest.0000000000100087.quest_subtitle: "Transmit rotation"
+	quest.0000000000100087.title: "Cogwheel"
+	quest.0000000000100088.quest_desc: ["Create's water wheel is the easiest early power source - and your water is infinite."]
+	quest.0000000000100088.quest_subtitle: "Cheap, quiet power"
+	quest.0000000000100088.title: "Water Wheel"
+	quest.0000000000100089.quest_desc: ["A millstone only needs rotation. Great for early ore and bone meal processing."]
+	quest.0000000000100089.quest_subtitle: "Grind without power infrastructure"
+	quest.0000000000100089.title: "Millstone"
+	quest.000000000010008A.quest_desc: ["Pressing makes plates for IE and Mekanism recipes, and compacts blocks."]
+	quest.000000000010008A.quest_subtitle: "Compact and plate"
+	quest.000000000010008A.title: "Mechanical Press"
+	quest.000000000010008B.quest_desc: ["A fan blowing through water washes gravel into flint and ores. Through lava it smelts. This is huge for sieve output."]
+	quest.000000000010008B.quest_subtitle: "Wash, smelt, haunt"
+	quest.000000000010008B.title: "Encased Fan"
+	quest.000000000010008C.quest_subtitle: "Combine in bulk"
+	quest.000000000010008C.title: "Mechanical Mixer"
+	quest.000000000010008D.quest_desc: ["Two crushing wheels process ore faster and cheaper than almost anything else at this tier."]
+	quest.000000000010008D.quest_subtitle: "The best ore doubler"
+	quest.000000000010008D.title: "Crushing Wheels"
+	quest.000000000010008E.quest_desc: ["Water plus fire equals a lot of stress units. Scale this when water wheels stop being enough."]
+	quest.000000000010008E.quest_subtitle: "Serious rotational power"
+	quest.000000000010008E.title: "Steam Engine"
+	quest.000000000010008F.quest_desc: ["Lay out a ring of crafters to automate any recipe - the poor player's AE2 autocrafting, and it works great."]
+	quest.000000000010008F.quest_subtitle: "Automated crafting"
+	quest.000000000010008F.title: "Mechanical Crafters"
+	quest.00000000001000A7.quest_desc: [
+		"Mekanism is the deepest tech chain here. Its 5x ore processing turns your sieve output into an absurd amount of metal."
+		""
+		"It needs osmium (sieve it) and steel (IE blast furnace, or Mekanism's own smelter)."
+	]
+	quest.00000000001000A7.quest_subtitle: "Ore quintupling and beyond"
+	quest.00000000001000A7.title: "Mekanism"
+	quest.00000000001000A8.quest_subtitle: "The machine chassis"
+	quest.00000000001000A8.title: "Steel Casing"
+	quest.00000000001000A9.quest_desc: ["Feed it lava from your crucibles. Simple, and it scales with how much lava you can make."]
+	quest.00000000001000A9.quest_subtitle: "Lava into power"
+	quest.00000000001000A9.title: "Heat Generator"
+	quest.00000000001000AA.quest_subtitle: "Portable charge"
+	quest.00000000001000AA.title: "Energy Tablet"
+	quest.00000000001000AB.quest_subtitle: "Store it"
+	quest.00000000001000AB.title: "Basic Energy Cube"
+	quest.00000000001000AC.quest_desc: ["The first step of the ore chain. Ore to 2x dust, immediately doubling everything you sieve."]
+	quest.00000000001000AC.quest_subtitle: "2x ore - step one"
+	quest.00000000001000AC.title: "Enrichment Chamber"
+	quest.00000000001000AD.quest_subtitle: "Part of the chain"
+	quest.00000000001000AD.title: "Crusher"
+	quest.00000000001000AE.quest_desc: ["Makes infused alloys and lets you produce your own steel without IE."]
+	quest.00000000001000AE.quest_subtitle: "Alloys and steel"
+	quest.00000000001000AE.title: "Metallurgic Infuser"
+	quest.00000000001000AF.quest_desc: ["Hydrogen and oxygen - the start of Mekanism's chemistry, and good fuel."]
+	quest.00000000001000AF.quest_subtitle: "Split water into gases"
+	quest.00000000001000AF.title: "Electrolytic Separator"
+	quest.00000000001000B0.quest_desc: ["Climbing the circuit tiers gates Mekanism's best machines. This is the last one."]
+	quest.00000000001000B0.quest_subtitle: "Top-tier components"
+	quest.00000000001000B0.title: "Ultimate Control Circuit"
+	quest.00000000001000B1.quest_desc: ["It can pull blocks from a wide area - useful once you have built a large cobble or resource farm."]
+	quest.00000000001000B1.quest_subtitle: "Mine a void world"
+	quest.00000000001000B1.title: "Digital Miner"
+	quest.00000000001000C9.quest_desc: [
+		"By now you have thousands of pebbles, chunks and dusts. Applied Energistics 2 turns all of it into one searchable terminal with autocrafting."
+		""
+		"Refined Storage is also installed if you prefer its simpler approach."
+	]
+	quest.00000000001000C9.quest_subtitle: "Stop drowning in chests"
+	quest.00000000001000C9.title: "Storage, Solved"
+	quest.00000000001000CA.quest_desc: ["Sieve it, or grow it in water with a charger and seeds."]
+	quest.00000000001000CA.quest_subtitle: "AE2's crystal"
+	quest.00000000001000CA.title: "Certus Quartz"
+	quest.00000000001000CB.quest_subtitle: "Charge and grow crystals"
+	quest.00000000001000CB.title: "Charger"
+	quest.00000000001000CC.quest_desc: ["Charged certus plus redstone plus quartz, dropped in water."]
+	quest.00000000001000CC.quest_subtitle: "The key material"
+	quest.00000000001000CC.title: "Fluix Crystal"
+	quest.00000000001000CD.quest_desc: ["Makes the processors every AE2 device needs. Automate three of these early - it is tedious by hand."]
+	quest.00000000001000CD.quest_subtitle: "Print circuits"
+	quest.00000000001000CD.title: "Inscriber"
+	quest.00000000001000CE.quest_subtitle: "Put storage cells somewhere"
+	quest.00000000001000CE.title: "ME Drive"
+	quest.00000000001000CF.quest_subtitle: "One window, everything"
+	quest.00000000001000CF.title: "ME Terminal"
+	quest.00000000001000D0.quest_subtitle: "Scale the network"
+	quest.00000000001000D0.title: "ME Controller"
+	quest.00000000001000D1.quest_subtitle: "Autocrafting begins"
+	quest.00000000001000D1.title: "Crafting Unit"
+	quest.00000000001000D2.quest_desc: ["Now the system crafts for you. Queue a stack of iron mesh and walk away."]
+	quest.00000000001000D2.quest_subtitle: "Craft on demand"
+	quest.00000000001000D2.title: "Molecular Assembler"
+	quest.00000000001000D3.quest_subtitle: "Wireless across dimensions"
+	quest.00000000001000D3.title: "Quantum Ring"
+	quest.00000000001000D4.quest_desc: ["If AE2's channels annoy you, Refined Storage does the same job more simply. Both are installed - use either or both."]
+	quest.00000000001000D4.quest_subtitle: "The alternative"
+	quest.00000000001000D4.title: "Refined Storage"
+	quest.00000000001000D5.quest_subtitle: "Search and craft"
+	quest.00000000001000D5.title: "RS Grid"
+	quest.00000000001000D6.quest_desc: ["Drawers are still the best way to hold ten thousand cobblestone cheaply."]
+	quest.00000000001000D6.quest_subtitle: "Low-tech bulk"
+	quest.00000000001000D6.title: "Functional Storage"
+	quest.00000000001000F4.quest_desc: [
+		"Why sieve for diamonds when you can farm them? Mystical Agriculture lets you plant seeds that grow any resource in the pack."
+		""
+		"This is the answer to every late-game bottleneck."
+	]
+	quest.00000000001000F4.quest_subtitle: "Grow your resources"
+	quest.00000000001000F4.title: "Mystical Agriculture"
+	quest.00000000001000F5.quest_desc: ["Sieve it, or farm inferium seeds. Everything in this mod is built from it."]
+	quest.00000000001000F5.quest_subtitle: "The base currency"
+	quest.00000000001000F5.title: "Inferium Essence"
+	quest.00000000001000F6.quest_subtitle: "Seed-making material"
+	quest.00000000001000F6.title: "Prosperity Shard"
+	quest.00000000001000F7.quest_desc: ["Surround it with pedestals. This is where you turn essence and a resource into a seed that grows it."]
+	quest.00000000001000F7.quest_subtitle: "Craft your seeds"
+	quest.00000000001000F7.title: "Infusion Altar"
+	quest.00000000001000F8.quest_subtitle: "Tier 1 gear"
+	quest.00000000001000F8.title: "Inferium Ingot"
+	quest.00000000001000F9.quest_desc: ["Stack these under your farmland. Higher tiers tick faster."]
+	quest.00000000001000F9.quest_subtitle: "Grow it faster"
+	quest.00000000001000F9.title: "Growth Accelerator"
+	quest.00000000001000FA.quest_desc: ["Soulium daggers collect mob souls, letting you farm mob drops without a spawner."]
+	quest.00000000001000FA.quest_subtitle: "Mob essence"
+	quest.00000000001000FA.title: "Soulium Ingot"
+	quest.00000000001000FB.quest_subtitle: "Tier up"
+	quest.00000000001000FB.title: "Imperium Essence"
+	quest.00000000001000FC.quest_subtitle: "Top tier essence"
+	quest.00000000001000FC.title: "Supremium Essence"
+	quest.00000000001000FD.quest_desc: ["A large multiblock that awakens supremium. Endgame gear and the best seeds come from here."]
+	quest.00000000001000FD.quest_subtitle: "The final upgrade"
+	quest.00000000001000FD.title: "Awakening Altar"
+	quest.00000000001000FE.quest_subtitle: "The end of the line"
+	quest.00000000001000FE.title: "Awakened Supremium"
+	quest.00000000001000FF.quest_desc: ["Bees produce ore combs while you sleep. A genuinely great low-effort resource source."]
+	quest.00000000001000FF.quest_subtitle: "Passive resources"
+	quest.00000000001000FF.title: "Productive Bees"
+	quest.0000000000100119.quest_desc: ["You have infinite resources. Now make absurd amounts of power and automate everything."]
+	quest.0000000000100119.quest_subtitle: "Power, scale and automation"
+	quest.0000000000100119.title: "The Long Game"
+	quest.000000000010011A.quest_desc: ["Powah is the friendliest power mod here - thermo generators on lava and nitro cells at the top end."]
+	quest.000000000010011A.quest_subtitle: "Easy scalable power"
+	quest.000000000010011A.title: "Powah Starter Cell"
+	quest.000000000010011B.quest_subtitle: "Lava to FE"
+	quest.000000000010011B.title: "Thermo Generator"
+	quest.000000000010011C.quest_subtitle: "Enormous buffer"
+	quest.000000000010011C.title: "Nitro Energy Cell"
+	quest.000000000010011D.quest_desc: ["Extreme Reactors multiblocks scale from modest to ridiculous. Yellorium comes from sieving and Mystical Agriculture."]
+	quest.000000000010011D.quest_subtitle: "Build a fission reactor"
+	quest.000000000010011D.title: "Reactor Casing"
+	quest.000000000010011E.quest_subtitle: "Fire it up"
+	quest.000000000010011E.title: "Reactor Controller"
+	quest.000000000010011F.quest_desc: ["Needs D-T fuel from Mekanism's chemistry chain. The single biggest power source in the pack."]
+	quest.000000000010011F.quest_subtitle: "Mekanism's endgame"
+	quest.000000000010011F.title: "Fusion Reactor"
+	quest.0000000000100120.quest_subtitle: "Alloys in bulk"
+	quest.0000000000100120.title: "EnderIO Alloy Smelter"
+	quest.0000000000100121.quest_desc: ["Industrial Foregoing gatherer plus sower is the cleanest automatic tree and crop farm in the pack. Endless wood for charcoal and crucibles."]
+	quest.0000000000100121.quest_subtitle: "Automate tree farming"
+	quest.0000000000100121.title: "Plant Gatherer"
+	quest.0000000000100122.quest_subtitle: "Replant automatically"
+	quest.0000000000100122.title: "Plant Sower"
+	quest.0000000000100123.quest_desc: [
+		"You started with one tree and a lava bucket. Look at it now."
+		""
+		"Thanks for playing - go build something ridiculous."
+	]
+	quest.0000000000100123.quest_subtitle: "Nothing left to sieve"
+	quest.0000000000100123.title: "Island Complete"
+	quest.0000000000200005.quest_desc: [
+		"This pack has a lot in it, so this book is the thread through all of it. Chapters unlock as you finish the one before, so you can always just do what is lit up."
+		""
+		"One tip worth more than any other: hold W while looking at any Create block to open Ponder. It animates exactly how the thing works. It is better than any wiki."
+	]
+	quest.0000000000200005.quest_subtitle: "Day one, nothing in your pockets"
+	quest.0000000000200005.title: "Landfall"
+	quest.0000000000200006.quest_subtitle: "The usual opening"
+	quest.0000000000200006.title: "Wood and Stone"
+	quest.0000000000200007.quest_subtitle: "Stone will do for now"
+	quest.0000000000200007.title: "A Real Pickaxe"
+	quest.0000000000200008.quest_desc: ["Chop ingredients on a cutting board for more yield than crafting by hand. Everything in Farmer's Delight builds on this and the cooking pot."]
+	quest.0000000000200008.quest_subtitle: "Farmer's Delight starts here"
+	quest.0000000000200008.title: "Cutting Board"
+	quest.0000000000200009.quest_subtitle: "Stop eating raw potatoes"
+	quest.0000000000200009.title: "Something Hot"
+	quest.000000000020000A.quest_desc: ["Nights get genuinely dangerous later in this pack. Born in Chaos sees to that."]
+	quest.000000000020000A.quest_subtitle: "Skip the dangerous part of the day"
+	quest.000000000020000A.title: "Somewhere to Sleep"
+	quest.000000000020000B.quest_subtitle: "Light is survival"
+	quest.000000000020000B.title: "Torches by the Hundred"
+	quest.000000000020000C.quest_subtitle: "Quark's backpack"
+	quest.000000000020000C.title: "Something to Carry It In"
+	quest.000000000020000D.quest_desc: ["Quark adds hundreds of small things like this. You will keep finding them for weeks."]
+	quest.000000000020000D.quest_subtitle: "Count what you are standing on"
+	quest.000000000020000D.title: "The Abacus"
+	quest.000000000020000E.title: "Know Where You Are"
+	quest.000000000020000F.quest_desc: ["Iron opens up the two directions this pack goes first: a home worth living in, and gear worth fighting in. Both chapters unlock from here."]
+	quest.000000000020000F.quest_subtitle: "The real start"
+	quest.000000000020000F.title: "Iron at Last"
+	quest.0000000000200011.quest_desc: [
+		"You are going to be away a lot in this pack. Make the place you return to good."
+		""
+		"Handcrafted, Chipped, FramedBlocks, Supplementaries, Amendments and all five Macaw's packs are installed. Open JEI and search a material name to see what is possible."
+	]
+	quest.0000000000200011.quest_subtitle: "Build somewhere you want to come back to"
+	quest.0000000000200011.title: "Hearth \\& Home"
+	quest.0000000000200012.quest_subtitle: "Furniture that is actually furniture"
+	quest.0000000000200012.title: "A Table and a Chair"
+	quest.0000000000200013.title: "A Kitchen Counter"
+	quest.0000000000200014.quest_subtitle: "Cook six things at once"
+	quest.0000000000200014.title: "A Stove"
+	quest.0000000000200015.quest_desc: ["Soups and stews from the cooking pot are the best food in the pack and they stack."]
+	quest.0000000000200015.quest_subtitle: "The heart of Farmer's Delight"
+	quest.0000000000200015.title: "The Cooking Pot"
+	quest.0000000000200016.quest_subtitle: "Cook in the field"
+	quest.0000000000200016.title: "Skillet"
+	quest.0000000000200017.title: "Compost and Crops"
+	quest.0000000000200018.quest_desc: ["These barrels and chests take upgrades: stack size, auto-pickup, filtering, even a crafting grid. One upgraded barrel replaces a wall of chests."]
+	quest.0000000000200018.quest_subtitle: "Sophisticated Storage"
+	quest.0000000000200018.title: "Storage, Properly"
+	quest.0000000000200019.quest_subtitle: "Stack upgrades are the good ones"
+	quest.0000000000200019.title: "Upgrade It"
+	quest.000000000020001A.title: "Crates for the Overflow"
+	quest.000000000020001B.title: "A Safe for the Good Stuff"
+	quest.000000000020001C.quest_subtitle: "Supplementaries odds and ends"
+	quest.000000000020001C.title: "Sacks and Soap"
+	quest.000000000020001D.quest_desc: ["With a base and a kitchen behind you, it is time to make it do some work for you."]
+	quest.000000000020001D.quest_subtitle: "Somewhere worth defending"
+	quest.000000000020001D.title: "Home"
+	quest.000000000020001F.quest_desc: ["Apotheosis rebuilds enchanting, loot and gear. Weapons and armour now roll affixes and have sockets for gems, so a sword you find in a dungeon can beat anything you craft. Enchanting needs a table surrounded by the right shelves, not just bookshelves."]
+	quest.000000000020001F.quest_subtitle: "Apotheosis changes what gear means"
+	quest.000000000020001F.title: "Iron \\& Enchantment"
+	quest.0000000000200020.title: "Diamonds"
+	quest.0000000000200021.title: "The Enchanting Table"
+	quest.0000000000200022.quest_desc: ["Each shelf type pushes enchanting in a different direction: eterna, quanta and arcana. The table's tooltip shows what your arrangement is doing."]
+	quest.0000000000200022.quest_subtitle: "Not all bookshelves are equal"
+	quest.0000000000200022.title: "Shelves That Matter"
+	quest.0000000000200023.quest_subtitle: "You need what is in there"
+	quest.0000000000200023.title: "Into the Nether"
+	quest.0000000000200024.title: "Blaze Rods"
+	quest.0000000000200025.quest_subtitle: "Quanta, at a cost"
+	quest.0000000000200025.title: "Hellshelf"
+	quest.0000000000200026.quest_subtitle: "Add a socket to anything"
+	quest.0000000000200026.title: "Sigil of Socketing"
+	quest.0000000000200027.quest_subtitle: "Break gear down into gems and materials"
+	quest.0000000000200027.title: "Salvaging Table"
+	quest.0000000000200028.quest_subtitle: "Simply Swords"
+	quest.0000000000200028.title: "A Better Blade"
+	quest.0000000000200029.quest_subtitle: "Reach beats damage more often than you think"
+	quest.0000000000200029.title: "Or a Glaive"
+	quest.000000000020002A.quest_desc: ["Gear sorted. Now go and find out how big this world actually is, and start learning what the arcane side of it can do."]
+	quest.000000000020002A.quest_subtitle: "Ready to leave the valley"
+	quest.000000000020002A.title: "Armed and Enchanted"
+	quest.000000000020002C.quest_desc: ["Terralith and Tectonic rebuilt this world, and 27 structure mods filled it. YUNG's overhauls replaced every vanilla structure. There is a lot out there, and two compasses so you never have to wander aimlessly looking for it."]
+	quest.000000000020002C.quest_subtitle: "The overworld is far bigger than it looks"
+	quest.000000000020002C.title: "The Wayfarer"
+	quest.000000000020002D.quest_subtitle: "Find any structure on demand"
+	quest.000000000020002D.title: "Explorer's Compass"
+	quest.000000000020002E.quest_subtitle: "Find any biome on demand"
+	quest.000000000020002E.title: "Nature's Compass"
+	quest.000000000020002F.quest_subtitle: "Travel without the walking"
+	quest.000000000020002F.title: "A Waystone"
+	quest.0000000000200030.quest_subtitle: "Reusable return trip"
+	quest.0000000000200030.title: "Warp Stone"
+	quest.0000000000200031.title: "Warp Scrolls"
+	quest.0000000000200032.quest_desc: ["Artifacts drop from the structures you are about to raid. The umbrella slows your fall and blocks arrows. There are plenty more."]
+	quest.0000000000200032.quest_subtitle: "Artifacts are dungeon loot worth hunting"
+	quest.0000000000200032.title: "An Umbrella"
+	quest.0000000000200033.title: "Night Vision Goggles"
+	quest.0000000000200034.title: "Cloud in a Bottle"
+	quest.0000000000200035.quest_subtitle: "Push an enchantment past its cap"
+	quest.0000000000200035.title: "Ancient Tome"
+	quest.0000000000200036.quest_subtitle: "Proof you went somewhere"
+	quest.0000000000200036.title: "A Globe for the Wall"
+	quest.0000000000200037.quest_desc: ["There is a second world layered under this one, reachable from a pool of water and a diamond. It has its own full progression, and it is the best content in the pack."]
+	quest.0000000000200037.quest_subtitle: "You have seen this world"
+	quest.0000000000200037.title: "Well Travelled"
+	quest.0000000000200039.quest_desc: [
+		"This is the machine half of the pack. Create is about rotation: generate it, move it, and spend it on something useful."
+		""
+		"Hold W over any Create block for Ponder. Seriously. Do it for every block in this chapter and you will never need to look anything up."
+	]
+	quest.0000000000200039.quest_subtitle: "Create, the light-tech spine"
+	quest.0000000000200039.title: "Wheels \\& Water"
+	quest.000000000020003A.quest_subtitle: "Everything starts here"
+	quest.000000000020003A.title: "Andesite Alloy"
+	quest.000000000020003B.quest_subtitle: "Move rotation around"
+	quest.000000000020003B.title: "Cogwheels"
+	quest.000000000020003C.quest_subtitle: "Free, quiet, early power"
+	quest.000000000020003C.title: "Water Wheel"
+	quest.000000000020003D.quest_subtitle: "Grinding with no infrastructure"
+	quest.000000000020003D.title: "Millstone"
+	quest.000000000020003E.quest_subtitle: "Plates and compacting"
+	quest.000000000020003E.title: "Mechanical Press"
+	quest.000000000020003F.quest_desc: ["A fan blowing through water washes gravel and ore. Through lava it smelts. Through soul fire it haunts. One block, four processing chains."]
+	quest.000000000020003F.quest_subtitle: "Wash, smelt and haunt"
+	quest.000000000020003F.title: "Encased Fan"
+	quest.0000000000200040.title: "Mechanical Mixer"
+	quest.0000000000200041.quest_subtitle: "The second tier metal"
+	quest.0000000000200041.title: "Brass"
+	quest.0000000000200042.quest_subtitle: "Heat for the mixer"
+	quest.0000000000200042.title: "Blaze Burner"
+	quest.0000000000200043.quest_subtitle: "The best ore processing at this tier"
+	quest.0000000000200043.title: "Crushing Wheels"
+	quest.0000000000200044.quest_subtitle: "When water wheels stop being enough"
+	quest.0000000000200044.title: "Steam Engine"
+	quest.0000000000200045.quest_subtitle: "Automated crafting"
+	quest.0000000000200045.title: "Mechanical Crafters"
+	quest.0000000000200046.quest_desc: ["You can make things without touching them now. Later you will wire this to electricity and point it at the arcane side of the pack."]
+	quest.0000000000200046.quest_subtitle: "Rotation, mastered"
+	quest.0000000000200046.title: "A Working Factory"
+	quest.0000000000200048.quest_desc: [
+		"Four magic systems are installed and this book sequences them so they do not all land at once. Ars Nouveau is first because it teaches the idea: spells are made of glyphs you combine yourself, not picked off a list."
+		""
+		"Craft the Worn Notebook before anything else. It is the actual tutorial."
+	]
+	quest.0000000000200048.quest_subtitle: "Ars Nouveau: build your own spells"
+	quest.0000000000200048.title: "First Glyphs"
+	quest.0000000000200049.quest_subtitle: "The currency of everything here"
+	quest.0000000000200049.title: "Source Gems"
+	quest.000000000020004A.quest_desc: ["A spell is a form (Projectile, Touch, Self) then effects then modifiers. Projectile + Break is a mining laser. Touch + Harvest is a sickle."]
+	quest.000000000020004A.quest_subtitle: "Form, then effect, then modifier"
+	quest.000000000020004A.title: "Novice Spell Book"
+	quest.000000000020004B.quest_subtitle: "Where glyphs are written"
+	quest.000000000020004B.title: "Scribes Table"
+	quest.000000000020004C.quest_subtitle: "Make your own source gems"
+	quest.000000000020004C.title: "Imbuement Chamber"
+	quest.000000000020004D.quest_subtitle: "Store the magic"
+	quest.000000000020004D.title: "Source Jar"
+	quest.000000000020004E.quest_subtitle: "Move source without pipes"
+	quest.000000000020004E.title: "Relay Network"
+	quest.000000000020004F.title: "Arcane Pedestals"
+	quest.0000000000200050.quest_subtitle: "The crafting station for everything else"
+	quest.0000000000200050.title: "Enchanting Apparatus"
+	quest.0000000000200051.quest_subtitle: "Grow your own cloth"
+	quest.0000000000200051.title: "Magebloom"
+	quest.0000000000200052.quest_subtitle: "Rituals change the world around you"
+	quest.0000000000200052.title: "Ritual Brazier"
+	quest.0000000000200053.quest_subtitle: "A bigger book, more spell slots"
+	quest.0000000000200053.title: "Apprentice"
+	quest.0000000000200054.quest_desc: ["Two paths open from here: a second, very different magic tradition, and the twilight world you were told about."]
+	quest.0000000000200054.quest_subtitle: "You can write magic now"
+	quest.0000000000200054.title: "Spellwright"
+	quest.0000000000200056.quest_desc: [
+		"Dig a 2x2 pool, fill it with water, ring it with flowers and mushrooms, and throw in a diamond."
+		""
+		"The Twilight Forest is gated internally: each boss you kill lifts the curse on the next region. Kill them in order or the forest itself will stop you. This chapter is that order."
+	]
+	quest.0000000000200056.quest_subtitle: "A whole second game, with its own ladder"
+	quest.0000000000200056.title: "Into the Twilight"
+	quest.0000000000200057.quest_subtitle: "See through the labyrinth"
+	quest.0000000000200057.title: "Maze Map Focus"
+	quest.0000000000200058.quest_subtitle: "First boss, first lock lifted"
+	quest.0000000000200058.title: "The Naga"
+	quest.0000000000200059.title: "Ironwood"
+	quest.000000000020005A.quest_subtitle: "Second boss"
+	quest.000000000020005A.title: "The Twilight Lich"
+	quest.000000000020005B.quest_subtitle: "The labyrinth has a kitchen"
+	quest.000000000020005B.title: "Meef Stroganoff"
+	quest.000000000020005C.quest_subtitle: "Under the labyrinth"
+	quest.000000000020005C.title: "The Minoshroom"
+	quest.000000000020005D.quest_subtitle: "Three heads, all of them a problem"
+	quest.000000000020005D.title: "The Hydra"
+	quest.000000000020005E.quest_subtitle: "The stronghold"
+	quest.000000000020005E.title: "The Knight Phantom"
+	quest.000000000020005F.title: "Fiery Ingots"
+	quest.0000000000200060.quest_subtitle: "The glacier"
+	quest.0000000000200060.title: "The Alpha Yeti"
+	quest.0000000000200061.quest_subtitle: "The aurora palace"
+	quest.0000000000200061.title: "The Snow Queen"
+	quest.0000000000200062.quest_subtitle: "Highlands reward"
+	quest.0000000000200062.title: "Carminite"
+	quest.0000000000200063.quest_subtitle: "Burn back the thorns"
+	quest.0000000000200063.title: "Lamp of Cinders"
+	quest.0000000000200064.quest_desc: ["You have cleared a full dimension's worth of bosses. There are two more worlds waiting, and they are stranger than this one."]
+	quest.0000000000200064.quest_subtitle: "That forest is yours"
+	quest.0000000000200064.title: "Twilight Conqueror"
+	quest.0000000000200066.quest_desc: ["Where Ars Nouveau makes you build spells, Iron's Spells gives you schools to specialise in: fire, ice, lightning, evocation, holy, blood, ender, nature. Your spell book holds a loadout and your gear rolls spell power for a school."]
+	quest.0000000000200066.quest_subtitle: "Iron's Spells: pick a school and commit"
+	quest.0000000000200066.title: "Schools of Magic"
+	quest.0000000000200067.quest_subtitle: "Your first real loadout"
+	quest.0000000000200067.title: "Iron Spell Book"
+	quest.0000000000200068.quest_subtitle: "Write scrolls into your book"
+	quest.0000000000200068.title: "Inscription Table"
+	quest.0000000000200069.title: "Blank Runes"
+	quest.000000000020006A.quest_subtitle: "Upgrade gear with orbs"
+	quest.000000000020006A.title: "Arcane Anvil"
+	quest.000000000020006B.quest_subtitle: "More casting before you run dry"
+	quest.000000000020006B.title: "Mana Upgrade Orb"
+	quest.000000000020006C.title: "Mana Ring"
+	quest.000000000020006D.title: "The Fire School"
+	quest.000000000020006E.title: "The Ice School"
+	quest.000000000020006F.title: "Evocation"
+	quest.0000000000200070.quest_subtitle: "More slots, more power"
+	quest.0000000000200070.title: "Diamond Spell Book"
+	quest.0000000000200071.quest_subtitle: "The one you should be careful with"
+	quest.0000000000200071.title: "The Necronomicon"
+	quest.0000000000200072.quest_desc: ["Now put machinery and magic in the same room. It turns out they get on well."]
+	quest.0000000000200072.quest_subtitle: "Two traditions, both yours"
+	quest.0000000000200072.title: "Archmage's Apprentice"
+	quest.0000000000200074.quest_desc: ["This is the chapter that makes the pack one thing instead of several. Create generates electricity, electricity runs an enchanting line, and that line produces Apotheosis affixes on demand. Occultism then hands you storage and labour that no machine can match."]
+	quest.0000000000200074.quest_subtitle: "Where the machines meet the magic"
+	quest.0000000000200074.title: "The Arcane Engine"
+	quest.0000000000200075.quest_subtitle: "Rotation into electricity"
+	quest.0000000000200075.title: "Alternator"
+	quest.0000000000200076.quest_subtitle: "And back again"
+	quest.0000000000200076.title: "Electric Motor"
+	quest.0000000000200077.quest_subtitle: "Store it"
+	quest.0000000000200077.title: "Capacitor"
+	quest.0000000000200078.quest_subtitle: "Wire and rods without a press setup"
+	quest.0000000000200078.title: "Rolling Mill"
+	quest.0000000000200079.quest_subtitle: "Wireless charging, and a weapon"
+	quest.0000000000200079.title: "Tesla Coil"
+	quest.000000000020007A.quest_subtitle: "Automated enchanting"
+	quest.000000000020007A.title: "Blaze Enchanter"
+	quest.000000000020007B.quest_desc: ["Create Enchantment Industry speaks Apotheosis. This is the bridge between the two halves of the pack and it is the single best thing in it."]
+	quest.000000000020007B.quest_subtitle: "Liquid affixes"
+	quest.000000000020007B.title: "Apotheotic Essence"
+	quest.000000000020007C.quest_subtitle: "Roll affixes on purpose, not by luck"
+	quest.000000000020007C.title: "Affix Augmentor"
+	quest.000000000020007D.quest_desc: ["Occultism summons spirits to do work: mine for you, chop trees, haul items, and hold a near-infinite warehouse inside one block."]
+	quest.000000000020007D.quest_subtitle: "Draw a summoning circle"
+	quest.000000000020007D.title: "Occultism: A Brush and Chalk"
+	quest.000000000020007E.quest_subtitle: "Only visible with the right eyes"
+	quest.000000000020007E.title: "Otherworld Trees"
+	quest.000000000020007F.title: "Spirit Attuned Crystal"
+	quest.0000000000200080.quest_subtitle: "Bind a spirit"
+	quest.0000000000200080.title: "Magic Lamp"
+	quest.0000000000200081.quest_subtitle: "The metal of the other side"
+	quest.0000000000200081.title: "Iesnium"
+	quest.0000000000200082.quest_subtitle: "The best storage in the pack"
+	quest.0000000000200082.title: "Storage Controller"
+	quest.0000000000200083.quest_subtitle: "Reach your warehouse from anywhere"
+	quest.0000000000200083.title: "Stable Wormhole"
+	quest.0000000000200084.quest_desc: ["Everything from here on is dangerous. Good thing you are well equipped."]
+	quest.0000000000200084.quest_subtitle: "Machines, spirits, one base"
+	quest.0000000000200084.title: "Industrialist of the Occult"
+	quest.0000000000200086.quest_desc: ["Two more dimensions, opposite in every way. The Aether is a bright floating world reached by pouring water into a glowstone frame. The Undergarden is a dark cavern world reached by throwing a Catalyst at an obsidian frame."]
+	quest.0000000000200086.quest_subtitle: "One world above, one below"
+	quest.0000000000200086.title: "Other Skies"
+	quest.0000000000200087.quest_subtitle: "Water will not survive the trip otherwise"
+	quest.0000000000200087.title: "Skyroot Bucket"
+	quest.0000000000200088.title: "The Aether"
+	quest.0000000000200089.quest_subtitle: "Fuel and healing"
+	quest.0000000000200089.title: "Ambrosium"
+	quest.000000000020008A.title: "Holystone"
+	quest.000000000020008B.title: "Golden Amber"
+	quest.000000000020008C.title: "Icestone"
+	quest.000000000020008D.quest_subtitle: "The Aether's best metal, and it floats"
+	quest.000000000020008D.title: "Enchanted Gravitite"
+	quest.000000000020008E.title: "Gravitite Armour"
+	quest.000000000020008F.title: "Flaming Sword"
+	quest.0000000000200090.title: "Cloud Staff"
+	quest.0000000000200091.quest_subtitle: "Your key downward"
+	quest.0000000000200091.title: "The Catalyst"
+	quest.0000000000200092.title: "The Undergarden"
+	quest.0000000000200093.title: "Cloggrum"
+	quest.0000000000200094.title: "Froststeel"
+	quest.0000000000200095.title: "Utherium"
+	quest.0000000000200096.quest_subtitle: "Deepest and best"
+	quest.0000000000200096.title: "Forgotten Metal"
+	quest.0000000000200097.title: "Regalium"
+	quest.0000000000200098.quest_desc: ["Only the dark half of this pack is left, and then the End."]
+	quest.0000000000200098.quest_subtitle: "Four dimensions cleared"
+	quest.0000000000200098.title: "Between Worlds"
+	quest.000000000020009A.quest_desc: [
+		"The last tier of this pack is its grimmest. Malum is magic by sacrifice rather than study. L_Ender's Cataclysm puts real multi-phase bosses in real dungeons. Born in Chaos makes the dark genuinely hostile."
+		""
+		"Gateways to Eternity is installed too: a Gate Pearl summons a wave arena wherever you stand. It is the cleanest way to test whether your gear is actually ready."
+	]
+	quest.000000000020009A.quest_subtitle: "Malum, Cataclysm, and nights that bite back"
+	quest.000000000020009A.title: "The Long Dark"
+	quest.000000000020009B.quest_subtitle: "Malum's guide"
+	quest.000000000020009B.title: "Encyclopedia Arcana"
+	quest.000000000020009C.title: "Arcane Charcoal"
+	quest.000000000020009D.title: "Runewood"
+	quest.000000000020009E.quest_subtitle: "Kill things, keep what leaves them"
+	quest.000000000020009E.title: "Harvest Spirits"
+	quest.000000000020009F.quest_subtitle: "Grown on sacrifice"
+	quest.000000000020009F.title: "Soulwood"
+	quest.00000000002000A0.quest_subtitle: "The rare one"
+	quest.00000000002000A0.title: "Eldritch Spirit"
+	quest.00000000002000A1.quest_subtitle: "Malum's endgame metal"
+	quest.00000000002000A1.title: "Soul Stained Steel"
+	quest.00000000002000A2.quest_subtitle: "Cataclysm's dungeons pay well"
+	quest.00000000002000A2.title: "Ancient Metal"
+	quest.00000000002000A3.title: "Black Steel"
+	quest.00000000002000A4.title: "Infernal Forge"
+	quest.00000000002000A5.quest_subtitle: "Melt-proof armour material"
+	quest.00000000002000A5.title: "Ignitium"
+	quest.00000000002000A6.quest_subtitle: "Taken off something enormous"
+	quest.00000000002000A6.title: "The Monstrous Helm"
+	quest.00000000002000A7.title: "Bone Reptile Armour"
+	quest.00000000002000A8.quest_subtitle: "Born in Chaos"
+	quest.00000000002000A8.title: "Dark Metal"
+	quest.00000000002000A9.title: "Soulbane"
+	quest.00000000002000AA.quest_desc: ["A Gate Pearl drops a wave arena at your feet. Clear it and it pays out properly. If you cannot clear one yet, you are not ready for the End."]
+	quest.00000000002000AA.quest_subtitle: "Prove the gear works"
+	quest.00000000002000AA.title: "Open a Gateway"
+	quest.00000000002000AB.quest_desc: ["One thing remains, and getting into it is no longer as simple as twelve ender pearls."]
+	quest.00000000002000AB.quest_subtitle: "The dark is just scenery now"
+	quest.00000000002000AB.title: "Nothing Left to Fear"
+	quest.00000000002000AD.quest_desc: [
+		"Vanilla sells you the End for twelve blaze powders and some pearls. End Remastered takes that away. Each eye now comes from a specific place or a specific kill, scattered across every dimension you have been to."
+		""
+		"This is the pack's final exam. It sends you back through everything."
+	]
+	quest.00000000002000AD.quest_subtitle: "End Remastered: the End is earned, not bought"
+	quest.00000000002000AD.title: "The Eye Hunt"
+	quest.00000000002000AE.quest_subtitle: "Where it starts"
+	quest.00000000002000AE.title: "The Old Eye"
+	quest.00000000002000AF.title: "Nether \\& Undead"
+	quest.00000000002000B0.title: "Cold \\& Corrupted"
+	quest.00000000002000B1.quest_subtitle: "The ocean and the swamp"
+	quest.00000000002000B1.title: "Guardian \\& Witch"
+	quest.00000000002000B2.title: "Cryptic \\& Cursed"
+	quest.00000000002000B3.title: "Evil \\& Rogue"
+	quest.00000000002000B4.title: "Exotic \\& Lost"
+	quest.00000000002000B5.quest_subtitle: "The expensive ones"
+	quest.00000000002000B5.title: "Wither \\& Black"
+	quest.00000000002000B6.quest_subtitle: "The last one"
+	quest.00000000002000B6.title: "The Magical Eye"
+	quest.00000000002000B7.title: "Ancient Portal Frame"
+	quest.00000000002000B8.title: "The End"
+	quest.00000000002000B9.title: "The Dragon"
+	quest.00000000002000BA.quest_subtitle: "The real reward"
+	quest.00000000002000BA.title: "Elytra"
+	quest.00000000002000BB.quest_desc: ["There is nothing left that can stop you. So go and build something ridiculous instead."]
+	quest.00000000002000BB.quest_subtitle: "You earned that one"
+	quest.00000000002000BB.title: "Ender"
+	quest.00000000002000BD.quest_desc: ["None of this is required. It is the stuff worth doing once nothing is dangerous."]
+	quest.00000000002000BD.quest_subtitle: "Optional, expensive, and the point"
+	quest.00000000002000BD.title: "Mastery"
+	quest.00000000002000BE.title: "A Beacon"
+	quest.00000000002000BF.title: "Netherite Throughout"
+	quest.00000000002000C0.quest_subtitle: "Ars Nouveau's best"
+	quest.00000000002000C0.title: "Archmage Spell Book"
+	quest.00000000002000C1.quest_subtitle: "Enchanting, perfected"
+	quest.00000000002000C1.title: "Draconic Endshelf"
+	quest.00000000002000C2.quest_subtitle: "Simply Swords endgame"
+	quest.00000000002000C2.title: "Runic Forge"
+	quest.00000000002000C3.title: "A Runic Weapon"
+	quest.00000000002000C4.quest_subtitle: "Choose your own affixes"
+	quest.00000000002000C4.title: "Apotheotic Affix Template"
+	quest.00000000002000C5.title: "Never Die Again"
+	quest.00000000002000C6.quest_desc: ["Thirteen chapters, four dimensions, four magic systems and a factory. Thanks for playing it."]
+	quest.00000000002000C6.quest_subtitle: "That is the whole ladder"
+	quest.00000000002000C6.title: "Nothing Left to Climb"
+	quest.0000000000300002.quest_desc: [
+		"You are in a cavern somewhere in a world made entirely of stone. There is no sky. There is no surface to dig up to - the rock goes all the way to the build limit."
+		""
+		"Everything you will ever own is in that chest, or still inside the walls."
+		""
+		"Press the quest book key any time to reopen this book."
+	]
+	quest.0000000000300002.quest_subtitle: "A room, a chest, and a lot of rock"
+	quest.0000000000300002.title: "Buried"
+	quest.0000000000300003.quest_desc: [
+		"The chest holds four oak logs. That is every scrap of wood in the world until your sapling grows."
+		""
+		"Make a crafting table first, then a wooden pickaxe. Do not burn logs as fuel."
+	]
+	quest.0000000000300003.quest_subtitle: "Spend them wisely"
+	quest.0000000000300003.title: "Four Logs"
+	quest.0000000000300004.quest_desc: ["A wooden pickaxe gets you cobblestone, and cobblestone gets you everything else."]
+	quest.0000000000300004.quest_subtitle: "The only way out is through"
+	quest.0000000000300004.title: "Something to Dig With"
+	quest.0000000000300005.quest_desc: ["Mine into the wall. Unlike a skyblock, your resources are not in the sky - they are in the stone around you, and the stone is infinite."]
+	quest.0000000000300005.quest_subtitle: "There is rather a lot of it"
+	quest.0000000000300005.title: "Break Rock"
+	quest.0000000000300006.quest_desc: ["Stone tools cost nothing now that you can mine. Make a pickaxe, a shovel and an axe."]
+	quest.0000000000300006.quest_subtitle: "An upgrade, barely"
+	quest.0000000000300006.title: "Stone Tools"
+	quest.0000000000300007.quest_desc: [
+		"You live underground. Every unlit cell within your tunnels is a mob spawn waiting to happen."
+		""
+		"There is no daylight to save you here - light discipline is a permanent habit, not an early-game chore."
+	]
+	quest.0000000000300007.quest_subtitle: "Darkness is not atmosphere, it is mobs"
+	quest.0000000000300007.title: "Light Is a Resource"
+	quest.0000000000300008.quest_desc: [
+		"Plant the sapling on the dirt patch. It needs light - put a torch next to it."
+		""
+		"Use the bone meal if you cannot wait. Harvest the leaves for more saplings before they rot."
+	]
+	quest.0000000000300008.quest_subtitle: "Dirt, light, patience"
+	quest.0000000000300008.title: "Grow the First Tree"
+	quest.0000000000300009.quest_desc: [
+		"Place the ice, light it up or put it next to lava, and catch the water."
+		""
+		"Two ice is all you get. Make an infinite source the moment you have a bucket - two source blocks diagonal from each other refill forever."
+	]
+	quest.0000000000300009.quest_subtitle: "Your only water"
+	quest.0000000000300009.title: "Melt the Ice"
+	quest.000000000030000A.quest_desc: ["A furnace needs eight cobblestone. Fuel it with coal from the walls, not with your wood."]
+	quest.000000000030000A.quest_subtitle: "Smelting at last"
+	quest.000000000030000A.title: "Fire in the Hole"
+	quest.000000000030000B.quest_desc: ["The chest had eight bread and four wheat seeds. Plant the seeds on the dirt next to water and keep the loop going before the bread runs out."]
+	quest.000000000030000B.quest_subtitle: "Bread keeps"
+	quest.000000000030000B.title: "Something to Eat"
+	quest.0000000000300024.quest_desc: ["Coal is the most common ore in the rock and you will burn an absurd amount of it. Torches, furnaces, and later coke."]
+	quest.0000000000300024.quest_subtitle: "Fuel forever"
+	quest.0000000000300024.title: "Black Seams"
+	quest.0000000000300025.quest_desc: [
+		"The carvers cut genuine cave systems through this world - caverns, ravines, the lot. Tunnel far enough in any direction and you will break into one."
+		""
+		"They are faster to travel than tunnelling, and far more dangerous. Light as you go."
+	]
+	quest.0000000000300025.quest_subtitle: "The world is not solid after all"
+	quest.0000000000300025.title: "A Real Cave"
+	quest.0000000000300026.quest_desc: ["Iron ore is everywhere in stone. Smelt it and your tools stop being a bottleneck."]
+	quest.0000000000300026.quest_subtitle: "The real beginning"
+	quest.0000000000300026.title: "Iron in the Walls"
+	quest.0000000000300027.quest_desc: ["A bucket turns your two ice cubes into an infinite water source. Make this early."]
+	quest.0000000000300027.quest_subtitle: "Water that moves"
+	quest.0000000000300027.title: "Three Iron"
+	quest.0000000000300028.quest_desc: ["Anything below iron tier is off limits until you hold this."]
+	quest.0000000000300028.quest_subtitle: "Now you can take diamonds"
+	quest.0000000000300028.title: "Iron Pickaxe"
+	quest.0000000000300029.quest_desc: ["Create and Mekanism both eat copper. Collect more than feels reasonable."]
+	quest.0000000000300029.quest_subtitle: "For later, in bulk"
+	quest.0000000000300029.title: "Copper Too"
+	quest.000000000030002A.quest_desc: [
+		"The bottom 56 layers of this world are deepslate instead of stone. It is slower to mine, and it is where the good ores concentrate."
+		""
+		"Dig down. Mind the lava."
+	]
+	quest.000000000030002A.quest_subtitle: "Below minus eight"
+	quest.000000000030002A.title: "Going Deeper"
+	quest.000000000030002B.quest_desc: ["Redstone is a deepslate-depth ore. You will need stacks of it."]
+	quest.000000000030002B.quest_subtitle: "Everything mechanical wants it"
+	quest.000000000030002B.title: "Red Dust"
+	quest.000000000030002C.quest_desc: ["Lapis is only useful once you have an enchanting table, which is only useful once you have books, which means sugar cane or leather. Get it anyway."]
+	quest.000000000030002C.quest_subtitle: "Enchanting fuel"
+	quest.000000000030002C.title: "Lapis"
+	quest.000000000030002D.quest_desc: ["Terrible tools. Required for nearly every mod's mid-tier recipes."]
+	quest.000000000030002D.quest_subtitle: "Soft, useless, essential"
+	quest.000000000030002D.title: "Gold"
+	quest.000000000030002E.quest_desc: ["Deep in the deepslate. Bring torches, food, and a water bucket for the lava you will inevitably find."]
+	quest.000000000030002E.quest_subtitle: "The old milestone"
+	quest.000000000030002E.title: "Diamonds"
+	quest.000000000030002F.quest_desc: ["Amethyst geodes generate as sealed pockets in the rock. In a solid world they are genuinely hidden - you will only find one by tunnelling into it."]
+	quest.000000000030002F.quest_subtitle: "A hollow full of crystal"
+	quest.000000000030002F.title: "Geode"
+	quest.0000000000300030.quest_desc: ["Diamond tier mines obsidian, which means a nether portal, which means the rest of the game."]
+	quest.0000000000300030.quest_subtitle: "Obsidian, finally"
+	quest.0000000000300030.title: "Diamond Pickaxe"
+	quest.000000000030004F.quest_desc: [
+		"Ex Deorum works differently here than in a skyblock. You are not sieving because you have nothing - you are sieving because it multiplies what you mine."
+		""
+		"The hammer turns cobblestone into gravel, gravel into sand, sand into dust."
+	]
+	quest.000000000030004F.quest_subtitle: "Rock into profit"
+	quest.000000000030004F.title: "Hammer Time"
+	quest.0000000000300050.quest_desc: ["Hammer cobblestone. Gravel sieves into flint, iron chunks and more."]
+	quest.0000000000300050.quest_subtitle: "Step one of three"
+	quest.0000000000300050.title: "Gravel"
+	quest.0000000000300051.quest_desc: ["Hammer gravel. Sand is also your glass supply, which matters when you have no sky and want to see anything."]
+	quest.0000000000300051.quest_subtitle: "Step two"
+	quest.0000000000300051.title: "Sand"
+	quest.0000000000300052.quest_desc: ["The end of the chain, and the best sieve drops."]
+	quest.0000000000300052.quest_subtitle: "Step three, the richest"
+	quest.0000000000300052.title: "Dust"
+	quest.0000000000300053.quest_desc: [
+		"The crook multiplies sapling and apple drops from leaves, and yields silkworms."
+		""
+		"With one tree to your name, this is how you get a second."
+	]
+	quest.0000000000300053.quest_subtitle: "More saplings"
+	quest.0000000000300053.title: "A Crooked Start"
+	quest.0000000000300054.quest_desc: ["Right-click leaves with a silkworm to infest them. Infested leaves slowly become string."]
+	quest.0000000000300054.quest_subtitle: "Leaves into string"
+	quest.0000000000300054.title: "Silky Business"
+	quest.0000000000300055.quest_desc: ["Your first sieve mesh. Upgrade through flint, iron, gold, diamond and netherite for better drops."]
+	quest.0000000000300055.quest_subtitle: "The coarsest filter"
+	quest.0000000000300055.title: "String Mesh"
+	quest.0000000000300056.quest_desc: [
+		"Place the sieve, insert a mesh, right-click with dust, sand, gravel or dirt."
+		""
+		"Ore chunks from sieving plus ore from mining is far more than mining alone."
+	]
+	quest.0000000000300056.quest_subtitle: "Multiply the rock"
+	quest.0000000000300056.title: "The Sieve"
+	quest.0000000000300057.quest_desc: ["Barrels make water from ice or dirt from compost. No rain down here, so fill them by hand or by pipe."]
+	quest.0000000000300057.quest_subtitle: "Compost and water"
+	quest.0000000000300057.title: "Barrel"
+	quest.0000000000300058.quest_desc: [
+		"A stone crucible melts cobblestone into lava. Heat it from below."
+		""
+		"This is your power source later, and you have infinite cobblestone, so it scales as far as you want."
+	]
+	quest.0000000000300058.quest_subtitle: "Renewable lava"
+	quest.0000000000300058.title: "The Crucible"
+	quest.0000000000300059.quest_desc: ["Iron mesh and above is where sieving stops being a novelty and starts beating a mine shaft."]
+	quest.0000000000300059.quest_subtitle: "The real drops start here"
+	quest.0000000000300059.title: "Iron Mesh"
+	quest.000000000030005A.quest_desc: ["Hammering by hand does not scale. Create, Mekanism and Industrial Foregoing all have crushers that do this automatically - come back here once you have one."]
+	quest.000000000030005A.quest_subtitle: "Automate the boring part"
+	quest.000000000030005A.title: "Industrial Quantities"
+	quest.0000000000300077.quest_desc: [
+		"Mineshafts generate inside the rock. Rails, chest minecarts, cobwebs and a great deal of cave spider."
+		""
+		"In a solid world you find these by tunnelling into them, which makes them feel genuinely discovered."
+	]
+	quest.0000000000300077.quest_subtitle: "Someone was here first"
+	quest.0000000000300077.title: "Abandoned Mineshaft"
+	quest.0000000000300078.quest_desc: ["A cobblestone-and-mossy room with a spawner and two chests. Light the floor around it and you control the spawn, or cage it and build a farm."]
+	quest.0000000000300078.quest_subtitle: "Free mob farm"
+	quest.0000000000300078.title: "Spawner Room"
+	quest.0000000000300079.quest_desc: [
+		"Villages still generate, which in a solid world means they are entombed in the stone."
+		""
+		"This is the oddest thing about caveblock and I have left it in on purpose. Dig one out."
+	]
+	quest.0000000000300079.quest_subtitle: "Strange place for it"
+	quest.0000000000300079.title: "Buried Village"
+	quest.000000000030007A.quest_desc: ["Somewhere in this rock is a stronghold with an end portal frame. You need it eventually."]
+	quest.000000000030007A.quest_subtitle: "The way to the End"
+	quest.000000000030007A.title: "Stronghold"
+	quest.000000000030007B.quest_desc: ["Trial chambers generate between y minus 40 and minus 20. Trial keys open their vaults."]
+	quest.000000000030007B.quest_subtitle: "Copper and danger"
+	quest.000000000030007B.title: "Trial Chambers"
+	quest.000000000030007C.quest_desc: [
+		"Ancient cities sit at a fixed y of minus 27, in the deep dark. Echo shards, enchanted books, and a sculk shrieker that will summon a Warden if you let it."
+		""
+		"Sneak. Break the shriekers. Bring wool."
+	]
+	quest.000000000030007C.quest_subtitle: "Do not wake it"
+	quest.000000000030007C.title: "Ancient City"
+	quest.000000000030007D.quest_desc: ["Sculk, catalysts, sensors and shriekers only drop with Silk Touch. Everything else gives you nothing."]
+	quest.000000000030007D.quest_subtitle: "Silk touch required"
+	quest.000000000030007D.title: "Harvest the Dark"
+	quest.000000000030007E.quest_desc: [
+		"There are 37 structure types enabled in this world and nearly all of them are now underground. Mansions, outposts, igloos, ruined portals, pyramids - all of it entombed."
+		""
+		"There is no checklist for this one. Go and find something strange."
+	]
+	quest.000000000030007E.quest_subtitle: "Keep digging"
+	quest.000000000030007E.title: "Deep Pockets"
+	quest.0000000000300093.quest_desc: [
+		"Read this before you plan your power."
+		""
+		"This world is solid rock to the build limit. There is no sky anywhere, which means **solar panels produce nothing and windmills will not turn**."
+		""
+		"Every watt you ever generate here comes from burning something or from heat. Plan around coal, lava and steam. The crucible turning infinite cobblestone into infinite lava is not a curiosity - it is your grid."
+	]
+	quest.0000000000300093.quest_subtitle: "A real constraint, not flavour"
+	quest.0000000000300093.title: "No Sun, No Wind"
+	quest.0000000000300094.quest_desc: ["Iron Furnaces upgrade through gold, diamond and netherite, and take augments for speed or fuel efficiency."]
+	quest.0000000000300094.quest_subtitle: "Faster, then fancier"
+	quest.0000000000300094.title: "A Better Furnace"
+	quest.0000000000300095.quest_desc: ["Immersive Engineering's coke oven turns coal into coke, which burns far longer, and creosote oil for treated wood."]
+	quest.0000000000300095.quest_subtitle: "Better fuel, free creosote"
+	quest.0000000000300095.title: "Coke Oven"
+	quest.0000000000300096.quest_desc: ["The IE blast furnace makes steel from iron. Steel gates most of the mid game."]
+	quest.0000000000300096.quest_subtitle: "Steel at last"
+	quest.0000000000300096.title: "Blast Furnace"
+	quest.0000000000300097.quest_desc: ["Stockpile it. Everything from here wants steel."]
+	quest.0000000000300097.quest_subtitle: "The universal ingredient"
+	quest.0000000000300097.title: "Steel"
+	quest.0000000000300098.quest_desc: ["Any generator will do - a thermoelectric, a furnace generator, a lava-fed setup. The point is to stop doing everything by hand."]
+	quest.0000000000300098.quest_subtitle: "Burn something"
+	quest.0000000000300098.title: "First Power"
+	quest.00000000003000A8.quest_desc: [
+		"Andesite plus iron nuggets. You will need hundreds."
+		""
+		"Hold W while looking at any Create block to open Ponder - it animates exactly how the thing works, and it is better than any wiki."
+	]
+	quest.00000000003000A8.quest_subtitle: "Create's bread and butter"
+	quest.00000000003000A8.title: "Andesite Alloy"
+	quest.00000000003000A9.quest_desc: ["Create runs on rotational force. Speed and stress are the two numbers that matter."]
+	quest.00000000003000A9.quest_subtitle: "Rotation is a resource"
+	quest.00000000003000A9.title: "Cogwheels"
+	quest.00000000003000AA.quest_desc: [
+		"A water wheel needs flowing water. You have no rivers, so build one - a source block and a slope is enough."
+		""
+		"This is the cleanest power in a world with no sky."
+	]
+	quest.00000000003000AA.quest_subtitle: "Quiet, endless torque"
+	quest.00000000003000AA.title: "Water Wheel"
+	quest.00000000003000AB.quest_desc: ["The press makes plates and, with a basin, compacts materials."]
+	quest.00000000003000AB.quest_subtitle: "Plates and compacting"
+	quest.00000000003000AB.title: "Mechanical Press"
+	quest.00000000003000AC.quest_desc: [
+		"A pair of crushing wheels turns cobblestone into gravel into sand without you holding a hammer."
+		""
+		"This is the moment Ex Deorum stops being manual labour."
+	]
+	quest.00000000003000AC.quest_subtitle: "Automate the hammer"
+	quest.00000000003000AC.title: "Crushing Wheels"
+	quest.00000000003000AD.quest_desc: ["Mixer plus basin gives you brass, and brass unlocks the second half of Create."]
+	quest.00000000003000AD.quest_subtitle: "Alloys and brass"
+	quest.00000000003000AD.title: "Mechanical Mixer"
+	quest.00000000003000AE.quest_desc: ["Belts, funnels and chutes. Build one line that takes cobblestone all the way to dust with no hands."]
+	quest.00000000003000AE.quest_subtitle: "Move it yourself"
+	quest.00000000003000AE.title: "Belts"
+	quest.00000000003000AF.quest_desc: ["Cobblestone generator, crushing wheels, sieves, sorting. Let it run while you go dig."]
+	quest.00000000003000AF.quest_subtitle: "The first real factory"
+	quest.00000000003000AF.title: "Fully Automatic"
+	quest.00000000003000C2.quest_desc: ["Osmium and steel. Casings are the chassis of every Mekanism machine."]
+	quest.00000000003000C2.quest_subtitle: "Mekanism begins"
+	quest.00000000003000C2.title: "Steel Casing"
+	quest.00000000003000C3.quest_desc: ["Enrichment doubles ore. Chained with purification, injection and crushing it goes to five times."]
+	quest.00000000003000C3.quest_subtitle: "Doubling, properly"
+	quest.00000000003000C3.title: "Enrichment Chamber"
+	quest.00000000003000C4.quest_desc: ["Infused and reinforced alloys gate the higher Mekanism tiers."]
+	quest.00000000003000C4.quest_subtitle: "Alloys"
+	quest.00000000003000C4.title: "Metallurgic Infuser"
+	quest.00000000003000C5.quest_desc: ["The digital miner pulls specified blocks out of a radius. In a world made of stone, pointing one at the walls is extremely effective."]
+	quest.00000000003000C5.quest_subtitle: "Mine without mining"
+	quest.00000000003000C5.title: "Digital Miner"
+	quest.00000000003000C6.quest_desc: ["Sieve dust for certus, or grow it in water with a crystal seed."]
+	quest.00000000003000C6.quest_subtitle: "Applied Energistics"
+	quest.00000000003000C6.title: "Certus Quartz"
+	quest.00000000003000C7.quest_desc: ["The inscriber stamps processors. The presses come from meteorites - which, in a solid world, are buried somewhere in your stone."]
+	quest.00000000003000C7.quest_subtitle: "Presses and circuits"
+	quest.00000000003000C7.title: "Inscriber"
+	quest.00000000003000C8.quest_desc: ["Storage, autocrafting, terminals. The end of chest sprawl."]
+	quest.00000000003000C8.quest_subtitle: "One network to hold it all"
+	quest.00000000003000C8.title: "ME Controller"
+	quest.00000000003000C9.quest_desc: ["Pattern up your common intermediates. From here the pack stops being about gathering."]
+	quest.00000000003000C9.quest_subtitle: "Ask for it and it appears"
+	quest.00000000003000C9.title: "Autocrafting"
+	quest.00000000003000DB.quest_desc: [
+		"Cast obsidian and light a portal."
+		""
+		"Fair warning: the Nether here is filled in as well - bedrock and 127 layers of netherrack. You will arrive inside solid rock and have to dig out. Bring a pickaxe and torches."
+	]
+	quest.00000000003000DB.quest_subtitle: "The nether is solid too"
+	quest.00000000003000DB.title: "A Door in the Rock"
+	quest.00000000003000DC.quest_desc: ["Netherrack is soft. Carve yourself a room and get oriented before anything finds you."]
+	quest.00000000003000DC.quest_subtitle: "Again"
+	quest.00000000003000DC.title: "Dig Out"
+	quest.00000000003000DD.quest_desc: ["Quartz is everywhere in netherrack and half of tech wants it."]
+	quest.00000000003000DD.quest_subtitle: "Buried in the red"
+	quest.00000000003000DD.title: "Nether Quartz"
+	quest.00000000003000DE.quest_desc: ["Fortresses still generate in the filled nether. Blaze rods, wither skeletons, nether wart."]
+	quest.00000000003000DE.quest_subtitle: "Entombed, like everything else"
+	quest.00000000003000DE.title: "Fortress"
+	quest.00000000003000DF.quest_desc: ["Deep in the netherrack. A digital miner set to ancient debris is an excellent use of an afternoon."]
+	quest.00000000003000DF.quest_subtitle: "The last tier"
+	quest.00000000003000DF.title: "Ancient Debris"
+	quest.00000000003000E0.quest_desc: ["Debris plus gold, then a smithing template from a bastion."]
+	quest.00000000003000E0.quest_subtitle: "Best in the game"
+	quest.00000000003000E0.title: "Netherite"
+	quest.00000000003000E1.quest_desc: ["Blaze powder plus ender pearls. You located the stronghold back in Buried Things - now open it."]
+	quest.00000000003000E1.quest_subtitle: "Find the stronghold you already found"
+	quest.00000000003000E1.title: "Eyes of Ender"
+	quest.00000000003000E2.quest_desc: ["The End is the only place in this world with open air above you. After a whole playthrough underground, that is the reward."]
+	quest.00000000003000E2.quest_subtitle: "An actual sky, at last"
+	quest.00000000003000E2.title: "The Dragon"
+	quest.00000000003000E3.quest_desc: ["End cities, end ships, and the only wings in the game."]
+	quest.00000000003000E3.quest_subtitle: "Flight"
+	quest.00000000003000E3.title: "Elytra"
+	quest.00000000003000E4.quest_desc: ["A nether star from the Wither, on a pyramid of your choosing. Down here a beacon beam has nowhere to go - which makes it a strange and good monument."]
+	quest.00000000003000E4.quest_subtitle: "A light in the deep"
+	quest.00000000003000E4.title: "Beacon"
+	quest.0000000000400002.quest_desc: [
+		"This is the Nether, and it is not a place you visited - it is where you live."
+		""
+		"There is no overworld above you. The sky is rock. Water you pour will hiss and vanish. If you sleep, the bed will kill you."
+		""
+		"Everything about this pack comes from those three facts. Work with them."
+	]
+	quest.0000000000400002.quest_subtitle: "There is no surface to go back to"
+	quest.0000000000400002.title: "You Woke Up Here"
+	quest.0000000000400003.quest_desc: ["Netherrack mines by hand, burns forever once lit, and is the floor of the entire world."]
+	quest.0000000000400003.quest_subtitle: "Your first building block"
+	quest.0000000000400003.title: "Soft Red Stone"
+	quest.0000000000400004.quest_desc: [
+		"Crimson and warped stems are the only wood here. Find a crimson or warped forest and cut one down."
+		""
+		"They do not burn, which makes them useless as fuel and excellent as scaffolding."
+	]
+	quest.0000000000400004.quest_subtitle: "Fungus counts"
+	quest.0000000000400004.title: "Wood, of a Sort"
+	quest.0000000000400005.quest_desc: ["Stems make planks, planks make a table. Now the game can begin."]
+	quest.0000000000400005.quest_subtitle: "Finally"
+	quest.0000000000400005.title: "Crafting Table"
+	quest.0000000000400006.quest_desc: ["There is no cobblestone in the Nether. Blackstone is the substitute - it crafts into stone tools and a furnace just fine."]
+	quest.0000000000400006.quest_subtitle: "Stone tools without stone"
+	quest.0000000000400006.title: "Blackstone"
+	quest.0000000000400007.quest_desc: ["Blackstone pickaxe. Everything below this point is gated on having one."]
+	quest.0000000000400007.quest_subtitle: "Quartz, gold, and eventually out"
+	quest.0000000000400007.title: "A Pickaxe"
+	quest.0000000000400008.quest_desc: ["Glowstone grows on the ceiling. It is light, it is a redstone component, and it is half of a respawn anchor."]
+	quest.0000000000400008.quest_subtitle: "Light you did not have to craft"
+	quest.0000000000400008.title: "Glowstone"
+	quest.0000000000400009.quest_desc: [
+		"There are no cows. Hoglins in crimson forests are your food supply, and they fight back."
+		""
+		"Cook the porkchop on a netherrack fire - you have infinite fuel."
+	]
+	quest.0000000000400009.quest_subtitle: "The only meat in hell"
+	quest.0000000000400009.title: "Hunt Hoglins"
+	quest.000000000040000A.quest_desc: ["Nether gravel patches give flint. Flint plus iron is a flint and steel, and you will want several."]
+	quest.000000000040000A.quest_subtitle: "Fire needs a striker"
+	quest.000000000040000A.title: "Gravel and Flint"
+	quest.000000000040000B.quest_desc: ["Nether quartz is everywhere and half of modded crafting wants it."]
+	quest.000000000040000B.quest_subtitle: "The common ore"
+	quest.000000000040000B.title: "Quartz"
+	quest.000000000040000C.quest_desc: ["Nether gold ore is common. Gold armour stops piglins attacking you on sight - wear at least one piece before you go near a bastion."]
+	quest.000000000040000C.quest_subtitle: "Wear it or get hunted"
+	quest.000000000040000C.title: "Gold"
+	quest.0000000000400025.quest_desc: [
+		"**Water evaporates.** Pouring a bucket here does nothing. Every recipe and farm that assumes a water source has to be rethought."
+		""
+		"**Beds explode.** Sleeping is not a mechanic in this pack. Do not test this."
+		""
+		"**Respawn anchors work.** They are your save point, and charging one costs glowstone."
+	]
+	quest.0000000000400025.quest_subtitle: "Read before you die"
+	quest.0000000000400025.title: "Three Rules"
+	quest.0000000000400026.quest_desc: [
+		"Crying obsidian plus glowstone. Crying obsidian comes from bartering with piglins or from bastion chests."
+		""
+		"Until you have one, every death sends you back to world spawn."
+	]
+	quest.0000000000400026.quest_subtitle: "A place to come back to"
+	quest.0000000000400026.title: "Respawn Anchor"
+	quest.0000000000400027.quest_desc: [
+		"Piglins trade gold ingots for a table of items including crying obsidian, ender pearls, fire charges, soul speed books and obsidian itself."
+		""
+		"This is one of only two reliable obsidian sources in the world."
+	]
+	quest.0000000000400027.quest_subtitle: "Throw gold at a piglin"
+	quest.0000000000400027.title: "Bartering"
+	quest.0000000000400028.quest_desc: [
+		"Ex Deorum's wooden crucible melts stems and planks into water, and it holds that water inside the block where the dimension cannot boil it off."
+		""
+		"This is how you get water at all. Everything downstream - sieving, concrete, coolant, potions - starts here."
+	]
+	quest.0000000000400028.quest_subtitle: "The only water that stays"
+	quest.0000000000400028.title: "Water in a Box"
+	quest.0000000000400029.quest_desc: ["A barrel holds water as a contained fluid too. Pair it with the crucible and you have a working water supply without a single placed source block."]
+	quest.0000000000400029.quest_subtitle: "Storage for the impossible"
+	quest.0000000000400029.title: "Barrels"
+	quest.000000000040002A.quest_desc: ["With water solved, Ex Deorum works normally. Sieve nether gravel, dust and soul sand for the resources this dimension does not generate."]
+	quest.000000000040002A.quest_subtitle: "Gravel into everything"
+	quest.000000000040002A.title: "Sieve"
+	quest.000000000040002B.quest_desc: ["There is no iron ore in the Nether. Every ingot you own until you escape comes out of a sieve."]
+	quest.000000000040002B.quest_subtitle: "Sieved, not mined"
+	quest.000000000040002B.title: "Iron Without an Overworld"
+	quest.0000000000400040.quest_desc: [
+		"Ruined portals are scattered through the Nether, and their frames are made of the one thing you cannot manufacture here."
+		""
+		"Mine every block of obsidian you find. This is the main route to your way out."
+	]
+	quest.0000000000400040.quest_subtitle: "Someone tried this before"
+	quest.0000000000400040.title: "Ruined Portals"
+	quest.0000000000400041.quest_desc: [
+		"Bastions hold the best loot in the dimension: crying obsidian, gilded blackstone, netherite upgrade templates, enchanted gear."
+		""
+		"Wear gold. Do not open chests in front of piglins. Have an exit."
+	]
+	quest.0000000000400041.quest_subtitle: "Gold, and a very bad idea"
+	quest.0000000000400041.title: "Bastion Remnant"
+	quest.0000000000400042.quest_desc: ["The netherite upgrade template only comes from bastion treasure rooms. You need one before any netherite gear exists."]
+	quest.0000000000400042.quest_subtitle: "Netherite needs it"
+	quest.0000000000400042.title: "Smithing Template"
+	quest.0000000000400043.quest_desc: ["Nether fortresses give blaze rods, wither skeletons, and nether wart - the base of every potion you will ever brew."]
+	quest.0000000000400043.quest_subtitle: "Blazes and wart"
+	quest.0000000000400043.title: "Fortress"
+	quest.0000000000400044.quest_desc: ["Nether wart grows on soul sand and needs no water at all. In a dimension that cannot hydrate farmland, it is the one crop that simply works."]
+	quest.0000000000400044.quest_subtitle: "Farming without water"
+	quest.0000000000400044.title: "Nether Wart"
+	quest.0000000000400045.quest_desc: ["Three skulls and four soul sand make a Wither. Collect them whenever you see one - the drop rate is miserable."]
+	quest.0000000000400045.quest_subtitle: "For much later"
+	quest.0000000000400045.title: "Wither Skeleton Skull"
+	quest.0000000000400046.quest_desc: ["Nether fossils in soul sand valleys are bone blocks. Bone meal is how you grow anything here."]
+	quest.0000000000400046.quest_subtitle: "Bone meal at last"
+	quest.0000000000400046.title: "Nether Fossil"
+	quest.0000000000400047.quest_desc: ["Netherite's raw material, buried deep in the netherrack. You live on top of it - there is no trip to make."]
+	quest.0000000000400047.quest_subtitle: "It was always here"
+	quest.0000000000400047.title: "Ancient Debris"
+	quest.000000000040005C.quest_desc: [
+		"A portal frame needs ten obsidian. You cannot cast it - placed water evaporates before it ever touches lava."
+		""
+		"So every block has to be scavenged: ruined portal frames, bastion chests, or piglin bartering. That scarcity is the whole first act."
+	]
+	quest.000000000040005C.quest_subtitle: "The real gate of this pack"
+	quest.000000000040005C.title: "Ten Obsidian"
+	quest.000000000040005D.quest_desc: ["Iron from your sieve, flint from nether gravel."]
+	quest.000000000040005D.quest_subtitle: "Light it"
+	quest.000000000040005D.title: "Flint and Steel"
+	quest.000000000040005E.quest_desc: [
+		"Build the frame, strike it, and look at what is on the other side."
+		""
+		"In this world the nether portal does not lead down into hell. You are already there. It leads out."
+	]
+	quest.000000000040005E.quest_subtitle: "Somewhere else exists"
+	quest.000000000040005E.title: "Light the Portal"
+	quest.000000000040005F.quest_desc: ["Compasses spin uselessly in a nether-type dimension. A lodestone and a lodestone compass is the only reliable way to find your way home."]
+	quest.000000000040005F.quest_subtitle: "Compasses lie here"
+	quest.000000000040005F.title: "Lodestone"
+	quest.000000000040006A.quest_desc: [
+		"Through the portal is a normal world - sky, weather, water that stays where you put it, and a sun that sets."
+		""
+		"It is reached the way the Nether normally is, which is the joke of this pack. Everything you could not do in hell, you do here."
+	]
+	quest.000000000040006A.quest_subtitle: "You have never seen this"
+	quest.000000000040006A.title: "Grass"
+	quest.000000000040006B.quest_desc: ["The first genuinely emotional moment in this pack."]
+	quest.000000000040006B.quest_subtitle: "Place a bucket and watch it stay"
+	quest.000000000040006B.title: "Actual Water"
+	quest.000000000040006C.quest_desc: ["Beds work here. Wool comes from sheep, which are animals, which also now exist."]
+	quest.000000000040006C.quest_subtitle: "Without dying"
+	quest.000000000040006C.title: "Sleep"
+	quest.000000000040006D.quest_desc: ["Wheat, carrots, potatoes - all the things that were impossible on the other side."]
+	quest.000000000040006D.quest_subtitle: "Hydrated, for once"
+	quest.000000000040006D.title: "Farmland"
+	quest.000000000040006E.quest_desc: ["Crimson stems never burned. Oak does. Your fuel and smelting problems change completely."]
+	quest.000000000040006E.quest_subtitle: "Wood that burns"
+	quest.000000000040006E.title: "Real Trees"
+	quest.000000000040006F.quest_desc: ["Overworld ore generation, strongholds, caves, the lot. After the Nether it feels like cheating."]
+	quest.000000000040006F.quest_subtitle: "Mining, the normal way"
+	quest.000000000040006F.title: "Iron in the Ground"
+	quest.0000000000400070.quest_desc: [
+		"Most of your industry should probably stay in the Nether, where lava and netherrack are infinite. The green world is for food, water and wood."
+		""
+		"That split is the pack. Build both."
+	]
+	quest.0000000000400070.quest_subtitle: "Keep both"
+	quest.0000000000400070.title: "Two Homes"
+	quest.0000000000400082.quest_desc: ["Hold W over any Create block to open Ponder - it animates exactly how the thing works."]
+	quest.0000000000400082.quest_subtitle: "Create begins"
+	quest.0000000000400082.title: "Andesite Alloy"
+	quest.0000000000400083.quest_desc: ["Speed and stress are the two numbers that matter."]
+	quest.0000000000400083.quest_subtitle: "Rotation"
+	quest.0000000000400083.title: "Cogwheels"
+	quest.0000000000400084.quest_desc: [
+		"Lava is everywhere here, and it is the best fuel and the best coolant source in the game."
+		""
+		"A pump and a tank in the Nether feeding machines through the portal is the natural shape of this pack's power grid."
+	]
+	quest.0000000000400084.quest_subtitle: "The one thing hell has plenty of"
+	quest.0000000000400084.title: "Infinite Lava"
+	quest.0000000000400085.quest_desc: ["Plates and compacting, the backbone of Create processing."]
+	quest.0000000000400085.quest_subtitle: "Plates"
+	quest.0000000000400085.title: "Mechanical Press"
+	quest.0000000000400086.quest_desc: ["Crush netherrack, gravel and ores. Feed the output into your sieves."]
+	quest.0000000000400086.quest_subtitle: "Ore doubling"
+	quest.0000000000400086.title: "Crushing Wheels"
+	quest.0000000000400087.quest_desc: ["Immersive Engineering's coke oven and blast furnace give you steel, which gates most of the mid game."]
+	quest.0000000000400087.quest_subtitle: "Fuel that is not netherrack"
+	quest.0000000000400087.title: "Coke Oven"
+	quest.0000000000400088.quest_desc: ["Stockpile it."]
+	quest.0000000000400088.quest_subtitle: "Universal ingredient"
+	quest.0000000000400088.title: "Steel"
+	quest.0000000000400089.quest_desc: ["One line that takes a raw nether resource to a finished product with no clicking."]
+	quest.0000000000400089.quest_subtitle: "Stop doing it by hand"
+	quest.0000000000400089.title: "Automate Something"
+	quest.000000000040009C.quest_desc: ["Osmium and steel. The chassis of every machine."]
+	quest.000000000040009C.quest_subtitle: "Mekanism"
+	quest.000000000040009C.title: "Steel Casing"
+	quest.000000000040009D.quest_desc: ["Chain enrichment, purification, injection and crushing for five times ore output."]
+	quest.000000000040009D.quest_subtitle: "Doubling"
+	quest.000000000040009D.title: "Enrichment Chamber"
+	quest.000000000040009E.quest_desc: ["Infused and reinforced alloys gate the higher tiers."]
+	quest.000000000040009E.quest_subtitle: "Alloys"
+	quest.000000000040009E.title: "Metallurgic Infuser"
+	quest.000000000040009F.quest_desc: ["Sieve for certus or grow it in water - which you now have, on one side of the portal at least."]
+	quest.000000000040009F.quest_subtitle: "Applied Energistics"
+	quest.000000000040009F.title: "Certus Quartz"
+	quest.00000000004000A0.quest_desc: ["Presses come from meteorites, which generate in the green world rather than in hell."]
+	quest.00000000004000A0.quest_subtitle: "Circuits"
+	quest.00000000004000A0.title: "Inscriber"
+	quest.00000000004000A1.quest_desc: ["Storage and autocrafting across both dimensions."]
+	quest.00000000004000A1.quest_subtitle: "One network"
+	quest.00000000004000A1.title: "ME Controller"
+	quest.00000000004000A2.quest_desc: ["Ancient debris, gold, and that bastion template."]
+	quest.00000000004000A2.quest_subtitle: "You live on the stuff"
+	quest.00000000004000A2.title: "Netherite"
+	quest.00000000004000A3.quest_desc: ["Pattern your intermediates and stop crafting by hand."]
+	quest.00000000004000A3.quest_subtitle: "Ask and receive"
+	quest.00000000004000A3.title: "Autocrafting"
+	quest.00000000004000B6.quest_desc: ["Blaze rods from the fortress you looted in chapter three, pearls from piglin bartering or from endermen - who are everywhere in the Nether."]
+	quest.00000000004000B6.quest_subtitle: "Blaze powder and pearls"
+	quest.00000000004000B6.title: "Eyes of Ender"
+	quest.00000000004000B7.quest_desc: ["Strongholds generate in overworld terrain, which here means through the portal. Throw the eyes there, not in the Nether."]
+	quest.00000000004000B7.quest_subtitle: "In the green world"
+	quest.00000000004000B7.title: "Stronghold"
+	quest.00000000004000B8.quest_desc: ["The End is untouched by this pack's swap - it is exactly where and what it always was."]
+	quest.00000000004000B8.quest_subtitle: "The third world"
+	quest.00000000004000B8.title: "The Dragon"
+	quest.00000000004000B9.quest_desc: ["End cities and ships."]
+	quest.00000000004000B9.quest_subtitle: "Wings"
+	quest.00000000004000B9.title: "Elytra"
+	quest.00000000004000BA.quest_desc: ["Three wither skeleton skulls and four soul sand. You have been collecting them since chapter three."]
+	quest.00000000004000BA.quest_subtitle: "Those skulls, finally"
+	quest.00000000004000BA.title: "The Wither"
+	quest.00000000004000BB.quest_desc: ["Put it on the Nether side. A beacon beam under a stone sky is a strange and good monument to a world that tried to kill you."]
+	quest.00000000004000BB.quest_subtitle: "A light in hell"
+	quest.00000000004000BB.title: "Beacon"
+	quest.0000000000500002.quest_desc: [
+		"A sand island barely above the waterline, one oak tree, and a chest."
+		""
+		"There is no other land anywhere. The sea floor is about thirty blocks down and it goes on forever in every direction. Everything you need is either on this island, under the water, or inside something that lives down there."
+	]
+	quest.0000000000500002.quest_subtitle: "The rest is water"
+	quest.0000000000500002.title: "One Island"
+	quest.0000000000500003.quest_desc: ["Cut it down and replant immediately. Harvest the leaves for extra saplings before they rot."]
+	quest.0000000000500003.quest_subtitle: "Do not waste it"
+	quest.0000000000500003.title: "The Only Tree"
+	quest.0000000000500004.quest_desc: [
+		"In most packs water is the scarce half of a cobblestone generator. Here you are standing in an infinite supply of it."
+		""
+		"Pour the lava bucket next to the sea and start mining."
+	]
+	quest.0000000000500004.quest_subtitle: "The easiest cobble generator you will ever build"
+	quest.0000000000500004.title: "Lava Meets Water"
+	quest.0000000000500005.quest_desc: ["Cobblestone solves tools, a furnace, and most early recipes."]
+	quest.0000000000500005.quest_subtitle: "Then a furnace"
+	quest.0000000000500005.title: "Stone Tools"
+	quest.0000000000500006.quest_desc: ["Gravel and sand cover the whole sea floor. Sand is glass, and glass is how you build anything underwater without drowning."]
+	quest.0000000000500006.quest_subtitle: "The seabed is made of it"
+	quest.0000000000500006.title: "Sand and Glass"
+	quest.0000000000500007.quest_desc: [
+		"No land means no land animals. Cod and salmon are your food supply until you automate something better."
+		""
+		"Fishing also pulls up treasure - including nautilus shells, which you will need badly later."
+	]
+	quest.0000000000500007.quest_subtitle: "There are no cows"
+	quest.0000000000500007.title: "Fishing"
+	quest.0000000000500008.quest_desc: ["Dried kelp blocks are a renewable furnace fuel, and kelp grows absurdly fast. In a world with one tree, this matters more than it sounds."]
+	quest.0000000000500008.quest_subtitle: "Fuel that grows itself"
+	quest.0000000000500008.title: "Kelp"
+	quest.0000000000500009.quest_desc: ["Sixteen dirt in the chest is all the soil in the world until you compost more. Sugar cane grows on sand beside water, which you have in unlimited supply."]
+	quest.0000000000500009.quest_subtitle: "Dirt is precious"
+	quest.0000000000500009.title: "Something Green"
+	quest.000000000050000A.quest_desc: ["You will spend this entire pack on, in or under water. Make a boat early."]
+	quest.000000000050000A.quest_subtitle: "Leave the island"
+	quest.000000000050000A.title: "A Boat"
+	quest.0000000000500021.quest_desc: [
+		"The sea floor sits around y 34. That is a long way down and back on one lungful."
+		""
+		"Everything structural in this pack - ores, structures, sand in bulk - is down there."
+	]
+	quest.0000000000500021.quest_subtitle: "Hold your breath"
+	quest.0000000000500021.title: "Thirty Blocks Down"
+	quest.0000000000500022.quest_desc: [
+		"A door, a sign or a ladder placed underwater holds an air bubble. So does a bucket of air from any source block."
+		""
+		"This is how you work on the seabed before you have enchantments."
+	]
+	quest.0000000000500022.quest_subtitle: "The oldest trick"
+	quest.0000000000500022.title: "Air Pockets"
+	quest.0000000000500023.quest_desc: ["Under the gravel and sand is forty-five layers of stone, then fifty of deepslate, then bedrock. Real ore generation, all of it underwater."]
+	quest.0000000000500023.quest_subtitle: "Stone at last"
+	quest.0000000000500023.title: "Mine the Floor"
+	quest.0000000000500024.quest_desc: ["Ore generates normally down there. The only difficulty is breathing."]
+	quest.0000000000500024.quest_subtitle: "Everything wants it"
+	quest.0000000000500024.title: "Iron"
+	quest.0000000000500025.quest_desc: [
+		"Turtle scutes come from baby turtles growing up on sand beaches - which here means your island. Breed turtles with seagrass."
+		""
+		"The helmet gives water breathing, and it stacks with Respiration."
+	]
+	quest.0000000000500025.quest_subtitle: "Ten extra seconds"
+	quest.0000000000500025.title: "Turtle Helmet"
+	quest.0000000000500026.quest_desc: [
+		"Respiration III triples your breath. Aqua Affinity removes the underwater mining penalty. Depth Strider makes you able to move at all."
+		""
+		"Get all three before attempting a monument."
+	]
+	quest.0000000000500026.quest_subtitle: "The real fix"
+	quest.0000000000500026.title: "Respiration and Aqua Affinity"
+	quest.0000000000500027.quest_desc: ["Ink sacs for books and signs, glow ink for item frames. They are everywhere and harmless."]
+	quest.0000000000500027.quest_subtitle: "The only easy mob"
+	quest.0000000000500027.title: "Glow Squid and Ink"
+	quest.0000000000500038.quest_desc: ["Cobblestone to gravel to sand to dust. Your generator feeds it and the sea floor supplements it."]
+	quest.0000000000500038.quest_subtitle: "Cobble into the chain"
+	quest.0000000000500038.title: "Hammer"
+	quest.0000000000500039.quest_desc: ["With exactly one tree, sapling multiplication is not optional."]
+	quest.0000000000500039.quest_subtitle: "Saplings and silkworms"
+	quest.0000000000500039.title: "Crook"
+	quest.000000000050003A.quest_desc: [
+		"No land animals means no wool and no leather from the usual places."
+		""
+		"Silkworms infest leaves, infested leaves become string, and string becomes wool. That is the only route to a bed in this pack."
+	]
+	quest.000000000050003A.quest_subtitle: "There are no sheep"
+	quest.000000000050003A.title: "Silkworms Into String"
+	quest.000000000050003B.quest_desc: ["Three wool and three planks. It took a whole chain of silkworms to get here."]
+	quest.000000000050003B.quest_subtitle: "Earned"
+	quest.000000000050003B.title: "A Bed"
+	quest.000000000050003C.quest_desc: ["Sieving sand, gravel and dust is how you get the ores the seabed is stingy with."]
+	quest.000000000050003C.quest_subtitle: "Ore from sand"
+	quest.000000000050003C.title: "Sieve"
+	quest.000000000050003D.quest_desc: ["Each mesh tier unlocks more of the drop table. Netherite mesh is the end of the line."]
+	quest.000000000050003D.quest_subtitle: "Flint, iron, gold, diamond"
+	quest.000000000050003D.title: "Better Meshes"
+	quest.000000000050003E.quest_desc: ["Compost in a barrel makes dirt, which is the thing this pack is actually short of. A stone crucible makes lava from cobblestone, which is a second generator."]
+	quest.000000000050003E.quest_subtitle: "Dirt and lava"
+	quest.000000000050003E.title: "Barrel and Crucible"
+	quest.000000000050003F.quest_desc: ["Sand is infinite. Stone is infinite. Dirt is not - every block of it is composted from something you grew."]
+	quest.000000000050003F.quest_subtitle: "The real bottleneck"
+	quest.000000000050003F.title: "Soil"
+	quest.0000000000500054.quest_desc: ["Shipwrecks hold supply, treasure and map chests. The treasure map is what leads you to buried treasure."]
+	quest.0000000000500054.quest_subtitle: "Somebody else sank first"
+	quest.0000000000500054.title: "Shipwreck"
+	quest.0000000000500055.quest_desc: ["Scattered stone and sandstone ruins with small chests and drowned. Also a source of buried treasure maps."]
+	quest.0000000000500055.quest_subtitle: "Cold and warm"
+	quest.0000000000500055.title: "Ocean Ruins"
+	quest.0000000000500056.quest_desc: [
+		"Follow the map. Dig."
+		""
+		"This is the single source of Heart of the Sea in the game - there is no recipe, no drop and no trade. Without it there is no conduit, and without a conduit the deep ocean stays hostile forever."
+	]
+	quest.0000000000500056.quest_subtitle: "The only Heart of the Sea"
+	quest.0000000000500056.title: "Buried Treasure"
+	quest.0000000000500057.quest_desc: [
+		"Nautilus shells come from fishing treasure catches and from drowned that spawn holding one."
+		""
+		"A conduit needs eight, plus the heart."
+	]
+	quest.0000000000500057.quest_subtitle: "Fish for them"
+	quest.0000000000500057.title: "Eight Nautilus Shells"
+	quest.0000000000500058.quest_desc: ["A small fraction of drowned spawn with a trident. Loyalty, Riptide and Impaling make it the best weapon in this pack by a distance - Riptide in particular turns rain and water into travel."]
+	quest.0000000000500058.quest_subtitle: "Rare, and worth it"
+	quest.0000000000500058.title: "Drowned and Tridents"
+	quest.0000000000500059.quest_desc: [
+		"Elder guardians inflict Mining Fatigue, which is specifically designed to ruin your day. Bring milk, or kill all three."
+		""
+		"Inside: prismarine in bulk, sea lanterns, and eight gold blocks."
+	]
+	quest.0000000000500059.quest_subtitle: "Three guardians and a lot of prismarine"
+	quest.0000000000500059.title: "Ocean Monument"
+	quest.000000000050005A.quest_desc: [
+		"Elder guardians drop a wet sponge. Smelt it and it soaks up water in a radius."
+		""
+		"Sponges are how you hollow out a monument and turn it into a base."
+	]
+	quest.000000000050005A.quest_subtitle: "Dry rooms, finally"
+	quest.000000000050005A.title: "Sponges"
+	quest.000000000050006B.quest_desc: [
+		"Heart of the Sea plus eight nautilus shells. Frame it in prismarine and it grants water breathing, night vision underwater and haste in a huge radius."
+		""
+		"Everything in this pack gets easier the moment one is running."
+	]
+	quest.000000000050006B.quest_subtitle: "Stop drowning"
+	quest.000000000050006B.title: "Conduit"
+	quest.000000000050006C.quest_desc: ["A conduit at maximum needs a full prismarine frame. The range reaches a hundred blocks, which is enough to cover a serious build site."]
+	quest.000000000050006C.quest_subtitle: "Forty-two blocks"
+	quest.000000000050006C.title: "Full Power"
+	quest.000000000050006D.quest_desc: ["Sponges, glass and a conduit. Build something on the seabed that you can walk around in."]
+	quest.000000000050006D.quest_subtitle: "Because you can"
+	quest.000000000050006D.title: "An Underwater Base"
+	quest.000000000050006E.quest_desc: ["Warm oceans grow coral. It dies out of water unless you silk-touch it, and it is the only real colour in this world."]
+	quest.000000000050006E.quest_subtitle: "Warm ocean only"
+	quest.000000000050006E.title: "Coral Reef"
+	quest.0000000000500078.quest_desc: ["Hold W over any Create block to open Ponder."]
+	quest.0000000000500078.quest_subtitle: "Create begins"
+	quest.0000000000500078.title: "Andesite Alloy"
+	quest.0000000000500079.quest_desc: [
+		"Create's water wheels want flowing water. You live in an ocean."
+		""
+		"This is the one place where the pack hands you something: a wall of water wheels is trivially cheap here, and it is the right answer."
+	]
+	quest.0000000000500079.quest_subtitle: "The easiest power in any pack"
+	quest.0000000000500079.title: "Water Wheels, Obviously"
+	quest.000000000050007A.quest_desc: ["Plates and compacting."]
+	quest.000000000050007A.quest_subtitle: "Plates"
+	quest.000000000050007A.title: "Mechanical Press"
+	quest.000000000050007B.quest_desc: ["Cobblestone to gravel to sand, with no clicking."]
+	quest.000000000050007B.quest_subtitle: "Automate the hammer"
+	quest.000000000050007B.title: "Crushing Wheels"
+	quest.000000000050007C.quest_desc: ["Brass unlocks the second half of Create."]
+	quest.000000000050007C.quest_subtitle: "Brass"
+	quest.000000000050007C.title: "Mechanical Mixer"
+	quest.000000000050007D.quest_desc: ["Cobble generator into crushing wheels into sieves into sorted output."]
+	quest.000000000050007D.quest_subtitle: "Let it run"
+	quest.000000000050007D.title: "Automate the Island"
+	quest.000000000050008C.quest_desc: ["Osmium and steel."]
+	quest.000000000050008C.quest_subtitle: "Mekanism"
+	quest.000000000050008C.title: "Steel Casing"
+	quest.000000000050008D.quest_desc: ["Then purification, injection and crushing for five times."]
+	quest.000000000050008D.quest_subtitle: "Doubling"
+	quest.000000000050008D.title: "Enrichment Chamber"
+	quest.000000000050008E.quest_desc: ["Splits water into hydrogen and oxygen. You have an ocean, so this is effectively free fuel and the cleanest power in the pack."]
+	quest.000000000050008E.quest_subtitle: "Water into fuel"
+	quest.000000000050008E.title: "Electrolytic Separator"
+	quest.000000000050008F.quest_desc: ["Grow it in water, which is not exactly a constraint here."]
+	quest.000000000050008F.quest_subtitle: "Applied Energistics"
+	quest.000000000050008F.title: "Certus Quartz"
+	quest.0000000000500090.quest_desc: ["Presses come from meteorites, which land on the seabed."]
+	quest.0000000000500090.quest_subtitle: "Circuits"
+	quest.0000000000500090.title: "Inscriber"
+	quest.0000000000500091.quest_desc: ["Storage and autocrafting."]
+	quest.0000000000500091.quest_subtitle: "One network"
+	quest.0000000000500091.title: "ME Controller"
+	quest.0000000000500092.quest_desc: ["Pattern your intermediates."]
+	quest.0000000000500092.quest_subtitle: "Ask and receive"
+	quest.0000000000500092.title: "Autocrafting"
+	quest.00000000005000A2.quest_desc: ["The Nether here is untouched vanilla - this pack only rewrites the overworld. After an ocean, dry ground is a novelty."]
+	quest.00000000005000A2.quest_subtitle: "Normal, for once"
+	quest.00000000005000A2.title: "The Nether"
+	quest.00000000005000A3.quest_desc: ["Rods, wart, wither skeletons."]
+	quest.00000000005000A3.quest_subtitle: "Fortress business as usual"
+	quest.00000000005000A3.title: "Blaze Rods"
+	quest.00000000005000A4.quest_desc: ["Debris, gold, and a bastion template."]
+	quest.00000000005000A4.quest_subtitle: "Ancient debris"
+	quest.00000000005000A4.title: "Netherite"
+	quest.00000000005000A5.quest_desc: ["Strongholds generate in the overworld, and your overworld is entirely ocean. The portal room will be under the sea floor - bring a conduit and sponges."]
+	quest.00000000005000A5.quest_subtitle: "Where is the stronghold?"
+	quest.00000000005000A5.title: "Eyes of Ender"
+	quest.00000000005000A6.quest_desc: ["This is the moment the premise pays off properly. Everything you built for breathing and draining exists so you can reach a room that is normally a five minute walk."]
+	quest.00000000005000A6.quest_subtitle: "Dig it out"
+	quest.00000000005000A6.title: "An Underwater Stronghold"
+	quest.00000000005000A7.quest_desc: ["The End is vanilla and completely dry."]
+	quest.00000000005000A7.quest_subtitle: "Dry land at last"
+	quest.00000000005000A7.title: "The Dragon"
+	quest.00000000005000A8.quest_desc: ["After a whole pack of swimming, this is the reward."]
+	quest.00000000005000A8.quest_subtitle: "Fly over your ocean"
+	quest.00000000005000A8.title: "Elytra"
+	quest.0000000000600005.quest_desc: [
+		"You wake up in a city that stopped. Towers, streets, bridges, highways - all of it standing, none of it occupied."
+		""
+		"This pack is not about mining. Almost everything you need for the first few hours is already built, in a building, behind a door. Your job is to take it, make somewhere safe, and work out what you want this place to become."
+	]
+	quest.0000000000600005.quest_subtitle: "The city is already yours"
+	quest.0000000000600005.title: "Nobody Left"
+	quest.0000000000600006.quest_desc: [
+		"Ruined buildings are dark, enclosed, and enormous. They spawn mobs on every unlit floor, and the streets funnel them straight to you."
+		""
+		"Light is not decoration in this pack. Light the floor you sleep on before dark, every time."
+	]
+	quest.0000000000600006.quest_subtitle: "Every room is a spawner"
+	quest.0000000000600006.title: "The City at Night"
+	quest.0000000000600007.quest_desc: ["Pick a room, wall the holes, light it, put a door on it. It does not have to be good yet."]
+	quest.0000000000600007.quest_subtitle: "Anything is better than outside"
+	quest.0000000000600007.title: "A Door That Closes"
+	quest.0000000000600008.quest_desc: [
+		"Buildings are made of concrete, terracotta, bricks, glass and iron bars - all of it already placed and all of it yours."
+		""
+		"A pickaxe pays for itself in the first stairwell."
+	]
+	quest.0000000000600008.quest_subtitle: "Free building material"
+	quest.0000000000600008.title: "Salvage"
+	quest.0000000000600009.quest_desc: ["No dye, no sand, no mixing. Just break walls."]
+	quest.0000000000600009.quest_subtitle: "Hundreds of it, for free"
+	quest.0000000000600009.title: "Concrete"
+	quest.000000000060000A.quest_desc: ["Every tower is mostly glass. Silk touch is worth getting early purely for this."]
+	quest.000000000060000A.quest_subtitle: "Windows everywhere"
+	quest.000000000060000A.title: "Glass"
+	quest.000000000060000B.quest_desc: ["The default city profile leaves wilderness between the cities. That is where animals, crops and trees are."]
+	quest.000000000060000B.quest_subtitle: "The wild is still out there"
+	quest.000000000060000B.title: "Something to Eat"
+	quest.000000000060000C.quest_desc: ["Iron bars, doors, rails, anvils and blast furnaces are all over the buildings. You can be in full iron before you dig a single shaft."]
+	quest.000000000060000C.quest_subtitle: "From the city, not the ground"
+	quest.000000000060000C.title: "Iron"
+	quest.0000000000600020.quest_desc: ["Lost Cities places its own loot chests inside buildings, separate from vanilla structure loot. They are the reason to clear a tower floor by floor."]
+	quest.0000000000600020.quest_subtitle: "Someone left in a hurry"
+	quest.0000000000600020.title: "City Chests"
+	quest.0000000000600021.quest_desc: ["Library buildings are full of bookshelves. Apotheosis enchanting wants a great many of them, and here you do not have to farm a single sugar cane for it."]
+	quest.0000000000600021.quest_subtitle: "Bookshelves by the hundred"
+	quest.0000000000600021.title: "Libraries"
+	quest.0000000000600022.quest_desc: ["There is a rail network beneath the cities with its own dungeons and its own loot table. Follow the tracks down."]
+	quest.0000000000600022.quest_subtitle: "Under the streets"
+	quest.0000000000600022.title: "Rail Dungeons"
+	quest.0000000000600023.quest_desc: ["Apartment buildings come furnished. You will find beds long before you find sheep."]
+	quest.0000000000600023.quest_subtitle: "Already made"
+	quest.0000000000600023.title: "Beds"
+	quest.0000000000600024.quest_desc: [
+		"This pack ships an Explorer's Compass and a Nature's Compass. One finds structures, the other finds biomes."
+		""
+		"In a world this uniform they are the difference between exploring and getting lost."
+	]
+	quest.0000000000600024.quest_subtitle: "Stop wandering"
+	quest.0000000000600024.title: "Explorer's Compass"
+	quest.0000000000600025.quest_desc: ["Cities are far apart. Put a waystone in each one you clear and the map starts to feel like a network instead of a slog."]
+	quest.0000000000600025.quest_subtitle: "Link the cities"
+	quest.0000000000600025.title: "Waystones"
+	quest.0000000000600026.quest_desc: ["Sophisticated Storage barrels with upgrades will save you more time than any other early investment."]
+	quest.0000000000600026.quest_subtitle: "Scavenging produces a lot of junk"
+	quest.0000000000600026.title: "Somewhere to Put It"
+	quest.0000000000600027.quest_desc: ["Pick one building and take everything - blocks, loot, furniture, the lot."]
+	quest.0000000000600027.quest_subtitle: "Strip a whole tower"
+	quest.0000000000600027.title: "A Serious Haul"
+	quest.000000000060003A.quest_desc: [
+		"Find a building you actually like the shape of. Height, windows, a roof you can land on."
+		""
+		"This is the part of the pack that is closest to just building - the city gives you a shell and you decide what it becomes."
+	]
+	quest.000000000060003A.quest_subtitle: "This one is yours"
+	quest.000000000060003A.title: "Choose a Tower"
+	quest.000000000060003B.quest_desc: ["Light every floor, wall every hole, and check the basement. A cleared building stops spawning things in the night."]
+	quest.000000000060003B.quest_subtitle: "Floor by floor"
+	quest.000000000060003B.title: "Clear It"
+	quest.000000000060003C.quest_desc: ["Supplementaries has shelves, sconces, signs, flags and pedestals. Farmer's Delight has a kitchen. Use them."]
+	quest.000000000060003C.quest_subtitle: "Make it somewhere you want to be"
+	quest.000000000060003C.title: "Furnish It"
+	quest.000000000060003D.quest_desc: ["Rooftops are flat, lit and safe. They are the obvious place for a farm in a city full of things that bite."]
+	quest.000000000060003D.quest_subtitle: "A roof is a field"
+	quest.000000000060003D.title: "Food Security"
+	quest.000000000060003E.quest_desc: ["Apotheosis turns enchanting into a real system - bookshelf variety matters, not just count. The libraries you looted are the whole reason this is cheap."]
+	quest.000000000060003E.quest_subtitle: "All those bookshelves"
+	quest.000000000060003E.title: "Enchanting Table"
+	quest.000000000060003F.quest_desc: ["A lit, furnished, defended building with a bed and a waystone in it."]
+	quest.000000000060003F.quest_subtitle: "Sleep somewhere you built"
+	quest.000000000060003F.title: "Home"
+	quest.000000000060004E.quest_desc: ["Hold W over any Create block to open Ponder - it animates exactly how the thing works."]
+	quest.000000000060004E.quest_subtitle: "Create begins"
+	quest.000000000060004E.title: "Andesite Alloy"
+	quest.000000000060004F.quest_desc: ["Speed and stress are the two numbers that matter."]
+	quest.000000000060004F.quest_subtitle: "Rotation"
+	quest.000000000060004F.title: "Cogwheels"
+	quest.0000000000600050.quest_desc: [
+		"A windmill needs open sky and height. You own a tower."
+		""
+		"Putting the pack's power source on a skyscraper roof is the single most thematic thing you can do here."
+	]
+	quest.0000000000600050.quest_subtitle: "The city was built for this"
+	quest.0000000000600050.title: "Windmills on the Roof"
+	quest.0000000000600051.quest_desc: ["Plates and compacting."]
+	quest.0000000000600051.quest_subtitle: "Plates"
+	quest.0000000000600051.title: "Mechanical Press"
+	quest.0000000000600052.quest_desc: ["Crushing concrete, terracotta and stone back into usable material turns demolition into a resource loop."]
+	quest.0000000000600052.quest_subtitle: "Process the rubble"
+	quest.0000000000600052.title: "Crushing Wheels"
+	quest.0000000000600053.quest_desc: ["Create's trains and the city's rail network were made for each other. Link two cities by track."]
+	quest.0000000000600053.quest_subtitle: "The rails are already there"
+	quest.0000000000600053.title: "Trains"
+	quest.0000000000600054.quest_desc: ["A contraption lift in your own tower. Practical, and the kind of thing this pack exists for."]
+	quest.0000000000600054.quest_subtitle: "Twelve floors is a lot of stairs"
+	quest.0000000000600054.title: "An Elevator"
+	quest.0000000000600064.quest_desc: ["Cellars, sewers, rail tunnels and whatever the buildings were standing on."]
+	quest.0000000000600064.quest_subtitle: "The city goes down as well as up"
+	quest.0000000000600064.title: "Into the Basements"
+	quest.0000000000600065.quest_desc: ["Dungeons Arise, Structory and the vanilla structures all still generate between cities. Use the Explorer's Compass."]
+	quest.0000000000600065.quest_subtitle: "The wilderness kept its secrets"
+	quest.0000000000600065.title: "Not Everything Is City"
+	quest.0000000000600066.quest_desc: ["The Twilight Forest portal still works, and the forest enforces its own boss order regardless of what happened to this place."]
+	quest.0000000000600066.quest_subtitle: "Another world entirely"
+	quest.0000000000600066.title: "Into the Twilight"
+	quest.0000000000600067.quest_desc: ["A second underground dimension with its own materials and its own threats."]
+	quest.0000000000600067.quest_subtitle: "Down and sideways"
+	quest.0000000000600067.title: "The Undergarden"
+	quest.0000000000600068.quest_desc: ["Cataclysm's bosses are the hardest fights in the pack and they guard the best gear."]
+	quest.0000000000600068.quest_subtitle: "Cataclysm"
+	quest.0000000000600068.title: "Something Enormous"
+	quest.0000000000600069.quest_desc: ["Affixed weapons and armour from Apotheosis are a different power curve to vanilla. Reforge, socket, and keep what rolls well."]
+	quest.0000000000600069.quest_subtitle: "Affixes change everything"
+	quest.0000000000600069.title: "Apotheosis Gear"
+	quest.0000000000600077.quest_desc: ["Craft the Worn Notebook before anything else in Ars Nouveau. It is the real tutorial and the book will not make sense without it."]
+	quest.0000000000600077.quest_subtitle: "Read it first"
+	quest.0000000000600077.title: "The Worn Notebook"
+	quest.0000000000600078.quest_desc: ["Source gems, source jars, and the relays that move it. It is an infrastructure mod wearing a robe."]
+	quest.0000000000600078.quest_subtitle: "Magic has a power grid too"
+	quest.0000000000600078.title: "Source"
+	quest.0000000000600079.quest_desc: ["Ars Nouveau spells are built from glyphs you combine yourself. Build one that solves a problem you actually have."]
+	quest.0000000000600079.quest_subtitle: "Glyphs, not presets"
+	quest.0000000000600079.title: "Write a Spell"
+	quest.000000000060007A.quest_desc: ["Where Ars Nouveau builds, Iron's Spells specialises - schools, upgrade orbs and scrolls."]
+	quest.000000000060007A.quest_subtitle: "The other school"
+	quest.000000000060007A.title: "Iron's Spells"
+	quest.000000000060007B.quest_desc: ["Ars Nouveau for utility and automation, Iron's Spells for combat. Running both is the point."]
+	quest.000000000060007B.quest_subtitle: "They do different jobs"
+	quest.000000000060007B.title: "Two Systems"
+	quest.0000000000600087.quest_desc: ["The arm is where Create stops being contraptions and starts being a factory."]
+	quest.0000000000600087.quest_subtitle: "Real automation"
+	quest.0000000000600087.title: "Mechanical Arm"
+	quest.0000000000600088.quest_desc: ["Demolition feeds crushing feeds smelting feeds storage, with nothing clicked by hand."]
+	quest.0000000000600088.quest_subtitle: "Rubble in, material out"
+	quest.0000000000600088.title: "A Processing Line"
+	quest.0000000000600089.quest_desc: ["Stress capacity is the limit. Scale it before you blame the machines."]
+	quest.0000000000600089.quest_subtitle: "More than one windmill"
+	quest.0000000000600089.title: "Serious Power"
+	quest.000000000060008A.quest_desc: ["Sophisticated Storage with upgrades, controllers and sorting. Scavenging generates more junk than any other playstyle."]
+	quest.000000000060008A.quest_subtitle: "Thousands of scavenged blocks"
+	quest.000000000060008A.title: "Storage Network"
+	quest.0000000000600094.quest_desc: ["This pack only rewrote the overworld. Everything below is exactly where you left it."]
+	quest.0000000000600094.quest_subtitle: "Unchanged"
+	quest.0000000000600094.title: "The Nether"
+	quest.0000000000600095.quest_desc: ["Debris, gold, and a bastion template."]
+	quest.0000000000600095.quest_subtitle: "Top tier"
+	quest.0000000000600095.title: "Netherite"
+	quest.0000000000600096.quest_desc: [
+		"End Remastered replaces the twelve identical eyes with sixteen different ones, each from somewhere specific."
+		""
+		"This is the pack's real endgame checklist, and it will send you back through every structure and dimension you skipped."
+	]
+	quest.0000000000600096.quest_subtitle: "End Remastered"
+	quest.0000000000600096.title: "Sixteen Eyes"
+	quest.0000000000600097.quest_desc: ["Strongholds generate normally, which here means one of them is underneath a skyscraper."]
+	quest.0000000000600097.quest_subtitle: "Under a city, probably"
+	quest.0000000000600097.title: "The Stronghold"
+	quest.0000000000600098.quest_desc: ["The End is untouched."]
+	quest.0000000000600098.quest_subtitle: "Finish it"
+	quest.0000000000600098.title: "The Dragon"
+	quest.0000000000600099.quest_desc: ["Flying over a ruined skyline you have spent a hundred hours in is the actual ending of this pack."]
+	quest.0000000000600099.quest_subtitle: "See the whole city"
+	quest.0000000000600099.title: "Elytra"
+	quest.0000000000700002.quest_desc: [
+		"You are standing on the entire world. Sixteen blocks by sixteen, bedrock to grass, and void in every direction."
+		""
+		"There is no second chunk. Nothing generates. Nothing will ever be added to this place except by you."
+		""
+		"Read the next quest before you break anything."
+	]
+	quest.0000000000700002.quest_subtitle: "Count it while you can"
+	quest.0000000000700002.title: "This Is Everything"
+	quest.0000000000700003.quest_desc: [
+		"Buried in your chunk, and nowhere else in the world, is exactly:"
+		""
+		"26 coal, 18 iron, 16 copper, 10 redstone, 8 lapis, 8 gold, 5 diamond, and a single emerald."
+		""
+		"Ninety-two ore blocks. That is the lifetime supply of this world unless you make more. Do not spend iron on a bucket you will lose in the void."
+	]
+	quest.0000000000700003.quest_subtitle: "These are the real numbers"
+	quest.0000000000700003.title: "The Whole Supply"
+	quest.0000000000700004.quest_desc: ["One oak. Four saplings in the chest. Harvest the leaves for more before they rot, and never plant your last sapling without a backup."]
+	quest.0000000000700004.quest_subtitle: "Replant it immediately"
+	quest.0000000000700004.title: "The Tree"
+	quest.0000000000700005.quest_desc: [
+		"There is a 2x2 water pool in the grass. A 2x2 is an infinite source - you can take from it forever as long as you never break more than one block of it at a time."
+		""
+		"If you destroy it carelessly you have no water. Be careful around it with the lava."
+	]
+	quest.0000000000700005.quest_subtitle: "Two by two, and infinite"
+	quest.0000000000700005.title: "The Pool"
+	quest.0000000000700006.quest_desc: [
+		"The chunk is twenty-two blocks deep. Mining it out gives you stone, dirt, deepslate and the ore - but it also makes the world smaller."
+		""
+		"Most people regret hollowing the whole thing out on day one."
+	]
+	quest.0000000000700006.quest_subtitle: "Carefully"
+	quest.0000000000700006.title: "Dig In"
+	quest.0000000000700007.quest_desc: ["Eighteen iron ore is not many. A pickaxe, a bucket and a few machines will eat it."]
+	quest.0000000000700007.quest_subtitle: "Spend eighteen wisely"
+	quest.0000000000700007.title: "Iron Tools"
+	quest.0000000000700008.quest_desc: [
+		"There is a single lava source sealed in the stone, plus the bucket in your chest. Two lava, total, in the entire world."
+		""
+		"They are worth more as a cobblestone generator than as fuel. Do not burn them."
+	]
+	quest.0000000000700008.quest_subtitle: "One source block"
+	quest.0000000000700008.title: "The Lava"
+	quest.0000000000700009.quest_desc: [
+		"Walk to the boundary and look down. That is the rest of the universe."
+		""
+		"Falling off is the single most common way to end a One Chunk run. Fence the edges before you build anything on them."
+	]
+	quest.0000000000700009.quest_subtitle: "There is nothing out there"
+	quest.0000000000700009.title: "The Edge"
+	quest.000000000070001E.quest_desc: ["Coal is your only fuel until you have charcoal from a tree you planted or lava in a crucible. Twenty-six ore is roughly one furnace's worth of serious smelting."]
+	quest.000000000070001E.quest_subtitle: "Then no more"
+	quest.000000000070001E.title: "Twenty-Six Coal"
+	quest.000000000070001F.quest_desc: ["Burn a log to make charcoal. This is the first moment the pack stops being a countdown."]
+	quest.000000000070001F.quest_subtitle: "The first renewable"
+	quest.000000000070001F.title: "Charcoal"
+	quest.0000000000700020.quest_desc: ["Smelt it all and look at how small the pile is."]
+	quest.0000000000700020.quest_subtitle: "Bucket, pickaxe, and then nothing"
+	quest.0000000000700020.title: "Eighteen Iron"
+	quest.0000000000700021.quest_desc: ["Five diamond ore in the deepslate. A pickaxe is three. Think hard about the other two before you commit them."]
+	quest.0000000000700021.quest_subtitle: "That is the lot"
+	quest.0000000000700021.title: "Five Diamonds"
+	quest.0000000000700022.quest_desc: ["Somewhere in the stone there is a single emerald ore. It is not needed for anything critical - it is there so that you find it, and feel something about it."]
+	quest.0000000000700022.quest_subtitle: "There is exactly one"
+	quest.0000000000700022.title: "The Emerald"
+	quest.0000000000700023.quest_desc: [
+		"Sooner or later you break the last iron ore. If you have not built a sieve by then, the run is over and you simply have not noticed yet."
+		""
+		"This quest exists to make sure you build one before that."
+	]
+	quest.0000000000700023.quest_subtitle: "It was always going to happen"
+	quest.0000000000700023.title: "Running Out"
+	quest.0000000000700033.quest_desc: ["Cobblestone to gravel to sand to dust. Your generator makes cobblestone from two lava sources and a pool of water, which means this chain is genuinely infinite."]
+	quest.0000000000700033.quest_subtitle: "Cobblestone into matter"
+	quest.0000000000700033.title: "Hammer"
+	quest.0000000000700034.quest_desc: [
+		"Lava meets water makes cobblestone. Build it carefully - you have two lava and one pool, and a mistake costs you both."
+		""
+		"Everything downstream depends on this working."
+	]
+	quest.0000000000700034.quest_subtitle: "The most important build in the pack"
+	quest.0000000000700034.title: "Cobblestone Generator"
+	quest.0000000000700035.quest_desc: ["With one tree, sapling multiplication is survival."]
+	quest.0000000000700035.quest_subtitle: "Saplings and silkworms"
+	quest.0000000000700035.title: "Crook"
+	quest.0000000000700036.quest_desc: ["Silkworms infest leaves, infested leaves give string, string gives wool and a bed."]
+	quest.0000000000700036.quest_subtitle: "No sheep here either"
+	quest.0000000000700036.title: "String"
+	quest.0000000000700037.quest_desc: [
+		"Sieving dust, sand and gravel gives ore chunks. This is the only renewable ore in the world."
+		""
+		"The ninety-two blocks you started with were a loan. This is income."
+	]
+	quest.0000000000700037.quest_subtitle: "Ore that comes back"
+	quest.0000000000700037.title: "The Sieve"
+	quest.0000000000700038.quest_desc: ["String, flint, iron, gold, diamond, netherite. Each tier adds ores."]
+	quest.0000000000700038.quest_subtitle: "The drop table opens up"
+	quest.0000000000700038.title: "Better Meshes"
+	quest.0000000000700039.quest_desc: ["A stone crucible melts cobblestone into lava. The moment this works, lava stops being precious and starts being a utility."]
+	quest.0000000000700039.quest_subtitle: "Renewable lava"
+	quest.0000000000700039.title: "Crucible"
+	quest.000000000070003A.quest_desc: ["Compost makes dirt. Dirt is how the chunk gets bigger without filling it with stone."]
+	quest.000000000070003A.quest_subtitle: "Dirt from nothing"
+	quest.000000000070003A.title: "Barrel"
+	quest.000000000070003B.quest_desc: ["A cobblestone generator, a sieve, a crucible, a tree farm and a compost barrel. Nothing in the world can run out any more."]
+	quest.000000000070003B.quest_subtitle: "The run is secured"
+	quest.000000000070003B.title: "Self-Sufficient"
+	quest.0000000000700053.quest_desc: [
+		"Nothing stops you building into the void. Cobblestone is infinite now, so floor space is a matter of patience."
+		""
+		"This is the moment One Chunk turns from a survival puzzle into a building project."
+	]
+	quest.0000000000700053.quest_subtitle: "The chunk was only the beginning"
+	quest.0000000000700053.title: "Build Outward"
+	quest.0000000000700054.quest_desc: ["Every platform you build over the void needs an edge. You will be running around on it at night with a full inventory."]
+	quest.0000000000700054.quest_subtitle: "Please"
+	quest.0000000000700054.title: "Fence It"
+	quest.0000000000700055.quest_desc: ["Composted dirt, your 2x2 pool, and as much space as you felt like building."]
+	quest.0000000000700055.quest_subtitle: "Dirt is the limit"
+	quest.0000000000700055.title: "Farmland"
+	quest.0000000000700056.quest_desc: ["Mobs need an unlit platform far enough from where you stand. In a void world you control every spawnable surface in existence, which makes mob farming unusually precise."]
+	quest.0000000000700056.quest_subtitle: "Spawns need space you now have"
+	quest.0000000000700056.title: "Dark Room"
+	quest.0000000000700057.quest_desc: ["Sophisticated Storage barrels, then a proper sorting system."]
+	quest.0000000000700057.quest_subtitle: "It adds up fast"
+	quest.0000000000700057.title: "Storage"
+	quest.0000000000700064.quest_desc: ["Hold W over any Create block for Ponder."]
+	quest.0000000000700064.quest_subtitle: "Create begins"
+	quest.0000000000700064.title: "Andesite Alloy"
+	quest.0000000000700065.quest_desc: ["Speed and stress."]
+	quest.0000000000700065.quest_subtitle: "Rotation"
+	quest.0000000000700065.title: "Cogwheels"
+	quest.0000000000700066.quest_desc: ["You have exactly one water source to work from, so plumb it properly rather than flooding your base."]
+	quest.0000000000700066.quest_subtitle: "From a 2x2 pool"
+	quest.0000000000700066.title: "Water Wheel"
+	quest.0000000000700067.quest_desc: ["Cobblestone to gravel to sand with no clicking. This is the single biggest quality of life jump in the pack."]
+	quest.0000000000700067.quest_subtitle: "Stop hammering"
+	quest.0000000000700067.title: "Crushing Wheels"
+	quest.0000000000700068.quest_desc: ["Plates and compacting."]
+	quest.0000000000700068.quest_subtitle: "Plates"
+	quest.0000000000700068.title: "Mechanical Press"
+	quest.0000000000700069.quest_desc: ["Cobblestone generator into crushing wheels into sieves into sorted storage, running while you build."]
+	quest.0000000000700069.quest_subtitle: "Lava in, resources out"
+	quest.0000000000700069.title: "Automate the Loop"
+	quest.0000000000700078.quest_desc: ["Osmium and steel, both sieved."]
+	quest.0000000000700078.quest_subtitle: "Mekanism"
+	quest.0000000000700078.title: "Steel Casing"
+	quest.0000000000700079.quest_desc: ["Then purification, injection and crushing for five times output. In a world with no ore left, multipliers are everything."]
+	quest.0000000000700079.quest_subtitle: "Doubling"
+	quest.0000000000700079.title: "Enrichment Chamber"
+	quest.000000000070007A.quest_desc: ["Sieve it or grow it."]
+	quest.000000000070007A.quest_subtitle: "Applied Energistics"
+	quest.000000000070007A.title: "Certus Quartz"
+	quest.000000000070007B.quest_desc: ["Presses come from meteorites, which in a void world means sieving for them instead."]
+	quest.000000000070007B.quest_subtitle: "Circuits"
+	quest.000000000070007B.title: "Inscriber"
+	quest.000000000070007C.quest_desc: ["Storage and autocrafting, on a platform you built out of nothing."]
+	quest.000000000070007C.quest_subtitle: "One network"
+	quest.000000000070007C.title: "ME Controller"
+	quest.000000000070007D.quest_desc: ["Pattern the intermediates."]
+	quest.000000000070007D.quest_subtitle: "Ask and receive"
+	quest.000000000070007D.title: "Autocrafting"
+	quest.000000000070008B.quest_desc: ["Mystical Agriculture turns every ore into a crop. For a pack whose whole premise is that ore runs out, this is the most on-theme mod in the game."]
+	quest.000000000070008B.quest_subtitle: "Grow your resources"
+	quest.000000000070008B.title: "Prosperity"
+	quest.000000000070008C.quest_desc: ["Sieve for it, then farm it."]
+	quest.000000000070008C.quest_subtitle: "The base currency"
+	quest.000000000070008C.title: "Inferium Essence"
+	quest.000000000070008D.quest_desc: ["Iron, gold, diamond and more, as crops. The ninety-two ore blocks you started with stop mattering entirely."]
+	quest.000000000070008D.quest_subtitle: "Any resource, as a crop"
+	quest.000000000070008D.title: "Resource Seeds"
+	quest.000000000070008E.quest_desc: ["Each tier speeds growth and unlocks better seeds."]
+	quest.000000000070008E.quest_subtitle: "Prudentium and up"
+	quest.000000000070008E.title: "Higher Tiers"
+	quest.000000000070008F.quest_desc: ["Create harvesters, Industrial Foregoing planters, or a Mystical Agriculture harvester."]
+	quest.000000000070008F.quest_subtitle: "Harvest without you"
+	quest.000000000070008F.title: "Automate the Farm"
+	quest.000000000070009B.quest_desc: ["Your starting chest held exactly ten obsidian - a portal and nothing spare. The Nether here is void, like the overworld was, but its structures still generate."]
+	quest.000000000070009B.quest_subtitle: "Ten obsidian in the chest"
+	quest.000000000070009B.title: "The Nether"
+	quest.000000000070009C.quest_desc: ["Nether fortresses exist out in the void. Bridge to one."]
+	quest.000000000070009C.quest_subtitle: "Fortresses still generate"
+	quest.000000000070009C.title: "Blaze Rods"
+	quest.000000000070009D.quest_desc: ["Ancient debris comes from sieving crushed netherrack if bridging for it is too slow."]
+	quest.000000000070009D.quest_subtitle: "Sieved, probably"
+	quest.000000000070009D.title: "Netherite"
+	quest.000000000070009E.quest_desc: ["Blaze powder and ender pearls."]
+	quest.000000000070009E.quest_subtitle: "Twelve of them"
+	quest.000000000070009E.title: "Eyes of Ender"
+	quest.000000000070009F.quest_desc: ["You started on a platform you could cross in four seconds."]
+	quest.000000000070009F.quest_subtitle: "From sixteen blocks to this"
+	quest.000000000070009F.title: "The Dragon"
+	quest.00000000007000A0.quest_desc: ["Fly out far enough to see your chunk as a speck, which is what it always was."]
+	quest.00000000007000A0.quest_subtitle: "Look back at it"
+	quest.00000000007000A0.title: "Elytra"
+	quest.0000000000800005.quest_desc: [
+		"This is a run-based pack. Progress does not come from exploring outward - it comes from going into an arena, surviving it, and coming out better equipped than you went in."
+		""
+		"The loop is: craft a Gate Pearl, place it somewhere with room, survive every wave, collect the rewards, upgrade your gear, then craft the next tier up."
+		""
+		"There are five tiers. Each one's pearl recipe needs materials you can only realistically have after clearing the one below it."
+	]
+	quest.0000000000800005.quest_subtitle: "Read this one properly"
+	quest.0000000000800005.title: "How This Pack Works"
+	quest.0000000000800006.quest_desc: ["Somewhere safe, lit, with storage and a bed. Runs are where the danger is - home should be boring."]
+	quest.0000000000800006.quest_subtitle: "You will die in the arena, not at home"
+	quest.0000000000800006.title: "A Base Worth Returning To"
+	quest.0000000000800007.quest_desc: ["A tier five gateway is eight waves and twenty minutes. Go in without food and you will lose on the clock, not the fight."]
+	quest.0000000000800007.quest_subtitle: "Waves last a long time"
+	quest.0000000000800007.title: "Food Stock"
+	quest.0000000000800008.quest_desc: ["Sophisticated Storage barrels and a sorting wall. Each gateway returns a lot of items at once."]
+	quest.0000000000800008.quest_subtitle: "Loot adds up fast"
+	quest.0000000000800008.title: "Storage"
+	quest.0000000000800009.quest_desc: [
+		"A gateway needs clear space, and it fails outright if a wave entity wanders too far or falls out of bounds."
+		""
+		"Building one permanent arena you reuse for every run is the single best quality of life decision in this pack. Wall it, floor it, light it, and leave the middle empty."
+	]
+	quest.0000000000800009.quest_subtitle: "Flat, walled, lit, and yours"
+	quest.0000000000800009.title: "Build an Arena"
+	quest.000000000080000A.quest_desc: ["Do not over-prepare. Tier one is beatable in iron, and the rewards pay for the rest."]
+	quest.000000000080000A.quest_subtitle: "Iron is enough for tier one"
+	quest.000000000080000A.title: "Starting Gear"
+	quest.0000000000800019.quest_desc: ["Each tier has its own recipe and each produces a Gate Pearl bound to that gateway. Hover one to see its waves, rewards and failure penalties before you commit."]
+	quest.0000000000800019.quest_subtitle: "Iron, redstone, an ender pearl, rotten flesh"
+	quest.0000000000800019.title: "Your First Gate Pearl"
+	quest.000000000080001A.quest_desc: [
+		"Zombies, then skeletons, then husks and spiders. Tier one has no failure penalty on purpose - it is where you learn how gateways behave without being punished for it."
+		""
+		"Rewards: dungeon loot and 300 experience."
+	]
+	quest.000000000080001A.quest_subtitle: "Three waves, no penalty for failing"
+	quest.000000000080001A.title: "Trial I: The Proving Ground"
+	quest.000000000080001B.quest_desc: [
+		"Drowned, strays, cave spiders, then zombie villagers with witches behind them."
+		""
+		"From here failing a gateway costs you - a small explosion, and the run is over. Bring a shield."
+	]
+	quest.000000000080001B.quest_subtitle: "Four waves, and it bites back"
+	quest.000000000080001B.title: "Trial II: The Drowned Vault"
+	quest.000000000080001C.quest_desc: [
+		"The pearl wants blaze rods, so you cannot reach this tier without a fortress trip."
+		""
+		"Blazes, magma cubes, wither skeletons, then hoglins and piglin brutes. Fire resistance is close to mandatory."
+	]
+	quest.000000000080001C.quest_subtitle: "Five waves, and you need the Nether first"
+	quest.000000000080001C.title: "Trial III: The Hellish Trial"
+	quest.000000000080001D.quest_desc: [
+		"Pillagers, vindicators, evokers with vexes, and ravagers. The pearl costs diamonds, emeralds and an eye of ender."
+		""
+		"Vexes ignore your walls. Plan for that."
+	]
+	quest.000000000080001D.quest_subtitle: "Six waves of illagers"
+	quest.000000000080001D.title: "Trial IV: The Warband"
+	quest.000000000080001E.quest_desc: [
+		"Netherite, echo shards, emerald blocks and a nether star - which means a Wither and an Ancient City before you can even open it."
+		""
+		"The final wave is four ravagers, three evokers and six blazes at once, with every attribute buff stacked twelve deep. Rewards are End City and Ancient City loot."
+	]
+	quest.000000000080001E.quest_subtitle: "Eight waves, and the pearl costs a nether star"
+	quest.000000000080001E.title: "Trial V: The Gauntlet"
+	quest.000000000080001F.quest_desc: ["Gateways are repeatable. The ladder is not a checklist you finish once - it is a loop you run until your gear is where you want it."]
+	quest.000000000080001F.quest_subtitle: "That is the point"
+	quest.000000000080001F.title: "Run It Again"
+	quest.0000000000800034.quest_desc: [
+		"Gateway rewards drop affixed equipment. Affixes are a separate axis to enchantments and they matter far more."
+		""
+		"Rarity goes common through mythic. A mythic drop is worth building a whole run around."
+	]
+	quest.0000000000800034.quest_subtitle: "Apotheosis changes the power curve"
+	quest.0000000000800034.title: "Affixed Gear"
+	quest.0000000000800035.quest_desc: ["Gems slot into socketed gear and can be upgraded. This is how you tune a weapon for a specific tier."]
+	quest.0000000000800035.quest_subtitle: "Sockets and gems"
+	quest.0000000000800035.title: "Gem Dust"
+	quest.0000000000800036.quest_desc: ["A reforging table lets you spend materials to reroll affixes. Expensive, and the only way to fix a good base item with bad rolls."]
+	quest.0000000000800036.quest_subtitle: "Reroll what you do not like"
+	quest.0000000000800036.title: "Reforging"
+	quest.0000000000800037.quest_desc: ["Apotheosis enchanting cares what kind of bookshelves surround the table, not just how many. Build the library properly once."]
+	quest.0000000000800037.quest_subtitle: "Bookshelf variety, not count"
+	quest.0000000000800037.title: "Apotheotic Enchanting"
+	quest.0000000000800038.quest_desc: ["Apotheosis removes the anvil's too-expensive wall, so long-term gear investment actually works."]
+	quest.0000000000800038.quest_subtitle: "Combine and keep"
+	quest.0000000000800038.title: "Anvil Work"
+	quest.0000000000800039.quest_desc: ["Affixed, socketed, enchanted, in every slot. This is what tier five expects."]
+	quest.0000000000800039.quest_subtitle: "Built, not found"
+	quest.0000000000800039.title: "A Full Set"
+	quest.0000000000800047.quest_desc: [
+		"Pearl recipes want ender pearls, blaze rods, diamonds, emeralds, echo shards and a nether star. None of that comes out of a gateway."
+		""
+		"So the pack alternates: go out and gather, come back and run."
+	]
+	quest.0000000000800047.quest_subtitle: "Runs do not feed themselves"
+	quest.0000000000800047.title: "Where the Materials Come From"
+	quest.0000000000800048.quest_desc: ["Dungeons Arise, Yung's Better Dungeons, Dungeons and Taverns and Structory all generate out there."]
+	quest.0000000000800048.quest_subtitle: "Big, handmade, worth the trip"
+	quest.0000000000800048.title: "Dungeons Arise"
+	quest.0000000000800049.quest_desc: ["Point it at what you need instead of walking until you find it."]
+	quest.0000000000800049.quest_subtitle: "Stop wandering"
+	quest.0000000000800049.title: "Explorer's Compass"
+	quest.000000000080004A.quest_desc: ["Link your arena to wherever you are gathering. You will make this trip hundreds of times."]
+	quest.000000000080004A.quest_subtitle: "Arena, home, and the field"
+	quest.000000000080004A.title: "Waystones"
+	quest.000000000080004B.quest_desc: ["Three wither skeleton skulls and four soul sand. Start collecting skulls in Trial III, long before you need it."]
+	quest.000000000080004B.quest_subtitle: "Tier five is gated on this"
+	quest.000000000080004B.title: "A Nether Star"
+	quest.000000000080004C.quest_desc: ["Ancient City only. Sneak, break the shriekers, bring wool."]
+	quest.000000000080004C.quest_subtitle: "Also gated on this"
+	quest.000000000080004C.title: "Echo Shards"
+	quest.000000000080005A.quest_desc: ["Cataclysm's bosses are the toughest fights in the pack and they drop gear that changes how you run tiers four and five."]
+	quest.000000000080005A.quest_subtitle: "Harder than any gateway"
+	quest.000000000080005A.title: "Cataclysm"
+	quest.000000000080005B.quest_desc: ["Born in Chaos adds a genuinely threatening set of night mobs. Your arena walls earn their keep."]
+	quest.000000000080005B.quest_subtitle: "The nights got worse"
+	quest.000000000080005B.title: "Born in Chaos"
+	quest.000000000080005C.quest_desc: ["Twilight Forest enforces its own order, so it is a second ladder running alongside this one."]
+	quest.000000000080005C.quest_subtitle: "A whole dimension of bosses"
+	quest.000000000080005C.title: "Into the Twilight"
+	quest.000000000080005D.quest_desc: [
+		"Gateways supports endless gateways - waves keep coming with stacking modifiers until you fail."
+		""
+		"This is the real score attack of the pack, and the right place to test a finished set of gear."
+	]
+	quest.000000000080005D.quest_subtitle: "No last wave"
+	quest.000000000080005D.title: "Endless Mode"
+	quest.0000000000800067.quest_desc: ["Craft the Worn Notebook before anything else in Ars Nouveau. It is the real tutorial."]
+	quest.0000000000800067.quest_subtitle: "Read it first"
+	quest.0000000000800067.title: "The Worn Notebook"
+	quest.0000000000800068.quest_desc: ["Source gems, jars and relays. Ars Nouveau is a utility mod wearing a robe."]
+	quest.0000000000800068.quest_subtitle: "Magic as infrastructure"
+	quest.0000000000800068.title: "Source"
+	quest.0000000000800069.quest_desc: ["Writing a spell that solves tier four's vexes is more satisfying than any dropped weapon."]
+	quest.0000000000800069.quest_subtitle: "Built for a specific wave"
+	quest.0000000000800069.title: "Spells for the Arena"
+	quest.000000000080006A.quest_desc: ["Where Ars Nouveau builds, Iron's Spells specialises."]
+	quest.000000000080006A.quest_subtitle: "The combat school"
+	quest.000000000080006A.title: "Iron's Spells"
+	quest.000000000080006B.quest_desc: ["In an eight wave gateway the limiting factor is almost never your damage."]
+	quest.000000000080006B.quest_subtitle: "Sustain beats damage"
+	quest.000000000080006B.title: "Stay Alive"
+	quest.0000000000800077.quest_desc: ["By tier four you are crafting the same consumables over and over. That is what Create is for."]
+	quest.0000000000800077.quest_subtitle: "Pearls, food, arrows, potions"
+	quest.0000000000800077.title: "Automate the Boring Part"
+	quest.0000000000800078.quest_desc: ["Speed and stress."]
+	quest.0000000000800078.quest_subtitle: "Rotation"
+	quest.0000000000800078.title: "Cogwheels"
+	quest.0000000000800079.quest_desc: ["A harvester and a bulk cooking setup."]
+	quest.0000000000800079.quest_subtitle: "You eat a lot in here"
+	quest.0000000000800079.title: "Automated Food"
+	quest.000000000080007A.quest_desc: ["Point it at your pearl ingredients and stop hand-crafting them."]
+	quest.000000000080007A.quest_subtitle: "Craft the consumables"
+	quest.000000000080007A.title: "Mechanical Arm"
+	quest.000000000080007B.quest_desc: ["Gateway rewards arrive in a pile. Automate the sorting or drown in it."]
+	quest.000000000080007B.quest_subtitle: "Five tiers of rewards"
+	quest.000000000080007B.title: "Sort the Loot"
+	quest.0000000000800087.quest_desc: ["Ancient debris, gold, and a bastion template."]
+	quest.0000000000800087.quest_subtitle: "Tier five needs it"
+	quest.0000000000800087.title: "Netherite"
+	quest.0000000000800088.quest_desc: ["The End is still there, and still worth doing."]
+	quest.0000000000800088.quest_subtitle: "The other ending"
+	quest.0000000000800088.title: "Eyes of Ender"
+	quest.0000000000800089.quest_desc: ["After five tiers of waves, a single scripted fight feels almost quaint."]
+	quest.0000000000800089.quest_subtitle: "A boss that does not respawn on a timer"
+	quest.0000000000800089.title: "The Dragon"
+	quest.000000000080008A.quest_desc: ["End cities and ships."]
+	quest.000000000080008A.quest_subtitle: "Get to the arena faster"
+	quest.000000000080008A.title: "Elytra"
+	quest.000000000080008B.quest_desc: ["Clear tier five without taking a death, in gear you built rather than found."]
+	quest.000000000080008B.quest_subtitle: "Nothing left to be afraid of"
+	quest.000000000080008B.title: "Mastery"
+	quest.0000000000B00002.quest_desc: [
+		"You are stood on a single block floating in the void. Breaking it does not remove it - it comes back, and each time it comes back it has become something else."
+		""
+		"That block is your entire world. Every log, every ore, every mob and every drop of water comes out of it. There is nothing else to mine and nowhere else to go until you build somewhere to go to."
+		""
+		"Two rules keep you alive. First: never stand where you are about to fall. Second: put a platform behind you early, because mobs start arriving sooner than you expect."
+	]
+	quest.0000000000B00002.quest_subtitle: "Start here. Read this one."
+	quest.0000000000B00002.title: "One Block"
+	quest.0000000000B00003.quest_desc: ["Place blocks behind the one block so you have a floor. Every single thing you do from here depends on not falling into the void while your hands are full."]
+	quest.0000000000B00003.quest_subtitle: "Before anything else"
+	quest.0000000000B00003.title: "Something To Stand On"
+	quest.0000000000B00004.quest_desc: ["Keep breaking. Early phases are dirt, grass and wood - the material a crafting table and your first tools are made of."]
+	quest.0000000000B00004.quest_subtitle: "The block gives, eventually"
+	quest.0000000000B00004.title: "First Wood"
+	quest.0000000000B00005.quest_desc: ["A crafting table is the first real step. Put it on your platform, not next to the block, so a stray swing cannot destroy it."]
+	quest.0000000000B00005.quest_subtitle: "Four planks"
+	quest.0000000000B00005.title: "A Place To Craft"
+	quest.0000000000B00006.quest_desc: ["Once the block starts producing stone you can make better tools and a furnace. Cobble is also the cheapest platform material you will ever have."]
+	quest.0000000000B00006.quest_subtitle: "Phase two"
+	quest.0000000000B00006.title: "Stone At Last"
+	quest.0000000000B00007.quest_desc: ["A stone pickaxe mines faster, which matters more here than anywhere else - your progress is literally measured in blocks broken."]
+	quest.0000000000B00007.quest_subtitle: "Stop using wood"
+	quest.0000000000B00007.title: "A Real Pickaxe"
+	quest.0000000000B00008.quest_desc: ["A furnace turns what the block gives you into what you actually need. Charcoal from logs will keep it running before you ever see coal."]
+	quest.0000000000B00008.quest_subtitle: "Heat and patience"
+	quest.0000000000B00008.title: "Smelting"
+	quest.0000000000B00009.quest_desc: ["You will fill your inventory faster than you can sort it. Build storage now, on the platform, and get into the habit of emptying out between phases."]
+	quest.0000000000B00009.quest_subtitle: "Inventory management is the real boss"
+	quest.0000000000B00009.title: "Chest Of Holding"
+	quest.0000000000B0000B.quest_desc: [
+		"Later phases spawn mobs, and they arrive standing on the one block - directly in front of you, usually while you are mid-swing."
+		""
+		"A sword, some light and a wall you can retreat behind turn this from a death sentence into a loot source."
+	]
+	quest.0000000000B0000B.quest_subtitle: "They come out of the block too"
+	quest.0000000000B0000B.title: "Hold The Line"
+	quest.0000000000B0000C.quest_desc: ["A stone sword will do. Zombies and skeletons that spawn on the block are also your first reliable source of string, bones and iron."]
+	quest.0000000000B0000C.quest_subtitle: "Anything is better than fists"
+	quest.0000000000B0000C.title: "Something Sharp"
+	quest.0000000000B0000D.quest_desc: ["Torches on your platform stop things spawning behind you while you face the block."]
+	quest.0000000000B0000D.quest_subtitle: "Mobs spawn in the dark"
+	quest.0000000000B0000D.title: "Light It Up"
+	quest.0000000000B0000E.quest_desc: ["Bone meal is how you turn the block's grass and saplings into a real food supply later. Save every bone."]
+	quest.0000000000B0000E.quest_subtitle: "Skeletons are a crop"
+	quest.0000000000B0000E.title: "Bones To Meal"
+	quest.0000000000B0000F.quest_desc: ["A shield is the single biggest survivability jump available this early, and it costs almost nothing."]
+	quest.0000000000B0000F.quest_subtitle: "One iron and six planks"
+	quest.0000000000B0000F.title: "Shield Wall"
+	quest.0000000000B00010.quest_desc: ["The block produces animals and crops as it advances. Cook whatever it gives you - starving to death two phases from iron is a genuinely common way to lose a run."]
+	quest.0000000000B00010.quest_subtitle: "Hunger is the quiet killer"
+	quest.0000000000B00010.title: "Something To Eat"
+	quest.0000000000B00011.quest_desc: ["A bed sets your spawn, which in a void world is the difference between a mistake and starting over."]
+	quest.0000000000B00011.quest_subtitle: "Skip the night, keep the spawn"
+	quest.0000000000B00011.title: "Bed"
+	quest.0000000000B00013.quest_desc: [
+		"Neither water nor lava will ever appear on its own out here, so the mod gives you two recipes that most packs do not have: ice melts down into a water bucket, and magma renders down into a lava bucket."
+		""
+		"Both show up in the block's colder and hotter phases. The moment you see ice, stop and make buckets."
+	]
+	quest.0000000000B00013.quest_subtitle: "The two things a void world has none of"
+	quest.0000000000B00013.title: "Water And Lava"
+	quest.0000000000B00014.quest_desc: ["Iron comes from the block's stone and deepslate phases, and from the skeletons and zombies that arrive with them."]
+	quest.0000000000B00014.quest_subtitle: "Everything needs a bucket"
+	quest.0000000000B00014.title: "Three Iron"
+	quest.0000000000B00015.quest_desc: ["One bucket, used carefully, becomes an infinite water source. Two water buckets placed two blocks apart will refill each other forever."]
+	quest.0000000000B00015.quest_subtitle: "The most important item in the pack"
+	quest.0000000000B00015.title: "Bucket"
+	quest.0000000000B00016.quest_desc: ["Collect ice from a snowy phase and melt it. An infinite water source unlocks farming, smelting chains and almost every machine in this pack."]
+	quest.0000000000B00016.quest_subtitle: "Ice into a bucket"
+	quest.0000000000B00016.title: "Water Source"
+	quest.0000000000B00017.quest_desc: ["Lava is fuel, and later it is power. Magma blocks come from the block's nether-flavoured phases."]
+	quest.0000000000B00017.quest_subtitle: "Magma into a bucket"
+	quest.0000000000B00017.title: "Lava Source"
+	quest.0000000000B00018.quest_desc: ["With both buckets in hand, obsidian is just a matter of pouring one onto the other. This is your route to the nether and to enchanting."]
+	quest.0000000000B00018.quest_subtitle: "Water meets lava"
+	quest.0000000000B00018.title: "Obsidian"
+	quest.0000000000B0001A.quest_desc: ["By now the block is handing you real ore. This chapter is about turning that into gear good enough that a bad phase is not fatal."]
+	quest.0000000000B0001A.quest_subtitle: "Getting comfortable"
+	quest.0000000000B0001A.title: "Ore And Armour"
+	quest.0000000000B0001B.quest_desc: ["Twenty-four iron. It sounds like a lot until you realise how much the block produces once it reaches its stone phases."]
+	quest.0000000000B0001B.quest_subtitle: "A full set"
+	quest.0000000000B0001B.title: "Iron Armour"
+	quest.0000000000B0001C.quest_desc: ["Diamonds appear in the deeper phases. The first three should go to a pickaxe, not a sword - obsidian and enchanting matter more than damage right now."]
+	quest.0000000000B0001C.quest_subtitle: "They do show up"
+	quest.0000000000B0001C.title: "Diamonds"
+	quest.0000000000B0001D.quest_desc: ["A diamond pickaxe mines obsidian, which means portals, anvils and enchanting."]
+	quest.0000000000B0001D.quest_subtitle: "Obsidian on tap"
+	quest.0000000000B0001D.title: "Diamond Pickaxe"
+	quest.0000000000B0001E.quest_desc: ["An enchanting table needs obsidian, diamonds and a book. Efficiency on your pickaxe is worth more here than in any other kind of pack."]
+	quest.0000000000B0001E.quest_subtitle: "Fifteen bookshelves eventually"
+	quest.0000000000B0001E.title: "Enchanting"
+	quest.0000000000B0001F.quest_desc: ["Repairing an enchanted pickaxe is cheaper than re-enchanting one."]
+	quest.0000000000B0001F.quest_subtitle: "Keep the good tools"
+	quest.0000000000B0001F.title: "Anvil"
+	quest.0000000000B00020.quest_desc: ["A hopper under your mining spot catches drops before they fall into the void. This is the first piece of real automation and it pays for itself immediately."]
+	quest.0000000000B00020.quest_subtitle: "Let the block feed itself"
+	quest.0000000000B00020.title: "Hopper And Sorting"
+	quest.0000000000B00022.quest_desc: ["Everything so far has come out of the one block. This chapter is about building supply chains that run whether you are stood there breaking it or not."]
+	quest.0000000000B00022.quest_subtitle: "Stop depending on the block"
+	quest.0000000000B00022.title: "Renewable"
+	quest.0000000000B00023.quest_desc: ["With an infinite water source you can farm properly. Wheat, carrots and potatoes end the food problem permanently."]
+	quest.0000000000B00023.quest_subtitle: "Water, dirt, seeds"
+	quest.0000000000B00023.title: "Farmland"
+	quest.0000000000B00024.quest_desc: ["Cows, sheep and chickens all turn up in the block's grassland phases. Fence them on your platform the moment you see one - a cow that wanders into the void is gone."]
+	quest.0000000000B00024.quest_subtitle: "They arrive on the block"
+	quest.0000000000B00024.title: "Animals"
+	quest.0000000000B00025.quest_desc: ["Two saplings and some dirt and you never wait for a wood phase again."]
+	quest.0000000000B00025.quest_subtitle: "Saplings are infinite wood"
+	quest.0000000000B00025.title: "A Tree Farm"
+	quest.0000000000B00026.quest_desc: ["The classic skyblock engine works here too, and it means stone is no longer something you wait for."]
+	quest.0000000000B00026.quest_subtitle: "Water plus lava, forever"
+	quest.0000000000B00026.title: "Cobble Generator"
+	quest.0000000000B00027.quest_desc: ["The block will bury you in seeds and saplings. A composter turns the excess into the bone meal your farms want."]
+	quest.0000000000B00027.quest_subtitle: "Turn the surplus into bone meal"
+	quest.0000000000B00027.title: "Composter"
+	quest.0000000000B00029.quest_desc: [
+		"Create is installed, and in a one-block world it is the answer to the thing that will eventually wear you down: swinging at the same block by hand."
+		""
+		"Andesite alloy is the gateway. Everything else in Create is built on it."
+	]
+	quest.0000000000B00029.quest_subtitle: "Create begins"
+	quest.0000000000B00029.title: "Rotational Force"
+	quest.0000000000B0002A.quest_desc: ["Both come out of the block. This is the single most important crafting material in the second half of the pack."]
+	quest.0000000000B0002A.quest_subtitle: "Andesite and zinc"
+	quest.0000000000B0002A.title: "Andesite Alloy"
+	quest.0000000000B0002B.quest_desc: ["A windmill or a waterwheel will drive everything you need for a long time, and both are cheap."]
+	quest.0000000000B0002B.quest_subtitle: "Make it spin"
+	quest.0000000000B0002B.title: "Cogwheels"
+	quest.0000000000B0002C.quest_desc: [
+		"This is the quest the whole chapter exists for. A drill pointed at the one block breaks it for you, on a clock, forever - and a belt carries the drops away."
+		""
+		"From here the pack stops being about patience and starts being about design."
+	]
+	quest.0000000000B0002C.quest_subtitle: "Stop swinging by hand"
+	quest.0000000000B0002C.title: "Mechanical Drill"
+	quest.0000000000B0002D.quest_desc: ["Belts and chutes take the block's output and put it into storage without you touching it."]
+	quest.0000000000B0002D.quest_subtitle: "Move it somewhere useful"
+	quest.0000000000B0002D.title: "Belts"
+	quest.0000000000B0002E.quest_desc: ["Crafters let you build the next tier without hand-crafting every component."]
+	quest.0000000000B0002E.quest_subtitle: "Automate the recipes too"
+	quest.0000000000B0002E.title: "Mechanical Crafter"
+	quest.0000000000B00030.quest_desc: ["With the block automated, the bottleneck becomes sorting and processing. Mekanism, Applied Energistics and the storage mods all exist to solve exactly that."]
+	quest.0000000000B00030.quest_subtitle: "Scale it up"
+	quest.0000000000B00030.title: "Industry"
+	quest.0000000000B00031.quest_desc: ["Mekanism's steel opens up ore processing, which multiplies everything the block gives you."]
+	quest.0000000000B00031.quest_subtitle: "The first real alloy"
+	quest.0000000000B00031.title: "Steel"
+	quest.0000000000B00032.quest_desc: ["An enrichment chamber turns one ore into two ingots. In a world with exactly one source of ore, that is a straight doubling of your entire economy."]
+	quest.0000000000B00032.quest_subtitle: "Make the block go further"
+	quest.0000000000B00032.title: "Ore Doubling"
+	quest.0000000000B00033.quest_desc: ["A basic generator and some cable. Lava from the block's hot phases is a perfectly good first fuel."]
+	quest.0000000000B00033.quest_subtitle: "Something has to run it"
+	quest.0000000000B00033.title: "Power"
+	quest.0000000000B00034.quest_desc: ["An ME system turns the block's endless output into something searchable. This is the quality-of-life jump that makes a long run pleasant instead of a chore."]
+	quest.0000000000B00034.quest_subtitle: "The real endgame of any block pack"
+	quest.0000000000B00034.title: "Digital Storage"
+	quest.0000000000B00036.quest_desc: ["The block eventually produces everything the other dimensions need. Obsidian for a portal, blaze rods and ender pearls from its later phases, and from there the whole game is open again."]
+	quest.0000000000B00036.quest_subtitle: "There is a way out"
+	quest.0000000000B00036.title: "Beyond The Block"
+	quest.0000000000B00037.quest_desc: ["The nether in this pack is generated by the same one-block logic, so do not expect a landscape - expect another block, with hotter contents."]
+	quest.0000000000B00037.quest_subtitle: "Ten obsidian and a flint"
+	quest.0000000000B00037.title: "The Nether"
+	quest.0000000000B00038.quest_desc: ["Blazes arrive in the nether phases. Rods mean brewing stands, and powder means eyes."]
+	quest.0000000000B00038.quest_subtitle: "Fuel and brewing"
+	quest.0000000000B00038.title: "Blaze Rods"
+	quest.0000000000B00039.quest_desc: ["Fighting an enderman on a platform over the void is its own kind of challenge. Build a roof two blocks high and they cannot reach you."]
+	quest.0000000000B00039.quest_subtitle: "Endermen on a one-block world"
+	quest.0000000000B00039.title: "Ender Pearls"
+	quest.0000000000B0003A.quest_desc: ["Rods plus pearls. The stronghold does not exist out here, so the portal is something you will be placing yourself."]
+	quest.0000000000B0003A.quest_subtitle: "Twelve of them"
+	quest.0000000000B0003A.title: "Eyes Of Ender"
+	quest.0000000000B0003B.quest_desc: ["The end is reachable and the dragon is killable, from a world that started as one block of dirt. Bring blocks to bridge and more food than you think you need."]
+	quest.0000000000B0003B.quest_subtitle: "Finish it"
+	quest.0000000000B0003B.title: "The Dragon"
+	quest.0000000000B0003C.quest_desc: ["An elytra in a void world is the single best item in the game. Nothing about falling is frightening any more."]
+	quest.0000000000B0003C.quest_subtitle: "The actual ending"
+	quest.0000000000B0003C.title: "Elytra"
+	quest.0000000000C00002.quest_desc: [
+		"This pack is not balanced around you winning fights. Several things in this world hunt you specifically, they are faster than you, and at least one of them will follow you across a world without ever being seen."
+		""
+		"The whole game is light, walls, and knowing when to stop mining and go home. Running is almost always the correct answer."
+		""
+		"Your brightness is set to the darkest setting and shaders are on. That is deliberate. Do not turn it up - the dark is the mechanic."
+	]
+	quest.0000000000C00002.quest_subtitle: "Then put the book away"
+	quest.0000000000C00002.title: "Read This Once"
+	quest.0000000000C00003.quest_desc: ["You have until dusk. Nothing else matters yet."]
+	quest.0000000000C00003.quest_subtitle: "Before anything else"
+	quest.0000000000C00003.title: "Wood, Immediately"
+	quest.0000000000C00004.quest_desc: ["A door you can open is worth more than a wall you have to mine through when something is behind you."]
+	quest.0000000000C00004.quest_subtitle: "Not a hole you block up"
+	quest.0000000000C00004.title: "A Door"
+	quest.0000000000C00005.quest_desc: ["Make more than you think you need. Every unlit block within sight of your base is somewhere something can stand."]
+	quest.0000000000C00005.quest_subtitle: "The only thing that works"
+	quest.0000000000C00005.title: "Torches"
+	quest.0000000000C00006.quest_desc: ["Things in this pack climb and drop. An open-topped pit is not a shelter."]
+	quest.0000000000C00006.quest_subtitle: "A roof, specifically"
+	quest.0000000000C00006.title: "Four Walls And A Roof"
+	quest.0000000000C00007.quest_desc: ["Sleeping removes the night entirely, and it sets your spawn. Both matter more here than in any normal pack."]
+	quest.0000000000C00007.quest_subtitle: "Skip what you can"
+	quest.0000000000C00007.title: "A Bed"
+	quest.0000000000C00009.quest_desc: [
+		"Three separate things in this pack are built to stalk you rather than wander into you:"
+		""
+		"The Cave Dweller lives underground, tracks you, and closes distance when you are not looking at it. If you hear something sprint in a cave, leave - do not investigate."
+		""
+		"The Obsessed does not attack at first. It watches, from a distance, and gets closer over time. Seeing it in the same place twice is not a coincidence."
+		""
+		"Arphex's horrors nest. The deeper you dig, the more you are walking into something's house rather than exploring."
+	]
+	quest.0000000000C00009.quest_subtitle: "Know what is coming"
+	quest.0000000000C00009.title: "You Are Being Hunted"
+	quest.0000000000C0000A.quest_desc: [
+		"Sound Physics is installed, so audio is occluded and reverbed by real geometry. A sound that is muffled is behind stone; a sound that is clear is in the open with you."
+		""
+		"Play with headphones. It is the single biggest survival advantage you have."
+	]
+	quest.0000000000C0000A.quest_subtitle: "Sound is your only radar"
+	quest.0000000000C0000A.title: "Listen"
+	quest.0000000000C0000B.quest_desc: ["Staircase down, never straight down, and always leave the staircase unblocked. Your exit route is the only thing standing between a bad encounter and a dead world."]
+	quest.0000000000C0000B.quest_subtitle: "The oldest rule, and here it is literal"
+	quest.0000000000C0000B.title: "Never Mine Down"
+	quest.0000000000C0000C.quest_desc: ["Every base gets two exits. The one you use, and the one you use when something is in the first one."]
+	quest.0000000000C0000C.quest_subtitle: "Dig the second exit first"
+	quest.0000000000C0000C.title: "A Way Out"
+	quest.0000000000C0000D.quest_desc: ["Lanterns are brighter than torches and cannot be washed away or knocked off. Ring the base, not just the inside."]
+	quest.0000000000C0000D.quest_subtitle: "Spawn-proofing is survival"
+	quest.0000000000C0000D.title: "Light The Perimeter"
+	quest.0000000000C0000F.quest_desc: ["You will not out-damage what is coming for a long time. Make the place you sleep genuinely impossible to enter instead."]
+	quest.0000000000C0000F.quest_subtitle: "Defence before offence"
+	quest.0000000000C0000F.title: "Make The Base Hold"
+	quest.0000000000C00010.quest_desc: ["Mine carefully and shallowly. Iron is worth more to you as a door and a shield than as a sword right now."]
+	quest.0000000000C00010.quest_subtitle: "The first real step"
+	quest.0000000000C00010.title: "Iron"
+	quest.0000000000C00011.quest_desc: ["Most of what hunts you hits hard and slowly. A shield turns those into survivable mistakes."]
+	quest.0000000000C00011.quest_subtitle: "Blocking beats hitting"
+	quest.0000000000C00011.title: "Shield"
+	quest.0000000000C00012.quest_desc: ["Partial armour is the same as no armour against anything in this pack."]
+	quest.0000000000C00012.quest_subtitle: "All four pieces"
+	quest.0000000000C00012.title: "Armour"
+	quest.0000000000C00013.quest_desc: ["Farm it; do not forage for it. Being outside at dusk because you are hungry is how runs end."]
+	quest.0000000000C00013.quest_subtitle: "Hunger kills quietly"
+	quest.0000000000C00013.title: "Food You Can Rely On"
+	quest.0000000000C00014.quest_desc: ["Anything that tells you something has entered the perimeter is worth the iron. You cannot react to what you have not noticed."]
+	quest.0000000000C00014.quest_subtitle: "Early warning"
+	quest.0000000000C00014.title: "A Bell Or A Tripwire"
+	quest.0000000000C00016.quest_desc: ["You win fights in this pack by choosing them: in a corridor you dug, in light you placed, with a door behind you. Anything else is a coin flip."]
+	quest.0000000000C00016.quest_subtitle: "Never theirs"
+	quest.0000000000C00016.title: "On Your Terms"
+	quest.0000000000C00017.quest_desc: ["Stone stops being enough quickly."]
+	quest.0000000000C00017.quest_subtitle: "Iron at minimum"
+	quest.0000000000C00017.title: "A Real Weapon"
+	quest.0000000000C00018.quest_desc: ["A bow and a stack of arrows turn several unwinnable encounters into manageable ones."]
+	quest.0000000000C00018.quest_subtitle: "Kill it before it arrives"
+	quest.0000000000C00018.title: "Range"
+	quest.0000000000C00019.quest_desc: ["You will miss. Bring more than feels reasonable."]
+	quest.0000000000C00019.quest_subtitle: "Many"
+	quest.0000000000C00019.title: "Arrows"
+	quest.0000000000C0001A.quest_desc: ["Protection and Sharpness are the difference between fleeing everything and choosing your fights. This is the mid-game pivot."]
+	quest.0000000000C0001A.quest_subtitle: "The real power curve"
+	quest.0000000000C0001A.title: "Enchanting"
+	quest.0000000000C0001B.quest_desc: ["Several things here apply effects rather than damage. A bucket of milk cancels most of them outright."]
+	quest.0000000000C0001B.quest_subtitle: "Cure what you can"
+	quest.0000000000C0001B.title: "Milk And Honey"
+	quest.0000000000C0001D.quest_desc: ["The deep dark, the dweller's range and the worst of Arphex's nests all live below. Going down is the most dangerous decision available to you, and the game will not warn you before it goes wrong."]
+	quest.0000000000C0001D.quest_subtitle: "Everything below y 0 is someone's home"
+	quest.0000000000C0001D.title: "Down Is Worse"
+	quest.0000000000C0001E.quest_desc: ["Go down with a plan, a lit staircase and an exit. Do not explore. Get what you came for and come back up."]
+	quest.0000000000C0001E.quest_subtitle: "Quickly, then leave"
+	quest.0000000000C0001E.title: "Diamonds"
+	quest.0000000000C0001F.quest_desc: ["This is the first point where a mistake is not automatically fatal."]
+	quest.0000000000C0001F.quest_subtitle: "Finally comfortable"
+	quest.0000000000C0001F.title: "Diamond Armour"
+	quest.0000000000C00020.quest_desc: ["Shriekers trigger on sound. Wool blocks vibration - a wool path through a deep dark is the difference between looting it and summoning something."]
+	quest.0000000000C00020.quest_subtitle: "The deep dark listens"
+	quest.0000000000C00020.title: "Wool, For Sculk"
+	quest.0000000000C00021.quest_desc: ["If you take nothing else from the deep, take this. A totem of undying is the only insurance this world sells."]
+	quest.0000000000C00021.quest_subtitle: "One mistake forgiven"
+	quest.0000000000C00021.title: "Totem"
+	quest.0000000000C00023.quest_desc: [
+		"There is no boss to kill here. You win a horror pack by making the world safe enough that it stops being frightening - a lit, walled, self-sufficient place where nothing gets in and you no longer listen for footsteps."
+		""
+		"Everything below is in service of that."
+	]
+	quest.0000000000C00023.quest_subtitle: "That is the win condition"
+	quest.0000000000C00023.title: "Make It Boring"
+	quest.0000000000C00024.quest_desc: ["The nether is its own problem, but the armour is worth the trip."]
+	quest.0000000000C00024.quest_subtitle: "Best in slot"
+	quest.0000000000C00024.title: "Netherite"
+	quest.0000000000C00025.quest_desc: ["A beacon is a permanent, unbreakable, enormous light source and a status buff. It is the single most anti-horror object in the game."]
+	quest.0000000000C00025.quest_subtitle: "Light that cannot be put out"
+	quest.0000000000C00025.title: "A Beacon"
+	quest.0000000000C00026.quest_desc: ["For the encounter you did not choose."]
+	quest.0000000000C00026.quest_subtitle: "Keep one, always"
+	quest.0000000000C00026.title: "Enchanted Golden Apple"
+	quest.0000000000C00027.quest_desc: ["Nothing in this pack can follow you into the sky. This is the real escape."]
+	quest.0000000000C00027.quest_subtitle: "Leave the ground behind"
+	quest.0000000000C00027.title: "Elytra"
+	task.000000000010000F.title: "Read this and begin"
+	task.000000000010003F.title: "Understood"
+	task.000000000010006E.title: "Let us build"
+	task.0000000000100090.title: "Start turning"
+	task.00000000001000B2.title: "Begin industrialising"
+	task.00000000001000D7.title: "Go digital"
+	task.0000000000100100.title: "Start planting"
+	task.0000000000100124.title: "Go big"
+	task.0000000000100138.title: "Declare victory"
+	task.00000000002000C7.title: "Start the journey"
+	task.00000000002000E0.title: "Settle in"
+	task.00000000002000FE.title: "Get digging"
+	task.0000000000200118.title: "Pack a bag"
+	task.0000000000200132.title: "Start turning"
+	task.0000000000200191.title: "Choose a tradition"
+	task.00000000002001AD.title: "Wire it together"
+	task.00000000002001D2.title: "Look up, then down"
+	task.00000000002001FB.title: "Face it"
+	task.0000000000200223.title: "Begin the hunt"
+	task.000000000020024B.title: "Keep going"
+	task.000000000020025D.title: "Declare victory"
+	task.000000000030000C.title: "Read this and begin"
+	task.0000000000300033.title: "Break into a natural cave"
+	task.000000000030007F.title: "Find an abandoned mineshaft"
+	task.0000000000300082.title: "Find a dungeon spawner"
+	task.0000000000300084.title: "Find a village inside the rock"
+	task.0000000000300087.title: "Find a stronghold"
+	task.0000000000300090.title: "Find a structure that surprised you"
+	task.0000000000300099.title: "Understand the power situation"
+	task.00000000003000A5.title: "Generate your first power"
+	task.00000000003000BF.title: "Automate cobblestone to sieved output"
+	task.00000000003000D8.title: "Autocraft something from raw cobblestone"
+	task.00000000003000E5.title: "Light a nether portal"
+	task.00000000003000F5.title: "Kill the Ender Dragon"
+	task.000000000040000D.title: "Read this and begin"
+	task.000000000040002C.title: "Understand what will kill you"
+	task.0000000000400064.title: "Step through the portal"
+	task.000000000040007F.title: "Establish a base on both sides"
+	task.0000000000400099.title: "Build your first fully automatic line"
+	task.00000000004000B3.title: "Autocraft a netherite tool"
+	task.00000000004000BE.title: "Find the stronghold"
+	task.00000000004000C0.title: "Kill the Ender Dragon"
+	task.000000000050000B.title: "Read this and begin"
+	task.000000000050002A.title: "Build an air pocket on the seabed"
+	task.000000000050005B.title: "Loot a shipwreck"
+	task.000000000050005D.title: "Explore an ocean ruin"
+	task.0000000000500073.title: "Build a dry base on the sea floor"
+	task.0000000000500089.title: "Automate cobblestone to sieved output"
+	task.000000000050009F.title: "Autocraft something from raw cobblestone"
+	task.00000000005000A9.title: "Light a nether portal"
+	task.00000000005000B3.title: "Find the stronghold and the end portal"
+	task.00000000005000B5.title: "Kill the Ender Dragon"
+	task.000000000060000D.title: "Read this and begin"
+	task.0000000000600012.title: "Secure a room for the first night"
+	task.0000000000600028.title: "Loot a chest inside a building"
+	task.0000000000600037.title: "Completely strip one building"
+	task.0000000000600040.title: "Choose a building to make your base"
+	task.0000000000600044.title: "Furnish your base properly"
+	task.000000000060004B.title: "Spend a night in a base you made"
+	task.0000000000600061.title: "Build a working elevator in your base"
+	task.000000000060006C.title: "Find a non-city structure"
+	task.000000000060006E.title: "Enter the Twilight Forest"
+	task.0000000000600070.title: "Enter the Undergarden"
+	task.0000000000600072.title: "Defeat a Cataclysm boss"
+	task.0000000000600080.title: "Cast a spell you wrote"
+	task.0000000000600084.title: "Use both magic systems in one fight"
+	task.000000000060008D.title: "Build a fully automatic processing line"
+	task.0000000000600091.title: "Build a sorted storage room"
+	task.000000000060009F.title: "Collect all sixteen eyes"
+	task.00000000006000A1.title: "Find the end portal"
+	task.00000000006000A3.title: "Kill the Ender Dragon"
+	task.000000000070000A.title: "Read this and begin"
+	task.000000000070000D.title: "Understand what finite means"
+	task.0000000000700018.title: "Find the lava source without losing it"
+	task.000000000070001A.title: "Look over the edge"
+	task.0000000000700030.title: "Accept that mining is not a plan"
+	task.0000000000700050.title: "Become fully renewable"
+	task.0000000000700075.title: "Automate cobblestone to sieved output"
+	task.0000000000700088.title: "Autocraft something from raw cobblestone"
+	task.0000000000700098.title: "Fully automate an essence farm"
+	task.00000000007000A1.title: "Light a nether portal"
+	task.00000000007000AB.title: "Kill the Ender Dragon"
+	task.000000000080000B.title: "Understand the loop"
+	task.0000000000800014.title: "Build a dedicated arena"
+	task.0000000000800022.title: "Clear Trial I"
+	task.0000000000800025.title: "Clear Trial II"
+	task.0000000000800028.title: "Clear Trial III"
+	task.000000000080002B.title: "Clear Trial IV"
+	task.000000000080002E.title: "Clear Trial V"
+	task.0000000000800031.title: "Clear any tier five times"
+	task.000000000080003A.title: "Find your first affixed item"
+	task.000000000080003E.title: "Reforge a piece of gear"
+	task.0000000000800044.title: "Assemble a full set of upgraded gear"
+	task.000000000080004D.title: "Accept that you have to leave sometimes"
+	task.000000000080004F.title: "Clear a large modded dungeon"
+	task.000000000080005E.title: "Defeat a Cataclysm boss"
+	task.0000000000800060.title: "Survive a Born in Chaos night"
+	task.0000000000800062.title: "Defeat a Twilight Forest boss"
+	task.0000000000800064.title: "Survive ten waves of an endless gateway"
+	task.0000000000800070.title: "Clear a gateway wave with a spell you wrote"
+	task.0000000000800074.title: "Build a healing or defensive setup"
+	task.0000000000800084.title: "Automate loot sorting"
+	task.0000000000800090.title: "Kill the Ender Dragon"
+	task.0000000000800095.title: "Clear Trial V deathless"
+}

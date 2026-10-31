@@ -1,0 +1,200 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skyblock_03_steam_steel"
+	group: "0000000000900001"
+	id: "0000000000100062"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000100063"
+			rewards: [{
+				id: "000000000010006F"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "000000000010006E"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000100063"]
+			id: "0000000000100064"
+			rewards: [{
+				id: "0000000000100071"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100070"
+				item: { count: 1, id: "immersiveengineering:treated_wood_horizontal" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000100063"]
+			id: "0000000000100065"
+			rewards: [{
+				count: 16
+				id: "0000000000100073"
+				item: {
+					count: 1
+					id: "minecraft:coal"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000100072"
+				item: { count: 1, id: "immersiveengineering:coke_oven" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000100065"]
+			id: "0000000000100066"
+			rewards: [{
+				id: "0000000000100075"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000100074"
+				item: { count: 1, id: "immersiveengineering:coke" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000100066"]
+			id: "0000000000100067"
+			rewards: [{
+				id: "0000000000100077"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "0000000000100076"
+				item: { count: 1, id: "immersiveengineering:blast_furnace" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000100067"]
+			id: "0000000000100068"
+			rewards: [{
+				id: "0000000000100079"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100078"
+				item: { count: 1, id: "immersiveengineering:ingot_steel" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["0000000000100064"]
+			id: "0000000000100069"
+			rewards: [{
+				id: "000000000010007B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 3L
+				id: "000000000010007A"
+				item: { count: 1, id: "immersiveengineering:waterwheel_segment" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000100069"]
+			id: "000000000010006A"
+			rewards: [{
+				id: "000000000010007D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000010007C"
+				item: { count: 1, id: "immersiveengineering:windmill" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["000000000010006A"]
+			id: "000000000010006B"
+			rewards: [{
+				id: "000000000010007F"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000010007E"
+				item: { count: 1, id: "immersiveengineering:capacitor_lv" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"0000000000100068"
+				"000000000010006B"
+			]
+			id: "000000000010006C"
+			rewards: [{
+				id: "0000000000100081"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000100080"
+				item: { count: 1, id: "immersiveengineering:crusher" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["0000000000100063"]
+			id: "000000000010006D"
+			rewards: [{
+				id: "0000000000100083"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000100082"
+				item: { count: 1, id: "immersiveengineering:hemp_fiber" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+	]
+}

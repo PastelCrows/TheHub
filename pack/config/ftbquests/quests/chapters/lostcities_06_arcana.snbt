@@ -1,0 +1,95 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lostcities_06_arcana"
+	group: "0000000000900006"
+	id: "0000000000600076"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000600077"
+			rewards: [{
+				id: "000000000060007D"
+				type: "xp"
+				xp: 50
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000060007C"
+				item: { count: 1, id: "ars_nouveau:worn_notebook" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000600077"]
+			id: "0000000000600078"
+			rewards: [{
+				id: "000000000060007F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000060007E"
+				item: { count: 1, id: "ars_nouveau:source_gem" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000600078"]
+			id: "0000000000600079"
+			rewards: [{
+				id: "0000000000600081"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000600080"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000600078"]
+			id: "000000000060007A"
+			rewards: [{
+				id: "0000000000600083"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 4L
+				id: "0000000000600082"
+				item: { count: 1, id: "irons_spellbooks:arcane_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"0000000000600079"
+				"000000000060007A"
+			]
+			id: "000000000060007B"
+			rewards: [{
+				id: "0000000000600085"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000600084"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+	]
+}

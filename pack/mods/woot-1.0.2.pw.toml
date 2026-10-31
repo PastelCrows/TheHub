@@ -1,0 +1,8 @@
+name = "Woot-1.0.2"
+filename = "woot-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "91c20fee2941897b33b97f8e1b137082520be1f37d05ef68a124f1c5d7847e690425618a30cd9e712983fa675cfb33fae13eb5e9d8140b496d6263187fc3e791"
+url = "https://cdn.modrinth.com/data/vSPZ8edg/versions/T2VGZfgI/woot-1.0.2.jar"

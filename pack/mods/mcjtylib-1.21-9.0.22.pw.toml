@@ -1,0 +1,8 @@
+name = "McJtyLib - 1.21-9.0.22"
+filename = "mcjtylib-1.21-9.0.22.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "0c4ef91b23ca14cd59269bdf9ec68d615902a3641826cd43ff7976868ed5b8b8016e60870b02d7ac8dceb19a8f66993ed0dfa8f90a99ad9ab538ad8e0a1a0eac"
+url = "https://cdn.modrinth.com/data/1Zu0uTEE/versions/hvOvujxs/mcjtylib-1.21-9.0.22.jar"

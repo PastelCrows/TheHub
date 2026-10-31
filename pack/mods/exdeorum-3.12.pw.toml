@@ -1,0 +1,8 @@
+name = "Ex Deorum 3.12"
+filename = "exdeorum-3.12.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "e0397e2f3734a54f036cc12d1bd3dfd6afbd13449bed33735e52d576ad9bed719b2056103722044f3eedf8eaa89a60303c11a1e741c92f24a404acace803d350"
+url = "https://cdn.modrinth.com/data/WP0FLyzv/versions/NOZ1Zbbu/exdeorum-3.12.jar"

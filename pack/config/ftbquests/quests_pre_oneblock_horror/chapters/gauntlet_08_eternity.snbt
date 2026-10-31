@@ -1,0 +1,107 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gauntlet_08_eternity"
+	group: "0000000000900008"
+	id: "0000000000800086"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000800087"
+			rewards: [{
+				id: "000000000080008D"
+				type: "xp"
+				xp: 500
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 2L
+				id: "000000000080008C"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000800087"]
+			id: "0000000000800088"
+			rewards: [{
+				id: "000000000080008F"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				count: 12L
+				id: "000000000080008E"
+				item: { count: 1, id: "minecraft:ender_eye" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000800088"]
+			id: "0000000000800089"
+			rewards: [
+				{
+					id: "0000000000800091"
+					item: {
+						count: 1
+						id: "minecraft:dragon_egg"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000800092"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			tasks: [{
+				id: "0000000000800090"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000800089"]
+			id: "000000000080008A"
+			rewards: [{
+				id: "0000000000800094"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "0000000000800093"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"0000000000800087"
+				"0000000000800089"
+			]
+			id: "000000000080008B"
+			rewards: [{
+				id: "0000000000800096"
+				type: "xp"
+				xp: 2000
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000800095"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+	]
+}

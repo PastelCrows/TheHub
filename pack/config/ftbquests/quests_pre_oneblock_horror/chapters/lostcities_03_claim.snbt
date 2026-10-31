@@ -1,0 +1,122 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lostcities_03_claim"
+	group: "0000000000900006"
+	id: "0000000000600039"
+	images: [ ]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "000000000060003A"
+			rewards: [{
+				id: "0000000000600041"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000600040"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["000000000060003A"]
+			id: "000000000060003B"
+			rewards: [{
+				id: "0000000000600043"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000600042"
+				item: { count: 1, id: "minecraft:lantern" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["000000000060003B"]
+			id: "000000000060003C"
+			rewards: [{
+				id: "0000000000600045"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000600044"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000060003B"]
+			id: "000000000060003D"
+			rewards: [
+				{
+					count: 8
+					id: "0000000000600047"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000600048"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 32L
+				id: "0000000000600046"
+				item: { count: 1, id: "minecraft:wheat" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["000000000060003C"]
+			id: "000000000060003E"
+			rewards: [{
+				id: "000000000060004A"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000600049"
+				item: { count: 1, id: "minecraft:enchanting_table" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"000000000060003E"
+				"000000000060003D"
+			]
+			id: "000000000060003F"
+			rewards: [{
+				id: "000000000060004C"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "000000000060004B"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+	]
+}

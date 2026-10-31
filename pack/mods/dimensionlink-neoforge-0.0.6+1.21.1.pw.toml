@@ -1,0 +1,8 @@
+name = "Dimension Link 0.0.6+1.21.1"
+filename = "dimensionlink-neoforge-0.0.6+1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "ea9863006543dd593b7084f5f76dec14ad2c5ab57bee85770f976c3638916c66d6e7c86e2a7e8b354d412c13381cc6a18f8a444ee6c6ad2e38943ff6754894e4"
+url = "https://cdn.modrinth.com/data/mgRpdg8r/versions/E9G5i0RD/dimensionlink-neoforge-0.0.6%2B1.21.1.jar"

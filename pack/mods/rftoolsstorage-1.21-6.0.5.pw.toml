@@ -1,0 +1,8 @@
+name = "RFToolsStorage - 1.21-6.0.5"
+filename = "rftoolsstorage-1.21-6.0.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "b3d77929b57acf4a494bca6c32f5f8c93b5dd2bd2e04b52a81513910c2857ff53c360943078586bcdaa802e6a48b6b6862e22dfab871ae7bcc17169bcad9458b"
+url = "https://cdn.modrinth.com/data/tx4M6qRg/versions/LWsB9Cy7/rftoolsstorage-1.21-6.0.5.jar"

@@ -1,0 +1,269 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "caveblock_02_digging_out"
+	group: "0000000000900003"
+	id: "0000000000300023"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000300024"
+			rewards: [{
+				count: 32
+				id: "0000000000300032"
+				item: {
+					count: 1
+					id: "minecraft:torch"
+				}
+				type: "item"
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 32L
+				id: "0000000000300031"
+				item: { count: 1, id: "minecraft:coal" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000300024"]
+			id: "0000000000300025"
+			rewards: [
+				{
+					count: 32
+					id: "0000000000300034"
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300035"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				id: "0000000000300033"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300024"]
+			id: "0000000000300026"
+			rewards: [{
+				id: "0000000000300037"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000300036"
+				item: { count: 1, id: "minecraft:iron_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000300026"]
+			id: "0000000000300027"
+			rewards: [{
+				count: 3
+				id: "0000000000300039"
+				item: {
+					count: 1
+					id: "minecraft:iron_ingot"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000300038"
+				item: { count: 1, id: "minecraft:bucket" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000300026"]
+			id: "0000000000300028"
+			rewards: [{
+				id: "000000000030003B"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "000000000030003A"
+				item: { count: 1, id: "minecraft:iron_pickaxe" }
+				type: "item"
+			}]
+			x: 5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0000000000300026"]
+			id: "0000000000300029"
+			rewards: [{
+				id: "000000000030003D"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 24L
+				id: "000000000030003C"
+				item: { count: 1, id: "minecraft:copper_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0000000000300028"]
+			id: "000000000030002A"
+			rewards: [
+				{
+					count: 8
+					id: "000000000030003F"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300040"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				count: 64L
+				id: "000000000030003E"
+				item: { count: 1, id: "minecraft:cobbled_deepslate" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["000000000030002A"]
+			id: "000000000030002B"
+			rewards: [{
+				id: "0000000000300042"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000300041"
+				item: { count: 1, id: "minecraft:redstone" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000030002A"]
+			id: "000000000030002C"
+			rewards: [{
+				id: "0000000000300044"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000300043"
+				item: { count: 1, id: "minecraft:lapis_lazuli" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000030002A"]
+			id: "000000000030002D"
+			rewards: [{
+				id: "0000000000300046"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000300045"
+				item: { count: 1, id: "minecraft:gold_ingot" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["000000000030002A"]
+			id: "000000000030002E"
+			rewards: [
+				{
+					count: 2
+					id: "0000000000300048"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000300049"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				count: 5L
+				id: "0000000000300047"
+				item: { count: 1, id: "minecraft:diamond" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000030002A"]
+			id: "000000000030002F"
+			rewards: [{
+				id: "000000000030004B"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 8L
+				id: "000000000030004A"
+				item: { count: 1, id: "minecraft:amethyst_shard" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["000000000030002E"]
+			id: "0000000000300030"
+			rewards: [{
+				id: "000000000030004D"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000030004C"
+				item: { count: 1, id: "minecraft:diamond_pickaxe" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.5d
+		}
+	]
+}

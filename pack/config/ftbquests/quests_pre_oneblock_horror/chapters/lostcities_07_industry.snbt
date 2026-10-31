@@ -1,0 +1,75 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lostcities_07_industry"
+	group: "0000000000900006"
+	id: "0000000000600086"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000600087"
+			rewards: [{
+				id: "000000000060008C"
+				type: "xp"
+				xp: 200
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "000000000060008B"
+				item: { count: 1, id: "create:mechanical_arm" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000600087"]
+			id: "0000000000600088"
+			rewards: [{
+				id: "000000000060008E"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "000000000060008D"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000600087"]
+			id: "0000000000600089"
+			rewards: [{
+				id: "0000000000600090"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 16L
+				id: "000000000060008F"
+				item: { count: 1, id: "create:large_cogwheel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000600088"]
+			id: "000000000060008A"
+			rewards: [{
+				id: "0000000000600092"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000600091"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+	]
+}

@@ -1,0 +1,8 @@
+name = "1.13.0 for NeoForge 1.21.1"
+filename = "integratedtunnels-1.21.1-neoforge-1.13.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha512"
+hash = "8912ae297ae9d2127a84c7a00030a2ac1963b926fe99e7db3d8e10caeac5ff114aec4f36d7a7e39f528ef8552f056664b853e2e76c20a06b5ae722ce7cfe9b00"
+url = "https://cdn.modrinth.com/data/Etqy1Omb/versions/fLWXpCWB/integratedtunnels-1.21.1-neoforge-1.13.0.jar"

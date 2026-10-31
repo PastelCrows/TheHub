@@ -1,0 +1,97 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_07_industry"
+	group: "0000000000900009"
+	id: "0000000000B0002F"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00030"
+			rewards: [{
+				id: "0000000000B0008E"
+				type: "xp"
+				xp: 400
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B0008F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00030"]
+			id: "0000000000B00031"
+			rewards: [{
+				id: "0000000000B00090"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				count: 8L
+				id: "0000000000B00091"
+				item: { count: 1, id: "mekanism:ingot_steel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00030"]
+			id: "0000000000B00032"
+			rewards: [{
+				id: "0000000000B00092"
+				type: "xp"
+				xp: 400
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000B00093"
+				item: { count: 1, id: "mekanism:enrichment_chamber" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00030"]
+			id: "0000000000B00033"
+			rewards: [{
+				id: "0000000000B00094"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000B00095"
+				item: { count: 1, id: "mekanism:basic_energy_cube" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00030"]
+			id: "0000000000B00034"
+			rewards: [{
+				id: "0000000000B00096"
+				type: "xp"
+				xp: 600
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "0000000000B00097"
+				item: { count: 1, id: "ae2:controller" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

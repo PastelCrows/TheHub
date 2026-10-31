@@ -1,0 +1,112 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "onechunk_06_industrial"
+	group: "0000000000900007"
+	id: "0000000000700077"
+	images: [ ]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000700078"
+			rewards: [{
+				id: "000000000070007F"
+				type: "xp"
+				xp: 50
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 4L
+				id: "000000000070007E"
+				item: { count: 1, id: "mekanism:steel_casing" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000700078"]
+			id: "0000000000700079"
+			rewards: [{
+				id: "0000000000700081"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000700080"
+				item: { count: 1, id: "mekanism:enrichment_chamber" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0000000000700078"]
+			id: "000000000070007A"
+			rewards: [{
+				id: "0000000000700083"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000700082"
+				item: { count: 1, id: "ae2:certus_quartz_crystal" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["000000000070007A"]
+			id: "000000000070007B"
+			rewards: [{
+				id: "0000000000700085"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0000000000700084"
+				item: { count: 1, id: "ae2:inscriber" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["000000000070007B"]
+			id: "000000000070007C"
+			rewards: [{
+				id: "0000000000700087"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "0000000000700086"
+				item: { count: 1, id: "ae2:controller" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"000000000070007C"
+				"0000000000700079"
+			]
+			id: "000000000070007D"
+			rewards: [{
+				id: "0000000000700089"
+				type: "xp"
+				xp: 300
+			}]
+			tasks: [{
+				id: "0000000000700088"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+	]
+}

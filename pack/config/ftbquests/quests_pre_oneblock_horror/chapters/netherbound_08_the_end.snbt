@@ -1,0 +1,119 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "netherbound_08_the_end"
+	group: "0000000000900004"
+	id: "00000000004000B5"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "00000000004000B6"
+			rewards: [{
+				id: "00000000004000BD"
+				type: "xp"
+				xp: 200
+			}]
+			size: 1.5d
+			tasks: [{
+				count: 12L
+				id: "00000000004000BC"
+				item: { count: 1, id: "minecraft:ender_eye" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00000000004000B6"]
+			id: "00000000004000B7"
+			rewards: [{
+				id: "00000000004000BF"
+				type: "xp"
+				xp: 200
+			}]
+			tasks: [{
+				id: "00000000004000BE"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["00000000004000B7"]
+			id: "00000000004000B8"
+			rewards: [
+				{
+					id: "00000000004000C1"
+					item: {
+						count: 1
+						id: "minecraft:dragon_egg"
+					}
+					type: "item"
+				}
+				{
+					id: "00000000004000C2"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "00000000004000C0"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["00000000004000B8"]
+			id: "00000000004000B9"
+			rewards: [{
+				id: "00000000004000C4"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "00000000004000C3"
+				item: { count: 1, id: "minecraft:elytra" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["00000000004000B8"]
+			id: "00000000004000BA"
+			rewards: [{
+				id: "00000000004000C6"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "00000000004000C5"
+				item: { count: 1, id: "minecraft:nether_star" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["00000000004000BA"]
+			id: "00000000004000BB"
+			rewards: [{
+				id: "00000000004000C8"
+				type: "xp"
+				xp: 500
+			}]
+			tasks: [{
+				id: "00000000004000C7"
+				item: { count: 1, id: "minecraft:beacon" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 12.0d
+		}
+	]
+}

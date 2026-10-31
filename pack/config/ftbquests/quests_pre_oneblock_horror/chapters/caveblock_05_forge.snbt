@@ -1,0 +1,130 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "caveblock_05_forge"
+	group: "0000000000900003"
+	id: "0000000000300092"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000300093"
+			rewards: [
+				{
+					count: 8
+					id: "000000000030009A"
+					item: {
+						count: 1
+						id: "minecraft:coal_block"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000030009B"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000300099"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000300093"]
+			id: "0000000000300094"
+			rewards: [
+				{
+					count: 32
+					id: "000000000030009D"
+					item: {
+						count: 1
+						id: "minecraft:coal"
+					}
+					type: "item"
+				}
+				{
+					id: "000000000030009E"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				id: "000000000030009C"
+				item: { count: 1, id: "ironfurnaces:iron_furnace" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000300094"]
+			id: "0000000000300095"
+			rewards: [{
+				id: "00000000003000A0"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "000000000030009F"
+				item: { count: 1, id: "immersiveengineering:coke_oven" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000300095"]
+			id: "0000000000300096"
+			rewards: [{
+				id: "00000000003000A2"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "00000000003000A1"
+				item: { count: 1, id: "immersiveengineering:blast_furnace" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0000000000300096"]
+			id: "0000000000300097"
+			rewards: [{
+				id: "00000000003000A4"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				count: 16L
+				id: "00000000003000A3"
+				item: { count: 1, id: "immersiveengineering:ingot_steel" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["0000000000300094"]
+			id: "0000000000300098"
+			rewards: [{
+				id: "00000000003000A6"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "00000000003000A5"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+	]
+}

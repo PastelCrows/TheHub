@@ -1,0 +1,163 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oneblock_01_the_block"
+	group: "0000000000900009"
+	id: "0000000000B00001"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "0000000000B00002"
+			rewards: [
+				{
+					count: 8
+					id: "0000000000B0003D"
+					item: {
+						count: 1
+						id: "minecraft:oak_log"
+					}
+					type: "item"
+				}
+				{
+					id: "0000000000B0003E"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "0000000000B0003F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00003"
+			rewards: [{
+				id: "0000000000B00040"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000B00041"
+				item: { count: 1, id: "minecraft:dirt" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00004"
+			rewards: [{
+				id: "0000000000B00042"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				count: 16L
+				id: "0000000000B00043"
+				item: { count: 1, id: "minecraft:oak_log" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00005"
+			rewards: [{
+				count: 16
+				id: "0000000000B00044"
+				item: {
+					count: 1
+					id: "minecraft:oak_planks"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000B00045"
+				item: { count: 1, id: "minecraft:crafting_table" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00006"
+			rewards: [{
+				id: "0000000000B00046"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 32L
+				id: "0000000000B00047"
+				item: { count: 1, id: "minecraft:cobblestone" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00007"
+			rewards: [{
+				id: "0000000000B00048"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0000000000B00049"
+				item: { count: 1, id: "minecraft:stone_pickaxe" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00008"
+			rewards: [{
+				count: 8
+				id: "0000000000B0004A"
+				item: {
+					count: 1
+					id: "minecraft:charcoal"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0000000000B0004B"
+				item: { count: 1, id: "minecraft:furnace" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0000000000B00002"]
+			id: "0000000000B00009"
+			rewards: [{
+				id: "0000000000B0004C"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				count: 2L
+				id: "0000000000B0004D"
+				item: { count: 1, id: "minecraft:chest" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+	]
+}
