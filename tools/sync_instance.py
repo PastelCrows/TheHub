@@ -66,6 +66,10 @@ FILES = [
      "config/lostcities/common.toml"),
     (os.path.join("minecraft", "config", "lostcities-server.toml"),
      "config/lostcities-server.toml"),
+    # RRLS hides the vanilla reload screen and draws a small progress line over the world
+    # instead, which is why a 90-second texture swap reads as a frozen client. Its message
+    # was still the shipped placeholder, "Edit in config!".
+    (os.path.join("minecraft", "config", "rrls.toml"), "config/rrls.toml"),
 ]
 SKIP_SUFFIX = (".prehubfix", ".prehubtune", ".part")
 
