@@ -54,12 +54,22 @@ reported `missing required: 2` immediately. Pulling in two library jars for a de
 bad trade, and version **1.3.2** does the same job with zero dependencies. That is the one
 installed.
 
-**RRLS has strong synergy with the deferred texture swap** and is the reason it is worth a beta.
-`PocketSkins` already defers `reloadResourcePacks()` until the player has landed and the game is
-quiet; RRLS makes that reload non-blocking on top. The `reloading` flag in `PocketSkins` is the
-real re-entrancy guard, not the loading-overlay check, so removing the overlay does not break the
-gate. Its filename says `-forge` but it ships `META-INF/neoforge.mods.toml` — it is the NeoForge
-build. If it misbehaves, delete the one jar; nothing else depends on it.
+**RRLS was installed, then removed on 2026-10-31 — and the reason is worth keeping.** It made
+`reloadResourcePacks()` non-blocking by hiding the loading overlay entirely
+(`hideOverlays = "ALL"`) and drawing a small progress line over the still world instead. That
+worked exactly as advertised, and it is precisely why the texture swap was reported as *"laggy"*
+and *"stuttery"*: for eighty to a hundred seconds the world sat there looking frozen, with no
+screen saying otherwise. Its progress message was still the shipped placeholder, `Edit in
+config!`.
+
+The replacement is the opposite bet. DrippyLoadingScreen renders a branded loading screen for
+that same moment, which means the pause is visibly a pause. RRLS hides the screen Drippy draws,
+so the two cannot both be installed — this is a straight trade of *invisible but non-blocking*
+for *blocking but legible*, and legible won. If that turns out to be the wrong call in play, the
+reverse is one jar each way; `add_performance_mods.py` still carries the entry as a comment.
+
+The `reloading` flag in `PocketSkins` is the real re-entrancy guard, not the loading-overlay
+check, so neither choice affects the gate.
 
 ## Refused — and the judgement matters more than the download counts
 

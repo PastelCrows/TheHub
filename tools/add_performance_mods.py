@@ -53,11 +53,12 @@ WANT = [
      "packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
      "raises packet/NBT size limits - 247 mods make a very large registry sync", "release"),
 
-    ("rrls-5.0.11+mc1.21.1-forge.jar",
-     "https://cdn.modrinth.com/data/ZP7xHXtw/versions/1W53KOea/"
-     "rrls-5.0.11%2Bmc1.21.1-forge.jar",
-     "resource packs reload in the BACKGROUND - directly shortens the PocketSkins "
-     "texture-swap pause", "BETA - the one risk on this list"),
+    # RRLS was REMOVED on 2026-10-31. It was added to make resource reloads non-blocking -
+    # hideOverlays = "ALL" draws a small progress line over the still world instead of a loading
+    # screen. That worked, and it is exactly why a 90-second texture swap read as a frozen
+    # client: nothing on screen said it was working. With DrippyLoadingScreen now providing a
+    # branded loading screen for that same moment, the two were mutually exclusive and the
+    # branded screen won. Left here, commented, so this is a decision rather than an omission.
 ]
 
 
