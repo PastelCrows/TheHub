@@ -5,36 +5,26 @@ empty Prism instance, pastes one pre-launch command into it, and every launch fr
 whatever has changed — the same shape as Kewz's Cobblemon pack, without the 54 MB signed
 executable.
 
-## One thing has to change first
+## Status: live
 
-**This repository is private.** packwiz fetches over plain HTTP with no authentication, so
-`raw.githubusercontent.com` returns 404 for everything in it, and so do the release assets. That
-is not a packwiz limitation to work around — it is the whole delivery mechanism.
-
-Verified, not assumed:
+The repository is public and every host the installer touches has been checked by hand:
 
 ```
-raw README.md                               HTTP 404
-twilightforest .jar (release asset)         HTTP 404
-sodium (Modrinth CDN)                       HTTP 206
-ftb-quests (maven.ftb.dev)                  HTTP 206
-packwiz-installer-bootstrap.jar (GitHub)    HTTP 200
+pack.toml            (raw.githubusercontent)   HTTP 200
+index.toml                                     HTTP 200
+a mod metafile                                 HTTP 200
+a metafile with spaces in the name             HTTP 200
+twilightforest       (release asset)           HTTP 206
+pocketquests         (release asset)           HTTP 206
+sodium               (Modrinth CDN)            HTTP 206
+ftb-quests           (maven.ftb.dev)           HTTP 206
+packwiz-installer-bootstrap.jar (GitHub)       HTTP 200
 ```
 
-Everything that is somebody else's works. Only our own two hosts fail, and both fail for the
-same reason.
-
-Three ways forward, and the choice is yours because making a repository public cannot be quietly
-undone — the history goes public with it:
-
-1. **Make this repository public.** Simplest. It publishes the quest book, the configs, the
-   tooling and the two hosted jars. Nothing here is secret, but it is a decision.
-2. **Keep it private and publish only the pack.** A second, public repo holding `pack/` and the
-   two release assets. More moving parts, nothing else exposed.
-3. **Host the pack somewhere else entirely** — GitHub Pages, Cloudflare Pages, any static host.
-
-Until one of those happens the pack is complete but unreachable, and the installer will fail on
-the first file it tries to fetch.
+Making the repository public also published the commit history, which carries the author's real
+email address on every commit - a known and accepted trade, recorded here so it is not a surprise
+later. There are no tokens, keys or addresses in the tree; a handful of tool constants and
+`config/litematica.json` carry the Windows username.
 
 ## What the installer gets
 
