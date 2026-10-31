@@ -9,7 +9,9 @@ Terminology used throughout (and in the generated comments):
 
 What changed from v3:
   - Twelve arches, six per wall: nine live (eight pocket dimensions plus redstone land) and
-    three sealed (crying obsidian behind a frame) for One Block, Horror and one spare, so the
+    ONE sealed (crying obsidian behind a frame) - the reserved slot. One Block and Horror were
+    sealed when this was first written and have both been live for a while; LIVE below is the
+    authority, not this paragraph. So the
     hall reads as finished with doors not yet opened rather than as holes.
   - A real room instead of a slab: a raised central dais, a lantern-lit colonnade between the
     arches, overhead beams, a bordered floor with a centre aisle, and a recessed back panel

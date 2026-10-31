@@ -4,26 +4,30 @@
 THE BRIEF, from the user's own stated sensibility: deep purple, warm gold, gothic/elegant,
 old-school D&D-era high fantasy. Not neon, not flat-modern - illuminated manuscript.
 
-The convenient part is that the pack is already built out of that palette, so the art is drawn
-from the thing itself rather than imposed on it. The lobby is polished blackstone and deepslate
-brick lit by glowstone, and its hall is TWELVE ARCHES, nine of them live and three sealed in
-crying obsidian. Crying obsidian is purple; glowstone is warm gold. So the title screen is that
-hall: twelve arches, nine lit from within, three cold and sealed. Anyone who has stood in the
-lobby will recognise it, and the 9/3 split is real information rather than decoration - see
-tools/build_hub_room_v5.py, which emits the arch coordinates.
+The pack is already built out of that palette, so the art is drawn from the thing itself rather
+than imposed on it. The title screen IS the lobby: a twelve-bay gothic arcade.
 
-TYPOGRAPHY. Palatino Linotype, because it is the closest thing on this machine to the Souvenir
-and Friz Quadrata that the old AD&D books were set in - a humanist serif with calligraphic
-bones. Checked against C:\\Windows\\Fonts rather than assumed; there is no blackletter installed
-and Times/Georgia would read as a word processor rather than a rulebook.
+ELEVEN LIVE, ONE SEALED. Not nine. One Block and Horror were sealed early on and have both been
+live for a long time; the authority is the `LIVE` set in build_hub_room_v6.py, whose own
+docstring was stale until 2026-10-31.
 
-WHY RENDER THE TEXT INTO THE IMAGE rather than use FancyMenu's `text` element: the serialization
-keys for `image` elements were read out of a known-good layout file and are safe to author by
-hand, and rendering type here means real letterspacing, a gold gradient fill and a drop shadow,
-none of which Minecraft's bitmap font can do. The layout stays to constructs that have been
-observed working.
+EACH ARCH IS ITS OWN DOOR. build_hub_room_v6.py gives every arch a frame material and a light
+block, and those are carried into the art: skyblock's sea lantern is pale and cool, netherbound's
+shroomlight burns orange, horror's soul lantern is a cold blue, the gauntlet's gold block is the
+brightest thing in the hall. The colours are tempered toward the brand so eleven different lights
+still read as one deep-purple-and-gold room, but the identity of each door is really there. The
+sealed bay is crying obsidian with a deepslate cross-brace and no light at all, so "shut" reads
+at a glance instead of being a faint ghost nobody can see.
 
-Everything is drawn at 2x and downsampled, because arches are arcs and arcs alias badly.
+TYPOGRAPHY. Palatino Linotype, checked against C:\\Windows\\Fonts rather than assumed - there is
+no blackletter installed, and it is the closest thing here to the Souvenir and Friz Quadrata the
+old AD&D books were set in. The wordmark renders to a PNG rather than a FancyMenu text element,
+which buys real letterspacing, a gold gradient fill and a drop shadow the bitmap font cannot do.
+
+THE ARCH. Two-centred and equilateral. For an opening of width w springing at y, the head runs
+from x = w - sqrt(w^2 - dy^2) to x = sqrt(w^2 - dy^2), meeting at a point at dy = w*sqrt(3)/2.
+The springing line sits a head's height DOWN FROM THE TOP of the mask - putting it at the bottom
+renders twelve floating arrowheads and nothing else.
 
     python build_brand_assets.py            # render into tools/_brand/ for review
     python build_brand_assets.py --apply    # also install into the instance
@@ -33,7 +37,7 @@ import math
 import os
 import sys
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -41,23 +45,51 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "_brand")
 MC = os.path.expandvars(r"%APPDATA%\PrismLauncher\instances\The Hub\minecraft")
 
-# ----------------------------------------------------------------- palette
-# Deep purple and warm gold. The purples are taken toward blackstone rather than toward magenta;
-# the golds are antique (glowstone lit through dust), not lemon.
-VOID        = (11, 7, 16)        # near-black, violet-biased - the ground everything sits on
-PURPLE_DEEP = (26, 15, 40)
-PURPLE_MID  = (45, 24, 70)
-PURPLE_LIT  = (74, 42, 112)      # crying obsidian, catching light
-GOLD_DIM    = (138, 107, 32)
-GOLD        = (201, 162, 39)
+W_OUT, H_OUT = 2560, 1440
+SS = 2
+
+VOID        = (10, 7, 15)
+PURPLE_DEEP = (24, 14, 37)
+PURPLE_LIT  = (82, 48, 122)
+STONE_LIT   = (46, 33, 60)
+GOLD_DIM    = (132, 102, 32)
+GOLD        = (198, 160, 42)
 GOLD_BRIGHT = (242, 205, 122)
-IVORY       = (237, 227, 207)    # parchment, for text that must stay readable
+IVORY       = (237, 227, 207)
+
+# The twelve bays in the order build_hub_room_v6.py lays them out, with the light each arch
+# actually contains. None means sealed.
+BAYS = [
+    ("skyblock",    (142, 178, 186)),   # sea lantern
+    ("survival",    (236, 184, 112)),   # lantern
+    ("caveblock",   (242, 205, 122)),   # glowstone
+    ("netherbound", (232, 146,  78)),   # shroomlight
+    ("oceanblock",  (142, 178, 186)),   # sea lantern
+    ("lostcities",  (214, 122,  72)),   # redstone lamp
+    ("onechunk",    (242, 205, 122)),   # glowstone
+    ("gauntlet",    (246, 208, 108)),   # gold block
+    ("redstone",    (214, 122,  72)),   # redstone lamp
+    ("oneblock",    (238, 200, 126)),   # ochre froglight
+    ("horror",      (118, 196, 206)),   # soul lantern
+    ("reserved",    None),              # sealed: crying obsidian, no light
+]
 
 FONT_DIR = r"C:\Windows\Fonts"
-FACE_BOLD = os.path.join(FONT_DIR, "palab.ttf")      # Palatino Linotype Bold
-FACE_ITAL = os.path.join(FONT_DIR, "palai.ttf")      # Palatino Linotype Italic
+FACE_BOLD = os.path.join(FONT_DIR, "palab.ttf")
+FACE_ITAL = os.path.join(FONT_DIR, "palai.ttf")
 
-SS = 2  # supersample factor
+FLOOR_T = 0.930
+
+# How far each arch's own light is pulled toward the brand's gold before it is drawn. The first
+# attempt used the raw block colours and the hall came out a rainbow - eleven saturated slabs
+# that read as a colour chart, not as deep purple and warm gold. At 0.55 the identities survive
+# (sea lantern still cool, shroomlight still orange, soul lantern still blue) but they all sit
+# inside one palette.
+TEMPER = 0.55
+
+
+def tempered(c):
+    return lerp(c, GOLD, TEMPER)
 
 
 def font(path, size):
@@ -70,142 +102,187 @@ def lerp(a, b, t):
     return tuple(int(round(a[i] + (b[i] - a[i]) * t)) for i in range(3))
 
 
-def vertical_gradient(size, top, bottom, stops=None):
-    """A vertical gradient. `stops` is an optional list of (t, colour) for a multi-stop ramp."""
+def ramp(size, stops):
     w, h = size
-    img = Image.new("RGB", (1, h))
-    px = img.load()
+    col = Image.new("RGB", (1, h))
+    px = col.load()
     for y in range(h):
         t = y / max(1, h - 1)
-        if stops:
-            c = stops[0][1]
-            for i in range(len(stops) - 1):
-                t0, c0 = stops[i]
-                t1, c1 = stops[i + 1]
-                if t0 <= t <= t1:
-                    c = lerp(c0, c1, (t - t0) / max(1e-6, t1 - t0))
-                    break
-            else:
-                c = stops[-1][1]
-        else:
-            c = lerp(top, bottom, t)
+        c = stops[-1][1]
+        for i in range(len(stops) - 1):
+            t0, c0 = stops[i]
+            t1, c1 = stops[i + 1]
+            if t0 <= t <= t1:
+                c = lerp(c0, c1, (t - t0) / max(1e-6, t1 - t0))
+                break
         px[0, y] = c
-    return img.resize((w, h), Image.BILINEAR)
+    return col.resize((w, h), Image.BILINEAR)
 
 
-def radial_glow(size, centre, radius, colour, strength=1.0):
-    """An additive soft glow, returned as an RGB image to be screened over the base."""
+def glow(size, centre, rx, ry, colour, strength):
     w, h = size
-    small = max(8, int(radius / 8))
-    g = Image.new("L", (w // 4, h // 4), 0)
+    q = 4
+    g = Image.new("L", (w // q, h // q), 0)
     d = ImageDraw.Draw(g)
-    cx, cy = centre[0] // 4, centre[1] // 4
-    r = radius // 4
-    for i in range(12, 0, -1):
-        t = i / 12.0
-        d.ellipse([cx - r * t, cy - r * t * 0.72, cx + r * t, cy + r * t * 0.72],
-                  fill=int(255 * (1 - t) ** 2 * strength))
-    g = g.resize((w, h), Image.BILINEAR).filter(ImageFilter.GaussianBlur(small))
+    cx, cy = centre[0] // q, centre[1] // q
+    for i in range(14, 0, -1):
+        t = i / 14.0
+        d.ellipse([cx - rx * t / q, cy - ry * t / q, cx + rx * t / q, cy + ry * t / q],
+                  fill=int(255 * (1 - t) ** 2.2 * strength))
+    g = g.resize((w, h), Image.BILINEAR).filter(ImageFilter.GaussianBlur(max(6, rx // 10)))
     out = Image.new("RGB", (w, h), colour)
     out.putalpha(g)
     return out
 
 
 def arch_mask(w, h):
-    """A two-centred (equilateral) gothic arch, built by scanline rather than by pieslice.
-
-    The pieslice version of this drew a notch instead of a point, because the arcs were being
-    bounded by boxes that did not correspond to the two springing centres. The geometry is not
-    actually fiddly once written down: for an opening of width w springing at y = spring, the
-    left arc is centred at (w, spring) with radius w and the right arc at (0, spring), also
-    radius w. At a height dy above the springing line the opening runs from
-
-        x_left  = w - sqrt(w^2 - dy^2)        to        x_right = sqrt(w^2 - dy^2)
-
-    which is the full width at dy = 0 and meets at a point at dy = w*sqrt(3)/2. That apex height
-    is what makes it equilateral, and it is why the head is always 0.866 of the opening width.
-    """
     head = w * math.sqrt(3) / 2.0
-    # The springing line sits a HEAD'S HEIGHT DOWN FROM THE TOP, not at the bottom of the mask.
-    # Putting it at h-1 meant every row below it was outside the loop's reach, so the shafts were
-    # never filled and the hall rendered as twelve floating arrowheads.
     spring = int(round(head))
     m = Image.new("L", (w, h), 0)
     px = m.load()
-    top = 0
     for y in range(h):
         if y >= spring:
-            x0, x1 = 0, w                      # the shaft, full width
+            x0, x1 = 0, w
         else:
             dy = spring - y
             if dy >= head:
-                continue                       # above the apex
+                continue
             k = math.sqrt(max(0.0, w * w - dy * dy))
-            x0 = int(round(w - k))
-            x1 = int(round(k))
+            x0, x1 = int(round(w - k)), int(round(k))
         for x in range(max(0, x0), min(w, x1)):
             px[x, y] = 255
-    return m, top
+    return m, spring
 
 
-FLOOR_T = 0.935   # where the hall floor meets the arches; both must agree
+def outline_of(mask, width):
+    """A band just inside the mask edge - the archivolt moulding around each opening."""
+    eroded = mask.filter(ImageFilter.MinFilter(width * 2 + 1))
+    return ImageChops.subtract(mask, eroded)
 
 
-def draw_arcade(base):
-    """The hall: twelve arches, nine lit from within, three sealed in crying obsidian.
+def ashlar(size, rows=20):
+    """Faint coursed stonework, so the wall reads as masonry and not a flat field."""
+    w, h = size
+    layer = Image.new("L", (w, h), 0)
+    d = ImageDraw.Draw(layer)
+    course = max(8, h // rows)
+    block = course * 3
+    for i, y in enumerate(range(0, h, course)):
+        d.line([(0, y), (w, y)], fill=24, width=max(1, course // 22))
+        offset = (block // 2) if (i % 2) else 0
+        for x in range(-block, w + block, block):
+            d.line([(x + offset, y), (x + offset, y + course)],
+                   fill=18, width=max(1, course // 26))
+    return layer.filter(ImageFilter.GaussianBlur(0.6))
 
-    The lobby really is twelve arches with three sealed, so the split is carried over exactly
-    rather than chosen for composition. See tools/build_hub_room_v5.py for the real coordinates.
-    """
-    w, h = base.size
-    FLOOR_Y = int(h * FLOOR_T)
-    total = 12
-    sealed_at = {2, 6, 9}
 
-    aw = int(w * 0.050)
+def tracery(d, x, y, w, head, colour, weight):
+    """A circle over two lancets in the arch head - the cheapest gothic tell there is."""
+    cx = x + w // 2
+    r = int(w * 0.16)
+    cy = y + int(head * 0.40)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=colour, width=weight)
+    d.ellipse([cx - r // 3, cy - r // 3, cx + r // 3, cy + r // 3], outline=colour, width=weight)
+    lw = int(w * 0.26)
+    for side in (-1, 1):
+        ix = cx + side * int(w * 0.19) - lw // 2
+        iy = cy + int(r * 1.05)
+        d.arc([ix, iy, ix + lw, iy + lw], 180, 360, fill=colour, width=weight)
+        d.line([(ix, iy + lw // 2), (ix, y + head)], fill=colour, width=weight)
+        d.line([(ix + lw, iy + lw // 2), (ix + lw, y + head)], fill=colour, width=weight)
+
+
+def build_hall(w, h):
+    floor_y = int(h * FLOOR_T)
+
+    base = ramp((w, h), [(0.0, VOID), (0.30, PURPLE_DEEP), (0.72, (36, 20, 55)),
+                         (1.0, (20, 11, 31))]).convert("RGB")
+    base.paste(Image.new("RGB", (w, h), STONE_LIT), (0, 0), ashlar((w, h)))
+
+    total = len(BAYS)
+    aw = int(w * 0.0515)
     head = int(aw * math.sqrt(3) / 2.0)
-    shaft = int(h * 0.255)
+    shaft = int(h * 0.205)
     ah = head + shaft
-    gap = int(w * 0.0135)
-    span = total * aw + (total - 1) * gap
+    pier = int(w * 0.0150)
+    span = total * aw + (total - 1) * pier
     x0 = (w - span) // 2
-    base_y = FLOOR_Y
-    y0 = base_y - ah
+    y0 = floor_y - ah
 
-    glow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    lights = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    reflect = Image.new("RGB", (w, h), (0, 0, 0))
+    weight = max(2, w // 900)
+    d = ImageDraw.Draw(base)
 
-    for i in range(total):
-        x = x0 + i * (aw + gap)
+    for i in range(total + 1):
+        px = x0 - pier + i * (aw + pier)
+        face = ramp((pier, ah + head // 2),
+                    [(0.0, (26, 18, 38)), (0.5, STONE_LIT), (1.0, (22, 15, 33))])
+        base.paste(face, (px, y0 - head // 2))
+        cap_y = y0 + head
+        d.rectangle([px - weight, cap_y - weight * 3, px + pier + weight, cap_y], fill=GOLD_DIM)
+        d.rectangle([px - weight, floor_y - weight * 4, px + pier + weight, floor_y],
+                    fill=(58, 42, 74))
+
+    for i, (name, light) in enumerate(BAYS):
+        x = x0 + i * (aw + pier)
         m, _ = arch_mask(aw, ah)
-        sealed = i in sealed_at
 
-        if sealed:
-            # crying obsidian: cold purple, no light behind it
-            fill = vertical_gradient((aw, ah), (36, 20, 56), (18, 10, 28),
-                                     stops=[(0.0, (30, 17, 47)), (0.6, (42, 24, 66)),
-                                            (1.0, (16, 9, 25))])
+        if light is None:
+            fill = ramp((aw, ah), [(0.0, (30, 18, 46)), (0.40, (52, 31, 78)),
+                                   (0.80, (44, 26, 66)), (1.0, (26, 15, 40))])
         else:
-            # an opening, not a panel: dark at the head, light pooling at the threshold
-            fill = vertical_gradient((aw, ah), VOID, GOLD,
-                                     stops=[(0.0, (14, 9, 20)), (0.55, (26, 17, 28)),
-                                            (0.82, (96, 68, 28)), (1.0, GOLD_BRIGHT)])
+            t = tempered(light)
+            fill = ramp((aw, ah), [(0.0, lerp(t, VOID, 0.94)),
+                                   (0.62, lerp(t, VOID, 0.86)),
+                                   (0.88, lerp(t, VOID, 0.52)),
+                                   (1.0, lerp(t, VOID, 0.16))])
         base.paste(fill, (x, y0), m)
+        base.paste(Image.new("RGB", (aw, ah), GOLD if light else PURPLE_LIT),
+                   (x, y0), outline_of(m, weight))
 
-        if not sealed:
-            g = radial_glow((w, h), (x + aw // 2, base_y - int(shaft * 0.25)),
-                            int(aw * 2.1), GOLD, strength=0.42)
-            glow = Image.alpha_composite(glow, g)
+        # Tracery and braces go on their own layer and are pasted THROUGH the arch mask. Drawn
+        # straight onto the wall they ran past the opening - the sealed bay's cross-brace stuck
+        # out into the pier either side of it.
+        detail = Image.new("RGB", (aw, ah), (0, 0, 0))
+        dm = Image.new("L", (aw, ah), 0)
+        dd, dmd = ImageDraw.Draw(detail), ImageDraw.Draw(dm)
+        for drw, col in ((dd, GOLD_DIM if light else (92, 58, 132)), (dmd, 255)):
+            tracery(drw, 0, 0, aw, head, col, max(1, weight - 1))
+        if light is None:
+            for a, b in (((0, head), (aw, ah - weight)), ((aw, head), (0, ah - weight))):
+                dd.line([a, b], fill=(48, 40, 56), width=weight * 4)
+                dmd.line([a, b], fill=255, width=weight * 4)
+                dd.line([a, b], fill=(92, 80, 104), width=weight)
+                dmd.line([a, b], fill=255, width=weight)
+        dm = ImageChops.multiply(dm, m)
+        base.paste(detail, (x, y0), dm)
 
-        edge = Image.new("RGB", (aw, ah), GOLD_DIM if not sealed else PURPLE_LIT)
-        outline = m.filter(ImageFilter.FIND_EDGES).point(lambda v: min(255, v * 4))
-        base.paste(edge, (x, y0), outline)
+        if light is None:
+            continue
 
-    out = Image.alpha_composite(base.convert("RGBA"), glow).convert("RGB")
-    return out
+        lights = Image.alpha_composite(
+            lights, glow((w, h), (x + aw // 2, floor_y - int(shaft * 0.10)),
+                         int(aw * 1.5), int(ah * 0.42), tempered(light), 0.30))
+        reflect.paste(ramp((aw, int(h * 0.050)),
+                           [(0.0, lerp(tempered(light), VOID, 0.72)), (1.0, VOID)]),
+                      (x, floor_y))
+
+    scene = Image.alpha_composite(base.convert("RGBA"), lights).convert("RGB")
+
+    fd = ImageDraw.Draw(scene)
+    fd.rectangle([0, floor_y, w, h], fill=(11, 7, 16))
+    scene = ImageChops.add(scene, reflect.filter(ImageFilter.GaussianBlur(w // 320)))
+    ImageDraw.Draw(scene, "RGBA").line([(0, floor_y), (w, floor_y)],
+                                       fill=GOLD_DIM + (120,), width=weight)
+
+    return Image.alpha_composite(
+        scene.convert("RGBA"),
+        glow((w, h), (w // 2, floor_y - int(h * 0.02)), int(w * 0.46), int(h * 0.05),
+             (196, 150, 90), 0.30)).convert("RGB")
 
 
-def filigree(d, box, colour, weight=3):
-    """A restrained gold frame: double rule with corner diamonds. Gothic, not Baroque."""
+def filigree(d, box, colour, weight):
     x0, y0, x1, y1 = box
     d.rectangle([x0, y0, x1, y1], outline=colour, width=weight)
     inset = weight * 5
@@ -217,12 +294,10 @@ def filigree(d, box, colour, weight=3):
 
 
 def gold_text(size, text, face, px, tracking=0.0, grad=(GOLD_BRIGHT, GOLD_DIM)):
-    """Text filled with a vertical gold gradient, with a soft shadow beneath it."""
     f = font(face, px)
     w, h = size
     mask = Image.new("L", (w, h), 0)
     d = ImageDraw.Draw(mask)
-    # manual letterspacing - PIL has no tracking
     widths = [d.textlength(ch, font=f) for ch in text]
     total = sum(widths) + tracking * max(0, len(text) - 1)
     x = (w - total) / 2
@@ -231,60 +306,33 @@ def gold_text(size, text, face, px, tracking=0.0, grad=(GOLD_BRIGHT, GOLD_DIM)):
     for ch, cw in zip(text, widths):
         d.text((x, y), ch, font=f, fill=255)
         x += cw + tracking
-    fill = vertical_gradient((w, h), grad[0], grad[1])
     out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    out.paste(fill, (0, 0), mask)
-
+    out.paste(ramp((w, h), [(0.0, grad[0]), (1.0, grad[1])]), (0, 0), mask)
     shadow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     shadow.paste(Image.new("RGB", (w, h), (0, 0, 0)), (0, 0), mask)
     shadow = shadow.filter(ImageFilter.GaussianBlur(px // 14))
-    shadow.putalpha(shadow.getchannel("A").point(lambda v: int(v * 0.75)))
+    shadow.putalpha(shadow.getchannel("A").point(lambda v: int(v * 0.8)))
     return Image.alpha_composite(shadow, out)
 
 
-# ----------------------------------------------------------------- the pieces
-def title_background(w=1920, h=1080):
-    W, H = w * SS, h * SS
-    base = vertical_gradient((W, H), VOID, PURPLE_DEEP,
-                             stops=[(0.0, VOID), (0.42, PURPLE_DEEP),
-                                    (0.78, PURPLE_MID), (1.0, (16, 9, 24))]).convert("RGB")
-
-    # a cold wash from above, so the hall is lit only by its own arches
-    base = Image.blend(base, Image.new("RGB", (W, H), PURPLE_LIT), 0.06)
-
-    # The floor goes down FIRST. Drawn after the arcade it painted over the arch shafts, which
-    # left twelve floating heads and no hall.
-    d = ImageDraw.Draw(base, "RGBA")
-    d.rectangle([0, int(H * FLOOR_T), W, H], fill=(8, 5, 12, 255))
-
-    base = draw_arcade(base)
-
-    d = ImageDraw.Draw(base, "RGBA")
-    d.line([(0, int(H * FLOOR_T)), (W, int(H * FLOOR_T))], fill=GOLD_DIM + (110,), width=SS)
-
-    # vignette
+def title_background():
+    W, H = W_OUT * SS, H_OUT * SS
+    scene = build_hall(W, H)
     vig = Image.new("L", (W, H), 0)
-    vd = ImageDraw.Draw(vig)
-    vd.ellipse([-W * 0.25, -H * 0.35, W * 1.25, H * 1.35], fill=255)
-    vig = vig.filter(ImageFilter.GaussianBlur(W // 12))
-    dark = Image.new("RGB", (W, H), (0, 0, 0))
-    base = Image.composite(base, dark, vig)
-
-    d = ImageDraw.Draw(base)
-    filigree(d, (int(W * 0.022), int(H * 0.034), int(W * 0.978), int(H * 0.966)),
-             GOLD_DIM, weight=2 * SS)
-
-    return base.resize((w, h), Image.LANCZOS)
+    ImageDraw.Draw(vig).ellipse([-W * 0.22, -H * 0.40, W * 1.22, H * 1.30], fill=255)
+    scene = Image.composite(scene, Image.new("RGB", (W, H), (0, 0, 0)),
+                            vig.filter(ImageFilter.GaussianBlur(W // 11)))
+    filigree(ImageDraw.Draw(scene),
+             (int(W * 0.020), int(H * 0.030), int(W * 0.980), int(H * 0.970)),
+             GOLD_DIM, max(2, W // 1100))
+    return scene.resize((W_OUT, H_OUT), Image.LANCZOS)
 
 
-def wordmark(w=1200, h=340):
+def wordmark(w=1600, h=440):
     W, H = w * SS, h * SS
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-
-    t = gold_text((W, int(H * 0.62)), "THE HUB", FACE_BOLD, int(H * 0.40),
-                  tracking=int(H * 0.055))
-    img.alpha_composite(t, (0, 0))
-
+    img.alpha_composite(gold_text((W, int(H * 0.62)), "THE HUB", FACE_BOLD,
+                                  int(H * 0.40), tracking=int(H * 0.055)), (0, 0))
     d = ImageDraw.Draw(img)
     ry = int(H * 0.66)
     half = int(W * 0.30)
@@ -292,44 +340,41 @@ def wordmark(w=1200, h=340):
     s = int(H * 0.030)
     d.polygon([(W // 2, ry - s), (W // 2 + s, ry), (W // 2, ry + s), (W // 2 - s, ry)],
               fill=GOLD + (255,))
-
-    sub = gold_text((W, int(H * 0.26)), "ELEVEN WORLDS, ONE HALL", FACE_ITAL, int(H * 0.095),
-                    tracking=int(H * 0.030), grad=(IVORY, GOLD_DIM))
-    img.alpha_composite(sub, (0, int(H * 0.70)))
-
+    img.alpha_composite(gold_text((W, int(H * 0.26)), "ELEVEN WORLDS, ONE HALL", FACE_ITAL,
+                                  int(H * 0.095), tracking=int(H * 0.030),
+                                  grad=(IVORY, GOLD_DIM)), (0, int(H * 0.70)))
     return img.resize((w, h), Image.LANCZOS)
 
 
-def plain_backdrop(w, h, with_frame=True):
-    """The quieter sibling used behind loading and splash - same world, less event."""
-    W, H = w * SS, h * SS
-    base = vertical_gradient((W, H), VOID, PURPLE_MID,
-                             stops=[(0.0, VOID), (0.55, PURPLE_DEEP),
-                                    (1.0, (22, 12, 34))]).convert("RGB")
-    g = radial_glow((W, H), (W // 2, int(H * 0.52)), int(W * 0.42), GOLD, strength=0.30)
-    base = Image.alpha_composite(base.convert("RGBA"), g).convert("RGB")
-
+def quiet_backdrop(framed=True):
+    """Loading and splash: the same hall, further off and out of focus."""
+    W, H = W_OUT * SS, H_OUT * SS
+    scene = build_hall(W, H).filter(ImageFilter.GaussianBlur(W // 220))
+    scene = Image.blend(scene, Image.new("RGB", (W, H), VOID), 0.30)
     vig = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(vig).ellipse([-W * 0.2, -H * 0.3, W * 1.2, H * 1.3], fill=255)
-    vig = vig.filter(ImageFilter.GaussianBlur(W // 10))
-    base = Image.composite(base, Image.new("RGB", (W, H), (0, 0, 0)), vig)
-
-    if with_frame:
-        filigree(ImageDraw.Draw(base),
-                 (int(W * 0.03), int(H * 0.045), int(W * 0.97), int(H * 0.955)),
-                 GOLD_DIM, weight=2 * SS)
-    return base.resize((w, h), Image.LANCZOS)
+    ImageDraw.Draw(vig).ellipse([-W * 0.18, -H * 0.30, W * 1.18, H * 1.25], fill=255)
+    scene = Image.composite(scene, Image.new("RGB", (W, H), (0, 0, 0)),
+                            vig.filter(ImageFilter.GaussianBlur(W // 9)))
+    if framed:
+        filigree(ImageDraw.Draw(scene),
+                 (int(W * 0.028), int(H * 0.042), int(W * 0.972), int(H * 0.958)),
+                 GOLD_DIM, max(2, W // 1100))
+    return scene.resize((W_OUT, H_OUT), Image.LANCZOS)
 
 
 def main():
     apply = "--apply" in sys.argv
     os.makedirs(OUT, exist_ok=True)
 
+    live = sum(1 for _, c in BAYS if c)
+    print("hall: %d bays, %d live, %d sealed" % (len(BAYS), live, len(BAYS) - live))
+    print("")
+
     pieces = {
-        "hub_title_background.png": lambda: title_background(),
-        "hub_wordmark.png":         lambda: wordmark(),
-        "hub_loading.png":          lambda: plain_backdrop(1920, 1080),
-        "hub_splash.png":           lambda: plain_backdrop(1920, 1080, with_frame=False),
+        "hub_title_background.png": title_background,
+        "hub_wordmark.png":         wordmark,
+        "hub_loading.png":          lambda: quiet_backdrop(True),
+        "hub_splash.png":           lambda: quiet_backdrop(False),
     }
     made = {}
     for name, fn in pieces.items():
@@ -346,17 +391,19 @@ def main():
         return 0
 
     targets = [
-        ("hub_title_background.png", os.path.join(MC, "config", "fancymenu", "assets")),
-        ("hub_wordmark.png",         os.path.join(MC, "config", "fancymenu", "assets")),
-        ("hub_loading.png",          os.path.join(MC, "config", "fancymenu", "assets")),
-        ("hub_splash.png",           os.path.join(MC, "config", "simplesplashscreen")),
+        ("hub_title_background.png", os.path.join(MC, "config", "fancymenu", "assets"), None),
+        ("hub_wordmark.png",         os.path.join(MC, "config", "fancymenu", "assets"), None),
+        ("hub_loading.png",          os.path.join(MC, "config", "fancymenu", "assets"), None),
+        ("hub_splash.png",           os.path.join(MC, "config", "simplesplashscreen"),
+         "background.png"),
     ]
     print("")
-    for name, dest in targets:
+    for name, dest, rename in targets:
         os.makedirs(dest, exist_ok=True)
-        with io.open(made[name], "rb") as src, io.open(os.path.join(dest, name), "wb") as dst:
-            dst.write(src.read())
-        print("installed " + name + "  ->  " + dest.replace(MC, "<instance>"))
+        out_name = rename or name
+        with io.open(made[name], "rb") as src, io.open(os.path.join(dest, out_name), "wb") as f:
+            f.write(src.read())
+        print("installed %-26s -> %s" % (out_name, dest.replace(MC, "<instance>")))
     return 0
 
 

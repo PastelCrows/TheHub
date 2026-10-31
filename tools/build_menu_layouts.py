@@ -13,8 +13,8 @@ wordmark is rendered to a PNG by build_brand_assets.py, which buys real lettersp
 gradient fill and a drop shadow that Minecraft's bitmap font cannot do, and keeps this file to
 the one element type whose serialization is confirmed.
 
-The design: the hall itself as the backdrop - twelve gothic arches, nine lit, three sealed, the
-same split as the lobby - with the wordmark set high so the vanilla button column lands in the
+The design: the hall itself as the backdrop - twelve gothic arches, ELEVEN lit and one sealed,
+the same split as the real lobby (One Block and Horror have been live for a long time) - with the wordmark set high so the vanilla button column lands in the
 clear middle band and the arcade reads along the bottom. Deep purple and warm gold throughout,
 per the user's stated sensibility.
 
@@ -108,9 +108,9 @@ def title_layout():
     rid = ident()
     bid = ident()
 
-    # The wordmark is 1200x340. At 620 wide it clears the vanilla button column entirely and
-    # still reads at 1280x720, which is the smallest window worth designing for.
-    wm_w, wm_h = 620, 176
+    # The wordmark is 1600x440 (3.64:1). At 640 wide it clears the vanilla button column
+    # entirely and still reads at 1280x720, the smallest window worth designing for.
+    wm_w, wm_h = 640, 176
 
     return """type = fancymenu_layout
 
