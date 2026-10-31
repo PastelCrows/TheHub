@@ -130,12 +130,103 @@
     if (dim.indexOf('hub:netherbound') !== -1) { giveKit(event, player, 'netherbound', 'hub:netherbound'); return; }
   }
 
+  // ------------------------------------------------------- return portals
+  //
+  // ONE-WAY, back to the hub. Not a second mouth of a two-way portal, deliberately: you are
+  // meant to arrive in One Block standing on the block and in skyblock on the island, not step
+  // out of a doorway, and a two-way portal would need an arrival anchor in every pocket to
+  // teleport you onto. One-way is strictly simpler and gives exactly the arrival that was asked
+  // for.
+  //
+  // Placed RELATIVE TO WHERE YOU ACTUALLY LAND, with `execute at`, rather than at a table of
+  // fixed coordinates. Four pocket dimensions (survival, lost cities, horror, netherbound)
+  // arrive via spreadplayers and have no fixed spawn at all, so a coordinate table could not
+  // cover them; `execute at` covers all eleven with one mechanism and keeps the portal close by
+  // wherever you come down.
+  //
+  // ON THE VOID POCKETS IT IS JUST THE PORTAL. Two blocks hanging in the air a few paces off,
+  // nothing under them, no frame - a platform would be free blocks in a pack whose whole premise
+  // is that you have none, and a frame would be a free stack of whatever it was made of.
+  // Terrain pockets get a modest frame of their own arch material, where a few blocks of
+  // cracked stone brick or red nether brick change nothing.
+  //
+  // Once per pocket per world, tracked in the server's persistent data. Breaking one is
+  // permanent by design - they cannot be crafted, and that is the player's problem to avoid,
+  // the same as any other one-off structure in the pack.
+  var RETURN_FLAG = 'hubReturnPortal_';
+
+  function setb(server, dim, who, dx, dy, dz, block) {
+    server.runCommandSilent('execute in ' + dim + ' at ' + who
+      + ' run setblock ~' + dx + ' ~' + dy + ' ~' + dz + ' ' + block + ' replace');
+  }
+
+  // No loops anywhere in here: Rhino's iteration is not trusted in this codebase, and a frame
+  // that silently places nothing is exactly the kind of failure that hides for weeks.
+  function clearAround(server, dim, who, dx, dz) {
+    setb(server, dim, who, dx, 0, dz, 'minecraft:air');
+    setb(server, dim, who, dx, 1, dz, 'minecraft:air');
+    setb(server, dim, who, dx, 2, dz, 'minecraft:air');
+    setb(server, dim, who, dx - 1, 0, dz, 'minecraft:air');
+    setb(server, dim, who, dx - 1, 1, dz, 'minecraft:air');
+    setb(server, dim, who, dx + 1, 0, dz, 'minecraft:air');
+    setb(server, dim, who, dx + 1, 1, dz, 'minecraft:air');
+  }
+
+  function placeReturn(server, dim, who, dx, dz, frame) {
+    if (frame) {
+      clearAround(server, dim, who, dx, dz);
+      // posts either side, a lintel over, a sill under - the smallest thing that reads as a door
+      setb(server, dim, who, dx - 1, 0, dz, frame);
+      setb(server, dim, who, dx - 1, 1, dz, frame);
+      setb(server, dim, who, dx + 1, 0, dz, frame);
+      setb(server, dim, who, dx + 1, 1, dz, frame);
+      setb(server, dim, who, dx - 1, 2, dz, frame);
+      setb(server, dim, who, dx, 2, dz, frame);
+      setb(server, dim, who, dx + 1, 2, dz, frame);
+      setb(server, dim, who, dx, -1, dz, frame);
+    }
+    setb(server, dim, who, dx, 0, dz, 'pocketquests:portal_hub');
+    setb(server, dim, who, dx, 1, dz, 'pocketquests:portal_hub');
+    console.info('[hub] return portal placed in ' + dim + ' near ' + who);
+  }
+
+  // pocket -> [dimension, offset x, offset z, frame material or null for the void pockets]
+  var RETURNS = {
+    skyblock:    ['hub:skyblock',    5,  0, null],
+    caveblock:   ['hub:caveblock',   4,  0, 'minecraft:polished_deepslate'],
+    oceanblock:  ['hub:oceanblock',  5,  0, null],
+    onechunk:    ['hub:onechunk',    5,  0, null],
+    oneblock:    ['hub:oneblock',    4,  0, null],
+    survival:    ['hub:survival',    4,  0, 'minecraft:stripped_oak_wood'],
+    lostcities:  ['hub:lostcities',  4,  0, 'minecraft:cracked_stone_bricks'],
+    netherbound: ['hub:netherbound', 4,  0, 'minecraft:red_nether_bricks'],
+    horror:      ['hub:horror',      4,  0, 'minecraft:blackstone'],
+    gauntlet:    ['hub:gauntlet',    5,  0, 'minecraft:gilded_blackstone'],
+    redstone:    ['hub:redstone',    5,  0, 'minecraft:redstone_block']
+  };
+
+  function ensureReturn(server, player, name) {
+    var spec = RETURNS[name];
+    if (!spec) { return; }
+    var flag = RETURN_FLAG + name;
+    if (server.persistentData.getBoolean(flag)) { return; }
+    server.persistentData.putBoolean(flag, true);
+    // Late enough that the teleport (and spreadplayers, which resolves over a few ticks) has
+    // actually put the player where they are going. Placing it at the moment of travel puts the
+    // portal next to where they LEFT, which is the hub.
+    server.scheduleInTicks(40, () => {
+      placeReturn(server, spec[0], player.username, spec[1], spec[2], spec[3]);
+      player.tell(Text.gold('A way back to the hub stands a few paces away.'));
+    });
+  }
+
   function enter(event, player, name) {
     var key = '' + player.username;
     cooldown[key] = ticks;
     player.persistentData.putString('lastPocket', name);
     player.tell(Text.gold('Entering ' + name + '...'));
     console.info('[hub] MATCHED ' + name);
+    ensureReturn(event.server, player, name);
 
     if (name === 'skyblock')    { seedAndLand(event, player, name, 'hub:skyblock',   'hub:skyblock_start',  -4, 64, -4,  2, 67, 1); return; }
     if (name === 'caveblock')   { seedAndLand(event, player, name, 'hub:caveblock',  'hub:caveblock_start', -7, 60, -7,  1, 61, 1); return; }

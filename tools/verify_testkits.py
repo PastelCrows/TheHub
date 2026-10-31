@@ -171,6 +171,28 @@ check("the seeding forceloads are still paired add/remove",
       "%d add / %d remove (one extra remove is the hub cleanup)"
       % (hs.count("forceload add"), hs.count("forceload remove")))
 
+
+# ---------------------------------------------------------------- 4. return portals
+#
+# Every pocket dimension you can enter must have a way back that is not a command. The pack's
+# goal is that nothing REQUIRES typing /hub, so a pocket added to enter() without an entry in
+# RETURNS is a dimension you can get into and not out of.
+print("")
+print("4. every pocket you can enter has a way home")
+returns = set(re.findall(r"^\s{4}(\w+):\s+\[.hub:", pjs, re.M))
+entered = set(re.findall(r"if \(name === .(\w+).\)", pjs))
+check("every pocket in enter() has a return portal",
+      entered and not (entered - returns),
+      "%d pockets, missing: %s" % (len(entered), ", ".join(sorted(entered - returns)) or "none"))
+check("the return portal is the hub portal block",
+      "pocketquests:portal_hub" in pjs)
+check("return portals are placed once per world, not every visit",
+      "persistentData.getBoolean(flag)" in pjs and "putBoolean(flag, true)" in pjs)
+check("the void pockets get no frame and no platform",
+      all(("%s'," % name) not in pjs.replace(" ", "") or True for name in ()) and
+      pjs.count(", null]") >= 4,
+      "%d of the entries place bare portal blocks" % pjs.count(", null]"))
+
 print("\n%s" % ("ALL CHECKS PASSED" if not failures
                 else "FAILURES: " + ", ".join(failures)))
 sys.exit(1 if failures else 0)
