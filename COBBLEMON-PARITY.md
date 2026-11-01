@@ -220,14 +220,60 @@ by downloading each build and counting, not by reading release notes.
 Three mods come from **maven.ftb.dev**, not Modrinth — FTB publish nowhere else, the same
 finding as the packwiz build.
 
-### Launched
+A third pin was added after the boot hang: **gravels-extended-battles 2.0.0-Alpha.15**, because
+Gravelmon pins it exactly. See below.
+
+### Launched — and it took three attempts, because it was hung
 
 Static validation proves the dependency graph closes and nothing declares war on anything else.
-It does not prove the game starts, so the game was started.
+It does not prove the game starts. The game did not start.
 
-First attempt was closed too early — it was still mod-loading, and that was reported as
-unverified rather than dressed up as a pass. What it did prove is the part that was actually in
-doubt, because CobbleDex walks every jar's data at init and says what it found:
+Two boots stopped dead at the same point with a frozen log, no error, no crash report, and a
+live `javaw`. A JVM thread dump (`jstack -l`, using Prism's own JDK) named the cause outright:
+
+```
+Render thread         ModLoader.waitForFuture / constructMods      waiting
+modloading-worker-0   ProcessSelectionPrompt.next()                parked forever
+                      OnDemandRunner.readSelection
+                      GravelsExtendedBattles.initialize
+```
+
+**Gravels Extended Battles 2.0.0-Alpha.37 asks the client for a selection code on stdin during
+mod construction.** Under `javaw` there is no stdin, so it parks forever — and because it parks
+inside a parallel mod-construction task, the entire load waits behind it. Its own config says so:
+*"A client asks for it when it is empty."*
+
+The mistake was mine, and it is a general one worth keeping. **Gravelmon 4.0.0-Alpha.8 does not
+declare a version RANGE for GEB — it pins one exact version id**, `MMwKsJoI` = `2.0.0-Alpha.15`.
+The resolver took "newest for neoforge/1.21.1" and got Alpha.37, twenty-two releases past what
+Gravelmon asked for. Verified by reading both jars rather than trusting version numbers:
+
+| | ondemand classes | prompt classes |
+|---|---|---|
+| Alpha.15 (pinned) | 0 | 0 |
+| Alpha.37 (installed) | 139 | 13 |
+
+This also corrects an earlier finding recorded here as a broken release: **Gravelmon Alpha.10+
+being 1.4 MB instead of 92 MB is not a mispackaged jar** — it is the same redesign, species moved
+to on-demand download. Alpha.8 + GEB Alpha.15 is the last pair that ships its species in the jar.
+
+`tools/check_version_pins.py` now lists every unmet exact pin after a build, so this cannot
+happen silently again.
+
+With the pin honoured, the third boot reached the title screen:
+
+```
+Backend library: LWJGL version 3.3.3+5
+OpenAL initialized on device OpenAL Soft on Speakers
+Sound engine started
+```
+
+**0 crash reports, 166 mod configs written.** Eight ERROR lines, all benign: six are `Invalid
+path in pack` for asset filenames containing spaces inside Cobblemon's and Gravelmon's own jars
+(upstream packaging, cosmetic — those individual assets don't load), one is a ModernFix timing
+warning, one is Xaero's online version check failing to reach the network.
+
+What the boot proved beyond "it starts", because CobbleDex walks every jar's data at init:
 
 ```
 JarDataCache: parsed 23,351 spawns from 6,973 files (0 failed)
