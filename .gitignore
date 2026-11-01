@@ -26,3 +26,4 @@ instance/crash-reports/
 instance/shaderpacks/
 instance/resourcepacks/*
 !instance/resourcepacks/horror-desaturated/
+tools/_parity/
