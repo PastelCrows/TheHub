@@ -112,6 +112,56 @@ gates entity spawns per dimension by pattern, `PocketRules` already gates crafti
 and `PocketWorlds` already gates access to modded dimensions. A Cobblemon pocket needs the same
 three levers pointed at `cobblemon:*`, not a new mechanism.
 
+## What 17 jars is NOT
+
+It is the **mechanics layer** and nothing else. Calling it a recreation of his pack was wrong.
+Here is the scale it is measured against, counted rather than estimated:
+
+| | |
+|---|---|
+| **1,924 species JSONs** across his mods | 1,025 from Cobblemon itself, ~900 from fakemon and romhack packs |
+| **34 datapacks**, of which **27 are his own** | a whole second layer of custom work the first audit never looked at |
+| 370 mods | of which 77 carry his name |
+
+His species packs: Gravelmon **331**, Gravel's Extended Battles **142**, SpaceworldMons **94**,
+Cobblemon AFP **87**, Lively 'Mons **73**, Laser's Fakemon **70**, Mega Showdown **53**,
+Silent's Minemons **25**, Fai's Mythical Monstrosities **24**.
+
+And his 27 datapacks are the same kind of work as his 16 mods, in data instead of code:
+`fakemon-riding`, `gravelmon-scrub`, `mega-stone-recipes`, `starter-filter`, `form-removals`,
+`structure-loot-fixes`, `end-spawn-balance`, `rocket-biome-fix`, `missing-ability-scripts`.
+
+### The content layer mostly CAN come across
+
+| pack | species | NeoForge? |
+|---|---|---|
+| Gravelmon | 331 | yes |
+| Gravel's Extended Battles | 142 | yes |
+| SpaceworldMons | 94 | yes |
+| Lively 'Mons | 73 | yes |
+| Laser's Fakemon | 70 | yes |
+| Silent's Minemons | 25 | yes |
+| Cobblemon AFP | 87 | not found under that name |
+| Fai's Mythical Monstrosities | 24 | **Fabric only** |
+
+About **1,813 of 1,924 species — 94% — are reachable on NeoForge.** The species layer is a
+bigger win than the mechanics layer and was not part of the 17.
+
+### The part that is not downloadable at all
+
+Eleven regions as continents in a hand-built map. Every gym, Elite Four and champion. Quests
+tied to every legendary, mythical and mega. Custom structures and worldgen to match.
+
+**None of that is a mod.** It is a world, a quest book and a pile of structure NBT — authored,
+not installed. No amount of parity analysis touches it, and it is the actual reason his pack
+is his pack. The honest estimate for that layer is months, and the mod list is the easy part
+that comes first.
+
+The one thing that transfers is the METHOD: The Hub already merges eleven quest books into one
+and seeds structures per dimension. A region-per-continent map with gyms is the same shape of
+problem as eleven pocket dimensions with their own starts.
+
+
 ## Status: the standalone instance exists
 
 Built 2026-11-01 by `tools/build_cobblemon_instance.py`. Prism instance **Cobblemon
