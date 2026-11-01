@@ -539,3 +539,72 @@ bug, not a packaging choice here, and Rad Gyms is load-bearing for the gym ladde
 flagged. If unexplained reload crashes ever appear, this is the first thing to suspect.
 
 Memory raised 6 GB → 8 GB (the machine has 32 GB; The Hub runs 12).
+
+## His custom work, reproduced
+
+### The datapacks: 27 ported, 1,533 files
+
+22 needed no change. 5 used Fabric load conditions; 232 files converted. The mapping was read
+off shipped jars, not recalled — Carved Wood ships BOTH spellings in one recipe, which settles it.
+His sentinel trick (disable a recipe by requiring a mod that cannot exist) is kept verbatim
+rather than collapsed to `neoforge:false`: the sentinel's NAME carries the reason
+(`kewz_pokedolls_are_found_not_crafted`), and a datapack could later define it to switch the
+behaviour back on.
+
+### The recompiles: classified by cost, not counted
+
+| bucket | jars | what it takes |
+|---|---|---|
+| DATA | 4 | a datapack — **done**, 86 JSON files |
+| DATA+ASSETS | 4 | repackage the jar — **done**, `mod-ports/` |
+| CODE | 33 | read his bytecode, reimplement |
+| unresolved | 14 | explained below |
+| his own originals | 16 | write from scratch |
+
+**The eight no-compile ones split on one fact: a datapack can override a file inside a mod jar
+but can never delete one.** Four are pure overrides and became `kewz-dex-fixes-ported.zip`. The
+other four are mostly deletions — his `strip1`, `nomodel1`, `newonly1` tags — so the jar itself
+had to change, which is exactly why *he* recompiles. `tools/repack_kewz_mods.py` replays his
+data/asset diff onto our NeoForge jar: **324 removals, 319 overrides, 56 additions**.
+
+Three applied at 100%. silents-minemons is 25 of 29 because his edit targeted 4.4.2 and ours is
+4.6.1 — four species he deleted no longer exist upstream. Reported and skipped, never silently
+ignored.
+
+**What the removals were actually for, confirmed empirically:** 324 files deleted cost only
+**3 net species** (4,917 → 4,914). They were deduplication between overlapping fakemon packs, not
+content loss. That is what "strip" means, and it is now measured rather than assumed.
+
+### The 14 unresolved, explained
+
+2 are his own originals. 1 is a voxy build he compiled himself
+(`0.2.19-beta+mc1.21.1-leaf-tint-fog-fade-test`, never published). 11 have no Fabric 1.21.1
+release on Modrinth, cross-checked by slug and by display name.
+
+## Two boot failures, both self-inflicted
+
+**`ftb-quests-cobblemon-entity` is out.** He runs 2.0.0 on Fabric; NeoForge has exactly one
+build, 1.0.0, whose `CommandRewardMixin` throws `InvalidInjectionException` against FTB Quests
+2101.1.37 — the descriptor it injects on is gone. A fatal mixin failure aborts mod construction,
+so one mod killed the whole boot. **The quest bridge is a real loss on NeoForge**, recorded as one.
+
+**FancyMenu is pinned to 3.8.1.** 3.9.14 broke `satisfying_buttons`, which was already installed
+and working: its `@WrapOperation` targets `ExtendedButton.renderBackground`, gone in 3.9.x.
+Satisfying Buttons has shipped nothing since Sep 2024. The version was not guessed — **Kewz runs
+both**, at FancyMenu 3.8.1 and satisfying_buttons 1.1.2.
+
+## Verified state
+
+```
+302 jars   28 datapacks   0 duplicates   0 missing   0 mismatches   0 conflicts
+OpenAL initialized -> Sound engine started      0 crash reports
+4,914 species with spawns
+all four +hub repackaged jars confirmed loaded by name in the log
+```
+
+14 ERROR lines, the same benign set throughout: 7 asset filenames containing spaces inside
+Gravelmon's and Cobblemon's own jars, 5 CraftPresence launcher probes it labels ignorable, 1
+Xaero network check, 1 Rad Gyms off-thread reload listener (upstream, flagged).
+
+Dream Displays downloads FFmpeg on first launch — completed normally, worth knowing because it
+is an outbound fetch during boot.
