@@ -62,8 +62,14 @@ UA = {"User-Agent": "TheHub-cobblemon-build/1.0 (personal modpack)"}
 #   render thread sat in ModLoader.waitForFuture. Alpha.15 carries 0 ondemand classes
 #   and 0 prompt classes; Alpha.37 carries 139 and 13. Verified by reading both jars.
 #   This is also why Gravelmon Alpha.10+ is 1.4 MB instead of 92 MB - same redesign.
+#   cameraoverhaul: every 1.21.1 neoforge build from 2.0.2 up declares cloth_config
+#   ">=16.0.0", and cloth-config does not publish 16 for 1.21.1 at all - it stops at
+#   15.0.140. That is an upstream packaging bug, and it would refuse to load. 2.0.0 covers
+#   mc 1.20.6-1.21.1 and asks for cloth ">=14.0.0", which 15.0.140 satisfies. All nine
+#   builds were checked by reading their tomls.
 PINS = {"gravelmon": "4.0.0-Alpha.8", "matthiesen-core": "1.3.5",
-        "gravels-extended-battles": "2.0.0-Alpha.15"}
+        "gravels-extended-battles": "2.0.0-Alpha.15",
+        "cameraoverhaul": "2.0.0-neoforge+mc.1.20.6-1.21.1"}
 
 FTB_MAVEN = "https://maven.ftb.dev/releases/dev/ftb/mods/{a}/{v}/{a}-{v}.jar"
 FTB = {"ftb-library-neoforge": "2101.1.37",
@@ -251,6 +257,199 @@ MODS = {
     "lithostitched":                   "required by Legendary Monuments",
     "resourceful-lib":                 "required by Chipped",
     "athena-ctm":                      "required by Chipped (slug is athena-ctm, not athena)",
+
+    # ---- HIS PACK IS NOT A POKEMON PACK, IT IS A PACK WITH POKEMON IN IT -------
+    # The gap was 237 jars, and it got dismissed here twice as "client/perf/QoL" - which was
+    # both inaccurate and the wrong way to think about it. tools/cobblemon_gap.py measured 158
+    # projects he runs that publish for NeoForge 1.21.1 and we did not have, and that list is
+    # the pack's whole character: nineteen [Let's Do] mods of villages, restaurants and farms,
+    # Terrablender and Biolith for worldgen, Serene Seasons, Enhanced Celestials, a building
+    # palette, a camera layer and an audio layer. The region work does not substitute for any
+    # of this - Terrablender and Biolith are what the region work is BUILT ON.
+    # ---- towns, food and farms - the [Let's Do] suite, which is how a region stops looking
+    # like vanilla and starts looking like a Pokemon town
+    "lets-do-vinery":                      "",
+    "lets-do-meadow":                      "",
+    "lets-do-beachparty":                  "",
+    "lets-do-farm-charm":                  "",
+    "lets-do-herbalbrews":                 "",
+    "lets-do-furniture":                   "",
+    "lets-do-hearth-timber":               "",
+    "lets-do-lilis-pottery":               "",
+    "lets-do-alpine-whispers":             "",
+    "lets-do-addon-corn-expansion":        "",
+    "lets-do-lilis-lucky-lures":           "",
+    "lets-do-candlelight-farmcharm-compat": "",
+    "lets-do-bakery-farmcharm-compat":     "",
+    "lets-do-brewery-farmcharm-compat":    "",
+    "lets-do-addon-compat":                "",
+    "lets-do-emi-compat":                  "",
+    "seasonal-lets-do":                    "",
+    "apple-wood-rebarked":                 "",
+    "chefs-delight":                       "",
+
+    # ---- worldgen and biome control - load-bearing for eleven regions, not flavour
+    "terrablender":                        "",
+    "biolith":                             "",
+    "biome-replacer":                      "",
+    "streams-reflowing":                   "",
+    "the-roads-more-travelled":            "",
+    "bathymetry":                          "",
+    "head-in-the-clouds":                  "",
+    "smooth-skies":                        "",
+    "dawn-of-time":                        "",
+    "immersive-gateways":                  "",
+    "huge-structure-blocks":               "",
+    "cubes-without-borders":               "",
+
+    # ---- seasons, weather and sky
+    "serene-seasons":                      "",
+    "serene-seasons-gen-fix":              "",
+    "enhanced-celestials-2-core":          "",
+    "enhanced-celestials-2-default-lunar-events": "",
+    "enhanced-celestials-2-shader-support": "",
+    "immersive-weather-renewed":           "",
+    "immersivethunder":                    "",
+    "betterdays":                          "",
+
+    # ---- building palette - the blocks a hand-authored region is actually built out of
+    "rechiseled":                          "",
+    "carved-wood":                         "",
+    "diagonal-fences":                     "",
+    "diagonal-walls":                      "",
+    "diagonal-windows":                    "",
+    "furnies":                             "",
+    "immersive-paintings":                 "",
+    "better-beds":                         "",
+    "reconnectible-chains":                "",
+    "fast-item-frames":                    "",
+    "chiseled-bookshelf-visualizer":       "",
+    "lmps":                                "",
+    "selectivebounds":                     "",
+
+    # ---- camera, movement and feel - much of what makes his pack read as polished.
+    # Do A Barrel Roll and its addon Rolling Down In The Deep are NOT here: every one of
+    # DABR's four neoforge builds for 1.21.1 declares fabric_api as a mandatory dependency
+    # with no version range, which means it expects Sinytra Connector. Checked all four
+    # tomls, not just the newest. Not viable on plain NeoForge.
+    "shoulder-surfing-reloaded":           "",
+    "cameraoverhaul":                      "",
+    "ok-zoomer":                           "",
+    "playeranimator":                      "",
+    "hang-glider":                         "",
+    "dive-in":                             "",
+    "bridging-mod":                        "",
+    "smooth-swapping":                     "",
+    "radial-hot-bar":                      "",
+    "clavis":                              "",
+    "brb":                                 "",
+
+    # ---- the audio layer
+    "sound":                               "",
+    "extrasoundsforge":                    "",
+    "esf":                                 "",
+    "soundsbegone":                        "",
+    "extreme_sound_muffler":               "",
+    "immersive-melodies":                  "",
+    "melody":                              "",
+    "music-notification":                  "",
+    "chimes":                              "",
+
+    # ---- interface. EMI is what he runs, not JEI, and five of his addons only speak EMI.
+    # His own EMI is an unpublished fabric SNAPSHOT, which is why the hash lookup missed it;
+    # EMI itself publishes 1.1.24 for neoforge/1.21.1, checked directly. JEI stays as well:
+    # the two coexist, and dropping it would break anything here that declares it required.
+    "emi":                                 "recipe viewer - what his five emi_* addons need",
+    # ---- interface addons and polish
+    "emi-loot":                            "",
+    "emi-enchanting":                      "",
+    "emi-ores":                            "",
+    "reliable-emi":                        "",
+    "notenoughrecipebook":                 "",
+    "trashslot":                           "",
+    "immersive-ui":                        "",
+    "immersive-hotbar":                    "",
+    "obscure-tooltips":                    "",
+    "whats-that-slot":                     "",
+    "map-tooltip":                         "",
+    "effecttimerplus":                     "",
+    "fancy-toasts":                        "",
+    "detail-armor-bar-reconstructed":      "",
+    "eclipseui":                          "required by detail-armor-bar",
+    "inventory-particles":                 "",
+    "loot-journal":                        "",
+    "screenshot-viewer":                   "",
+    "screenshot-to-clipboard":             "",
+    "highlight":                           "",
+    "blur-plus":                           "",
+    "better-f1-reborn":                    "",
+    "countereds-smooth-f5":                "",
+    "resourcify":                          "",
+    "craftpresence":                       "",
+    "ping-wheel":                          "",
+    "what-are-they-up-to":                 "",
+    "satisfying-buttons":                  "",
+    "emojiful":                            "",
+    "interactic-renewed":                  "",
+    "discord-chat-connect":                "",
+
+    # ---- performance and stability
+    "scalablelux":                         "",
+    "ixeris":                              "",
+    "smooth-boot":                         "",
+    "framepacer":                          "",
+    "packforge":                           "",
+    "notenoughcrashes":                    "",
+    "neruina":                             "",
+    "packet-fixer":                        "",
+    "fast-ip-ping":                        "",
+    "log-begone":                          "",
+    "modelfix":                            "",
+    "map-distance-fix":                    "",
+    "asyncparticles":                      "",
+    "vescompatcomp":                       "",
+    "fragmentum":                          "",
+    "voxy-server-side":                    "",
+    "data-anchor":                         "",
+    "chunk-loaders":                       "",
+    "tiny-takeover-backport":              "",
+
+    # ---- config and resource-pack infrastructure
+    "cloth-config":                        "",
+    "yacl":                                "",
+    "forge-config-api-port":               "",
+    "fzzy-config":                         "",
+    "supermartijn642s-config-lib":         "",
+    "default-options":                     "",
+    "globalpacks":                         "",
+    "resource-pack-overrides":             "",
+    "respackopts":                         "",
+    "configurable":                        "",
+    "iris-shader-folder":                  "",
+    "modefite-item-definition-backport":   "",
+    "puzzle":                              "",
+
+    # ---- libraries the above pull in
+    "iceberg":                             "",
+    "coroutil":                            "",
+    "midnightlib":                         "",
+    "glitchcore":                          "",
+    "mru":                                 "",
+    "supermartijn642s-core-lib":           "",
+    "particle-core":                       "",
+    "prism-lib":                           "",
+    "shatterbyte-lib":                     "",
+    "libjf":                               "",
+    "corgilib":                            "",
+    "unilib":                              "",
+    "platform":                            "",
+    "gnetum":                              "",
+    "toadlib":                             "",
+    "mossylib":                            "",
+    "eveningstarlib":                      "",
+    "tlib":                                "",
+    "effectual":                           "",
+    "fwa":                                 "",
 }
 
 

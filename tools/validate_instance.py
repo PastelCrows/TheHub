@@ -29,6 +29,41 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 NESTED_DIRS = ("META-INF/jarjar/", "META-INF/jars/")   # neoforge first, fabric fallback
 
 
+# Minecraft versions embedded INSIDE a mod version are the last big source of false
+# mismatches. Two real shapes from this pack:
+#
+#   moonlight            have "1.21.1-3.7.2"  needs "[1.21-2.29.33,)"   -> mc is a PREFIX
+#   forgeconfigapiport   have "21.1.6"        needs ">=v21.1.6-1.21.1-NeoForge"  -> a SUFFIX
+#
+# Both failed, and both were satisfied: 3.7.2 > 2.29.33, and 21.1.6 == 21.1.6. Comparing every
+# integer group in order cannot see that, because it lines the mc digits up against the mod's.
+# So strip the game version and loader name from both sides before comparing. The longest mc
+# form goes first (1.21.1 before 1.21), and nothing is stripped if no digits would survive -
+# that keeps `minecraft` and `neoforge` comparing as themselves.
+MC_FORMS = ("1.21.1", "1.21")
+LOADER_WORDS = ("neoforge", "forge", "fabric", "quilt")
+
+
+def strip_game(v):
+    """Remove an embedded Minecraft version and loader name, leaving the mod's own version.
+
+    Only a DASH-DELIMITED component is removed. Stripping by plain substring looked right and
+    was wrong: "1.21" is a substring of the bare game version "1.21.1", so a substring strip
+    turned minecraft's own version into ".1" and broke every mc range in the suite. The
+    self-test below caught it, which is the whole reason that suite exists.
+    """
+    out = str(v).lower()
+    for w in LOADER_WORDS:
+        out = re.sub(r"[-+_.]?" + w, "", out)
+    for form in MC_FORMS:
+        f = re.escape(form)
+        cut = re.sub(r"(?:^|(?<=-))" + f + r"(?=-|$)", "", out)
+        if cut != out and re.search(r"\d", cut):
+            out = cut
+    out = out.strip("-+_.")
+    return out if re.search(r"\d", out) else str(v)
+
+
 def vtuple(v):
     """Every integer group in the version, in order.
 
@@ -36,7 +71,7 @@ def vtuple(v):
     `[1.21.1-2.4.9,1.21.1-2.5.0)` and is shipping 1.21.1-2.4.9, so dropping everything after
     the dash collapsed the whole range to [1.21.1,1.21.1) and reported a false mismatch.
     """
-    nums = re.findall(r"\d+", str(v))
+    nums = re.findall(r"\d+", strip_game(v))
     out = [int(n) for n in nums[:6]]
     return tuple(out + [0] * 6)[:6]
 
@@ -90,6 +125,13 @@ assert not in_range("6.7.0", "[6.6.3, 6.7)")
 # qualifier versions, where the meaningful digits sit after the dash
 assert in_range("1.21.1-2.4.9", "[1.21.1-2.4.9,1.21.1-2.5.0)")
 assert not in_range("1.21.1-2.5.1", "[1.21.1-2.4.9,1.21.1-2.5.0)")
+# the mc-version-inside-the-mod-version cases, both seen in the Cobblemon pack
+assert in_range("1.21.1-3.7.2", "[1.21-2.29.33,)")          # mc as a prefix on both sides
+assert not in_range("1.21.1-2.1.0", "[1.21-2.29.33,)")
+assert in_range("21.1.6", ">=v21.1.6-1.21.1-NeoForge")      # mc+loader as a suffix on the range
+assert not in_range("21.1.5", ">=v21.1.6-1.21.1-NeoForge")
+assert in_range("1.21.1", "[1.21,1.21.2)")                  # bare mc versions still compare
+assert vtuple("1.21.1") == (1, 21, 1, 0, 0, 0)              # nothing stripped to nothing
 print("range evaluator self-test passed")
 
 
@@ -180,7 +222,14 @@ def scan(path, provided, alldeps, label, tmp, depth=0):
         if text:
             mods, deps = parse_toml(text, jar_version(z))
             for mid, ver in mods:
-                if mid not in provided:
+                # Keep the HIGHEST version, not the first one scanned. A modId can be provided
+                # both standalone and nested in someone's META-INF/jarjar, and NeoForge resolves
+                # that by version, not by scan order. First-seen-wins reported this pack as
+                # having YACL 3.6.6 (nested inside fragmentum) when 3.8.2 was sitting in mods/,
+                # and then failed three mods that were actually satisfied. A validator that
+                # invents failures gets ignored, which is the same as having none.
+                old = provided.get(mid)
+                if old is None or vtuple(ver) > vtuple(old[0]):
                     provided[mid] = (ver, label, depth > 0)
             alldeps.extend(deps)
         if depth < 3:

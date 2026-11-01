@@ -406,6 +406,37 @@ it feel like playing the games back to back rather than a very large creature sa
 2. **Gym ladder** — RCT trainers + Rad Gyms structures + Cobblemon Quests into FTB Quests, eight
    badges per region gating the next region's entry.
 3. **The map** — eleven continents, one ocean. Hand work, and the long pole.
-4. **Mystery Dungeon** — a separate mode, not a region: no human player character, procedurally
-   generated floors, a party of Pokemon. Worth noting now that this is closer to a *pocket
-   dimension* in Hub terms than a continent, because its rules differ from the overworld's.
+4. **Mystery Dungeon** — a pocket inside a pocket. Settled: it is NOT a thirteenth arch in The
+   Hub. It is a pocket *within* the Pokemon pocket, reached from inside it, because its rules
+   differ from the overworld's (no human player character, procedurally generated floors, a
+   party rather than a trainer) while still belonging to the Pokemon pack.
+
+## The shape of the Pokemon pocket
+
+This is now decided, and it is a three-level nesting rather than the usual two:
+
+```
+The Hub  ──arch──▶  Pokemon pocket
+                        │
+                        ├── region hub  ──teleport──▶  Kanto      (overworld)
+                        │                ──teleport──▶  Johto      (overworld)
+                        │                ──teleport──▶  ... x11
+                        │
+                        └── pocket  ──────────────────▶  Mystery Dungeon  (own dimension)
+```
+
+Two things fall out of that, and they are not the same mechanism:
+
+**The eleven region teleports are overworld teleports, not portals.** The regions are continents
+in ONE world separated by ocean, reachable by flight or boat the long way round — the teleports
+exist so you can *choose your next region* without the voyage. At least one per region. That
+means they are a command/waystone-shaped problem, not a dimension-portal problem, and it is
+much cheaper than what The Hub's arches do: no dimension registration, no `coordinate_scale`
+arithmetic, no return-portal placement. A fixed destination per region and a hub room to stand
+in. The spawn fence is `minX/maxX` + `minZ/maxZ`, which the spawn format already supports.
+
+**Mystery Dungeon IS a dimension**, and so it is the one piece here that reuses The Hub's
+machinery directly — the same portal-block pattern, the same per-dimension rule gating that
+PocketQuests already does for eleven pockets. Its entrance lives in the region hub.
+
+So the region hub does double duty: eleven same-world teleports and one real portal.
