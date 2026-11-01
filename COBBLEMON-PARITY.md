@@ -220,10 +220,30 @@ by downloading each build and counting, not by reading release notes.
 Three mods come from **maven.ftb.dev**, not Modrinth — FTB publish nowhere else, the same
 finding as the packwiz build.
 
-### Still not launched
+### Launched
 
-Validation is static: it proves the dependency graph closes and nothing declares war on
-anything else. It does not prove the game starts. That is the next step.
+Static validation proves the dependency graph closes and nothing declares war on anything else.
+It does not prove the game starts, so the game was started.
+
+First attempt was closed too early — it was still mod-loading, and that was reported as
+unverified rather than dressed up as a pass. What it did prove is the part that was actually in
+doubt, because CobbleDex walks every jar's data at init and says what it found:
+
+```
+JarDataCache: parsed 23,351 spawns from 6,973 files (0 failed)
+              2,072 habitat spawns from 52 pools
+              2,529 base + 1,314 form evolutions from 6,722 species files (0 failed)
+              779 native TMs, 183 marks, 18 fossils, 376 mega stones
+ready in 2.7s - 4,807 species with spawns, 4,904 with breeding/dex traits
+```
+
+**0 failed on both parses.** Every species file and every spawn file in 133 jars is
+well-formed and mutually consistent — that is the thing a hand-assembled 4,900-species roster
+is most likely to get wrong, and it is clean.
+
+The mixin warnings in the log are all `ClassNotFoundException` for mods we deliberately do not
+ship — Controlify, MidnightControls, TerraFirmaCraft, Create, Aether. Those are optional-compat
+mixins declining to apply, which is the correct behaviour, not a fault.
 
 ## The gap, measured instead of guessed
 
@@ -286,3 +306,60 @@ wires progression into FTB Quests, and Legends Untold gives legendary structures
 
 And The Hub already merges eleven quest books into one and seeds structures per dimension.
 Region-per-continent is the same shape of problem, solved eleven times already.
+
+## The survival layer, and Oritech
+
+You asked for his whole survival layer, not just the Pokemon half, and specifically whether
+Oritech is a Forge mod.
+
+**Oritech publishes `fabric` AND `neoforge` for 1.21.1.** It comes over directly —
+`oritech-neoforge-1.21.1-1.2.13.jar` is installed.
+
+The backpacks are the opposite surprise: **Sophisticated Backpacks, Core and Storage are
+NeoForge-native.** They were Forge-first mods, and the jars in his pack are unofficial Fabric
+ports. So that whole family is *more* at home here than there.
+
+Installed from his survival layer: Oritech, Sophisticated Backpacks/Core/Storage, Waystones,
+Lootr (+ Lootrmon), Comforts, Handcrafted, Supplementaries, Farmer's Delight, Jade, JEI,
+Xaero's minimap + worldmap, Sodium (+ Extra, + Reese's options), FerriteCore, ModernFix.
+
+## What the other Cobblemon packs do that his does not
+
+Two packs were pulled and diffed by Modrinth project id rather than by name:
+
+| pack | mods | overrides | projects we lacked |
+|---|---|---|---|
+| COBBLEVERSE | 168 | 1,647 (1,234 of them shaderpack files) | 140 |
+| Cobblemon Official (NeoForge) | 75 | — | 73 |
+
+The honest read: **almost none of it is content.** Both lists are overwhelmingly
+client/performance/QoL — Sodium, Iris, FerriteCore, Lithium, FancyMenu, JEI, zoom mods. Neither
+pack carries Pokemon content Kewz lacks; his content layer is genuinely ahead of both.
+
+Two exceptions worth taking, and both packs ship them:
+
+- **Entity Texture Features (ETF)**
+- **Entity Model Features (EMF)**
+
+These let entity textures and models be overridden per-variant from a resource pack. For a pack
+whose whole point is 4,900 creatures with forms, shinies and regional variants, that is the
+difference between "a texture pack can reskin Pokemon" and "it cannot." Both are installed.
+
+Also swapped on the way in: Continuity → **Fusion** (Continuity is Fabric-only), zoomify →
+**Just Zoom**, plus the nine libraries the new entries pull in.
+
+**133 jars, 142 modIds, 578 MB, 0 duplicates, 0 missing deps, 0 version mismatches,
+0 declared conflicts.**
+
+## Next: the progression layer
+
+The roster is effectively done. What is missing is not mods, it is *shape* — the thing that makes
+it feel like playing the games back to back rather than a very large creature sandbox:
+
+1. **Region-locked spawns** — generated, not authored (see above). The first real build.
+2. **Gym ladder** — RCT trainers + Rad Gyms structures + Cobblemon Quests into FTB Quests, eight
+   badges per region gating the next region's entry.
+3. **The map** — eleven continents, one ocean. Hand work, and the long pole.
+4. **Mystery Dungeon** — a separate mode, not a region: no human player character, procedurally
+   generated floors, a party of Pokemon. Worth noting now that this is closer to a *pocket
+   dimension* in Hub terms than a continent, because its rules differ from the overworld's.

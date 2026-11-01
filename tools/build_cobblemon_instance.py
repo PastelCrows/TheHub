@@ -53,7 +53,17 @@ UA = {"User-Agent": "TheHub-cobblemon-build/1.0 (personal modpack)"}
 #   matthiesen-core: the move tutor and poke power both declare [1.3.0,2.0.0),
 #   and the newest build is 2.0.0 - outside the range by one patch. Pinned to the
 #   last 1.x so they load at all.
-PINS = {"gravelmon": "4.0.0-Alpha.8", "matthiesen-core": "1.3.5"}
+#   gravels-extended-battles: Gravelmon 4.0.0-Alpha.8 does not declare a RANGE for this,
+#   it pins one exact version id - MMwKsJoI = 2.0.0-Alpha.15. Resolving it to "newest"
+#   instead installed Alpha.37, and that HUNG THE GAME: from 2.0.0-Alpha.16 onward GEB
+#   downloads species on demand and asks the client for a selection code at startup.
+#   The prompt blocks mod construction forever under javaw, which has no stdin - the
+#   JVM thread dump put modloading-worker-0 in ProcessSelectionPrompt.next() while the
+#   render thread sat in ModLoader.waitForFuture. Alpha.15 carries 0 ondemand classes
+#   and 0 prompt classes; Alpha.37 carries 139 and 13. Verified by reading both jars.
+#   This is also why Gravelmon Alpha.10+ is 1.4 MB instead of 92 MB - same redesign.
+PINS = {"gravelmon": "4.0.0-Alpha.8", "matthiesen-core": "1.3.5",
+        "gravels-extended-battles": "2.0.0-Alpha.15"}
 
 FTB_MAVEN = "https://maven.ftb.dev/releases/dev/ftb/mods/{a}/{v}/{a}-{v}.jar"
 FTB = {"ftb-library-neoforge": "2101.1.37",
