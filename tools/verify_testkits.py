@@ -184,14 +184,22 @@ entered = set(re.findall(r"if \(name === .(\w+).\)", pjs))
 check("every pocket in enter() has a return portal",
       entered and not (entered - returns),
       "%d pockets, missing: %s" % (len(entered), ", ".join(sorted(entered - returns)) or "none"))
-check("the return portal is the hub portal block",
-      "pocketquests:portal_hub" in pjs)
+check("the return portal is the hub portal block (hub:, not a duplicate)",
+      "hub:portal_hub" in pjs)
 check("return portals are placed once per world, not every visit",
       "persistentData.getBoolean(flag)" in pjs and "putBoolean(flag, true)" in pjs)
 check("the void pockets get no frame and no platform",
       pjs.count(", null]") >= 4,
       "%d entries place bare portal blocks - skyblock, oceanblock, onechunk, oneblock"
       % pjs.count(", null]"))
+
+check("travel is detected from the BLOCK, not a coordinate table",
+      "hub:portal_" in pjs and "getBlock(px, py, pz)" in pjs
+      and "near(px, -25)" not in pjs,
+      "a coordinate table means the hall cannot be redesigned without regenerating this file")
+check("there is exactly one portal block namespace",
+      "pocketquests:portal_" not in pjs,
+      "two parallel sets of portal blocks is how the hall ends up with inert decoration in it")
 
 print("\n%s" % ("ALL CHECKS PASSED" if not failures
                 else "FAILURES: " + ", ".join(failures)))

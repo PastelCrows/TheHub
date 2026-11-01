@@ -1,7 +1,6 @@
 package pocketquests;
 
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
@@ -19,10 +18,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
 @Mod("pocketquests")
 public class PocketQuests {
 
-    public PocketQuests(IEventBus modBus) {
-        // Blocks and items must be registered before registries freeze, which is why this
-        // constructor now takes the mod event bus. Everything else here is game-bus listeners.
-        PocketPortal.register(modBus);
+    public PocketQuests() {
 
         // Entity gating is common: mods are global in the hub, so a pocket dimension whose
         // premise is its mobs needs them confined. EntityJoinLevelEvent catches programmatic

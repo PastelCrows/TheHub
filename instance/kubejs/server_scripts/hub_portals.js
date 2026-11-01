@@ -185,8 +185,8 @@
       setb(server, dim, who, dx + 1, 2, dz, frame);
       setb(server, dim, who, dx, -1, dz, frame);
     }
-    setb(server, dim, who, dx, 0, dz, 'pocketquests:portal_hub');
-    setb(server, dim, who, dx, 1, dz, 'pocketquests:portal_hub');
+    setb(server, dim, who, dx, 0, dz, 'hub:portal_hub');
+    setb(server, dim, who, dx, 1, dz, 'hub:portal_hub');
     console.info('[hub] return portal placed in ' + dim + ' near ' + who);
   }
 
@@ -317,28 +317,42 @@
     if (typeof x !== 'number') return;
     var px = Math.floor(x), py = Math.floor(y), pz = Math.floor(z);
 
+    // ---------------------------------------------------------------- detection
+    //
+    // WHAT BLOCK ARE YOU STANDING IN. This replaced a table of arch coordinates that
+    // build_hub_room_v6.py compiled into this file, and it fixes three things at once:
+    //
+    //   the portal that "took a long time to go off" - the old check compared floats against
+    //   arch positions with a one-block tolerance, so clipping a corner or a laggy tick could
+    //   miss entirely. A block lookup is exact and fires the tick you are inside it.
+    //
+    //   the hall could not be redesigned - coordinates were compiled in, so moving an arch meant
+    //   regenerating the room AND this script. Now the BLOCK is the portal. Pick one up in
+    //   creative, put it anywhere, and it works, in any dimension.
+    //
+    //   return portals - a hub:portal_hub placed in a pocket dimension sends you home, and
+    //   needed no new mechanism at all.
+    //
+    // The blocks are the ones hub_blocks.js has always registered, with their animated
+    // hue-rotated textures. They used to be inert decoration; the only thing they lacked was
+    // this.
     var hit = null;
-    if (py >= 65 && py <= 68) {
-      if (near(px, -25) && near(pz, -12)) hit = 'skyblock';
-      else if (near(px, -15) && near(pz, -12)) hit = 'survival';
-      else if (near(px, -5) && near(pz, -12)) hit = 'caveblock';
-      else if (near(px, 5) && near(pz, -12)) hit = 'netherbound';
-      else if (near(px, 15) && near(pz, -12)) hit = 'oceanblock';
-      else if (near(px, 25) && near(pz, -12)) hit = 'lostcities';
-      else if (near(px, -25) && near(pz, 12)) hit = 'onechunk';
-      else if (near(px, -15) && near(pz, 12)) hit = 'gauntlet';
-      else if (near(px, -5) && near(pz, 12)) hit = 'redstone';
-      else if (near(px, 5) && near(pz, 12)) hit = 'oneblock';
-      else if (near(px, 15) && near(pz, 12)) hit = 'horror';
+    var home = false;
+    var standing = player.level.getBlock(px, py, pz);
+    var bid = standing ? '' + standing.id : '';
+    if (bid.indexOf('hub:portal_') === 0) {
+      var target = bid.substring(11);
+      if (target === 'hub') { home = true; } else { hit = target; }
     }
 
-    // EDGE TRIGGER: you must step OUT of an arch before it can fire again. Without this,
-    // returning to the hub inside a doorway re-triggers instantly and loops you to death.
-    if (hit === null) { inArch[key] = false; return; }
-    if (inArch[key]) return;
-    inArch[key] = true;
-
-    if (cooldown[key] && ticks - cooldown[key] < 60) return;
+    if (home) {
+      if (cooldown[key] && ticks - cooldown[key] < COOLDOWN) return;
+      cooldown[key] = ticks;
+      event.server.runCommandSilent('execute as ' + key + ' at ' + key + ' run hub');
+      return;
+    }
+    if (!hit) return;
+    if (cooldown[key] && ticks - cooldown[key] < COOLDOWN) return;
     enter(event, player, hit);
   });
 })();

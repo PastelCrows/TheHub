@@ -4093,6 +4093,14 @@ file = "kubejs/assets/hub/textures/block/portal_horror.png.mcmeta"
 hash = "ded717f14aa8f096f3328261b1e6ff37631a4fcbbb0edaa25076ee89424b8c36"
 
 [[files]]
+file = "kubejs/assets/hub/textures/block/portal_hub.png"
+hash = "8d5949f85a2ac4406426aecfbca466b7cedf61bb537c0b6c58d79f4bcdd0d435"
+
+[[files]]
+file = "kubejs/assets/hub/textures/block/portal_hub.png.mcmeta"
+hash = "3f03bc3c7581277ee6a85d91276cc795c189e73ee234148eaf4bedcd96588c30"
+
+[[files]]
 file = "kubejs/assets/hub/textures/block/portal_lostcities.png"
 hash = "92563b855979328a60eddcdea7ba6f270dbd66b4a6de662d2e076891040f2ca4"
 
@@ -4534,7 +4542,7 @@ hash = "c0b0affe9325a8af6bbbff822ae94f871724bf859b74806e528082353ef49560"
 
 [[files]]
 file = "kubejs/server_scripts/hub_portals.js"
-hash = "917253265689f23a6a3e89915cf88a3b6c3209a7b6edaa0b57cea9a3b87609b3"
+hash = "31c5d35eea67623723f5fe639aa7e5c8375965c4a6592a17e63cc10774104468"
 
 [[files]]
 file = "kubejs/server_scripts/hub_respawn.js"
@@ -4562,7 +4570,7 @@ hash = "dae099ae3be7f033c0c190ee8c3b023b42f6b235d9d0591be5926e8435dbd67f"
 
 [[files]]
 file = "kubejs/startup_scripts/hub_blocks.js"
-hash = "32230ce9a5c3f514f8547a36fdf5e3495af10785ef528154b222c510687016b0"
+hash = "0c6988dae3415b93cf47bfa422ff70841b92888202fff1a4b46b15d6b6011d22"
 
 [[files]]
 file = "kubejs/startup_scripts/main.js"
@@ -5620,7 +5628,7 @@ metafile = true
 
 [[files]]
 file = "mods/pocketquests-1.15.0.pw.toml"
-hash = "27f73b1b63137b26adcd956c056e9244565247cbef54213cbfbf5c3a560197db"
+hash = "0bdac2a57b626e268aea4e71dd20d39087ec6c439bb22038dbb476ce6fe1cbb1"
 metafile = true
 
 [[files]]
@@ -15080,7 +15088,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/BSL_v10.1.8.zip.txt"
-hash = "a7ae8fd21ad6cc38f0ca8e05a1ad7ab2cd2a8eedbe55fcc5363c47be4e8b519d"
+hash = "c32277e87866c669efc041e65b129af7ca345424e2c545c4065280e515e774fa"
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
@@ -15089,11 +15097,11 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "b647407069ae5ec01367e43ce4e7c563db04e8c3f58427cac6aefc75c9ad0a9c"
+hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"
 
 [[files]]
 file = "shaderpacks/ComplementaryUnbound_r5.9.3.zip.txt"
-hash = "b647407069ae5ec01367e43ce4e7c563db04e8c3f58427cac6aefc75c9ad0a9c"
+hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.pw.toml"
@@ -15102,7 +15110,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "a7ae8fd21ad6cc38f0ca8e05a1ad7ab2cd2a8eedbe55fcc5363c47be4e8b519d"
+hash = "c32277e87866c669efc041e65b129af7ca345424e2c545c4065280e515e774fa"
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.pw.toml"
@@ -15111,7 +15119,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.zip.txt"
-hash = "7afee9afc9a0f7c2aa1ce7ca1bb50459da6a395d0abdbf7e136ccd2feaf7115c"
+hash = "ad369e2bb90fcfe5287d66644382280bc593d7eee980bb25a00618d3a6197beb"
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.pw.toml"
@@ -15120,4 +15128,4 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.zip.txt"
-hash = "b647407069ae5ec01367e43ce4e7c563db04e8c3f58427cac6aefc75c9ad0a9c"
+hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"

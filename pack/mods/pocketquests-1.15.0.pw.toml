@@ -4,5 +4,5 @@ side = "both"
 
 [download]
 hash-format = "sha512"
-hash = "d416e4db62a60e33449ac6078db5ca4bebf7472df14e9834b5e26779cd26596813eea278f9c79b1955c6e59241ae640923bcf0bc69cb4403fbf1cfcdf347e35a"
+hash = "adeb9a0df63778ac28c10648dc8e50b6fbe146af4a0c8c668b9338c149f270b22b8507108d668bb541fce57b304296211f5707bb2c805ddcdff0f30cac71d50e"
 url = "https://github.com/PastelCrows/TheHub/releases/download/mods-v1/pocketquests-1.15.0.jar"

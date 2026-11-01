@@ -56,6 +56,10 @@
     portal(event, 'redstone');
     portal(event, 'oneblock');
     portal(event, 'horror');
-    console.info('[hub] registered 11 portal blocks');
+    // The twelfth is the way HOME, and it is the only one that is not an arch in the hall: one
+    // of these is placed in every pocket dimension on first arrival. Same block, same rules -
+    // unbreakable, no drops, pick-up-able in creative so the hub can be rebuilt by hand.
+    portal(event, 'hub');
+    console.info('[hub] registered 12 portal blocks');
   });
 })();
