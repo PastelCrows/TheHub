@@ -225,6 +225,58 @@ finding as the packwiz build.
 Validation is static: it proves the dependency graph closes and nothing declares war on
 anything else. It does not prove the game starts. That is the next step.
 
+## The gap, measured instead of guessed
+
+`tools/cobblemon_gap.py` resolves both packs to Modrinth projects and lists what he has, we lack,
+and NeoForge publishes. 255 projects separate us. The split is the surprise:
+
+| | count |
+|---|---|
+| **Cobblemon-specific** | **16** |
+| general survival/client layer | 192 |
+| no NeoForge build | 47 |
+
+All 16 Cobblemon ones are now installed. Of the 192 general ones, **43 are already in The Hub** —
+and since this is going to live inside The Hub, that layer arrives with the merge rather than
+needing to be rebuilt here. Only 149 are new to the project at all, and they are Sodium, Jade,
+Waystones, Handcrafted, Lootr, storage and QoL — a survival pack underneath the Pokemon one.
+
+**87 jars, 82 modIds, 0 duplicates, 0 missing, 0 version mismatches, 0 conflicts.**
+
+## Regions: the mechanics already exist
+
+The spawn format was read out of the Cobblemon jar. Condition fields available:
+
+```
+dimensions   biomes   structures   labels   timeRange   moonPhase
+minX maxX    minY maxY    minZ maxZ    isSlimeChunk
+```
+
+Three things follow, and together they make the eleven-region plan tractable:
+
+**1. Species are already labelled by generation.** `pikachu.json` carries
+`"labels": ["gen1", "kantonian_form"]`, and the counts are exact: **gen1 = 151**. That is Kanto,
+with no hand-mapping of a Pokedex. gen2 = 100, gen3 = 135, gen4 = 107, gen5 = 156, gen6 = 72,
+gen7 = 86, gen8 = 89, gen9 = 120. Nine regions fall straight out of data Cobblemon already ships,
+and the fakemon packs bring their own.
+
+**2. "Only Kanto mons in Kanto" is a spawn-pool override, not a mod.** There are 1,591 spawn pool
+files in base Cobblemon, one per species, each already carrying biome conditions. A datapack that
+rewrites each pool's `condition` to add its region's fence is **generated, not authored** — read
+the label, look up the region, emit the file. That is a tool, and it is the same shape as every
+other generator in this repo.
+
+**3. The fence can be coordinates OR dimensions, and The Hub has already chosen.** `minX/maxX` and
+`minZ/maxZ` mean continents separated by ocean in ONE world work exactly as you described.
+`dimensions` means a region could instead be its own pocket — which is the thing this project has
+done thirty-two times. Either is expressible; the continent version is the one you want and costs
+nothing extra in the spawn data.
+
+**"Lavender city in a lavender forest"** is the remaining hard part, and it is honest to say so:
+that is biomes plus structures plus placement, authored per region. Aio's Extra Structures and
+Legends Untold give raw material; `structures` as a spawn condition means a Pokemon can be made to
+spawn only at a specific structure. But the map itself is hand work.
+
 ## Then: the world
 
 Eleven regions as continents, gyms, Elite Four, champions, legendary quests. Still not a mod —

@@ -49,7 +49,11 @@ UA = {"User-Agent": "TheHub-cobblemon-build/1.0 (personal modpack)"}
 #   content was moved out of the jar mid-alpha and is not published anywhere on Modrinth as a
 #   separate pack. Alpha.8 is 92 MB and carries 9,593 species/form definitions. Checked by
 #   downloading each build and counting, not by reading release notes.
-PINS = {"gravelmon": "4.0.0-Alpha.8"}
+#
+#   matthiesen-core: the move tutor and poke power both declare [1.3.0,2.0.0),
+#   and the newest build is 2.0.0 - outside the range by one patch. Pinned to the
+#   last 1.x so they load at all.
+PINS = {"gravelmon": "4.0.0-Alpha.8", "matthiesen-core": "1.3.5"}
 
 FTB_MAVEN = "https://maven.ftb.dev/releases/dev/ftb/mods/{a}/{v}/{a}-{v}.jar"
 FTB = {"ftb-library-neoforge": "2101.1.37",
@@ -140,6 +144,29 @@ MODS = {
     #   cobblemon-move-inspector     same - Battle Extras supersedes it and refuses to coexist
     #   cobblemon-ride-on            requires cobblemon [1.7,) and we are on 1.8.4; Mount Mastery covers riding anyway
 
+
+    # ---- the gap, found by diffing his pack against ours ---------------------
+    # cobblemon_gap.py resolved both packs to Modrinth projects and listed what he has, we lack,
+    # and NeoForge publishes. Only 16 were Cobblemon-specific - the rest of his 370 is a general
+    # survival layer The Hub already carries.
+    "cobblemon-rustling-spots":        "dynamic world-driven rustling spots",
+    "rs-teamrocket-addon":             "Jessie and James interrupt rustling spots",
+    "wild-battle-api":                 "shared wild-battle AI, needed by several addons",
+    "cobblemon-move-tutor":            "a move tutor NPC",
+    "cobblemon-minigames":             "Game Corner arcade and casino",
+    "cobblemon-failskins":             "character cosmetics - he runs this",
+    "cobblemon-shiny-cookie":          "shiny cookies",
+    "cobblemon-smartphone":            "the smartphone he runs a Pokedex app on",
+    "aios-extra-structures":           "more Cobblemon structures - region building material",
+    "msd-ores":                        "ores for crafting Mega Showdown items",
+    "pokemon-fly-transitions":         "Pokemon-style Fly transitions",
+    "lootrmon":                        "Lootr + Cobblemon gilded chest compatibility",
+    "lootr":                           "per-player loot - every player gets their own chest",
+    "cobblemon-poke-power":            "Pokemon as a power source for tech mods",
+    "torchmaster":                     "spawn control blocks - he uses these to shape spawns",
+    "cobblemon-torchmaster-fix":       "makes Torchmaster actually stop Cobblemon spawns",
+    "oracle-index":                    "client-side in-game documentation",
+
     # NOTE: FTB Quests/Library/Teams are NOT on Modrinth - they publish to
     # maven.ftb.dev. They are fetched separately; see FTB_MAVEN below.
 
@@ -149,6 +176,7 @@ MODS = {
     "geckolib":                        "required by raid dens",
     "accessories":                     "required by mega showdown",
     "owo-lib":                         "required by accessories",
+    "matthiesen-core":                 "required by the move tutor and poke power",
     "patchouli":                       "required by Cobblepedia",
     "chipped":                         "required by Legendary Monuments",
     "lithostitched":                   "required by Legendary Monuments",
