@@ -62,6 +62,12 @@ UA = {"User-Agent": "TheHub-cobblemon-build/1.0 (personal modpack)"}
 #   render thread sat in ModLoader.waitForFuture. Alpha.15 carries 0 ondemand classes
 #   and 0 prompt classes; Alpha.37 carries 139 and 13. Verified by reading both jars.
 #   This is also why Gravelmon Alpha.10+ is 1.4 MB instead of 92 MB - same redesign.
+#   fancymenu: 3.9.14 breaks satisfying_buttons - its FancyMenuButtonMixin @WrapOperation
+#   targets ExtendedButton.renderBackground, which 3.9.x no longer has, and the critical
+#   injection failure is fatal. Satisfying Buttons has shipped nothing since Sep 2024, so it
+#   will not be fixed upstream. The version to use is not a guess: KEWZ RUNS BOTH, at
+#   fancymenu 3.8.1 and satisfying_buttons 1.1.2, which is the evidence that 3.8.1 is the
+#   last version where the pair works. Pinned there rather than dropping either mod.
 #   cameraoverhaul: every 1.21.1 neoforge build from 2.0.2 up declares cloth_config
 #   ">=16.0.0", and cloth-config does not publish 16 for 1.21.1 at all - it stops at
 #   15.0.140. That is an upstream packaging bug, and it would refuse to load. 2.0.0 covers
@@ -69,7 +75,8 @@ UA = {"User-Agent": "TheHub-cobblemon-build/1.0 (personal modpack)"}
 #   builds were checked by reading their tomls.
 PINS = {"gravelmon": "4.0.0-Alpha.8", "matthiesen-core": "1.3.5",
         "gravels-extended-battles": "2.0.0-Alpha.15",
-        "cameraoverhaul": "2.0.0-neoforge+mc.1.20.6-1.21.1"}
+        "cameraoverhaul": "2.0.0-neoforge+mc.1.20.6-1.21.1",
+        "fancymenu": "3.8.1-1.21.1-neoforge"}
 
 FTB_MAVEN = "https://maven.ftb.dev/releases/dev/ftb/mods/{a}/{v}/{a}-{v}.jar"
 FTB = {"ftb-library-neoforge": "2101.1.37",
@@ -480,7 +487,11 @@ MODS = {
     "cobblebase":                          "base-building for Cobblemon",
     "cobblemon-emi-compat":                "Pokemon data inside EMI",
     "extra-move-anims-cobblemon":          "move animations",
-    "ftb-quests-cobblemon-entity":         "FTB Quests tasks that target Pokemon - the quest bridge",
+    # ftb-quests-cobblemon-entity is NOT here. He runs 2.0.0 on fabric; neoforge has exactly
+    # one build, 1.0.0, and its CommandRewardMixin fails with InvalidInjectionException
+    # against ftb-quests 2101.1.37 - the descriptor it injects on no longer exists. A FATAL
+    # mixin failure aborts mod construction, so this one mod killed the whole boot. The quest
+    # bridge has no usable NeoForge build at our FTB Quests version.
     "lets-do-bloomingnature":              "16 biomes - the single biggest biome source in HIS pack",
     "grassier-grass":                      "denser grass",
     "dreamdisplays":                       "display screens",
