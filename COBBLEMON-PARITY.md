@@ -440,3 +440,77 @@ machinery directly — the same portal-block pattern, the same per-dimension rul
 PocketQuests already does for eleven pockets. Its entrance lives in the region hub.
 
 So the region hub does double duty: eleven same-world teleports and one real portal.
+
+## The 370-vs-286 accounting, in full
+
+The fair question was: how is this pack so much smaller than his, and what is still being
+skipped? Here is the whole arithmetic, from `tools/cobblemon_gap.py` with per-version
+verification rather than project-level guessing.
+
+| | jars / projects |
+|---|---|
+| his pack | **370 jars** |
+| of those, resolvable on Modrinth | 271 |
+| **not resolvable at all** | **99** |
+| ours | **286 jars** |
+
+**The 99 are the real answer to "why is his bigger".** They are not downloadable by anyone:
+74 are `+kewz` recompiles of other people's mods, 16 are `kewz-` prefixed originals he wrote,
+and the rest are CurseForge-only or unpublished snapshots (his EMI is a fabric SNAPSHOT build,
+which is why a hash lookup cannot see it). A pack cannot be "caught up to" on that column; it
+has to be rebuilt, mod by mod, which is the long-term work.
+
+Of the 271 that *are* resolvable, 55 are projects we do not have:
+
+| | count |
+|---|---|
+| **no NeoForge build exists** | **52** |
+| deliberately excluded, documented | 3 |
+
+The 52 are the loader tax, and it is mostly structural rather than content: fabric-api,
+Fabric Language Kotlin, Mod Menu, Krypton, C2ME, Debugify, Enhanced Block Entities, Trinkets,
+and the unofficial *Fabric ports* of Sophisticated Backpacks/Core/Storage — which we run as the
+NeoForge originals instead, so those three are a gain, not a loss. Real content losses are a
+short list: Cobblemon Additions, COBBLEVERSE Badges & Trophies, Pokeblocks, Casino Rocket,
+Cobblemon Pasture Loot, Cobblemon Delight, CobbleCuisine Delight.
+
+The 3 excluded, each with a reason that was checked:
+
+- **Continuity** — its single neoforge 1.21.1 build requires Sinytra Connector plus Forgified
+  Fabric API. Fusion is installed in its place.
+- **Do A Barrel Roll** — all four neoforge builds declare `fabric_api` mandatory with no
+  version range. Same underlying reason as Continuity.
+- **Rolling Down in the Deep** — an addon to Do A Barrel Roll.
+
+So the honest statement is: **we are 3 installable projects short of his downloadable pack**,
+52 behind on things NeoForge does not have at all, and 99 behind on work he wrote himself.
+
+### Two tool bugs this exposed
+
+The gap was mis-measured twice, in opposite directions, and both tools are now fixed:
+
+- **`cobblemon_gap.py` over-reported by 6.** Asking "does the project list neoforge, and does it
+  list 1.21.1" is satisfied by a project that shipped neoforge for 1.20 and fabric for 1.21.1.
+  Six mods went onto a build list and quietly failed to download. It now queries the version
+  endpoint, and treats a Connector-requiring build as unavailable, because for this pack it is.
+- **`validate_instance.py` invented 5 failures.** It kept the FIRST version of a modId it
+  scanned, so a YACL 3.6.6 nested inside fragmentum's JarJar shadowed the 3.8.2 sitting in
+  `mods/`, failing three mods that were satisfied. It now keeps the highest, which is what
+  NeoForge actually resolves. It also could not compare versions with the game version embedded
+  in them (`1.21.1-3.7.2` against `[1.21-2.29.33,)`), which it now strips - dash-delimited only,
+  because a substring strip turns the bare game version `1.21.1` into `.1`, and the self-test
+  caught exactly that.
+
+### And the ceiling of static validation
+
+With 286 jars the set validated completely clean — 0 missing, 0 duplicates, 0 mismatches,
+0 conflicts — and then crashed on launch.
+
+**[Let's Do] Beachparty's NeoForge main class hard-references Curios in its constructor, and
+its toml declares only neoforge, minecraft and architectury.** No curios entry, required or
+optional. Construction threw `NoClassDefFoundError`, which aborted the parallel task, which left
+registries frozen before cobblenav had registered its items — so the crash report blamed
+cobblenav and ModelBakery, two mods innocent of the cause.
+
+No static check can catch a declaration that is simply wrong. Launching is not a formality after
+validation; it tests a different thing.

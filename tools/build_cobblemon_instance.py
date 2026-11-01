@@ -271,6 +271,17 @@ MODS = {
     "lets-do-vinery":                      "",
     "lets-do-meadow":                      "",
     "lets-do-beachparty":                  "",
+    # Curios is NOT optional here, whatever the tomls say. [Let's Do] Beachparty's neoforge
+    # main class hard-references top.theillusivec4.curios.api...ICurioItem in its constructor
+    # (the beach hat), and its toml declares only neoforge, minecraft and architectury - no
+    # curios entry at all, required OR optional. So mod construction died with a
+    # NoClassDefFoundError, which aborted the whole parallel task, which left registries frozen
+    # before cobblenav had registered its items - and THAT is what surfaced as the crash report.
+    # No static validator can catch this: the declaration is simply wrong. Only launching finds
+    # it. Eleven other mods here guard their curios integration properly; this one does not.
+    # Curios and Accessories coexist by design - Accessories ships accessories_compat_layer for
+    # exactly this - and nothing in the set declares curios incompatible.
+    "curios":                              "hard-referenced by beachparty, undeclared",
     "lets-do-farm-charm":                  "",
     "lets-do-herbalbrews":                 "",
     "lets-do-furniture":                   "",
