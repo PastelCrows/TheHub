@@ -16,29 +16,55 @@ ahead of what he is playing.
 
 ## His pack, by the numbers
 
-370 jars. **74 of them are his own recompiles** — every jar with `+kewz` in the name is a custom
-build he made, which is the single most important fact here: a large part of that pack does not
-exist anywhere to download, on any loader.
+370 jars. **77 of them carry his name**, and the first audit lumped them together as "recompiles".
+That was wrong, and the distinction turns out to be the whole story:
 
-| | count | |
+| | count | what it is |
 |---|---|---|
-| Resolve to a project that publishes NeoForge + 1.21.1 | **224** | direct swaps |
-| Kewz's own recompiles | **74** | do not exist to download, any loader |
+| `+kewz.` suffix on an upstream jar | **58** | his recompiles of other people's mods |
+| **`kewz-` prefix** | **16** | **mods he wrote from scratch** |
+| other infix forms | 3 | recompiles with different naming |
+| Resolve to a project publishing NeoForge + 1.21.1 | **224** | direct swaps |
 | Fabric-only or unlisted | **72** | broken down below |
 
-Of those 72:
+Of those 72: **37 already covered** (Fabric plumbing NeoForge does not need, or mods The Hub
+already has — EMI is JEI, Trinkets is Curios, and Sophisticated Backpacks/Core/Storage appear as
+"Unofficial Fabric port", which are ports *of NeoForge mods* we already run), **14
+Cobblemon-specific**, **21 decorative**.
 
-| | count | |
-|---|---|---|
-| Already covered | **37** | Fabric plumbing that NeoForge does not need, or mods The Hub *already has* |
-| Cobblemon-specific content | **14** | the actual work |
-| Other content, mostly decorative | **21** | replaceable or droppable |
+## The sixteen mods he wrote himself
 
-The 37 are worth naming because they look alarming in a raw list and are not losses at all: Fabric
-API, Fabric Language Kotlin, MixinExtras and CICADA are loader plumbing. EMI is JEI. Trinkets is
-Curios. Farmer's Delight Refabricated is Farmer's Delight. The FTB mods are the FTB mods. And
-**Sophisticated Backpacks / Core / Storage appear as "Unofficial Fabric port"** — those are ports
-*of NeoForge mods*, and The Hub already runs the originals.
+This is the part that cannot be downloaded, ported, or replaced by picking a different mod. Each
+is tiny — one to twenty classes — and each kills one specific papercut:
+
+| mod | what it does |
+|---|---|
+| `airhaze-shadergate` | turns Atmospherics' haze off automatically when a shader is active |
+| `chat-time` | timestamps every chat line in your own timezone |
+| `client-perf` | removes the freeze when opening the creative inventory |
+| `evolution-info` | an info button on the Cobblemon summary screen |
+| `kit-fastdraw` | draws the restyled menus (Perfect Partners, CobbleBase) without the stall |
+| `legacy-blocks` | keeps six Gravelmon ore/storage block ids alive after they were removed |
+| `lootr-retrofit` | converts already-generated structure chests to Lootr |
+| `native-tm-teaching` | staged, species- and form-restricted native TM extension |
+| `render-guard` | guards incomplete world-render and CobbleDollars HUD states |
+| `shader-profiles` | keeps Grassier Grass in step with the active Iris shaderpack |
+| `subtle-effects-stub` | lets you join the server when Subtle Effects is switched off |
+| `tm-filter` | hides TM entries whose move silently fell back to Tackle |
+| `tower-trainer-spot` | makes the Battle Tower trainer stand on the battle position |
+| `worldgen-compat` | repairs legacy and malformed jigsaw pool identifiers |
+| `hologram-target`, `terminal-layout` | no description shipped |
+
+**Read that list again and notice what most of it is.** Shader gating, worldgen id repair, legacy
+block ids, a stub for a disabled mod, a guard against half-initialised render state. That is not
+a feature set — it is **scar tissue from one specific 370-mod Fabric stack**. Those bugs exist
+because of what he combined, and a NeoForge build would not inherit them.
+
+So the honest conclusion is not "we must reproduce 16 mods". It is: **you cannot port his fixes,
+and you would not want to — you would develop your own set, for your own papercuts.** What *is*
+worth stealing is the handful that are design rather than repair: `evolution-info`, `tm-filter`,
+`native-tm-teaching`, `tower-trainer-spot`, `chat-time`. Those are decisions about how a Pokemon
+pack should feel, and they would port as ideas.
 
 ## The ecosystem is about half the size, not a tenth
 
@@ -75,10 +101,10 @@ Eight of nine have an answer. One does not.
 **Parity on mods is achievable and not the hard part.** The hard part is the two things the
 measurement cannot buy:
 
-**His 74 custom builds.** Recompiles, rebalances and fixes he made himself — `+kewz.dex1`,
-`+kewz.keys1`, `+kewz.sheetfix3`. Some are bug fixes that may be upstream by now; some are his own
-design decisions baked into a jar. Matching those means either doing the same work or deciding you
-do not need it.
+**His 77 custom jars** — 58 recompiles and 16 original mods. The recompiles carry tags like
+`+kewz.dex1`, `+kewz.sheetfix3`, `+kewz.cd181`: sprite-sheet fixes, Pokédex behaviour, pins to
+a specific Cobblemon build — maintenance against a moving target. The 16 originals are listed
+above, and most are compatibility glue for his stack rather than portable features.
 
 **The gating.** Pokémon-specific items and spawns confined to one pocket dimension is the roughest
 part, and it is roughest in a way The Hub is unusually well prepared for: `PocketMobs` already
@@ -86,12 +112,45 @@ gates entity spawns per dimension by pattern, `PocketRules` already gates crafti
 and `PocketWorlds` already gates access to modded dimensions. A Cobblemon pocket needs the same
 three levers pointed at `cobblemon:*`, not a new mechanism.
 
-## Suggested order, if this becomes real
+## Status: the standalone instance exists
 
-1. A standalone NeoForge Cobblemon instance first — Cobblemon alone, then the eight replacement
-   addons. Get it playable before thinking about the hub.
-2. Measure *that* against his pack rather than against this document.
-3. Fold it in as the twelfth arch only once it stands up alone, exactly as the other eleven were.
+Built 2026-11-01 by `tools/build_cobblemon_instance.py`. Prism instance **Cobblemon
+NeoForge**, MC 1.21.1 / NeoForge 21.1.265, 6 GB.
 
-Do not try to build it inside The Hub. Every one of the eleven pockets was a working instance
-first, and the one that was not — the Cobblemon one — is the one that never happened.
+**17 jars, 20 modIds, 0 duplicates, 0 missing dependencies, 0 conflicts — VALIDATION PASSED.**
+
+Twelve chosen mods plus five libraries. The library list was not guessed: the first build
+installed twelve jars and `validate_instance.py` named six unmet dependencies (architectury,
+kotlinforforge, geckolib, accessories), and a second pass named a seventh (owo, required by
+accessories). The tool is re-runnable for exactly that reason — a first build is never
+complete, because the dependency set is only discovered by validating it.
+
+| feature | mod |
+|---|---|
+| core | Cobblemon 1.8.4NF |
+| Pokédex | Cobbledex 1.3.0 + its JEI bridge |
+| badges / gyms | BadgeBox 1.3.0 |
+| raids | Cobblemon Raid Dens 0.13.5 |
+| mega evolution | Mega Showdown 1.3.3 |
+| battles | Cobblemon Battle Extras 1.13.45 |
+| pasture loot | Pasture Loot NeoForged 0.1.0 |
+| fishing | Legendary Fishing 1.0.0 |
+| riding | Mount Mastery 0.4.2 |
+| species coverage | MissingMons 3.6.1, Size Variations 1.4.0 |
+
+Two of those — **Battle Extras and Mount Mastery** — are mods Kewz maintains as his own custom
+Fabric builds. They exist upstream for NeoForge already.
+
+**It has not been launched.** Validation is static: it proves the dependency graph closes, not
+that the game starts. That is the next step, and it is a small one.
+
+## Then, and only then
+
+1. Launch it. Play it. Find out what *its* papercuts are — they will not be his.
+2. Add what is missing; food is the one feature with no NeoForge answer at all.
+3. Fold it in as the twelfth arch once it stands alone, exactly as the other eleven did.
+
+The gating it will need already exists: `PocketMobs` confines entities per dimension by
+pattern, `PocketRules` gates crafting per dimension, `PocketWorlds` gates dimension access. A
+Cobblemon pocket points those three at `cobblemon:*`. It is not a new mechanism — it is the
+one that is already load-bearing eleven times over.
