@@ -153,11 +153,94 @@ customization {
                        -(wm_w // 2), 54, wm_w, wm_h))
 
 
+def pause_layout():
+    """The pause menu. Identifier `pause_screen`, confirmed from a working layout.
+
+    Quieter than the title screen on purpose: you open this mid-game, often in a hurry, and a
+    full illustration behind it would fight whatever is on screen. It gets the wordmark small in
+    the corner and nothing else - the brand present, not insisting.
+    """
+    rid = ident()
+    return """type = fancymenu_layout
+
+layout-meta {
+  identifier = pause_screen
+  render_custom_elements_behind_vanilla = true
+  last_edited_time = %d
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:%s] = [groups:][instances:]
+}
+
+customization {
+  action = autoscale
+  basewidth = 1920
+  baseheight = 1080
+}
+%s""" % (NOW, rid,
+         image_element(ASSETS + "/hub_wordmark.png", "top-left", 14, 12, 260, 72,
+                       opacity="0.62"))
+
+
+def multiplayer_layout():
+    """The multiplayer screen. Identifier `join_multiplayer_screen`.
+
+    The Hub is a single-player pack, so this screen is mostly a dead end - which is exactly why
+    it is worth dressing: the hall backdrop makes an unused screen look deliberate instead of
+    forgotten. Vanilla widgets render ON TOP here (render_custom_elements_behind_vanilla =
+    false), because the server list has to stay readable.
+    """
+    rid = ident()
+    bid = ident()
+    return """type = fancymenu_layout
+
+layout-meta {
+  identifier = join_multiplayer_screen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = %d
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:%s] = [groups:][instances:]
+}
+
+customization {
+  action = autoscale
+  basewidth = 1920
+  baseheight = 1080
+}
+
+menu_background {
+  image_path = %s/hub_loading.png
+  slide = false
+  repeat_texture = false
+  parallax = false
+  parallax_intensity = 0.02
+  invert_parallax = false
+  restart_animated_on_menu_load = false
+  instance_identifier = %s
+  background_type = image
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}
+""" % (NOW, rid, ASSETS, bid)
+
+
 def main():
     apply = "--apply" in sys.argv
     os.makedirs(OUT, exist_ok=True)
 
-    files = {"hub_title.txt": title_layout()}
+    files = {"hub_title.txt": title_layout(),
+             "hub_pause.txt": pause_layout(),
+             "hub_multiplayer.txt": multiplayer_layout()}
 
     for name, body in files.items():
         path = os.path.join(OUT, name)

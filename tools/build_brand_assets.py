@@ -362,6 +362,43 @@ def quiet_backdrop(framed=True):
     return scene.resize((W_OUT, H_OUT), Image.LANCZOS)
 
 
+def icon(size=256):
+    """The pack's mark: one lit arch. The hall reduced to the smallest thing still recognisable.
+
+    Sized for Prism's instance list and for a window icon, so it has to survive being drawn at
+    32px - which is why it is a single arch rather than twelve, and why the gold is the brightest
+    thing in it. Prism scans %APPDATA%/PrismLauncher/icons for PNGs and offers whatever it finds
+    in the icon picker.
+    """
+    S = size * SS
+    img = ramp((S, S), [(0.0, (18, 11, 28)), (0.55, PURPLE_DEEP), (1.0, (12, 7, 18))]).convert("RGB")
+
+    aw = int(S * 0.44)
+    head = int(aw * math.sqrt(3) / 2.0)
+    ah = head + int(S * 0.34)
+    x = (S - aw) // 2
+    y = int(S * 0.80) - ah
+
+    m, _ = arch_mask(aw, ah)
+    fill = ramp((aw, ah), [(0.0, (16, 10, 24)), (0.50, (34, 22, 34)),
+                           (0.84, (120, 86, 36)), (1.0, GOLD_BRIGHT)])
+    img.paste(fill, (x, y), m)
+    weight = max(2, S // 110)
+    img.paste(Image.new("RGB", (aw, ah), GOLD), (x, y), outline_of(m, weight))
+
+    img = Image.alpha_composite(
+        img.convert("RGBA"),
+        glow((S, S), (S // 2, int(S * 0.74)), int(aw * 1.5), int(ah * 0.6),
+             GOLD, 0.55)).convert("RGB")
+
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rectangle([0, int(S * 0.80), S, S], fill=(10, 6, 15, 255))
+    d.line([(0, int(S * 0.80)), (S, int(S * 0.80))], fill=GOLD_DIM + (140,), width=weight)
+    filigree(ImageDraw.Draw(img), (weight * 2, weight * 2, S - weight * 2, S - weight * 2),
+             GOLD_DIM, weight)
+    return img.resize((size, size), Image.LANCZOS)
+
+
 def main():
     apply = "--apply" in sys.argv
     os.makedirs(OUT, exist_ok=True)
@@ -375,6 +412,7 @@ def main():
         "hub_wordmark.png":         wordmark,
         "hub_loading.png":          lambda: quiet_backdrop(True),
         "hub_splash.png":           lambda: quiet_backdrop(False),
+        "hub_icon.png":             lambda: icon(256),
     }
     made = {}
     for name, fn in pieces.items():
@@ -396,6 +434,8 @@ def main():
         ("hub_loading.png",          os.path.join(MC, "config", "fancymenu", "assets"), None),
         ("hub_splash.png",           os.path.join(MC, "config", "simplesplashscreen"),
          "background.png"),
+        # Prism scans this folder and offers whatever it finds in the instance icon picker.
+        ("hub_icon.png", os.path.expandvars(r"%APPDATA%\PrismLauncher\icons"), "thehub.png"),
     ]
     print("")
     for name, dest, rename in targets:

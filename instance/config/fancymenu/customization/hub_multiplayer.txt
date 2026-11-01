@@ -1,0 +1,36 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = join_multiplayer_screen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = 1793492611692
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:39fcef95-de7a-4a2c-9a77-7dff8ca35895-1793492611692] = [groups:][instances:]
+}
+
+customization {
+  action = autoscale
+  basewidth = 1920
+  baseheight = 1080
+}
+
+menu_background {
+  image_path = [source:local]/config/fancymenu/assets/hub_loading.png
+  slide = false
+  repeat_texture = false
+  parallax = false
+  parallax_intensity = 0.02
+  invert_parallax = false
+  restart_animated_on_menu_load = false
+  instance_identifier = 2c078718-3787-4fa7-b651-c66de29cf90a-1793492611692
+  background_type = image
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}

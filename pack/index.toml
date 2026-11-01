@@ -1633,6 +1633,10 @@ file = "config/dimswap.json"
 hash = "41ab0a7e940e5d81784b03ef2ff1b7b97d4d1f8033f23c60c03e705543e22596"
 
 [[files]]
+file = "config/drippyloadingscreen/options.txt"
+hash = "c991edcf5b668ce6132d2f5cf8f97869872560661dc0afcb4b5020a04a5cf30c"
+
+[[files]]
 file = "config/dynamic_fps.json"
 hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
 
@@ -2133,6 +2137,14 @@ file = "config/extremereactors/common.toml"
 hash = "03032d1ff18ffde91f6f16e5d2e3de9fb5a145eecfeb6c0b0305b8c24dab845c"
 
 [[files]]
+file = "config/fancymenu/assets/hub_bar_background.png"
+hash = "f168c6db91b415f9ae4fe61c930298658bf4d7f87648913dfd966ce9268b0eef"
+
+[[files]]
+file = "config/fancymenu/assets/hub_bar_progress.png"
+hash = "2edf212005586058c2da39f5d93b2e77528177324a77afbbbf52912938e6e563"
+
+[[files]]
 file = "config/fancymenu/assets/hub_loading.png"
 hash = "914021f7a7a3d3bd7a9db5232784817bde2c837806d89073a85273c8996a7ba9"
 
@@ -2145,8 +2157,72 @@ file = "config/fancymenu/assets/hub_wordmark.png"
 hash = "3f4790503a38d7b69f40b97709aac4175ac4336505194f430f772043d9dbbcc9"
 
 [[files]]
+file = "config/fancymenu/custom_gui_screens.txt"
+hash = "ff492043eaf454c46e949d5eef32ece90cc5a19feb50a161dd29a43b5732c880"
+
+[[files]]
+file = "config/fancymenu/customizablemenus.txt"
+hash = "a83e520716f7d5fa43025d5991acd6e2160fc43ba604bd4c258b9f5c0812830f"
+
+[[files]]
+file = "config/fancymenu/customization/hub_multiplayer.txt"
+hash = "9a1bb61d615eca853646c284ab753b71391fa9b15d6ab2a48a212c1eb7a84875"
+
+[[files]]
+file = "config/fancymenu/customization/hub_pause.txt"
+hash = "ec6b51f76e37de25fd31b9fa573f855b40439616b471a5fbcc2d8d37ab3e9d0e"
+
+[[files]]
 file = "config/fancymenu/customization/hub_title.txt"
-hash = "477414135080eba117c2d284e02460381a3799e04c8f7d1a02fd59aae5871c48"
+hash = "a9a8c8cd22538b481dacc3ca317c8ef8b291bc9c3f22d1536c4dbd04a14dcddf"
+
+[[files]]
+file = "config/fancymenu/legacy_checklist.txt"
+hash = "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0"
+
+[[files]]
+file = "config/fancymenu/options.txt"
+hash = "8ab246f419b5b363ab186db80fad034e743675450c90cca80f1f4aef1dd813c6"
+
+[[files]]
+file = "config/fancymenu/ui_themes/cherry_blossom.json"
+hash = "993c16664fe2d1b9e8ad107bf1c19c1dbb244729c403ed058ca2e54616dc5452"
+
+[[files]]
+file = "config/fancymenu/ui_themes/cozy_campfire.json"
+hash = "1e7505231b9d99e6315845043ce810dfc7004ce1d8f5a4ceddb4ecb96c03ac50"
+
+[[files]]
+file = "config/fancymenu/ui_themes/dark.json"
+hash = "01e2a3b5d250c0259a7f97f0d353785bfeab6d7ee2e147c16bb910f1d23e9498"
+
+[[files]]
+file = "config/fancymenu/ui_themes/dark_high_contrast.json"
+hash = "54316a2b309ddb472b9133f8ccb8694dce9b57be6ebcfb3c2e9d1bbfdade3f26"
+
+[[files]]
+file = "config/fancymenu/ui_themes/light.json"
+hash = "a05e95f7b62f338049fe0045d9a6a50060d3aba52d5ab83ac1ed6ff55cac1153"
+
+[[files]]
+file = "config/fancymenu/ui_themes/light_high_contrast.json"
+hash = "7c96ba2f2cb4d59d20eaf88960de7a9308ce8a3460c4e1757e07c42e174ea65a"
+
+[[files]]
+file = "config/fancymenu/ui_themes/pumpkin_soup.json"
+hash = "7c6a5d5b19e53ca2f88371c2e867f51339b045697aab29864df5877a6bba9311"
+
+[[files]]
+file = "config/fancymenu/ui_themes/purple_void.json"
+hash = "fa63577441fd576ebac90ecf06b7ded376cbf80ca5103d398bc9a73a25c6c2c0"
+
+[[files]]
+file = "config/fancymenu/ui_themes/spooky_season.json"
+hash = "cfa46554bbb027efe3c2184a073ee652000acac2500cd5136764f901355ec0cd"
+
+[[files]]
+file = "config/fancymenu/user_variables.db"
+hash = "3d7d4cda73d6bde134a568ccbe4e8d2e7fbe701570012b71fa45acdb2258c823"
 
 [[files]]
 file = "config/farmersdelight-client.toml"
@@ -3126,7 +3202,7 @@ hash = "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb"
 
 [[files]]
 file = "config/iris.properties"
-hash = "1bf489f6b607b00800d76a2cd84126236f1f68692ec4c47201502da15ca20b25"
+hash = "eaaf93950a234cb2506fd54752ce961c9271ce5cf01c75139631737fdc1d37b8"
 
 [[files]]
 file = "config/irisflw-client.toml"
@@ -3166,7 +3242,7 @@ hash = "3741bb54a4535fb5a00fb0ee1f4386f3dd17834aebdf9e89c21fcd3307109709"
 
 [[files]]
 file = "config/jade/jade.json"
-hash = "43bf8b49d6cb6897197a2c6924fe60f5618448ab3bffe790e7e2f765088dbae0"
+hash = "86b65f6309bce4dfef401dafbcdc530ccfae9be674d5847510f54cd8a385ffaa"
 
 [[files]]
 file = "config/jade/plugins.json"
@@ -3586,7 +3662,7 @@ hash = "c48156c84719b8d247a8d6c76e63a68f6c61a7107672bf4c8a49351eecf9938d"
 
 [[files]]
 file = "config/packetfixer.properties"
-hash = "fc1d7d834b136d36dde5f7a2602754afe35cb8a193c8327ddf04432d216e520e"
+hash = "91f5b748ab522e3b4f1f0ad1b617e765f884b4a2b3993f14f8477b3f03f9401f"
 
 [[files]]
 file = "config/particle_core_config.toml"
@@ -3733,8 +3809,20 @@ file = "config/shetiphiancore.toml"
 hash = "5ca32dc05d4abf088c05c0e48fd70d51065ec24770077599e74876ef268345e5"
 
 [[files]]
+file = "config/simplesplashscreen.json5"
+hash = "3df1571834013a3b3524db9f562c9912c2299e7a8c3899bdd098dea2a479af1e"
+
+[[files]]
 file = "config/simplesplashscreen/background.png"
 hash = "fba3a64e99aebaec9edcb6ac2f023c89eda4ab7360e9f8cd39e222a4e3edadc0"
+
+[[files]]
+file = "config/simplesplashscreen/progressbar.png"
+hash = "2edf212005586058c2da39f5d93b2e77528177324a77afbbbf52912938e6e563"
+
+[[files]]
+file = "config/simplesplashscreen/progressbar_background.png"
+hash = "f168c6db91b415f9ae4fe61c930298658bf4d7f87648913dfd966ce9268b0eef"
 
 [[files]]
 file = "config/simplyswords/compatibility.toml"
@@ -15085,10 +15173,6 @@ hash = "828efa72867a6689756e2d1f535c65968489b4f6a9debff973754f340f6e055d"
 file = "shaderpacks/BSL_v10.1.8.pw.toml"
 hash = "02c2df00ef2380b6d50a8de85fedbaf8ed09d92f3bc1d6a476da6346fc3452da"
 metafile = true
-
-[[files]]
-file = "shaderpacks/BSL_v10.1.8.zip.txt"
-hash = "c32277e87866c669efc041e65b129af7ca345424e2c545c4065280e515e774fa"
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
