@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = title_screen
   render_custom_elements_behind_vanilla = true
-  last_edited_time = 1793492611692
+  last_edited_time = 1793495032929
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:e0178d18-f92e-4ca7-b9fc-ff16a12fa9d9-1793492611692] = [groups:][instances:]
+  [loading_requirement_container_meta:c723cebe-6b1c-412c-acf6-f39c79b9caad-1793495032929] = [groups:][instances:]
 }
 
 customization {
@@ -26,7 +26,7 @@ menu_background {
   parallax_intensity = 0.02
   invert_parallax = false
   restart_animated_on_menu_load = false
-  instance_identifier = 8e84af9a-8aa3-415c-9796-5cb1189d91ca-1793492611692
+  instance_identifier = f51a8e11-ce21-4c3c-bfbc-cd3c21e7dddd-1793495032929
   background_type = image
 }
 
@@ -44,7 +44,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = 6f9a8bcb-da1d-441e-857c-c8f495c6d8a1-1793492611692
+  instance_identifier = 43092dcd-476d-4266-a1d6-17ebdf0267fc-1793495032929
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -64,8 +64,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = e82f3284-e1a0-4739-b075-1669ce214c8f-1793492611692
-  [loading_requirement_container_meta:e82f3284-e1a0-4739-b075-1669ce214c8f-1793492611692] = [groups:][instances:]
+  element_loading_requirement_container_identifier = a3cc0e2d-905c-4dc6-856e-3d30a6518787-1793495032929
+  [loading_requirement_container_meta:a3cc0e2d-905c-4dc6-856e-3d30a6518787-1793495032929] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false

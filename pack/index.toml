@@ -2165,16 +2165,20 @@ file = "config/fancymenu/customizablemenus.txt"
 hash = "a83e520716f7d5fa43025d5991acd6e2160fc43ba604bd4c258b9f5c0812830f"
 
 [[files]]
+file = "config/fancymenu/customization/hub_loading.txt"
+hash = "6578ff8e5756eca9ebaef5d0d8602562605692389214012ddcd0f50fef149f3f"
+
+[[files]]
 file = "config/fancymenu/customization/hub_multiplayer.txt"
-hash = "9a1bb61d615eca853646c284ab753b71391fa9b15d6ab2a48a212c1eb7a84875"
+hash = "c1b267be3ebdc17a0d093700a5b7c12023495a2660018ed1ad5476d49e186a5c"
 
 [[files]]
 file = "config/fancymenu/customization/hub_pause.txt"
-hash = "ec6b51f76e37de25fd31b9fa573f855b40439616b471a5fbcc2d8d37ab3e9d0e"
+hash = "2e302aa04520f81b2d5a0873ae90f17426ab09fe6a962921ba69180c695bf4e8"
 
 [[files]]
 file = "config/fancymenu/customization/hub_title.txt"
-hash = "a9a8c8cd22538b481dacc3ca317c8ef8b291bc9c3f22d1536c4dbd04a14dcddf"
+hash = "09ed42e6e5e30f1ad88fad3322a464709859f4d39946f90ce54207f29f333276"
 
 [[files]]
 file = "config/fancymenu/legacy_checklist.txt"
@@ -15175,17 +15179,21 @@ hash = "02c2df00ef2380b6d50a8de85fedbaf8ed09d92f3bc1d6a476da6346fc3452da"
 metafile = true
 
 [[files]]
+file = "shaderpacks/BSL_v10.1.8.zip.txt"
+hash = "f193a4a83b67a494f955f2a65d9b2eb33d7af431190c6c5c6a758c24fddd2768"
+
+[[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
 hash = "5adf3ab2394d6edc17f61dc17b83dd5afe20c69218bc5849c00dabe23fa62883"
 metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"
+hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"
 
 [[files]]
 file = "shaderpacks/ComplementaryUnbound_r5.9.3.zip.txt"
-hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"
+hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.pw.toml"
@@ -15194,7 +15202,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "c32277e87866c669efc041e65b129af7ca345424e2c545c4065280e515e774fa"
+hash = "f193a4a83b67a494f955f2a65d9b2eb33d7af431190c6c5c6a758c24fddd2768"
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.pw.toml"
@@ -15203,7 +15211,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.zip.txt"
-hash = "ad369e2bb90fcfe5287d66644382280bc593d7eee980bb25a00618d3a6197beb"
+hash = "5b8fb67617d4af07e35dd4b31a4a415372b32459c5b4cdf75e74500e9f38f6c7"
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.pw.toml"
@@ -15212,4 +15220,4 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.zip.txt"
-hash = "a4020bf074dcdde98ba1e6125d342464f1fdffb55b19a8d656acd167cb0a1891"
+hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"

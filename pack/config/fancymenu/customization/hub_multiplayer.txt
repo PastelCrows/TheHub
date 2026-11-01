@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = join_multiplayer_screen
   render_custom_elements_behind_vanilla = false
-  last_edited_time = 1793492611692
+  last_edited_time = 1793495032929
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:39fcef95-de7a-4a2c-9a77-7dff8ca35895-1793492611692] = [groups:][instances:]
+  [loading_requirement_container_meta:dea95831-8fea-4ee5-870d-96cf1559ff9c-1793495032929] = [groups:][instances:]
 }
 
 customization {
@@ -26,7 +26,7 @@ menu_background {
   parallax_intensity = 0.02
   invert_parallax = false
   restart_animated_on_menu_load = false
-  instance_identifier = 2c078718-3787-4fa7-b651-c66de29cf90a-1793492611692
+  instance_identifier = faaecb59-43f7-492e-ad4d-61581a36b287-1793495032929
   background_type = image
 }
 

@@ -234,13 +234,78 @@ customization {
 """ % (NOW, rid, ASSETS, bid)
 
 
+def loading_layout():
+    """The world-loading screen, via DrippyLoadingScreen.
+
+    IDENTIFIER. FancyMenu names vanilla screens in friendly form (`title_screen`, `pause_screen`)
+    but a modded screen by its class, and Drippy's is
+    de.keksuccino.drippyloadingscreen.customization.DrippyOverlayScreen - read out of the jar,
+    not guessed. Drippy also contributes its own elements (drippy_custom_loading_bar,
+    drippy_overlay_progress_bar); those are left alone here, because their serialization keys
+    have not been observed and an invented key is silently ignored, which looks exactly like a
+    layout that failed to load.
+
+    THE DESIGN. This screen is the one you stare at, and it is the only one that shows up at a
+    moment of real waiting - the 80-to-100 second texture swap when you step through an arch.
+    So it does the opposite of the title screen: no arcade, no ornament competing for attention.
+    The hall sits far back and out of focus (hub_loading.png is the same room blurred and pulled
+    30% toward black), the wordmark sits small and high at reduced opacity, and the whole lower
+    third is left deliberately empty for Drippy's progress bar and the loading text.
+
+    Vanilla renders ON TOP (render_custom_elements_behind_vanilla = false) so the progress bar
+    and any mod's loading messages stay readable over the art rather than under it.
+    """
+    rid = ident()
+    bid = ident()
+    return """type = fancymenu_layout
+
+layout-meta {
+  identifier = de.keksuccino.drippyloadingscreen.customization.DrippyOverlayScreen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = %d
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:%s] = [groups:][instances:]
+}
+
+customization {
+  action = autoscale
+  basewidth = 1920
+  baseheight = 1080
+}
+
+menu_background {
+  image_path = %s/hub_loading.png
+  slide = false
+  repeat_texture = false
+  parallax = false
+  parallax_intensity = 0.02
+  invert_parallax = false
+  restart_animated_on_menu_load = false
+  instance_identifier = %s
+  background_type = image
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}
+%s""" % (NOW, rid, ASSETS, bid,
+         image_element(ASSETS + "/hub_wordmark.png", "top-centered", -230, 62, 460, 127,
+                       opacity="0.78"))
+
+
 def main():
     apply = "--apply" in sys.argv
     os.makedirs(OUT, exist_ok=True)
 
     files = {"hub_title.txt": title_layout(),
              "hub_pause.txt": pause_layout(),
-             "hub_multiplayer.txt": multiplayer_layout()}
+             "hub_multiplayer.txt": multiplayer_layout(),
+             "hub_loading.txt": loading_layout()}
 
     for name, body in files.items():
         path = os.path.join(OUT, name)
