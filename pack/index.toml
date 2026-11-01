@@ -3526,7 +3526,7 @@ hash = "72ca2bcea2a9946a3a54842f14eff6f7b47d8fc96ef497c1b56406643b153fd7"
 
 [[files]]
 file = "config/modernfix-mixins.properties"
-hash = "a1c041ec2207c08a26388e7645696ab202d449832cd11d6594ca55c9bf4c0f05"
+hash = "f9b85b5c8d14c4d88fbf0b78224957e7cb9a1019105aa193c17cec5d4779dcb4"
 
 [[files]]
 file = "config/modonomicon-client.toml"
@@ -15180,7 +15180,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/BSL_v10.1.8.zip.txt"
-hash = "f193a4a83b67a494f955f2a65d9b2eb33d7af431190c6c5c6a758c24fddd2768"
+hash = "48f2bab773409ec016a226efb7f71075c91320719a0e056d0b59f3e30e0a0bcd"
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
@@ -15189,11 +15189,11 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"
+hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"
 
 [[files]]
 file = "shaderpacks/ComplementaryUnbound_r5.9.3.zip.txt"
-hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"
+hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.pw.toml"
@@ -15202,7 +15202,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "f193a4a83b67a494f955f2a65d9b2eb33d7af431190c6c5c6a758c24fddd2768"
+hash = "48f2bab773409ec016a226efb7f71075c91320719a0e056d0b59f3e30e0a0bcd"
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.pw.toml"
@@ -15211,7 +15211,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.zip.txt"
-hash = "5b8fb67617d4af07e35dd4b31a4a415372b32459c5b4cdf75e74500e9f38f6c7"
+hash = "a9edfd1dbd40f79603e79d0509b531fc18fad525bcfa8052542c6539ed4ec537"
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.pw.toml"
@@ -15220,4 +15220,4 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.zip.txt"
-hash = "dc3b5a9b742686aee1d95cfecebd15f4692665ecc98d4f05b618490bc84c9af7"
+hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"

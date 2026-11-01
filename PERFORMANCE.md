@@ -71,6 +71,45 @@ reverse is one jar each way; `add_performance_mods.py` still carries the entry a
 The `reloading` flag in `PocketSkins` is the real re-entrancy guard, not the loading-overlay
 check, so neither choice affects the gate.
 
+## A second pass, 2026-10-31 — from a launch, not from guesses
+
+The pack was launched to the title screen and closed. 102 seconds from process start to the menu
+with no world loaded: 50s of mod loading, then 52s of the first resource reload. The log was then
+read rather than theorised about.
+
+**Four ModernFix options turned on.** Its config file lists every option with its shipped
+default, so these were read, not guessed:
+
+| option | why this pack specifically |
+|---|---|
+| `perf.deduplicate_location` | 294 modIds worth of ResourceLocation objects, mostly duplicates |
+| `perf.deduplicate_climate_parameters` | 32 dimensions through TerraBlender, Terralith, Tectonic and Biolith |
+| `bugfix.skip_redundant_saves` | the log saves **every one of 30-odd levels** on each autosave |
+| `bugfix.packet_leak` | a known packet leak; this pack already needed PacketFixer for registry-sync size |
+
+**Three left off on purpose.** `perf.faster_item_rendering` is a real FPS win and the single most
+likely thing to break a pack with this many custom item renderers (Apotheosis, Sophisticated\*,
+Create, AE2, JEI overlays) — worth trying as its own test, not folded into a change meant to be
+safe. `perf.dynamic_entity_renderers` has the same shape of risk. `stability_level=BETA` is not
+something to put on an untested pack.
+
+**The biggest remaining lever is `renderDistance`, and it is not mine to pull.** It sits at **20**,
+which is high for 254 mods and shaders on an RTX 3050, and it is the one setting
+`tune_settings.py` explicitly refuses to touch — the previous pass listed it under "settings we
+must NOT have disturbed" because it is a look-of-the-game choice, not a config value. Dropping it
+to 14–16 would be the largest single FPS change available and would directly shorten the
+"laggy while initial chunks are loading" complaint. Everything around it is already tuned down:
+`simulationDistance 8`, `entityDistanceScaling 0.75`, `entityShadows false`, `particles 1`,
+`mipmapLevels 2`.
+
+**Sound Physics Remastered is enabled** and raytraces reverb per sound. `evaluate_ambient_sounds`
+is already off, which is the expensive half. On an eight-core Ryzen 2700 the rest is noticeable
+but not dominant, and it is doing real work in the horror pocket — flagged, not changed.
+
+**Not worth chasing:** 256 `missing model for variant` warnings and 31 unloadable models. They
+are upstream bugs in Industrial Foregoing's `latex` fluid (160), Cyclic's fluids (96) and a few
+mods referencing models under the wrong namespace. They cost log noise at load, not frames.
+
 ## Refused — and the judgement matters more than the download counts
 
 | Mod | Downloads | Why not |
