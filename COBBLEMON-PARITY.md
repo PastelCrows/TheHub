@@ -162,45 +162,75 @@ and seeds structures per dimension. A region-per-continent map with gyms is the 
 problem as eleven pocket dimensions with their own starts.
 
 
-## Status: the standalone instance exists
+## Status: 69 jars, and 91.8% of his roster
 
-Built 2026-11-01 by `tools/build_cobblemon_instance.py`. Prism instance **Cobblemon
-NeoForge**, MC 1.21.1 / NeoForge 21.1.265, 6 GB.
+Prism instance **Cobblemon NeoForge**, MC 1.21.1 / NeoForge 21.1.265, 6 GB.
+**69 jars, 66 modIds, 0 duplicates, 0 missing dependencies, 0 conflicts — VALIDATION PASSED.**
 
-**17 jars, 20 modIds, 0 duplicates, 0 missing dependencies, 0 conflicts — VALIDATION PASSED.**
+### Species
 
-Twelve chosen mods plus five libraries. The library list was not guessed: the first build
-installed twelve jars and `validate_instance.py` named six unmet dependencies (architectury,
-kotlinforforge, geckolib, accessories), and a second pass named a seventh (owo, required by
-accessories). The tool is re-runnable for exactly that reason — a first build is never
-complete, because the dependency set is only discovered by validating it.
+| | distinct species names |
+|---|---|
+| ours | **4,904** |
+| his | 1,446 |
+| shared | 1,328 |
+| only he has | **118** |
 
-| feature | mod |
+**91.8% of his roster, and 3,576 species he does not have.** The raw file counts (11,155 vs
+1,953) are not comparable — Gravelmon ships every regional form as its own JSON, and his
+`+kewz.strip1.forms1.r1047` tags mean he deliberately pruned exactly that. Distinct names is
+the honest measure.
+
+The 118 he has and we do not are almost entirely Cobblemon AFP (87 species, not on Modrinth
+under any findable name) and Fai's Mythical Monstrosities (24, Fabric only).
+
+### What is in it
+
+| layer | mods |
 |---|---|
 | core | Cobblemon 1.8.4NF |
-| Pokédex | Cobbledex 1.3.0 + its JEI bridge |
-| badges / gyms | BadgeBox 1.3.0 |
-| raids | Cobblemon Raid Dens 0.13.5 |
-| mega evolution | Mega Showdown 1.3.3 |
-| battles | Cobblemon Battle Extras 1.13.45 |
-| pasture loot | Pasture Loot NeoForged 0.1.0 |
-| fishing | Legendary Fishing 1.0.0 |
-| riding | Mount Mastery 0.4.2 |
-| species coverage | MissingMons 3.6.1, Size Variations 1.4.0 |
+| species | Gravelmon, Gravel's Extended Battles, SpaceworldMons, Lively 'Mons, Laser's Fakemon, Silent's Minemons, HiddenMons, MissingMons |
+| trainers + gyms | **RCT API, Radical Cobblemon Trainers (1500+ trainers), More Radical Trainers, Rad Gyms** |
+| quests | **Cobblemon Quests** — an FTB Quests bridge, and The Hub already runs FTB Quests |
+| legendaries | Legendary Monuments, Legends Untold (structures), Myths and Legends |
+| progression | Cobbreeding, SimpleTMs, CobbleDollars, Cobbleloots, Capture XP, PlayerXP, Unchained, Alpha Project, Cobblemarks+, Bottle Caps, Box Link, SafePastures |
+| mechanics | Mega Showdown, Navas ZA Megas, NoValidation, Raid Dens, Battle Extras, BadgeBox, Pasture Loot, Legendary Fishing, Mount Mastery, Size Variations, Fight or Flight, Trials Edition |
+| interface | Cobbledex + JEI bridge, PokeNav, MoreCobblemonTweaks, Cobblepedia, Catch Rate Display, Catch Indicator, Counter, Spawn Notification, Wiki GUI |
+| flavour | CobbleFurnies, Cafe Remix forms, Armory |
 
-Two of those — **Battle Extras and Mount Mastery** — are mods Kewz maintains as his own custom
-Fabric builds. They exist upstream for NeoForge already.
+### Four REAL conflicts the validator caught
 
-**It has not been launched.** Validation is static: it proves the dependency graph closes, not
-that the game starts. That is the next step, and it is a small one.
+Not missing dependencies — mods that declare each other incompatible and would have failed at
+launch:
 
-## Then, and only then
+| dropped | why |
+|---|---|
+| AllTheMons | declares itself incompatible with Mega Showdown |
+| CobbleStats | Battle Extras refuses to coexist |
+| Move Inspector | same — Battle Extras supersedes it |
+| Ride On | requires Cobblemon [1.7,), we are on 1.8.4 |
 
-1. Launch it. Play it. Find out what *its* papercuts are — they will not be his.
-2. Add what is missing; food is the one feature with no NeoForge answer at all.
-3. Fold it in as the twelfth arch once it stands alone, exactly as the other eleven did.
+### One version pin, and the reason
 
-The gating it will need already exists: `PocketMobs` confines entities per dimension by
-pattern, `PocketRules` gates crafting per dimension, `PocketWorlds` gates dimension access. A
-Cobblemon pocket points those three at `cobblemon:*`. It is not a new mechanism — it is the
-one that is already load-bearing eleven times over.
+**Gravelmon is pinned to 4.0.0-Alpha.8.** Every build from Alpha.10 onward is 1.4 MB and
+contains **zero** species JSONs — the content was moved out of the jar mid-alpha and is not
+published anywhere on Modrinth as a separate pack. Alpha.8 is 92 MB and carries the lot. Found
+by downloading each build and counting, not by reading release notes.
+
+Three mods come from **maven.ftb.dev**, not Modrinth — FTB publish nowhere else, the same
+finding as the packwiz build.
+
+### Still not launched
+
+Validation is static: it proves the dependency graph closes and nothing declares war on
+anything else. It does not prove the game starts. That is the next step.
+
+## Then: the world
+
+Eleven regions as continents, gyms, Elite Four, champions, legendary quests. Still not a mod —
+a world, a quest book and structure NBT. But the pieces that make it buildable are now in
+place: **RCT gives trainers and gym battles, Rad Gyms gives gym structure, Cobblemon Quests
+wires progression into FTB Quests, and Legends Untold gives legendary structures.**
+
+And The Hub already merges eleven quest books into one and seeds structures per dimension.
+Region-per-continent is the same shape of problem, solved eleven times already.
