@@ -461,6 +461,33 @@ MODS = {
     "tlib":                                "",
     "effectual":                           "",
     "fwa":                                 "",
+
+    # ---- THE GAP THE HASH METHOD COULD NOT SEE ---------------------------------
+    # cobblemon_gap.py resolves his jars by sha512, so all 74 of his CUSTOM builds hash-match
+    # nothing and were simply absent from the comparison. Any mod he runs ONLY as a +kewz
+    # recompile was therefore never counted as missing from ours - and 57 of them were. The
+    # earlier claim of "3 installable projects short" was true only of his unmodified jars.
+    # Measured properly by comparing modIds instead of hashes: 41 third-party mods we lacked
+    # (the other 16 are his own originals), of which these publish for NeoForge 1.21.1.
+    # Slugs rarely equal modIds - fightorflight lives at cobblemon-fight-or-flight-reborn -
+    # so each was resolved by display name and the full slug read back from the API.
+    "cobblemon-alatias-fakemon-pack":      "fakemon species pack he runs - we had none of it",
+    "kazeran-eeveelutions":                "eeveelution species pack",
+    "cobblemon-horizon-mons":              "species pack",
+    "cobblemon-journey-mounts":            "rideable mounts for gen1-9",
+    "perfectpartners":                     "companion/partner Pokemon system",
+    "cobblemon-battle-tower":              "battle tower progression",
+    "cobblebase":                          "base-building for Cobblemon",
+    "cobblemon-emi-compat":                "Pokemon data inside EMI",
+    "extra-move-anims-cobblemon":          "move animations",
+    "ftb-quests-cobblemon-entity":         "FTB Quests tasks that target Pokemon - the quest bridge",
+    "lets-do-bloomingnature":              "16 biomes - the single biggest biome source in HIS pack",
+    "grassier-grass":                      "denser grass",
+    "dreamdisplays":                       "display screens",
+    "fancymenu":                           "menu customisation - The Hub already uses it",
+    "packed-packs":                        "resource-pack profiles",
+    "put-a-plug-in-it":                    "PAPI",
+    "reactive-music":                      "context-aware music",
 }
 
 
