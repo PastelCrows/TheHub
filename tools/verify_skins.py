@@ -201,6 +201,22 @@ def main():
     off = sorted(d for d in real_dims if skin_for(d)[0].get("shadersEnabled") is False)
     print("   dimensions with shaders OFF : %s" % (", ".join(off) if off else "none"))
 
+    # Every shader actually in use must ship DH programs. Distant Horizons only renders with
+    # shaders "built with DH support in mind" - without them the far terrain simply is not
+    # there in that pocket dimension, silently. Nostalgia v5.1 is the one installed pack with
+    # no dh_ programs, which is why survival and oceanblock moved to Complementary Unbound.
+    # Read out of the zips, not from a list someone wrote down.
+    import zipfile as _zip
+    packs_dir = os.path.join(MC, "shaderpacks")
+    for name in sorted(s for s in shaders_used if s):
+        full = os.path.join(packs_dir, name)
+        has = False
+        if os.path.exists(full):
+            with _zip.ZipFile(full) as z:
+                has = any(n.split("/")[-1].startswith("dh_") for n in z.namelist())
+        check("%-34s ships dh_ programs" % name[:34], has,
+              "" if has else "Distant Horizons renders nothing in the pockets using it")
+
     print("\n%s" % ("ALL CHECKS PASSED" if not failures
                     else "FAILURES: " + ", ".join(failures)))
     return 1 if failures else 0

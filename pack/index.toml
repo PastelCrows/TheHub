@@ -3714,7 +3714,7 @@ hash = "3a0204db4cab801b4a75ae6326c7b6d9bb683ad2c6f84fe3c9f96040062abef3"
 
 [[files]]
 file = "config/pocketskins.json"
-hash = "0453e272c086e7dd29c2b839cc4f6588ac1ba2a96e06941b2f04a0659d336bf0"
+hash = "0ad392d4427d0adce6dcfdb6aa2f598c5d60837dbdf162c5234fa552f753551e"
 
 [[files]]
 file = "config/ponder-client.toml"
@@ -4756,6 +4756,11 @@ metafile = true
 [[files]]
 file = "mods/Cucumber-1.21.1-8.0.16.pw.toml"
 hash = "fc2c2e39624b5128dcb88e574fd72d6db191b0b99b63bd7f3f6bfb4b45bac6d7"
+metafile = true
+
+[[files]]
+file = "mods/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.pw.toml"
+hash = "914bc48d3c505806369171cdb22327ba093af738f63c393cf3d5504ba1087033"
 metafile = true
 
 [[files]]
@@ -15180,7 +15185,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/BSL_v10.1.8.zip.txt"
-hash = "48f2bab773409ec016a226efb7f71075c91320719a0e056d0b59f3e30e0a0bcd"
+hash = "ed9855c402b51d419d3f2bd91b70aaa2fa8a20d237af32deaa6fce0d579032e4"
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
@@ -15189,11 +15194,11 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"
+hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"
 
 [[files]]
 file = "shaderpacks/ComplementaryUnbound_r5.9.3.zip.txt"
-hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"
+hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.pw.toml"
@@ -15202,7 +15207,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "48f2bab773409ec016a226efb7f71075c91320719a0e056d0b59f3e30e0a0bcd"
+hash = "ed9855c402b51d419d3f2bd91b70aaa2fa8a20d237af32deaa6fce0d579032e4"
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.pw.toml"
@@ -15211,7 +15216,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.zip.txt"
-hash = "a9edfd1dbd40f79603e79d0509b531fc18fad525bcfa8052542c6539ed4ec537"
+hash = "46f8281a920095eec00a878b967bc809b186398da548a7161be1380b644eebaf"
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.pw.toml"
@@ -15220,4 +15225,4 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.zip.txt"
-hash = "6320aa53fa477162a35ad8d7cc3cbcaad7fdfdf1bbf9e37651491f69b8f96bfa"
+hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"

@@ -53,6 +53,15 @@ WANT = [
      "packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
      "raises packet/NBT size limits - 247 mods make a very large registry sync", "release"),
 
+    ("DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+     "https://cdn.modrinth.com/data/uCdwusMi/versions/9w34y8ai/"
+     "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+     "LOD terrain far past the render distance - the thing the Cobblemon server does with Voxy, "
+     "which is Fabric-only and so not available here. Render distance renders REAL chunks and is "
+     "the wrong lever for that look.",
+     "release; was refused in the first performance pass on a VRAM figure that turned out to be "
+     "wrong - see PERFORMANCE.md"),
+
     # RRLS was REMOVED on 2026-10-31. It was added to make resource reloads non-blocking -
     # hideOverlays = "ALL" draws a small progress line over the still world instead of a loading
     # screen. That worked, and it is exactly why a 90-second texture swap read as a frozen

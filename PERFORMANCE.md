@@ -110,6 +110,46 @@ but not dominant, and it is doing real work in the horror pocket — flagged, no
 are upstream bugs in Industrial Foregoing's `latex` fluid (160), Cyclic's fluids (96) and a few
 mods referencing models under the wrong namespace. They cost log noise at load, not frames.
 
+## Distant Horizons — and a refusal that rested on a wrong number
+
+The first performance pass refused Distant Horizons for "VRAM on 4GB". **The card has 8 GB.**
+`Win32_VideoController.AdapterRAM` is a 32-bit field that saturates at 4 GB, so it reports 4 for
+any card with 4 or more; `nvidia-smi` and the driver registry both say 8192 MiB. The refusal was
+made on an artefact of how Windows reports VRAM.
+
+**What was actually wanted:** the Cobblemon server's look, where a huge portion of the world is
+visible at once. That is **Voxy**, and Voxy is Fabric-only — Kewz runs
+`voxy-0.2.19-beta+1.21.1-fabric`, and Modrinth lists no NeoForge build at any version. Distant
+Horizons is the NeoForge equivalent of the idea: `DistantHorizons-3.3.3-1.21.1-fabric-neoforge`,
+release, no dependencies.
+
+**Render distance was never the lever for this.** It renders *real* chunks — full geometry,
+lighting, block entities, ticking — so raising it multiplies the cost of everything. An LOD mod
+renders a cheap approximation of terrain far beyond it. Wanting the Voxy look and reaching for
+`renderDistance` is reaching for the expensive half of the effect.
+
+**Shader support is not optional and it is not universal.** DH only renders through shaders
+"built with DH support in mind". Checked by looking inside the zips for `dh_terrain` / `dh_water`
+programs rather than trusting a compatibility list:
+
+| shaderpack | dh_ programs |
+|---|---|
+| BSL, Complementary Reimagined, Complementary Unbound, MakeUp UltraFast, Spooklementary | yes |
+| **Nostalgia v5.1** | **no** — and it is the only 1.21.1 build there is |
+
+Nostalgia was survival's and oceanblock's, so those two would have had no distant terrain at all,
+silently. Both moved to **Complementary Unbound**, which was already installed, already unused,
+already pinned motion-blur-off and already in the pack. Nostalgia stays shipped; swapping back is
+one line of `pocketskins.json`. `verify_skins.py` now fails if any shader in use lacks `dh_`.
+
+**The cost worth knowing before the next session.** DH builds its LOD database by exploring, and
+stores it per world and per dimension. A pack where a fresh world gets made for most tests sees
+almost none of the benefit — the LODs are rebuilt from nothing every time. This is the first
+thing in the backlog that genuinely argues for settling on a world worth keeping.
+
+DH ships no config until it has run once, so it is deliberately unconfigured, the same as the
+splash screen was.
+
 ## Refused — and the judgement matters more than the download counts
 
 | Mod | Downloads | Why not |

@@ -89,6 +89,9 @@ FETCH = [
     ("shaderpacks", "BSL_v10.1.8.zip"),
     ("shaderpacks", "ComplementaryReimagined_r5.9.3.zip"),
     ("shaderpacks", "MakeUp-UltraFast-9.6.zip"),
+    # Nostalgia is no longer assigned to a pocket dimension - it is the one installed pack
+    # with no dh_ programs, so Distant Horizons would render nothing behind it. Kept in the
+    # pack anyway: it costs 1.8 MB and swapping back is one line of pocketskins.json.
     ("shaderpacks", "Nostalgia_v5.1.zip"),
     ("shaderpacks", "Spooklementary_v2.0.4.zip"),
 ]
