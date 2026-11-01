@@ -514,3 +514,28 @@ cobblenav and ModelBakery, two mods innocent of the cause.
 
 No static check can catch a declaration that is simply wrong. Launching is not a formality after
 validation; it tests a different thing.
+
+## It boots at 286 jars
+
+```
+Backend library: LWJGL version 3.3.3+5
+OpenAL initialized on device OpenAL Soft on Speakers
+Sound engine started
+```
+
+**0 crash reports.** 14 ERROR lines, and all 14 are benign — but worth naming rather than
+waving at:
+
+| count | what | verdict |
+|---|---|---|
+| 7 | `Invalid path in pack` — asset filenames with spaces inside Gravelmon's and Cobblemon's own jars | upstream packaging; those individual assets don't load. One of them is a stray `Quick access - Shortcut.lnk` shipped inside Cobblemon's sounds folder. |
+| 5 | CraftPresence probing for Curse/ATLauncher/MCUpdater/Modrinth pack metadata | self-labelled "ignore if not using" |
+| 1 | Xaero's online version check | no network reply |
+| 1 | ModernFix: a mod called `registerReloadListener` on the wrong thread | **real, upstream** — see below |
+
+**The one to keep an eye on: Rad Gyms 0.5.2** calls `registerReloadListener` off-thread during
+init. ModernFix catches it and warns it can cause random concurrency crashes. That is an upstream
+bug, not a packaging choice here, and Rad Gyms is load-bearing for the gym ladder — so it stays,
+flagged. If unexplained reload crashes ever appear, this is the first thing to suspect.
+
+Memory raised 6 GB → 8 GB (the machine has 32 GB; The Hub runs 12).
