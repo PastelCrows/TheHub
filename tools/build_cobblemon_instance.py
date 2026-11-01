@@ -167,6 +167,57 @@ MODS = {
     "cobblemon-torchmaster-fix":       "makes Torchmaster actually stop Cobblemon spawns",
     "oracle-index":                    "client-side in-game documentation",
 
+
+    # ---- the foundation layer -------------------------------------------------
+    # Kewz's pack is a full survival pack with Pokemon on top, and the gap analysis showed 192 of
+    # the 255 projects separating us were exactly this. ETF and EMF are not optional niceties
+    # here: emissive and custom entity textures/models are what make Pokemon look right, and BOTH
+    # COBBLEVERSE and the official Cobblemon NeoForge pack ship them.
+    "sodium":                          "renderer",
+    "sodium-extra":                    "the options Sodium leaves out",
+    "reeses-sodium-options":           "a usable Sodium options screen",
+    "iris":                            "shaders",
+    "lithium":                         "game logic optimisation",
+    "ferrite-core":                    "memory",
+    "modernfix":                       "startup, memory, the lot",
+    "immediatelyfast":                 "immediate-mode rendering",
+    "entityculling":                   "async path-traced culling - matters with many Pokemon",
+    "moreculling":                     "more culling",
+    "badoptimizations":                "non-render optimisations",
+    "clumps":                          "clumps XP orbs - battles drop a lot",
+    "entitytexturefeatures":           "ETF - emissive and random entity textures",
+    "entity-model-features":           "EMF - custom entity models; both packs ship these",
+    # continuity is a FABRIC mod - it asks for connector and fabric_api, which is not a
+    # thing on pure NeoForge. Fusion is the NeoForge connected-textures mod, and The Hub
+    # already runs it.
+    "fusion-connected-textures":       "connected textures, the NeoForge one",
+    "not-enough-animations":           "first-person animations in third person",
+    "just-zoom":                       "zoom - zoomify is Fabric-only; The Hub uses this one",
+    "jade":                            "what am I looking at",
+    "jei":                             "recipes - the Cobbledex bridge needs it",
+    "appleskin":                       "food HUD",
+    "xaeros-minimap":                  "minimap",
+    "xaeros-world-map":                "world map - essential for eleven regions",
+    "mouse-tweaks":                    "inventory handling",
+    "controlling":                     "searchable keybinds",
+    "shulkerboxtooltip":               "see inside shulkers",
+    "enchantment-descriptions":        "what enchantments do",
+    "sound-physics-remastered":        "sound occlusion and reverb",
+    "spark":                           "profiler - this pack will need it",
+
+    # survival, storage and building - the layer he actually plays
+    "sophisticated-backpacks":         "the backpacks, and NeoForge-NATIVE here; he runs a port",
+    "sophisticated-storage":           "matching storage, also native",
+    "toms-storage":                    "simple vanilla-style storage",
+    "waystones":                       "fast travel - eleven regions need it",
+    "lootr":                           "per-player loot chests",
+    "comforts":                        "sleeping bags and hammocks",
+    "handcrafted":                     "furniture for building towns",
+    "supplementaries":                 "building blocks and utilities",
+    "farmers-delight":                 "cooking",
+    "oritech":                         "the tech mod he added and liked",
+    "visual-workbench":                "items stay in the crafting table",
+
     # NOTE: FTB Quests/Library/Teams are NOT on Modrinth - they publish to
     # maven.ftb.dev. They are fetched separately; see FTB_MAVEN below.
 
@@ -176,6 +227,14 @@ MODS = {
     "geckolib":                        "required by raid dens",
     "accessories":                     "required by mega showdown",
     "owo-lib":                         "required by accessories",
+    "searchables":                     "required by Controlling",
+    "puzzles-lib":                     "required by Visual Workbench",
+    "bookshelf-lib":                   "required by Enchantment Descriptions",
+    "prickle":                         "required by Enchantment Descriptions",
+    "konkrete":                        "required by Just Zoom",
+    "sophisticated-core":              "required by the backpacks and storage",
+    "moonlight":                       "required by Supplementaries",
+    "balm":                            "required by Waystones",
     "matthiesen-core":                 "required by the move tutor and poke power",
     "patchouli":                       "required by Cobblepedia",
     "chipped":                         "required by Legendary Monuments",
