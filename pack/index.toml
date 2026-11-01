@@ -21,6 +21,10 @@ file = "config/ArPhEx Configurations.toml"
 hash = "c405f61c450367dc2a4754984a4080799243bf4959c6ec78db91a0963c0ff26c"
 
 [[files]]
+file = "config/DistantHorizons.toml"
+hash = "3f355492e5ac753cbb46890f9c1ca4058efd1391911bd994d762decd651c6426"
+
+[[files]]
 file = "config/EndRemastered-NeoForge/Eyes/black_eye.json"
 hash = "0ce694b7842011f30705cbadc1140a105e15eabe5983dd62605d82e57fefd201"
 
@@ -3206,7 +3210,7 @@ hash = "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb"
 
 [[files]]
 file = "config/iris.properties"
-hash = "eaaf93950a234cb2506fd54752ce961c9271ce5cf01c75139631737fdc1d37b8"
+hash = "05c885a7013796c9141254f8f106e798f98a59c94dcd50ce057efcd07a4ab1b7"
 
 [[files]]
 file = "config/irisflw-client.toml"
@@ -3526,7 +3530,7 @@ hash = "72ca2bcea2a9946a3a54842f14eff6f7b47d8fc96ef497c1b56406643b153fd7"
 
 [[files]]
 file = "config/modernfix-mixins.properties"
-hash = "f9b85b5c8d14c4d88fbf0b78224957e7cb9a1019105aa193c17cec5d4779dcb4"
+hash = "cb77a32c9fe46f01fff69ac4474b141103769ef542b39dd5aa9f25e881062ee6"
 
 [[files]]
 file = "config/modonomicon-client.toml"
@@ -3666,7 +3670,7 @@ hash = "c48156c84719b8d247a8d6c76e63a68f6c61a7107672bf4c8a49351eecf9938d"
 
 [[files]]
 file = "config/packetfixer.properties"
-hash = "91f5b748ab522e3b4f1f0ad1b617e765f884b4a2b3993f14f8477b3f03f9401f"
+hash = "db891f9280f3e6a3b6991963cf3f90af7abe809781cbecc50acc95ee683926fb"
 
 [[files]]
 file = "config/particle_core_config.toml"
@@ -3814,7 +3818,7 @@ hash = "5ca32dc05d4abf088c05c0e48fd70d51065ec24770077599e74876ef268345e5"
 
 [[files]]
 file = "config/simplesplashscreen.json5"
-hash = "3df1571834013a3b3524db9f562c9912c2299e7a8c3899bdd098dea2a479af1e"
+hash = "601f16799fb3d3bd779a2b6be1f19a3a0946bfbea1f2e6babd64a0f616c364fc"
 
 [[files]]
 file = "config/simplesplashscreen/background.png"
@@ -15185,7 +15189,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/BSL_v10.1.8.zip.txt"
-hash = "ed9855c402b51d419d3f2bd91b70aaa2fa8a20d237af32deaa6fce0d579032e4"
+hash = "53c8156e065bdeeccfcff6567f366dd64edcf9e7de62cb91a24adb4f9e726896"
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.pw.toml"
@@ -15194,11 +15198,11 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"
+hash = "f5fb16d69cbebe7f592ecf0a9531b70ba84890cc1b1a527cbf2162175f98db94"
 
 [[files]]
 file = "shaderpacks/ComplementaryUnbound_r5.9.3.zip.txt"
-hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"
+hash = "f5fb16d69cbebe7f592ecf0a9531b70ba84890cc1b1a527cbf2162175f98db94"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.pw.toml"
@@ -15207,7 +15211,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "ed9855c402b51d419d3f2bd91b70aaa2fa8a20d237af32deaa6fce0d579032e4"
+hash = "53c8156e065bdeeccfcff6567f366dd64edcf9e7de62cb91a24adb4f9e726896"
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.pw.toml"
@@ -15216,7 +15220,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Nostalgia_v5.1.zip.txt"
-hash = "46f8281a920095eec00a878b967bc809b186398da548a7161be1380b644eebaf"
+hash = "a13627fb2189649380ca8db82587b847864d48a44358f21931c4a7a3786e4acb"
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.pw.toml"
@@ -15225,4 +15229,4 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/Spooklementary_v2.0.4.zip.txt"
-hash = "c8299de025a6b4dd932d46177d340cb821d860669635e41c8062cff27ad3729e"
+hash = "f5fb16d69cbebe7f592ecf0a9531b70ba84890cc1b1a527cbf2162175f98db94"
