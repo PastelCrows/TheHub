@@ -1,5 +1,14 @@
 # -*- coding: utf-8 -*-
-"""Compile and install the PocketQuests mod.
+"""Compile and install a purpose-written mod for one of the instances.
+
+TWO PROFILES, ONE CLASSPATH IMPLEMENTATION. This started as the PocketQuests build and now
+also builds hubtmfilter for the Cobblemon instance. The classpath resolution is the entire
+value of this script - which jars, which exact versions, read out of Prism rather than
+guessed - so a second mod gets a profile here instead of a second copy of that logic.
+
+    python build_mod.py                 # pocketquests -> The Hub
+    python build_mod.py hubtmfilter     # hubtmfilter  -> Cobblemon NeoForge
+
 
 Written down because the first several builds were ad hoc javac invocations reconstructed from
 memory each time, and the classpath is the whole trick. Notes worth keeping:
@@ -39,12 +48,36 @@ import zipfile
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(os.path.dirname(HERE), "mod-src")
 PRISM = os.path.expandvars(r"%APPDATA%\PrismLauncher")
 LIB = os.path.join(PRISM, "libraries")
-INST = os.path.join(PRISM, "instances", "The Hub")
-HUB = os.path.join(INST, "minecraft")
 OUT = os.path.join(HERE, "_build")
+
+# Each profile names its source tree, its instance, and the mods it compiles AGAINST. A mod we
+# PATCH never belongs here: PocketQuests names its horror target as a string via
+# @Mixin(targets=...) precisely so the build does not depend on that mod existing.
+PROFILES = {
+    "pocketquests": {
+        "src": "mod-src",
+        "instance": "The Hub",
+        "mod_deps": ["ftb-quests-neoforge-*.jar", "ftb-library-neoforge-*.jar",
+                     "architectury-*-neoforge.jar"],
+        "expect": ["pocketquests/PocketEffects.class", "pocketquests/PocketQuests.class"],
+    },
+    "hubtmfilter": {
+        "src": "mod-src-cobblemon",
+        "instance": "Cobblemon NeoForge",
+        # Cobblemon IS on this classpath, unlike the patched mods above, because the mixin names
+        # TechnicalMachines as a real class rather than a string and the filter calls its API.
+        "mod_deps": ["Cobblemon-neoforge-*.jar", "architectury-*-neoforge.jar",
+                     "kotlinforforge-*.jar"],
+        "expect": ["hubtmfilter/TmFilter.class", "hubtmfilter/HubTmFilter.class"],
+    },
+}
+PROFILE = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in PROFILES else "pocketquests"
+_P = PROFILES[PROFILE]
+SRC = os.path.join(os.path.dirname(HERE), _P["src"])
+INST = os.path.join(PRISM, "instances", _P["instance"])
+HUB = os.path.join(INST, "minecraft")
 
 # artifact ids we need on the compile classpath, resolved out of Prism's meta cache
 NEEDED = {
@@ -55,15 +88,14 @@ NEEDED = {
     "mergetool":      "distmarker",
     "loader":         "fml",
     "sponge-mixin":   "mixin",
+    "slf4j-api":      "slf4j",
 }
 # The NeoForge jar itself, which carries every net.neoforged.neoforge.* event class. It is not a
 # plain library coordinate (the meta cache lists it as a jarMod / launch artifact), so it is
 # resolved against the NeoForge component version straight from mmc-pack.json. Leaving it out is
 # what made the first build fail with "package net.neoforged.neoforge.common does not exist".
 NEOFORGE_JAR = "net/neoforged/neoforge/%s/neoforge-%s-universal.jar"
-# mods we compile AGAINST (never ones we patch by name)
-MOD_DEPS = ["ftb-quests-neoforge-*.jar", "ftb-library-neoforge-*.jar",
-            "architectury-*-neoforge.jar"]
+MOD_DEPS = _P["mod_deps"]
 
 
 def natural(v):
@@ -155,7 +187,7 @@ def version_of():
 
 
 def main():
-    print("PocketQuests build")
+    print("%s build  ->  %s" % (PROFILE, _P["instance"]))
     cp, missing = resolve_classpath()
     if missing:
         print("\n   MISSING classpath entries, build aborted:")
@@ -192,7 +224,7 @@ def main():
     for l in notes:                  # printed, not just counted - a silent note is a wasted one
         print("      %s" % l.strip())
 
-    jar = os.path.join(OUT, "pocketquests-%s.jar" % ver)
+    jar = os.path.join(OUT, "%s-%s.jar" % (PROFILE, ver))
     with zipfile.ZipFile(jar, "w", zipfile.ZIP_DEFLATED) as z:
         n = 0
         for base in (classes, os.path.join(SRC, "res")):
@@ -207,24 +239,24 @@ def main():
     # ---- install, removing older versions so two never load at once ----
     dest = os.path.join(HUB, "mods")
     for f in os.listdir(dest):
-        if f.startswith("pocketquests-") and f != os.path.basename(jar):
+        if f.startswith(PROFILE + "-") and f != os.path.basename(jar):
             os.remove(os.path.join(dest, f))
             print("   removed   : %s" % f)
     shutil.copy2(jar, dest)
-    print("   installed : %s -> The Hub/mods" % os.path.basename(jar))
+    print("   installed : %s -> %s/mods" % (os.path.basename(jar), _P["instance"]))
 
     # ---- verify the INSTALLED jar contains what it claims ----
     print("\nVERIFY")
     z = zipfile.ZipFile(os.path.join(dest, os.path.basename(jar)))
     names = z.namelist()
-    mx = json.loads(z.read("pocketquests.mixins.json").decode("utf-8"))
+    mx = json.loads(z.read("%s.mixins.json" % PROFILE).decode("utf-8"))
+    pkg = mx["package"].replace(".", "/")
     ok = True
     for m in list(mx.get("mixins", [])) + list(mx.get("client", [])):
-        present = "pocketquests/mixin/%s.class" % m in names
+        present = "%s/%s.class" % (pkg, m) in names
         print("   mixin declared and present : %-22s %s" % (m, present))
         ok = ok and present
-    for need in ("pocketquests/PocketEffects.class", "pocketquests/PocketQuests.class",
-                 "META-INF/neoforge.mods.toml"):
+    for need in list(_P.get("expect", [])) + ["META-INF/neoforge.mods.toml"]:
         print("   %-42s %s" % (need, need in names))
         ok = ok and need in names
     toml = z.read("META-INF/neoforge.mods.toml").decode("utf-8")

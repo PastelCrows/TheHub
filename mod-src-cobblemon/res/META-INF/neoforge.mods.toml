@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="hubtmfilter"
+version="1.0.0"
+displayName="Hub TM Filter"
+description="Removes Cobblemon TM entries whose JSON names a move nothing defines, which would otherwise silently become a TM that teaches Tackle. A port of Kewz's kewz-tm-filter."
+
+[[mixins]]
+config="hubtmfilter.mixins.json"
+
+[[dependencies.hubtmfilter]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.hubtmfilter]]
+modId="cobblemon"
+type="required"
+versionRange="[1.8,1.9)"
+ordering="AFTER"
+side="BOTH"
