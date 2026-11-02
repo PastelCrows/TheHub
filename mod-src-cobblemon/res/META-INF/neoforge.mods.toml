@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="hubtmfilter"
-version="1.0.0"
+version="1.1.0"
 displayName="Hub TM Filter"
 description="Removes Cobblemon TM entries whose JSON names a move nothing defines, which would otherwise silently become a TM that teaches Tackle. A port of Kewz's kewz-tm-filter."
 

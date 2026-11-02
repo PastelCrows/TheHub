@@ -608,3 +608,71 @@ Xaero network check, 1 Rad Gyms off-thread reload listener (upstream, flagged).
 
 Dream Displays downloads FFmpeg on first launch — completed normally, worth knowing because it
 is an outbound fetch during boot.
+
+## His 16 originals: the survey, and the first port
+
+Two are moot here: `kewz-airhaze-shadergate` patches Atmospherics and
+`kewz-subtle-effects-stub` is a server-join workaround for a mod being absent — we run neither.
+The rest are real work, and several matter more than their size suggests:
+
+| mod | what it is | target installed? |
+|---|---|---|
+| `kewz-client-perf` | creative-inventory freeze, Cobblemon texture-exists cache, ETF, Xaero VRAM | yes |
+| `kewz-evolution-info` | evolution chain + resulting types on the summary screen | yes |
+| `kewz-worldgen-compat` | repairs malformed jigsaw pool ids — **relevant to the region work** | vanilla |
+| `kewz-shader-profiles` | keeps Grassier Grass in step with the active Iris pack | yes |
+| `kewz-tm-filter` | drops TMs naming an undefined move | **ported** |
+| `kewz-lootr-retrofit` | converts literal-item chests to Lootr per-player | yes |
+| `kewz-kit-fastdraw` | batches draw calls for the restyled Cobblemon menus | yes |
+| `kewz-legacy-blocks` | restores 6 Gravelmon block ids removed upstream | yes |
+| `kewz-render-guard`, `kewz-terminal-layout`, `kewz-hologram-target`, `kewz-tower-trainer-spot`, `kewz-chat-time`, `kewz-native-tm-teaching` | battle-tower UI, crash guards, chat timestamps | mixed |
+
+`kewz-native-tm-teaching` says in its own description *"Runtime validation pending"* — he has not
+finished it, so neither should we.
+
+### hubtmfilter — ported, and the measurement that justified it
+
+Cobblemon resolves a TM's move by name and **falls back rather than failing**, so a TM naming an
+undefined move silently becomes a TM that teaches Tackle.
+
+Getting the real number took three wrong answers, each worth keeping:
+
+| attempt | result | why it was wrong |
+|---|---|---|
+| 1 | 90.5% broken | my "move registry" was 181 *animation* files |
+| 2 | 57.0% broken | found `showdown.zip` (1,113 ids) but GEB ships moves one-file-per-move as `data/<ns>/moves/<id>.js` and contributed **zero**, so its own 367 TMs read as broken |
+| 3 | **2.2%** | the union of both layouts: **2,337** move ids |
+
+**17 of 781 TM files**, all from Gravels Extended Battles. GEB's `move_substitutions` were checked
+too; none of the 17 is covered there. A figure as large as 90% should have been suspect
+immediately — `acrobatics` is obviously a real move.
+
+**The port.** Injection points read out of his jar with `javap`, not guessed. Both `reload`
+overloads verified present in Cobblemon-neoforge-1.8.4 with exactly those descriptors. Because
+Cobblemon is multiloader via Architectury the class path is identical on both loaders; the only
+change was the Minecraft type, intermediary `class_3300` → official `ResourceManager`.
+
+**One shortcut deliberately not taken.** 780 of 781 TM files are named after the move they grant,
+which makes `Moves.getByName(key.getPath())` look tidy. `tms/dustdevil.json` names the move
+`dustdevillc`. One exception in 781 is exactly what a shortcut gets silently wrong forever, so
+the written name is read from the JSON as his version does. The folder comes from
+`getResourcePath()` rather than a hardcoded `"tms"`, and every injector is `require = 1`.
+
+**Priority 900, for a reason found by reading the log.** GEB has its OWN `TechnicalMachinesMixin`
+injecting at TAIL of the same `reload(Map)`. It adds no TMs — it emits the TM reload observable —
+but if it emitted first, every listener would refresh while the 17 bad TMs were still present.
+Mixin applies lower-priority configs first and runs same-instruction callbacks in application
+order, so 900 puts the filter ahead of the notification.
+
+**Verified:** mixin applied with all three injectors, 0 mixin failures, clean boot.
+**Not yet verified:** the filter's own output. `TechnicalMachines` is `PackType.SERVER_DATA`, so
+it reloads on **world load**, not at the title screen. The line to look for is
+`hubtmfilter removed 17 of 781 TMs naming an unknown move`.
+
+### Build
+
+`tools/build_mod.py` now takes profiles rather than being forked — its classpath resolution
+(exact versions read out of Prism's meta cache, never globbed) is the whole value of that script,
+so a second mod gets a profile, not a second copy. `python build_mod.py` builds PocketQuests into
+The Hub; `python build_mod.py hubtmfilter` builds this into the Cobblemon instance. Both verified
+BUILD OK.

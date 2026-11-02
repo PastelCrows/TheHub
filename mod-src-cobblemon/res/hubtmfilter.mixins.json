@@ -3,6 +3,8 @@
   "package": "hubtmfilter.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
+  "_priority_note": "900 so this applies - and therefore injects - BEFORE Gravels Extended Battles' own TechnicalMachinesMixin, which injects at TAIL of the same reload(Map) to emit the TM reload observable. Mixin applies lower-priority configs first, and callbacks at the same instruction run in application order. If GEB emitted first, every listener would refresh while the 17 bad TMs were still in the map. GEB's mixin only emits - it adds no TMs - so this is purely about who sees the map first.",
+  "priority": 900,
   "mixins": [
     "TechnicalMachinesMixin"
   ],
