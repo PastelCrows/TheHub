@@ -664,7 +664,13 @@ but if it emitted first, every listener would refresh while the 17 bad TMs were 
 Mixin applies lower-priority configs first and runs same-instruction callbacks in application
 order, so 900 puts the filter ahead of the notification.
 
-**Verified:** mixin applied with all three injectors, 0 mixin failures, clean boot.
+**Verified:** mixin applied with all three injectors, 0 mixin failures, clean boot, and the
+ordering confirmed in the log rather than assumed — `hubtmfilter` applies first, GEB second:
+
+```
+hubtmfilter.mixins.json:TechnicalMachinesMixin                    (x3 injectors)
+gravels_extended_battles_neoforge_common.mixins.json:TechnicalMachinesMixin
+```
 **Not yet verified:** the filter's own output. `TechnicalMachines` is `PackType.SERVER_DATA`, so
 it reloads on **world load**, not at the title screen. The line to look for is
 `hubtmfilter removed 17 of 781 TMs naming an unknown move`.
