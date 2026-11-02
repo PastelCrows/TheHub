@@ -27,3 +27,7 @@ instance/shaderpacks/
 instance/resourcepacks/*
 !instance/resourcepacks/horror-desaturated/
 tools/_parity/
+
+# Headless test server: a NeoForge server install plus copied third-party jars.
+# Rebuildable from tools/test_server.py; nothing in it is ours.
+test-server/
