@@ -45,6 +45,7 @@ JAVA = os.path.join(PRISM, "java", "java-runtime-delta", "bin", "java.exe")
 NEOFORGE = "21.1.265"
 ARGS = os.path.join("libraries", "net", "neoforged", "neoforge", NEOFORGE, "win_args.txt")
 LOG = os.path.join(SERVER, "server-out.log")
+NL = chr(10)
 
 # What the TM filter needs to be exercised at all: Cobblemon itself, the mod that ships the
 # broken TMs, the loader shims they need, and the mod under test.
@@ -136,6 +137,35 @@ def missing_from_log(text):
     return uniq
 
 
+def write_harness_datapack(commands):
+    """Put the commands in a datapack function that runs on world load.
+
+    Console stdin to a NeoForge server proved unreliable here: some runs executed the commands
+    and some produced no output at all, which makes silence uninterpretable - and a negative
+    result you cannot interpret is worthless. A function tagged `minecraft:load` is run by the
+    server itself every time the world loads, needs no console, and cannot half-arrive. It is
+    written into the test world's own datapacks folder so it travels with that world and
+    nothing else.
+
+    HARNESS-BEGIN / HARNESS-END bracket the output so the log can be checked for the commands
+    having actually run, rather than inferring it from the absence of an error.
+    """
+    world = os.path.join(SERVER, "tmtest")
+    root = os.path.join(world, "datapacks", "harness")
+    fn_dir = os.path.join(root, "data", "harness", "function")
+    tag_dir = os.path.join(root, "data", "minecraft", "tags", "function")
+    for d in (fn_dir, tag_dir):
+        os.makedirs(d, exist_ok=True)
+    io.open(os.path.join(root, "pack.mcmeta"), "w", encoding="utf-8", newline=NL).write(
+        '{"pack": {"pack_format": 48, "description": "hub test harness"}}' + NL)
+    body = ["say HARNESS-BEGIN"] + list(commands) + ["say HARNESS-END"]
+    io.open(os.path.join(fn_dir, "run.mcfunction"), "w", encoding="utf-8",
+            newline=NL).write(NL.join(body) + NL)
+    io.open(os.path.join(tag_dir, "load.json"), "w", encoding="utf-8", newline=NL).write(
+        '{"values": ["harness:run"]}' + NL)
+    return os.path.join(fn_dir, "run.mcfunction")
+
+
 def run_once(timeout=420, commands=None):
     """Start the server, wait for it to be up or fail, stop it, return the log."""
     if os.path.exists(LOG):
@@ -224,6 +254,13 @@ def main():
 
     if not run:
         return 0
+
+    if "--via-datapack" in sys.argv and commands:
+        if os.path.isdir(os.path.join(SERVER, "tmtest")):
+            print("harness datapack: %s" % write_harness_datapack(commands))
+            commands = []        # the datapack runs them; do not also send them on stdin
+        else:
+            print("no world yet - do one plain --run first, then --via-datapack")
 
     idx = index_source()
     print("source jars indexed by modId: %d" % len(idx))

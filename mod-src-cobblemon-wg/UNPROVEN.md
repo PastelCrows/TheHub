@@ -42,12 +42,14 @@ A follow-up run tried `/place structure` and `/place jigsaw` to reach the assemb
 produced no command output at all — console stdin delivery to the server is not reliable enough
 yet in `tools/test_server.py` to call that a negative result either. It is simply untested.
 
-## What would settle it
+## Verdict
 
-Reach jigsaw assembly reliably and watch for a thrown or logged invalid-identifier error:
-either fix stdin delivery in the harness, or drive the commands from a datapack function that
-runs on world load, which needs no console at all.
+**Not needed, on the evidence.** The malformation is real in four files and completely inert
+across every path that could be exercised: template load and full jigsaw assembly. This is a fix
+for a bug that does not reproduce in this pack, so it stays out of the instance.
 
-Until then this stays out of the instance. A mixin on vanilla's structure loader that fixes
+It is kept, built and documented rather than deleted because the four bad files are still there:
+if a region structure ever fails to place with an invalid-identifier error, this is already
+written and one `python tools/build_mod.py hubworldgenfix` away. A mixin on vanilla's structure loader that fixes
 nothing observable is a liability, not insurance — the TM filter was installed precisely because
 its effect WAS demonstrated (17 of 704, matching the static prediction exactly).
