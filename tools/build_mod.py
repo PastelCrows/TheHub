@@ -72,6 +72,13 @@ PROFILES = {
                      "kotlinforforge-*.jar"],
         "expect": ["hubtmfilter/TmFilter.class", "hubtmfilter/HubTmFilter.class"],
     },
+    "hubworldgenfix": {
+        "src": "mod-src-cobblemon-wg",
+        "instance": "Cobblemon NeoForge",
+        # Pure vanilla target - no mod needs to be on the classpath for this one.
+        "mod_deps": [],
+        "expect": ["hubworldgenfix/PoolRepair.class", "hubworldgenfix/HubWorldgenFix.class"],
+    },
 }
 PROFILE = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in PROFILES else "pocketquests"
 _P = PROFILES[PROFILE]

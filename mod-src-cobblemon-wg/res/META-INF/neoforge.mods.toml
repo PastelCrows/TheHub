@@ -1,0 +1,19 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="hubworldgenfix"
+version="1.0.0"
+displayName="Hub Worldgen Fix"
+description="Replaces jigsaw pool identifiers that are not valid resource locations with minecraft:empty, so a structure carrying one does not throw while being placed. Four such files ship in this pack. Port of the generic half of Kewz's kewz-worldgen-compat."
+
+[[mixins]]
+config="hubworldgenfix.mixins.json"
+
+[[dependencies.hubworldgenfix]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"

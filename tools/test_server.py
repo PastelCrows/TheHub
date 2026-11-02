@@ -136,7 +136,7 @@ def missing_from_log(text):
     return uniq
 
 
-def run_once(timeout=420):
+def run_once(timeout=420, commands=None):
     """Start the server, wait for it to be up or fail, stop it, return the log."""
     if os.path.exists(LOG):
         os.remove(LOG)
@@ -159,6 +159,18 @@ def run_once(timeout=420):
             text = ""
         if done.search(text):
             break
+    if proc.poll() is None and commands:
+        # Sent only once the server reports Done. Superflat generates no structures, so
+        # `/place template <id>` is the only way to make StructureTemplate.load run on a
+        # chosen file - which is exactly what the jigsaw pool repair needs to be exercised.
+        for c in commands:
+            try:
+                proc.stdin.write((c + chr(10)).encode())
+                proc.stdin.flush()
+            except (OSError, ValueError):
+                break
+            time.sleep(3)
+        time.sleep(4)
     if proc.poll() is None:
         try:
             proc.stdin.write(b"stop\n")
@@ -180,6 +192,10 @@ def run_once(timeout=420):
 def main():
     setup = "--setup" in sys.argv
     run = "--run" in sys.argv
+    commands = []
+    for i, a in enumerate(sys.argv):
+        if a == "--cmd" and i + 1 < len(sys.argv):
+            commands.append(sys.argv[i + 1])
     pattern = None
     if "--grep" in sys.argv:
         i = sys.argv.index("--grep")
@@ -196,6 +212,16 @@ def main():
         write_config()
         print("seeded mods: %d" % seed_mods())
 
+    for i, a in enumerate(sys.argv):
+        if a == "--add" and i + 1 < len(sys.argv):
+            _idx = index_source()
+            _p = _idx.get(sys.argv[i + 1])
+            if _p:
+                shutil.copy2(_p, os.path.join(SERVER, "mods"))
+                print("added: %s" % os.path.basename(_p))
+            else:
+                print("cannot add %r - no installed jar provides it" % sys.argv[i + 1])
+
     if not run:
         return 0
 
@@ -210,7 +236,7 @@ def main():
             if f.endswith(".jar"):
                 have |= modids(os.path.join(dest, f))
         print("\n--- round %d: %d jars, %d modIds" % (rnd, len(os.listdir(dest)), len(have)))
-        text = run_once()
+        text = run_once(commands=commands)
 
         if re.search(r'Done \([0-9.]+s\)', text):
             print("   SERVER STARTED")
