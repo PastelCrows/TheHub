@@ -44,9 +44,26 @@ import zipfile
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-MC = os.path.expandvars(r"%APPDATA%\PrismLauncher\instances\The Hub\minecraft")
+PRISM = os.path.expandvars(r"%APPDATA%\PrismLauncher\instances")
+
+# Which instance to repair. The first version hardcoded The Hub, which fixed exactly one of the
+# instances that has the bug: every standalone ships the same Cyclic jar and so carries the same
+# two broken advancements. Reported as "it gets those 2 advancements upon first time placing
+# anything like the hub did, I'm willing to bet every instance aside from the hub still does".
+# That bet was correct.
+INSTANCE = "The Hub"
+MC = os.path.join(PRISM, INSTANCE, "minecraft")
 MODS = os.path.join(MC, "mods")
 OVERRIDES = os.path.join(MC, "kubejs", "data")
+
+
+def retarget(instance):
+    """Point the module at another instance."""
+    global INSTANCE, MC, MODS, OVERRIDES
+    INSTANCE = instance
+    MC = os.path.join(PRISM, instance, "minecraft")
+    MODS = os.path.join(MC, "mods")
+    OVERRIDES = os.path.join(MC, "kubejs", "data")
 
 
 def single_block(location):
@@ -67,6 +84,7 @@ def single_block(location):
 
 
 def scan():
+    global MODS
     """(jar, entry path, parsed json, [(criterion, block id)]) for every repairable advancement."""
     found = []
     for name in sorted(os.listdir(MODS)):
@@ -100,10 +118,38 @@ def scan():
     return found
 
 
+def run_one(instance):
+    retarget(instance)
+    if not os.path.isdir(MODS):
+        return None
+    print("=" * 92)
+    print("%s" % instance)
+    return _repair()
+
+
 def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if args:
+        names = args
+    else:
+        names = sorted(d for d in os.listdir(PRISM)
+                       if os.path.isdir(os.path.join(PRISM, d, "minecraft", "mods")))
+    total_files = 0
+    instances = 0
+    for name in names:
+        r = run_one(name)
+        if r:
+            total_files += r
+            instances += 1
+    print("=" * 92)
+    print("override files written: %d   across %d instance(s)" % (total_files, instances))
+    return 0
+
+
+def _repair():
     if not os.path.isdir(MODS):
         print("mods folder not found: " + MODS)
-        return 1
+        return 0
 
     found = scan()
     if not found:
@@ -151,7 +197,10 @@ def main():
     print("launch. An advancement already granted stays granted - /advancement revoke <player>")
     print("only cyclic:automation/launch_hidden and cyclic:enchanting/disenchanter_hidden on an")
     print("existing world, or just start the fresh world the smoke test uses anyway.")
-    return 1 if skipped else 0
+    # The COUNT, not an exit code: main() sums these across instances. It returned 1-if-skipped
+    # when this was a single-instance script, which read as "1 instance repaired" once it was
+    # looped - a wrong number that looked plausible.
+    return written
 
 
 if __name__ == "__main__":
