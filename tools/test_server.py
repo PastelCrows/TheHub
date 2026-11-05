@@ -57,7 +57,8 @@ PROFILES = {
         "from": "Cobblemon NeoForge",
         "world": "tmtest",
         "seed": ["Cobblemon-neoforge-*.jar", "gravels_extended_battles-neoforge-*.jar",
-                 "architectury-*-neoforge.jar", "kotlinforforge-*.jar", "hubtmfilter-*.jar"],
+                 "architectury-*-neoforge.jar", "kotlinforforge-*.jar", "hubtmfilter-*.jar",
+                 "hubclientperf-*.jar"],
     },
     # Distant Horizons + Chunky + our ordering fix. The Hub's world-creation crash was SERVER
     # side - "Exception during promotion of chunk to FULL status" in a -server crash report - so

@@ -88,6 +88,14 @@ PROFILES = {
         "mod_deps": [],
         "expect": ["hubchunkyfix/ChunkyReady.class", "hubchunkyfix/HubChunkyFix.class"],
     },
+    "hubclientperf": {
+        "src": "mod-src-clientperf",
+        "instance": "Cobblemon NeoForge",
+        # Pure vanilla target. Benefits EVERY instance, so this one gets copied around after
+        # building rather than living in one pack.
+        "mod_deps": [],
+        "expect": ["hubclientperf/HubClientPerf.class"],
+    },
 }
 PROFILE = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in PROFILES else "pocketquests"
 _P = PROFILES[PROFILE]

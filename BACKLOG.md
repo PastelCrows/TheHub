@@ -6,6 +6,10 @@ full-instance test pass.
 Status key: **DONE** verified · **FIXED** changed but not yet played · **OPEN** not started ·
 **DIAG** cause known, fix not written · **BIG** project-sized
 
+**Standing rule:** any task given and not finished in the same response is written here
+immediately. The user drafts tasks elsewhere and deletes them the moment they are sent, so this
+file is the only copy. Nothing is "remembered for later" outside it.
+
 ---
 
 ## P0 — stopped you playing
@@ -61,7 +65,11 @@ test below now has a world-creation gate for every instance.
 | 18 | 20 mods he runs that the hash-based gap measurement was blind to | **DONE** | Found by comparing modIds instead of hashes. |
 | 19 | `hubtmfilter` (his `kewz-tm-filter`) | **DONE** | Verified end-to-end on the headless server: removed 17 of 704, exactly the static prediction. |
 | 20 | `hubworldgenfix` (his `kewz-worldgen-compat`) | **SHELVED** | Built, not installed. The malformation is real in 4 files but inert through template load *and* full jigsaw assembly. See `mod-src-cobblemon-wg/UNPROVEN.md`. |
-| 21 | `kewz-client-perf` — 6 mixins | **IN PROGRESS** | **In progress when the limit hit.** Targets read: `NonNullList.clear()` (creative-inventory freeze, the headline fix), Cobblemon `ClientDistributionUtilsKt.exists()` + cache, `ReloadableResourceManager.createReload`, plus optional ETF and Xaero configs. Client-side, so the server harness cannot verify it. |
+| 21 | `kewz-client-perf` — mixin 1 of 6: `NonNullList.clear()` | **DONE** | The headline fix. Vanilla is genuinely O(n²): `clear()` with a null default calls `AbstractList.clear()` → `removeRange` → one-at-a-time removal, each shifting the backing ArrayList. **Measured: 56× at n=1,000, 235× at 50,000, 725× at 100,000.** Shipped as `hubclientperf`, installed in all 13 NeoForge instances. Both of his guards kept (`defaultValue == null`, exact-class check) and why they matter is written into the source. |
+| 21a | `kewz-client-perf` mixins 2–3: Cobblemon texture-exists cache | **OPEN** | `ClientDistributionUtilsKt.exists(ResourceLocation)` at HEAD+RETURN with a cache, plus `ReloadableResourceManager.createReload` at RETURN to invalidate it. Cobblemon-specific; needs its own optional mixin config. |
+| 21b | `kewz-client-perf` mixins 4–5: ETF NBT tick cache | **OPEN** | `EtfNbtTickCacheMixin` + `MinecraftTickMixin`, in his optional `etf` config. ETF is installed here. |
+| 21c | `kewz-client-perf` mixin 6: Xaero VRAM query | **OPEN** | `XaeroVramQueryMixin`, his optional `xaero` config. Xaero's is installed here. |
+| 21d | Verify the perf win in game | **OPEN** | Client-side, so the headless harness cannot measure it. Needs a before/after on opening the creative inventory in the Cobblemon pack. |
 | 22 | Remaining 13 of his originals | **OPEN** | 2 are moot (Atmospherics, Subtle Effects absent); 1 he hasn't finished himself (`native-tm-teaching`, "Runtime validation pending"). |
 | 23 | His 33 code recompiles | **OPEN** | The long pole. |
 
@@ -71,7 +79,7 @@ test below now has a world-creation gate for every instance.
 
 | # | Item | Status | Notes |
 |---|---|---|---|
-| 24 | 11 regions, each "exact" to its game counterpart, scaled up huge | **BIG** | Normal worldgen fills the blank space; ocean separates each region into its own continent. Build with a world-map design app rather than by hand. |
+| 24 | 11 regions, each **exact** to its game counterpart, scaled up huge for Minecraft | **BIG** | Confirmed shape: normal worldgen fills the blank space between regions; ocean separates each region into its own continent. To be built with a **Minecraft world-map design application**, not hand-placed. Needs: pick the tool, establish a scale factor, source canon region maps, decide how authored terrain and generated terrain meet at the coastlines. |
 | 25 | Region-locked spawns | **OPEN** | Generated, not authored — `gen1` label is exactly 151 = Kanto. Cheapest real step and already specified. |
 | 26 | Region hub with 11 overworld teleports | **OPEN** | Same-world teleports, not portals — continents stay reachable by boat/flight. |
 | 27 | Mystery Dungeon as a pocket *inside* the Pokémon pocket | **OPEN** | The only piece needing real dimension machinery. |
@@ -94,9 +102,30 @@ design either way, which he has confirmed is the plan: migrate to his later.
 | `tools/validate_instance.py` | Dependency/conflict validation. Keeps the highest provided version; strips embedded game versions when comparing. |
 | `tools/cobblemon_gap.py` | Gap vs his pack, with per-version verification and Connector-requiring builds counted as unavailable. |
 | `tools/repack_kewz_mods.py` | Replays his data/asset edits onto our NeoForge jars (removals a datapack cannot express). |
+| `tools/test_server.py --profile` | Named profiles (`tm`, `chunky`, `chunky-control`) each with their own source instance, seed set and world — so a fix can be proven by running the pair with and without it. |
 | `tools/find_undeclared_deps.py` | Catches the bug class that has now broken two instances: a mod that USES a library it never DECLARES. Parses class constant pools, so it sees what a mod actually calls rather than what it claims. Validated against the real case — it flags cave_dweller→fzzy_config (46 refs, 0 declarations). |
 
 ## Standing lesson
 
 Validation proves a dependency graph closes. The title screen proves mods construct. **Neither
 proves a world loads.** Both P0 bugs lived in the gap between those, and both were mine.
+
+---
+
+## Tool debt
+
+| # | Item | Status | Notes |
+|---|---|---|---|
+| 29 | `test_server.py` reuses a world across different seed sets | **OPEN** | Caused 37 bogus "Unknown biome" errors when the `tm` profile ran against a world generated while extra biome mods were present. Worked around by deleting the world; should delete it automatically when the seed set changes. |
+| 30 | `hubworldgenfix` still shelved | **OPEN** | See `mod-src-cobblemon-wg/UNPROVEN.md`. Now that `--profile` exists, a `worldgen` profile could retry the jigsaw path properly. |
+
+## Process notes earned the hard way
+
+1. **Validation proves a graph closes. The title screen proves mods construct. Neither proves a
+   world loads.** Both Cobblemon's hang and The Hub's crash lived in that gap.
+2. **A mod chosen for a feature is not "unused" because nothing declares it.** Removing Chunky
+   to stop a crash deleted the LOD pre-render it was installed for. Fix the interaction.
+3. **A stale `prismlauncher.exe` refuses `--launch` silently** — no log, no `javaw`, reads as a
+   crash.
+4. **Measure before porting.** `hubtmfilter` predicted 17 and found 17. `hubclientperf` was
+   benchmarked at 235×. `hubworldgenfix` could not be shown to fix anything and is shelved.
