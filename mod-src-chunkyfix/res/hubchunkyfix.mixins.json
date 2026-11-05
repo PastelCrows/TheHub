@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "hubchunkyfix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+    "AbstractChunkyAccessorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

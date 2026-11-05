@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="hubchunkyfix"
+version="1.0.0"
+displayName="Hub Chunky Fix"
+description="Makes Distant Horizons defer binding its Chunky listener until Chunky has registered its provider, instead of throwing during chunk promotion and killing world creation. Lets Chunky and DH be installed together, which is the point of having both."
+
+[[mixins]]
+config="hubchunkyfix.mixins.json"
+
+[[dependencies.hubchunkyfix]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.hubchunkyfix]]
+modId="distanthorizons"
+type="required"
+versionRange="[3.3,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.hubchunkyfix]]
+modId="chunky"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

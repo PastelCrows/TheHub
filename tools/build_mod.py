@@ -79,6 +79,15 @@ PROFILES = {
         "mod_deps": [],
         "expect": ["hubworldgenfix/PoolRepair.class", "hubworldgenfix/HubWorldgenFix.class"],
     },
+    "hubchunkyfix": {
+        "src": "mod-src-chunkyfix",
+        "instance": "The Hub",
+        # Distant Horizons is NOT on this classpath: the mixin names its target as a string via
+        # @Mixin(targets=...) and ChunkyReady reaches Chunky by reflection, so neither mod has to
+        # be present to compile - which also keeps the build working when either is updated.
+        "mod_deps": [],
+        "expect": ["hubchunkyfix/ChunkyReady.class", "hubchunkyfix/HubChunkyFix.class"],
+    },
 }
 PROFILE = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in PROFILES else "pocketquests"
 _P = PROFILES[PROFILE]

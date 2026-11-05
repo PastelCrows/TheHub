@@ -41,16 +41,41 @@ REPO = os.path.dirname(HERE)
 SERVER = os.path.join(REPO, "test-server")
 PRISM = os.path.expandvars(r"%APPDATA%\PrismLauncher")
 SRC_MODS = os.path.join(PRISM, "instances", "Cobblemon NeoForge", "minecraft", "mods")
+WORLD = "tmtest"
 JAVA = os.path.join(PRISM, "java", "java-runtime-delta", "bin", "java.exe")
 NEOFORGE = "21.1.265"
 ARGS = os.path.join("libraries", "net", "neoforged", "neoforge", NEOFORGE, "win_args.txt")
 LOG = os.path.join(SERVER, "server-out.log")
 NL = chr(10)
 
-# What the TM filter needs to be exercised at all: Cobblemon itself, the mod that ships the
-# broken TMs, the loader shims they need, and the mod under test.
-SEED = ["Cobblemon-neoforge-*.jar", "gravels_extended_battles-neoforge-*.jar",
-        "architectury-*-neoforge.jar", "kotlinforforge-*.jar", "hubtmfilter-*.jar"]
+# Named profiles. Each names the instance to pull jars FROM, the minimal set needed to exercise
+# one specific thing, and its own world - so two tests never share a level and leave each other
+# half-generated chunks to trip over.
+PROFILES = {
+    # Cobblemon itself, the mod that ships the broken TMs, the loader shims, the mod under test.
+    "tm": {
+        "from": "Cobblemon NeoForge",
+        "world": "tmtest",
+        "seed": ["Cobblemon-neoforge-*.jar", "gravels_extended_battles-neoforge-*.jar",
+                 "architectury-*-neoforge.jar", "kotlinforforge-*.jar", "hubtmfilter-*.jar"],
+    },
+    # Distant Horizons + Chunky + our ordering fix. The Hub's world-creation crash was SERVER
+    # side - "Exception during promotion of chunk to FULL status" in a -server crash report - so
+    # a dedicated server reproduces it exactly, which the client could only do by clicking.
+    "chunky": {
+        "from": "The Hub",
+        "world": "chunkytest",
+        "seed": ["DistantHorizons-*.jar", "Chunky-NeoForge-*.jar", "hubchunkyfix-*.jar"],
+    },
+    # The same pair WITHOUT our fix: the control that proves the crash is real and that the fix
+    # is what prevents it.
+    "chunky-control": {
+        "from": "The Hub",
+        "world": "chunkyctl",
+        "seed": ["DistantHorizons-*.jar", "Chunky-NeoForge-*.jar"],
+    },
+}
+PROFILE = "tm"
 
 MAX_ROUNDS = 14
 
@@ -98,10 +123,26 @@ def index_source():
     return idx
 
 
-def seed_mods():
+def apply_profile(name):
+    """Point the harness at one profile: source instance, seed set, world."""
+    global SRC_MODS, WORLD, PROFILE
+    cfg = PROFILES[name]
+    PROFILE = name
+    SRC_MODS = os.path.join(PRISM, "instances", cfg["from"], "minecraft", "mods")
+    WORLD = cfg["world"]
+    return cfg
+
+
+def seed_mods(clear=True):
     dest = os.path.join(SERVER, "mods")
     os.makedirs(dest, exist_ok=True)
-    for pat in SEED:
+    if clear:
+        # A profile switch must not inherit the previous profile's jars; leftovers are how a
+        # test ends up proving something about a mod set nobody asked about.
+        for f in os.listdir(dest):
+            if f.endswith(".jar"):
+                os.remove(os.path.join(dest, f))
+    for pat in PROFILES[PROFILE]["seed"]:
         for p in glob.glob(os.path.join(SRC_MODS, pat)):
             shutil.copy2(p, dest)
     return len(os.listdir(dest))
@@ -111,7 +152,7 @@ def write_config():
     io.open(os.path.join(SERVER, "eula.txt"), "w", newline="\n").write("eula=true\n")
     io.open(os.path.join(SERVER, "server.properties"), "w", newline="\n").write(
         "level-type=minecraft\\:flat\n"
-        "level-name=tmtest\n"
+        "level-name=" + WORLD + "\n"
         "online-mode=false\n"
         "view-distance=4\n"
         "simulation-distance=4\n"
@@ -150,7 +191,7 @@ def write_harness_datapack(commands):
     HARNESS-BEGIN / HARNESS-END bracket the output so the log can be checked for the commands
     having actually run, rather than inferring it from the absence of an error.
     """
-    world = os.path.join(SERVER, "tmtest")
+    world = os.path.join(SERVER, WORLD)
     root = os.path.join(world, "datapacks", "harness")
     fn_dir = os.path.join(root, "data", "harness", "function")
     tag_dir = os.path.join(root, "data", "minecraft", "tags", "function")
@@ -222,6 +263,16 @@ def run_once(timeout=420, commands=None):
 def main():
     setup = "--setup" in sys.argv
     run = "--run" in sys.argv
+    for i, a in enumerate(sys.argv):
+        if a == "--profile" and i + 1 < len(sys.argv):
+            name = sys.argv[i + 1]
+            if name not in PROFILES:
+                print("unknown profile %r; have: %s" % (name, ", ".join(sorted(PROFILES))))
+                return 1
+            apply_profile(name)
+            print("profile: %s   (from %s, world %s)"
+                  % (name, PROFILES[name]["from"], PROFILES[name]["world"]))
+
     commands = []
     for i, a in enumerate(sys.argv):
         if a == "--cmd" and i + 1 < len(sys.argv):
@@ -256,7 +307,7 @@ def main():
         return 0
 
     if "--via-datapack" in sys.argv and commands:
-        if os.path.isdir(os.path.join(SERVER, "tmtest")):
+        if os.path.isdir(os.path.join(SERVER, WORLD)):
             print("harness datapack: %s" % write_harness_datapack(commands))
             commands = []        # the datapack runs them; do not also send them on stdin
         else:
