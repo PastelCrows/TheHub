@@ -14,7 +14,11 @@ Status key: **DONE** verified · **FIXED** changed but not yet played · **OPEN*
 |---|---|---|---|
 | 1 | Cobblemon hangs forever on world creation, endless log, eats disk | **FIXED** | EMI NPE-loop. `VanillaPlugin.addRecipeSafe` → `ClientLevel.registryAccess()` before the level exists; Reliable EMI's retry wrapper made one NPE into 6,218. EMI + 5 addons + remi removed; JEI stays. **My fault** — I added EMI alongside JEI and claimed they coexist without testing. |
 | 2 | The Hub crashes on world creation | **FIXED** | `IllegalStateException: Chunky is not loaded` — Distant Horizons 3.3.3 binds Chunky's generation-progress event, Chunky 1.4.23's provider isn't registered yet. Chunky removed (nothing required it); DH stays so the LOD view survives. **Also my fault** — added DH, verified only to the title screen. |
-| 3 | Standalone Horror crashes on launch | **FIXED** | `cave_dweller-1.4-rc2` hard-references `me.fzzyhmstrs.fzzy_config` **46 times** while declaring only neoforge + minecraft. Mod construction failed → Sodium bailed → resource reload failed → recovery screen → `utilitarian` read its config before load → crash. Installed fzzy-config 0.7.7. **Same undeclared-dependency class as Beachparty→Curios.** |
+| 3 | Standalone Horror crashes on launch | **FIXED** | `cave_dweller-1.4-rc2` hard-references `me.fzzyhmstrs.fzzy_config` **46 times** while declaring only neoforge + minecraft. Mod construction failed → Sodium bailed → resource reload failed → recovery screen → `utilitarian` read its config before load → crash. Installed fzzy-config 0.7.7. **Same undeclared-dependency class as Beachparty→Curios.** Verified: reaches the title screen, 0 crash reports. |
+
+**Launcher gotcha found while verifying #3:** a stale `prismlauncher.exe` silently refuses
+`--launch` — no log, no `javaw`, which reads exactly like a crash. Kill it and relaunch before
+concluding anything from a silent launch.
 
 **The process failure behind #1 and #2:** I verified mods reached the *title screen* and reported
 them working. Neither bug is visible there. World creation is a different code path. The smoke
@@ -31,7 +35,7 @@ test below now has a world-creation gate for every instance.
 | 6 | Lost Cities standalone "still isn't cities" | **OPEN** | The Hub's `hub:lostcities=default` profile fix was applied to the Hub only. The standalone needs its own profile check. |
 | 7 | Nether standalone: void start on top of a tree | **OPEN** | Classic wrong-spawn-structure symptom. |
 | 8 | Oceanblock standalone: regular survival spawn | **OPEN** | Island template exists (`atoll.nbt`, chest now fixed) but isn't being used for spawn. |
-| 9 | Phantom advancements on first block placed — **every instance except The Hub** | **OPEN** | The Hub fix exists; needs porting to all standalones. User's guess that it affects all of them is almost certainly right. |
+| 9 | Phantom advancements on first block placed — **every instance except The Hub** | **FIXED** | Your bet was right. `fix_advancements.py` had the Hub's path hardcoded; it now walks every instance. **16 override files across 8 instances** (Caveblock, Creative Forge, Netherbound, Oceanblock, One Block, One Chunk, Skyblock, The Hub). The 7 instances without Cyclic came back genuinely clean. |
 | 10 | Gauntlet has no coliseum | **OPEN** | `tools/build_coliseum.py` exists — likely never run against the instance, or its output isn't loaded. |
 
 ---
