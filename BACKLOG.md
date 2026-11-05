@@ -14,7 +14,7 @@ Status key: **DONE** verified · **FIXED** changed but not yet played · **OPEN*
 |---|---|---|---|
 | 1 | Cobblemon hangs forever on world creation, endless log, eats disk | **FIXED** | EMI NPE-loop. `VanillaPlugin.addRecipeSafe` → `ClientLevel.registryAccess()` before the level exists; Reliable EMI's retry wrapper made one NPE into 6,218. EMI + 5 addons + remi removed; JEI stays. **My fault** — I added EMI alongside JEI and claimed they coexist without testing. |
 | 2 | The Hub crashes on world creation | **FIXED** | `IllegalStateException: Chunky is not loaded` — Distant Horizons 3.3.3 binds Chunky's generation-progress event, Chunky 1.4.23's provider isn't registered yet. Chunky removed (nothing required it); DH stays so the LOD view survives. **Also my fault** — added DH, verified only to the title screen. |
-| 3 | Standalone Horror crashes on launch | **OPEN** | Not yet diagnosed. |
+| 3 | Standalone Horror crashes on launch | **FIXED** | `cave_dweller-1.4-rc2` hard-references `me.fzzyhmstrs.fzzy_config` **46 times** while declaring only neoforge + minecraft. Mod construction failed → Sodium bailed → resource reload failed → recovery screen → `utilitarian` read its config before load → crash. Installed fzzy-config 0.7.7. **Same undeclared-dependency class as Beachparty→Curios.** |
 
 **The process failure behind #1 and #2:** I verified mods reached the *title screen* and reported
 them working. Neither bug is visible there. World creation is a different code path. The smoke
@@ -90,6 +90,7 @@ design either way, which he has confirmed is the plan: migrate to his later.
 | `tools/validate_instance.py` | Dependency/conflict validation. Keeps the highest provided version; strips embedded game versions when comparing. |
 | `tools/cobblemon_gap.py` | Gap vs his pack, with per-version verification and Connector-requiring builds counted as unavailable. |
 | `tools/repack_kewz_mods.py` | Replays his data/asset edits onto our NeoForge jars (removals a datapack cannot express). |
+| `tools/find_undeclared_deps.py` | Catches the bug class that has now broken two instances: a mod that USES a library it never DECLARES. Parses class constant pools, so it sees what a mod actually calls rather than what it claims. Validated against the real case — it flags cave_dweller→fzzy_config (46 refs, 0 declarations). |
 
 ## Standing lesson
 
