@@ -301,7 +301,6 @@ MODS = {
     "lets-do-bakery-farmcharm-compat":     "",
     "lets-do-brewery-farmcharm-compat":    "",
     "lets-do-addon-compat":                "",
-    "lets-do-emi-compat":                  "",
     "seasonal-lets-do":                    "",
     "apple-wood-rebarked":                 "",
     "chefs-delight":                       "",
@@ -377,12 +376,7 @@ MODS = {
     # His own EMI is an unpublished fabric SNAPSHOT, which is why the hash lookup missed it;
     # EMI itself publishes 1.1.24 for neoforge/1.21.1, checked directly. JEI stays as well:
     # the two coexist, and dropping it would break anything here that declares it required.
-    "emi":                                 "recipe viewer - what his five emi_* addons need",
     # ---- interface addons and polish
-    "emi-loot":                            "",
-    "emi-enchanting":                      "",
-    "emi-ores":                            "",
-    "reliable-emi":                        "",
     "notenoughrecipebook":                 "",
     "trashslot":                           "",
     "immersive-ui":                        "",
@@ -485,7 +479,6 @@ MODS = {
     "perfectpartners":                     "companion/partner Pokemon system",
     "cobblemon-battle-tower":              "battle tower progression",
     "cobblebase":                          "base-building for Cobblemon",
-    "cobblemon-emi-compat":                "Pokemon data inside EMI",
     "extra-move-anims-cobblemon":          "move animations",
     # ftb-quests-cobblemon-entity is NOT here. He runs 2.0.0 on fabric; neoforge has exactly
     # one build, 1.0.0, and its CommandRewardMixin fails with InvalidInjectionException
@@ -499,6 +492,16 @@ MODS = {
     "packed-packs":                        "resource-pack profiles",
     "put-a-plug-in-it":                    "PAPI",
     "reactive-music":                      "context-aware music",
+    # ---- EMI IS OUT, AND IT WAS MY MISTAKE TO ADD IT ALONGSIDE JEI ------------
+    # EMI NPE-loops during world creation: VanillaPlugin.addRecipeSafe calls
+    # ClientLevel.registryAccess() before the client level exists, and Reliable EMI's retry
+    # wrapper turns that single NPE into an endless one - 6,218 of them in a single run,
+    # filling the log until the disk notices. World creation never completes.
+    # I added EMI to match his pack while KEEPING JEI, and wrote at the time that "the two
+    # coexist" without testing it. They do not, usefully: two recipe viewers both indexing
+    # 4,900 species is waste even when it works. JEI stays - cobbledex-rei-emi-jei speaks
+    # JEI too - and the five emi_* addons go with EMI since all of them hard-require it.
+    # Losing them is a real cost against his pack, recorded as one.
 }
 
 
