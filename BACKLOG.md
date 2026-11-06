@@ -40,7 +40,7 @@ test below now has a world-creation gate for every instance.
 | 7 | Netherbound: void start on top of a tree | **FIXED (not a worldgen bug)** | The preset is correct — verified on a clean server, which generated `overworld type=minecraft:the_nether, settings=minecraft:nether`. The played world says why: `level.dat` overworld generator = **`exdeorum:void`**. It was created with Ex Deorum's **Void world type** instead of Default. Ex Deorum adds `exdeorum:void_world` to the `#minecraft:normal` tag that fills the world-type cycle button, so every pack carrying it offers a one-click way to generate the wrong world. Removed from the menu in all 6 affected instances via a `remove` tag override. **Needs a new world, created on Default.** |
 | 8 | Oceanblock standalone: regular survival spawn | **FIXED** | `dimensions.json5` had `isCustom: false` on all three dimensions, so SkyblockBuilder never took over and the world generated vanilla — confirmed by `level.dat` (`minecraft:noise`, overworld preset). Every other SkyblockBuilder config was byte-identical to Skyblock, which works; only this differed. Flipped all 3 to `true`. The atoll is self-contained (228 blocks of sand/grass/tree/chest, no water needed) so it works in void. **Needs a new world.** |
 | 9 | Phantom advancements on first block placed — **every instance except The Hub** | **FIXED** | Your bet was right. `fix_advancements.py` had the Hub's path hardcoded; it now walks every instance. **16 override files across 8 instances** (Caveblock, Creative Forge, Netherbound, Oceanblock, One Block, One Chunk, Skyblock, The Hub). The 7 instances without Cyclic came back genuinely clean. |
-| 10 | Gauntlet has no coliseum | **OPEN** | `tools/build_coliseum.py` exists — likely never run against the instance, or its output isn't loaded. |
+| 10 | Gauntlet has no coliseum | **NEXT** | `tools/build_coliseum.py` exists — likely never run against the instance, or its output isn't loaded. |
 
 ---
 
@@ -49,7 +49,7 @@ test below now has a world-creation gate for every instance.
 | # | Item | Status | Notes |
 |---|---|---|---|
 | 11 | No standalone has the Hub's shaders or texture packs | **OPEN** | Each standalone should at least match the Hub's version of itself. |
-| 12 | Custom instance icons for every instance | **OPEN** | Brand assets exist (`tools/build_brand_assets.py`); need one icon per instance + set in Prism. |
+| 12 | Custom instance icons for **every** instance | **FIXED** | Reference style supplied: Kewz's Cobblemon icon — a rounded **hexagon** with a thick near-black outline, flat **isometric** blocks inside, a tight two-colour palette with lit/mid/shadow faces, and a small hexagon at the centre. Wanted for all instances, **including new designs for The Hub and our Cobblemon** (current ones replaced). Built `tools/build_instance_icons.py` — generated, not hand-drawn, so the set cannot drift and a new instance gets a matching icon for free. 16 installed; Kewz's instance keeps his own icon since it IS the reference. **Review them in Prism and say which palettes you want changed** — a repaint is one line each. |
 | 13 | Vanilla-style main menu with a rotating still of the hub | **OPEN** | FancyMenu layouts already authored; this is a different, simpler direction than the current gothic hall. |
 | 14 | Knock-off HermitCraft: Faithful64 layered on top + shaders | **OPEN** | Needs a coverage check that Faithful64 exists for its MC version. |
 | 15 | Creative Maximum: confirm all content actually loads | **OPEN** | Validates clean; "a lot of content" unverified in play. |

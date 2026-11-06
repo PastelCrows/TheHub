@@ -34,3 +34,6 @@ test-server/
 
 # NBT backups left by tools/fix_stack_counts.py
 *.precount
+
+# Generated icon renders (rebuildable from tools/build_instance_icons.py)
+tools/_icons/
