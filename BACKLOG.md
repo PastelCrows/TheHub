@@ -36,9 +36,9 @@ test below now has a world-creation gate for every instance.
 |---|---|---|---|
 | 4 | Starting chests give 1 of everything (Caveblock, One Chunk, Skyblock, Oceanblock) | **FIXED** | 1.20.5 renamed item NBT `Count` (byte) → `count` (int); old key silently defaults to 1. **70 stacks across 16 files** — including 8 copies inside The Hub that a narrower scan had missed. Caveblock now gets 4 logs / 2 ice as authored. |
 | 5 | Caveblock: no ores spawning anywhere | **ANSWERED + FIXED** | **Ores are by design** — the overworld is void and ores come from Ex Deorum sieving, same as Skyblock. Verified: Ex Deorum 3.12, 846 sieve recipes, a `recipe/ores` set, and PocketQuests' Ex Deorum gate is Hub-only so nothing is denied in the standalone. BALANCE.md already said Caveblock owns Ex Deorum legitimately. **But a real bug sat behind it:** the gate chain is sapling → tree → leaves → crook → silkworm → infested_leaves → crook → string → string_mesh → sieve, there are ZERO meshless sieve recipes, and the template was a 15×7×15 hollow shell (755 air / 152 stone) with only 44 of 225 columns having 6 clear — too tight for the oak that gates everything. Rebuilt as a 19³ solid-stone cube with a 9³ chamber (8 clear above the floor) and a dirt patch, chest carried over verbatim. Now matches README's "carved pocket in solid rock", and mining outward yields stone (itself siftable via hammer → gravel → sand) instead of void. |
-| 6 | Lost Cities standalone "still isn't cities" | **OPEN** | The Hub's `hub:lostcities=default` profile fix was applied to the Hub only. The standalone needs its own profile check. |
-| 7 | Nether standalone: void start on top of a tree | **OPEN** | Classic wrong-spawn-structure symptom. |
-| 8 | Oceanblock standalone: regular survival spawn | **OPEN** | Island template exists (`atoll.nbt`, chest now fixed) but isn't being used for spawn. |
+| 6 | Lost Cities standalone "still isn't cities" | **FIXED** | Its `config/lostcities/common.toml` mapped profiles only to `lostcities:lostcity` and `lostworlds:abyss` — never to the overworld, which IS the pocket in the standalone. The played world confirms it: `level.dat` says overworld generator `minecraft:noise`, preset `minecraft:overworld` (plain vanilla). Added `minecraft:overworld=default`. **Needs a NEW world** — worldgen profiles do not retrofit. |
+| 7 | Netherbound: void start on top of a tree | **FIXED (not a worldgen bug)** | The preset is correct — verified on a clean server, which generated `overworld type=minecraft:the_nether, settings=minecraft:nether`. The played world says why: `level.dat` overworld generator = **`exdeorum:void`**. It was created with Ex Deorum's **Void world type** instead of Default. Ex Deorum adds `exdeorum:void_world` to the `#minecraft:normal` tag that fills the world-type cycle button, so every pack carrying it offers a one-click way to generate the wrong world. Removed from the menu in all 6 affected instances via a `remove` tag override. **Needs a new world, created on Default.** |
+| 8 | Oceanblock standalone: regular survival spawn | **FIXED** | `dimensions.json5` had `isCustom: false` on all three dimensions, so SkyblockBuilder never took over and the world generated vanilla — confirmed by `level.dat` (`minecraft:noise`, overworld preset). Every other SkyblockBuilder config was byte-identical to Skyblock, which works; only this differed. Flipped all 3 to `true`. The atoll is self-contained (228 blocks of sand/grass/tree/chest, no water needed) so it works in void. **Needs a new world.** |
 | 9 | Phantom advancements on first block placed — **every instance except The Hub** | **FIXED** | Your bet was right. `fix_advancements.py` had the Hub's path hardcoded; it now walks every instance. **16 override files across 8 instances** (Caveblock, Creative Forge, Netherbound, Oceanblock, One Block, One Chunk, Skyblock, The Hub). The 7 instances without Cyclic came back genuinely clean. |
 | 10 | Gauntlet has no coliseum | **OPEN** | `tools/build_coliseum.py` exists — likely never run against the instance, or its output isn't loaded. |
 
@@ -111,6 +111,13 @@ Validation proves a dependency graph closes. The title screen proves mods constr
 proves a world loads.** Both P0 bugs lived in the gap between those, and both were mine.
 
 ---
+
+## Discovered mid-work (logged per the standing rule)
+
+| # | Item | Status | Notes |
+|---|---|---|---|
+| 31 | `minecraft/datapacks/` is never loaded in any instance | **DIAG** | No instance has the globalpacks mod, and neither `netherbound_worldgen` nor `hub_worldgen` has EVER appeared in a log — only mod-generated packs do. Every live datapack file in these packs is under `kubejs/data`, which KubeJS does load. So `datapacks/hub_worldgen` (37 files) and `datapacks/netherbound_worldgen` are dead duplicates of content that also exists under `kubejs/data`. They should be deleted or the folder actually wired up, because right now editing them looks like it works and does nothing. |
+| 32 | Three fixed worldgen items all need NEW worlds | **OPEN** | Lost Cities, Netherbound and Oceanblock are config/worldgen fixes. Existing worlds keep their old generator — `level.dat` records it at creation. The old saves (`New World`, `test`) cannot be retrofitted. |
 
 ## Tool debt
 
