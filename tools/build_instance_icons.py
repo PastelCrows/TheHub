@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*-
-"""Render a matching icon for every Prism instance.
+"""Render a themed icon for every Prism instance.
 
-THE STYLE is taken from Kewz's Cobblemon icon, supplied as the reference: a rounded HEXAGON with
-a thick near-black outline, flat ISOMETRIC blocks inside it, a tight palette where each block
-face is lit / mid / shadow, and a small hexagonal nut at the centre. The point is a SET - every
-instance instantly reads as part of the same collection - so the geometry is identical
-throughout and only the palette and the arm shape change per pack.
+WHAT THE BRIEF ACTUALLY WAS. The reference supplied was Kewz's Cobblemon icon, and the first
+attempt here missed the point by copying its GEOMETRY - a rounded hexagon holding two
+interlocking isometric arms around a centre nut - and recolouring it sixteen times. That shape
+is a pokeball rendered in blocks. It is a Cobblemon icon. It means nothing on Lost Cities.
 
-WHY GENERATED RATHER THAN DRAWN. Seventeen icons by hand would drift; generated ones cannot. It
-also means a repaint is a palette edit rather than seventeen redraws, and a new instance gets an
-icon that already matches.
+What was wanted is the LOOK: that clean. Flat shapes, one bold near-black outline, a tight
+palette, a silhouette that still reads at 32px. The SUBJECT of each icon should be its pack.
 
-ISOMETRIC PROJECTION. A unit cube at integer grid (gx, gy, gz):
+So: one shared house style, sixteen different drawings.
 
-    sx = (gx - gy) * HALF_W
-    sy = (gx + gy) * HALF_H - gz * CUBE_H
+  * a rounded-square container, not a hexagon - the hexagon is Kewz's mark, and reusing it would
+    make our packs look like forks of his
+  * INK and STROKE are the single outline colour and weight everything uses, which is what makes
+    them read as a set without any of them repeating a shape
+  * each pack gets its own small draw function, named for it
+  * two or three flat colours each, no gradients
 
-drawn as three faces - top rhombus, left face, right face - in the lit / mid / shadow tints of
-one colour. Painter's order is by (gx + gy + gz) so nearer cubes overwrite farther ones.
-
-EVERYTHING IS SUPERSAMPLED 4x and downsampled with LANCZOS, because the diagonals in an
-isometric cube alias badly at icon sizes otherwise.
+Supersampled 4x then LANCZOS down: flat art with diagonal edges aliases badly at icon sizes.
 
     python build_instance_icons.py                 # render to tools/_icons
-    python build_instance_icons.py --install       # also copy to Prism and set iconKey
+    python build_instance_icons.py --sheet         # also write a contact sheet
+    python build_instance_icons.py --install       # copy to Prism and set iconKey
     python build_instance_icons.py --only "The Hub"
 """
 import io
@@ -46,165 +45,397 @@ PRISM = os.path.expandvars(r"%APPDATA%\PrismLauncher")
 ICONS = os.path.join(PRISM, "icons")
 INSTANCES = os.path.join(PRISM, "instances")
 
-SS = 4                      # supersample factor
-SIZE = 256                  # final icon edge
-OUTLINE = "#241F2E"         # the near-black of the reference
-INNER_BG = "#FFFFFF"
-
-HALF_W = 21                 # iso cube half width  (pre-supersample units)
-HALF_H = 12                 # iso cube half height
-CUBE_H = 18                 # vertical rise of one cube
-EDGE = 3                    # dark edge between cubes, so blocks stay separable
+SS = 4
+SIZE = 256
+W = SIZE * SS
+INK = "#221E2B"
+STROKE = int(W * 0.022)
 
 
-def shades(hex_colour):
-    """lit / mid / shadow for one base colour, as the reference does per face."""
-    base = hex_colour.lstrip("#")
-    r, g, b = (int(base[i:i + 2], 16) for i in (0, 2, 4))
+# ---------------------------------------------------------------- helpers
 
-    def mix(t, to):
-        return tuple(int(round(c + (x - c) * t)) for c, x in zip((r, g, b), to))
-
-    return {
-        "top": mix(0.22, (255, 255, 255)),
-        "left": (r, g, b),
-        "right": mix(0.34, (0, 0, 0)),
-    }
+def mix(c, to, t):
+    c = c.lstrip("#")
+    r, g, b = (int(c[i:i + 2], 16) for i in (0, 2, 4))
+    return "#%02X%02X%02X" % tuple(int(round(a + (x - a) * t)) for a, x in zip((r, g, b), to))
 
 
-# Two interlocking L-shaped arms around a centre nut - the reference's own arrangement.
-# Cells are (gx, gy, gz). ARM_A reads up-and-right, ARM_B mirrors it down-and-left.
-# Height matters: with both arms on z=0 the cells read as one flat plate rather than two
-# shapes. Arm A is raised a level so the pair interlocks the way the reference's does - each is
-# an L that wraps half way round the centre, and together they pinwheel about the nut.
-ARM_A = [(-1, -1, 1), (0, -1, 1), (1, -1, 1), (1, 0, 1)]
-ARM_B = [(1, 1, 0), (0, 1, 0), (-1, 1, 0), (-1, 0, 0)]
-
-# Per-instance palettes. Deep purple + warm gold is the stated house style and belongs to The
-# Hub; everything else is chosen to read as that pack at a glance while staying in the same
-# flat two-colour register.
-PALETTES = {
-    "The Hub":               ("#8B5CF6", "#F2B33D"),   # deep purple + warm gold - house brand
-    "Cobblemon NeoForge":    ("#E8584E", "#F5F3F7"),   # pokeball red + white
-    "Skyblock":              ("#5BC8F5", "#9BE08A"),   # sky + grass
-    "Caveblock":             ("#8C8FA3", "#D9A441"),   # stone + torchlight
-    "Oceanblock":            ("#2FB6C4", "#F2DFA8"),   # water + sand
-    "One Chunk":             ("#7FC24A", "#A9743F"),   # grass + dirt
-    "One Block":             ("#B07CE8", "#6EE7A0"),   # magic + growth
-    "Netherbound":           ("#C94B3F", "#4FC3D9"),   # netherrack + soul fire
-    "Lost Cities":           ("#9AA3AD", "#4E8C63"),   # concrete + overgrowth
-    "Survival":              ("#6BA94A", "#8A5A33"),   # grass + wood
-    "The Gauntlet":          ("#C8403F", "#C9A227"),   # blood + brass
-    "Horror":                ("#6B5A82", "#C0392B"),   # dusk + blood, both lifted
-    #   clear of the outline: the first pair sat 34 luminance from #241F2E and the
-    #   darker block read as a hole punched in the icon rather than as a block.
-    "Creative Forge":        ("#E08A3C", "#6E7A8A"),   # forge orange + steel
-    "Creative Modern":       ("#4FA8E0", "#E6E9ED"),   # glass + white
-    "Creative Maximum":      ("#9B6BE8", "#45C9A5"),   # violet + teal
-    "Knock-off Hermitcraft": ("#4FBF7A", "#E8C84A"),   # hermit green + gold
-}
-DEFAULT_PALETTE = ("#7D7F8C", "#C9C6D6")
+def lighter(c, t=0.28):
+    return mix(c, (255, 255, 255), t)
 
 
-def hexagon(cx, cy, r):
-    """Flat-top hexagon: flat top and bottom edges, points at left and right."""
-    pts = []
-    for i in range(6):
-        a = math.radians(60 * i)
-        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+def darker(c, t=0.30):
+    return mix(c, (0, 0, 0), t)
+
+
+def poly(d, pts, fill=None, outline=True, width=None):
+    if fill:
+        d.polygon(pts, fill=fill)
+    if outline:
+        d.line(list(pts) + [pts[0], pts[1]], fill=INK,
+               width=width or STROKE, joint="curve")
+
+
+def disc(d, cx, cy, r, fill, outline=True):
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=fill,
+              outline=INK if outline else None, width=STROKE if outline else 0)
+
+
+def box(d, x0, y0, x1, y1, fill, r=None, outline=True):
+    r = int(r if r is not None else W * 0.02)
+    d.rounded_rectangle([x0, y0, x1, y1], radius=r, fill=fill,
+                        outline=INK if outline else None, width=STROKE if outline else 0)
+
+
+def cube(d, cx, cy, s, colour, h=None):
+    """A flat isometric cube, positioned by the centre of its top face."""
+    h = h or s * 0.85
+    hw, hh = s, s * 0.56
+    poly(d, [(cx - hw, cy), (cx, cy + hh), (cx, cy + hh + h), (cx - hw, cy + h)],
+         darker(colour, 0.34), True)
+    poly(d, [(cx + hw, cy), (cx, cy + hh), (cx, cy + hh + h), (cx + hw, cy + h)],
+         darker(colour, 0.14), True)
+    poly(d, [(cx, cy - hh), (cx + hw, cy), (cx, cy + hh), (cx - hw, cy)],
+         lighter(colour, 0.22), True)
+
+
+def container(d, bg):
+    m = W * 0.055
+    d.rounded_rectangle([m, m, W - m, W - m], radius=int(W * 0.26), fill=bg,
+                        outline=INK, width=int(STROKE * 1.9))
+
+
+def arch_path(cx, base, half, rise):
+    """A pointed-ish arch outline, used by more than one icon."""
+    pts = [(cx - half, base)]
+    for k in range(33):
+        t = k / 32.0
+        pts.append((cx - half + 2 * half * t, base - rise * math.sin(math.pi * t)))
+    pts.append((cx + half, base))
     return pts
 
 
-def rounded_poly(draw, pts, radius, fill):
-    """A polygon with genuinely rounded corners.
+# ---------------------------------------------------------------- per-pack art
+# Few shapes, large. Anything fiddly turns to mush at 32px, which is the size that matters in
+# the instance list.
 
-    The obvious version - draw the polygon, then a disc at every vertex - is wrong, and looked
-    it: the discs bulge past the edges and the hexagon came out as a six-atom molecule. The
-    right way is to stroke the outline with a round-jointed line of width 2*radius, which grows
-    the shape outward by exactly radius with arcs at the corners, and fill the body behind it.
-    Callers therefore pass an INSET polygon so the result lands on the intended size.
-    """
-    draw.polygon(pts, fill=fill)
-    # pts[0] AND pts[1]: the closing joint is only rounded if the path continues through it,
-    # otherwise a wedge is left missing at that vertex - which is what the second render showed.
-    draw.line(list(pts) + [pts[0], pts[1]], fill=fill, width=int(radius * 2), joint="curve")
-
-
-def cube(draw, cx, cy, gx, gy, gz, colour):
-    sx = cx + (gx - gy) * HALF_W * SS
-    sy = cy + (gx + gy) * HALF_H * SS - gz * CUBE_H * SS
-    hw, hh, ch = HALF_W * SS, HALF_H * SS, CUBE_H * SS
-    s = shades(colour)
-    e = EDGE * SS
-    # Dark silhouette first, then the faces inset into it. Without this, two cubes of the same
-    # colour sitting side by side merge into one unreadable slab - which is exactly what the
-    # first render did.
-    draw.polygon([(sx, sy - hh - e), (sx + hw + e, sy), (sx + hw + e, sy + ch),
-                  (sx, sy + hh + ch + e), (sx - hw - e, sy + ch), (sx - hw - e, sy)],
-                 fill=OUTLINE)
-    k = e * 0.9
-    draw.polygon([(sx, sy - hh + k), (sx + hw - k, sy), (sx, sy + hh - k), (sx - hw + k, sy)],
-                 fill=s["top"])
-    draw.polygon([(sx - hw + k, sy + k), (sx - k, sy + hh), (sx - k, sy + hh + ch - k),
-                  (sx - hw + k, sy + ch - k)], fill=s["left"])
-    draw.polygon([(sx + hw - k, sy + k), (sx + k, sy + hh), (sx + k, sy + hh + ch - k),
-                  (sx + hw - k, sy + ch - k)], fill=s["right"])
+def art_hub(d, p):
+    """A lit gothic doorway. The first version drew a narrow arch over a dark one and read as a
+    capital A - the legs converged and the opening vanished. Wide opening, visible piers, a
+    floor line and a keystone fix it: the silhouette now says doorway at any size."""
+    dark, gold = p
+    base = W * 0.78
+    # piers
+    box(d, W * 0.22, W * 0.40, W * 0.34, base, gold, r=W * 0.015)
+    box(d, W * 0.66, W * 0.40, W * 0.78, base, gold, r=W * 0.015)
+    # arch band over the opening
+    band = arch_path(W * 0.5, W * 0.42, W * 0.28, W * 0.26)
+    poly(d, band, gold, True)
+    # the opening itself, lit
+    inner = arch_path(W * 0.5, base, W * 0.155, W * 0.30)
+    poly(d, inner, dark, True)
+    glow = arch_path(W * 0.5, base - W * 0.02, W * 0.105, W * 0.21)
+    poly(d, glow, lighter(gold, 0.35), True)
+    # keystone and floor
+    box(d, W * 0.455, W * 0.115, W * 0.545, W * 0.20, lighter(gold, 0.3), r=W * 0.012)
+    d.line([(W * 0.17, base), (W * 0.83, base)], fill=INK, width=int(STROKE * 1.7))
 
 
-def nut(draw, cx, cy, colour):
-    """The small centre hexagon - a bolt head seen from above."""
-    r = int(HALF_W * SS * 0.78)
-    s = shades(colour)
-    outer = hexagon(cx, cy, r)
-    draw.polygon(outer, fill=OUTLINE)
-    draw.polygon(hexagon(cx, cy, int(r * 0.80)), fill=s["top"])
-    draw.polygon(hexagon(cx, cy, int(r * 0.44)), fill=OUTLINE)
+def art_cobblemon(d, p):
+    """A pokeball - the one pack where the reference's own subject is the right answer."""
+    red, white = p
+    cx = cy = W * 0.5
+    r = W * 0.30
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=white)
+    d.pieslice([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=red)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=INK, width=int(STROKE * 1.3))
+    d.rectangle([cx - r, cy - STROKE, cx + r, cy + STROKE], fill=INK)
+    disc(d, cx, cy, r * 0.32, white)
+    disc(d, cx, cy, r * 0.15, lighter(red, 0.15))
 
 
-def render(colour_a, colour_b):
-    w = SIZE * SS
-    img = Image.new("RGBA", (w, w), (0, 0, 0, 0))
+def art_skyblock(d, p):
+    """A floating island. The tree was a disc on a stick - a two-tier canopy reads as a tree."""
+    sky, grass = p
+    cx, y = W * 0.5, W * 0.62
+    poly(d, [(cx - W * 0.25, y), (cx + W * 0.25, y), (cx + W * 0.13, y + W * 0.15),
+             (cx + W * 0.05, y + W * 0.21), (cx - W * 0.06, y + W * 0.17)],
+         "#8A5A33", True)
+    box(d, cx - W * 0.26, y - W * 0.075, cx + W * 0.26, y + W * 0.015, grass, r=W * 0.025)
+    box(d, cx - W * 0.028, y - W * 0.19, cx + W * 0.028, y - W * 0.05, "#7A5230")
+    poly(d, [(cx, y - W * 0.36), (cx + W * 0.15, y - W * 0.20), (cx - W * 0.15, y - W * 0.20)],
+         darker(grass, 0.18), True)
+    poly(d, [(cx, y - W * 0.28), (cx + W * 0.175, y - W * 0.13),
+             (cx - W * 0.175, y - W * 0.13)], lighter(grass, 0.12), True)
+
+
+def art_caveblock(d, p):
+    """A cave mouth with a torch and ore in the rock. The first version was a grey square with a
+    dark triangle in it - the ore dots and a bigger torch give it something to be about."""
+    stone, flame = p
+    box(d, W * 0.16, W * 0.19, W * 0.84, W * 0.81, stone, r=W * 0.05)
+    cx, base = W * 0.5, W * 0.76
+    poly(d, arch_path(cx, base, W * 0.20, W * 0.34), darker(stone, 0.70), True)
+    for ox, oy in ((0.265, 0.33), (0.715, 0.38), (0.255, 0.63)):
+        disc(d, W * ox, W * oy, W * 0.040, flame)
+    box(d, cx + W * 0.105, base - W * 0.21, cx + W * 0.145, base - W * 0.02, "#7A5230")
+    disc(d, cx + W * 0.125, base - W * 0.255, W * 0.058, flame)
+    d.line([(W * 0.17, base), (W * 0.83, base)], fill=INK, width=int(STROKE * 1.5))
+
+
+def art_oceanblock(d, p):
+    """A palm on a scrap of sand, with the waterline behind. The earlier curling wave read as a
+    blue hill - a horizon plus an island is unambiguous."""
+    water, sand = p
+    box(d, W * 0.16, W * 0.19, W * 0.84, W * 0.81, lighter(water, 0.62), r=W * 0.05)
+    y = W * 0.60
+    d.rectangle([W * 0.17, y, W * 0.83, W * 0.80], fill=water)
+    d.line([(W * 0.17, y), (W * 0.83, y)], fill=INK, width=int(STROKE))
+    island = [(W * 0.28, W * 0.70)]
+    for k in range(25):
+        t = k / 24.0
+        island.append((W * 0.28 + W * 0.44 * t, W * 0.70 - W * 0.10 * math.sin(math.pi * t)))
+    island.append((W * 0.72, W * 0.70))
+    poly(d, island, sand, True)
+    box(d, W * 0.485, W * 0.40, W * 0.525, W * 0.655, "#7A5230")
+    for dx, dy in ((-0.115, -0.03), (0.115, -0.03), (0.0, -0.075)):
+        disc(d, W * (0.505 + dx), W * (0.40 + dy), W * 0.072, darker(water, 0.15))
+
+
+def art_onechunk(d, p):
+    """Exactly one chunk of ground, cut out and standing alone."""
+    grass, dirt = p
+    cx, cy = W * 0.5, W * 0.40
+    s, h = W * 0.235, W * 0.28
+    hh = s * 0.56
+    poly(d, [(cx - s, cy), (cx, cy + hh), (cx, cy + hh + h), (cx - s, cy + h)], dirt, True)
+    poly(d, [(cx + s, cy), (cx, cy + hh), (cx, cy + hh + h), (cx + s, cy + h)],
+         darker(dirt, 0.24), True)
+    poly(d, [(cx, cy - hh), (cx + s, cy), (cx, cy + hh), (cx - s, cy)], grass, True)
+
+
+def art_oneblock(d, p):
+    """One block, and the cycle that keeps handing you another."""
+    magic, grow = p
+    cx, cy = W * 0.5, W * 0.57
+    r = W * 0.245
+    d.arc([cx - r, cy - r - W * 0.05, cx + r, cy + r - W * 0.05], 205, 455,
+          fill=grow, width=int(STROKE * 1.7))
+    tx, ty = cx + r * 0.76, cy - r * 0.58
+    poly(d, [(tx + W * 0.055, ty + W * 0.005), (tx - W * 0.03, ty - W * 0.055),
+             (tx - W * 0.015, ty + W * 0.055)], grow, True)
+    cube(d, cx, cy, W * 0.155, magic, h=W * 0.14)
+
+
+def art_netherbound(d, p):
+    """A flame. Nested rectangles were meant to be a portal and read as a picture frame; a
+    flame is one silhouette, says nether instantly, and survives being shrunk."""
+    rock, fire = p
+    cx = W * 0.5
+    outer = [(cx, W * 0.16)]
+    for k in range(33):
+        t = k / 32.0
+        ang = math.pi * t
+        outer.append((cx + W * 0.26 * math.sin(ang),
+                      W * 0.16 + W * 0.62 * t + W * 0.05 * math.sin(ang * 2)))
+    for k in range(33):
+        t = k / 32.0
+        ang = math.pi * t
+        outer.append((cx - W * 0.26 * math.sin(math.pi - ang),
+                      W * 0.78 - W * 0.62 * t - W * 0.05 * math.sin((math.pi - ang) * 2)))
+    poly(d, outer, fire, True)
+    inner = [(cx, W * 0.40)]
+    for k in range(33):
+        t = k / 32.0
+        ang = math.pi * t
+        inner.append((cx + W * 0.135 * math.sin(ang), W * 0.40 + W * 0.36 * t))
+    for k in range(33):
+        t = k / 32.0
+        ang = math.pi * t
+        inner.append((cx - W * 0.135 * math.sin(math.pi - ang), W * 0.76 - W * 0.36 * t))
+    poly(d, inner, lighter(fire, 0.5), True)
+    d.line([(W * 0.22, W * 0.80), (W * 0.78, W * 0.80)], fill=rock, width=int(STROKE * 2.2))
+
+
+def art_lostcities(d, p):
+    """A ruined skyline. Plain bars read as a bar chart - windows make them buildings, and one
+    broken top makes them ruins."""
+    concrete, moss = p
+    base = W * 0.78
+    towers = ((0.19, 0.42, 0.135), (0.345, 0.26, 0.145), (0.515, 0.47, 0.13),
+              (0.665, 0.34, 0.145))
+    for x, top, wdt in towers:
+        box(d, W * x, W * top, W * (x + wdt), base, concrete, r=W * 0.01)
+        rows = int((base - W * top) / (W * 0.075))
+        for ry in range(rows - 1):
+            for cxo in (0.030, 0.075):
+                if cxo + 0.030 > wdt:
+                    continue
+                wx = W * (x + cxo)
+                wy = W * top + W * 0.045 + ry * W * 0.075
+                d.rectangle([wx, wy, wx + W * 0.030, wy + W * 0.040],
+                            fill=darker(concrete, 0.55))
+    # one tower sheared off, and moss creeping over two of them
+    poly(d, [(W * 0.345, W * 0.26), (W * 0.49, W * 0.26), (W * 0.49, W * 0.315),
+             (W * 0.42, W * 0.285), (W * 0.345, W * 0.33)], moss, True)
+    box(d, W * 0.665, W * 0.34, W * 0.81, W * 0.395, moss, r=W * 0.01)
+    d.line([(W * 0.15, base), (W * 0.85, base)], fill=INK, width=int(STROKE * 1.6))
+
+
+def art_survival(d, p):
+    """A sword. Two crossed lines read as an X and nothing else, so this draws one unmistakable
+    blade instead: tapered point, crossguard, grip, pommel."""
+    grass, wood = p
+    cx = W * 0.5
+    poly(d, [(cx, W * 0.17), (cx + W * 0.075, W * 0.30), (cx + W * 0.075, W * 0.56),
+             (cx - W * 0.075, W * 0.56), (cx - W * 0.075, W * 0.30)],
+         lighter(grass, 0.45), True)
+    box(d, W * 0.285, W * 0.555, W * 0.715, W * 0.635, grass, r=W * 0.018)
+    box(d, cx - W * 0.045, W * 0.635, cx + W * 0.045, W * 0.775, wood, r=W * 0.015)
+    disc(d, cx, W * 0.80, W * 0.058, lighter(wood, 0.3))
+
+
+def art_gauntlet(d, p):
+    """A shield with a blade across it. The row of arches read as teeth at icon size; a shield
+    is one bold silhouette and says combat immediately."""
+    blood, brass = p
+    cx = W * 0.5
+    top, bot = W * 0.21, W * 0.82
+    shield = [(cx - W * 0.26, top), (cx + W * 0.26, top), (cx + W * 0.26, W * 0.50)]
+    for k in range(25):
+        t = k / 24.0
+        shield.append((cx + W * 0.26 * (1 - t), W * 0.50 + (bot - W * 0.50) * math.sin(t * math.pi / 2)))
+    for k in range(25):
+        t = k / 24.0
+        shield.append((cx - W * 0.26 * t, bot - (bot - W * 0.50) * math.sin(t * math.pi / 2)))
+    poly(d, shield, brass, True)
+    d.line([(cx, top + W * 0.04), (cx, bot - W * 0.06)], fill=blood, width=int(STROKE * 2.2))
+    d.line([(cx - W * 0.17, W * 0.40), (cx + W * 0.17, W * 0.40)], fill=blood,
+           width=int(STROKE * 2.2))
+
+
+def art_horror(d, p):
+    """One eye, open in the dark."""
+    dusk, blood = p
+    box(d, W * 0.16, W * 0.19, W * 0.84, W * 0.81, darker(dusk, 0.6), r=W * 0.05)
+    cx, cy = W * 0.5, W * 0.5
+    lid = []
+    for k in range(33):
+        t = k / 32.0
+        lid.append((cx - W * 0.24 + W * 0.48 * t, cy - W * 0.16 * math.sin(math.pi * t)))
+    for k in range(33):
+        t = k / 32.0
+        lid.append((cx + W * 0.24 - W * 0.48 * t, cy + W * 0.16 * math.sin(math.pi * t)))
+    poly(d, lid, lighter(dusk, 0.65), True)
+    disc(d, cx, cy, W * 0.098, blood)
+    disc(d, cx, cy, W * 0.042, INK, outline=False)
+
+
+def art_creative_forge(d, p):
+    """An anvil with a spark. The first attempt was three stacked bars and read as furniture -
+    an anvil needs the horn and the waisted profile to be recognisable."""
+    orange, steel = p
+    poly(d, [(W * 0.20, W * 0.40), (W * 0.76, W * 0.40), (W * 0.82, W * 0.46),
+             (W * 0.70, W * 0.52), (W * 0.26, W * 0.52)], steel, True)
+    poly(d, [(W * 0.38, W * 0.52), (W * 0.62, W * 0.52), (W * 0.58, W * 0.66),
+             (W * 0.42, W * 0.66)], darker(steel, 0.26), True)
+    box(d, W * 0.26, W * 0.66, W * 0.74, W * 0.78, steel, r=W * 0.02)
+    disc(d, W * 0.33, W * 0.27, W * 0.05, orange)
+    disc(d, W * 0.46, W * 0.21, W * 0.032, lighter(orange, 0.35))
+
+
+def art_creative_modern(d, p):
+    """A blueprint grid with one solid block placed on it."""
+    blue, paper = p
+    box(d, W * 0.16, W * 0.19, W * 0.84, W * 0.81, paper, r=W * 0.05)
+    faint = mix(blue, (255, 255, 255), 0.62)
+    for i in range(1, 4):
+        v = W * (0.19 + i * 0.155)
+        d.line([(v, W * 0.21), (v, W * 0.79)], fill=faint, width=int(STROKE * 0.6))
+        d.line([(W * 0.18, v), (W * 0.82, v)], fill=faint, width=int(STROKE * 0.6))
+    box(d, W * 0.345, W * 0.375, W * 0.655, W * 0.645, blue, r=W * 0.02)
+
+
+def art_creative_maximum(d, p):
+    """A heap of blocks - the pack is simply more of everything."""
+    violet, teal = p
+    cube(d, W * 0.355, W * 0.52, W * 0.145, violet, h=W * 0.13)
+    cube(d, W * 0.645, W * 0.52, W * 0.145, teal, h=W * 0.13)
+    cube(d, W * 0.5, W * 0.355, W * 0.145, lighter(violet, 0.3), h=W * 0.13)
+
+
+def art_hermitcraft(d, p):
+    """A chicken. The spiral shell read as a fingerprint; the instance's old Prism icon was a
+    chicken and it is instantly recognisable at any size."""
+    green, gold = p
+    cx, cy = W * 0.52, W * 0.52
+    poly(d, [(cx - W * 0.05, cy + W * 0.02), (cx - W * 0.26, cy + W * 0.17),
+             (cx - W * 0.04, cy + W * 0.25), (cx + W * 0.16, cy + W * 0.14)],
+         lighter(green, 0.55), True)
+    disc(d, cx, cy, W * 0.175, "#FBF7F2")
+    for i, dx in enumerate((-0.055, 0.0, 0.055)):
+        disc(d, cx + W * dx, cy - W * (0.165 + 0.012 * (i == 1)), W * 0.042, "#C0392B")
+    poly(d, [(cx + W * 0.165, cy - W * 0.01), (cx + W * 0.30, cy + W * 0.025),
+             (cx + W * 0.165, cy + W * 0.06)], gold, True)
+    disc(d, cx + W * 0.055, cy - W * 0.045, W * 0.026, INK, outline=False)
+
+ART = {
+    "The Hub": art_hub,
+    "Cobblemon NeoForge": art_cobblemon,
+    "Skyblock": art_skyblock,
+    "Caveblock": art_caveblock,
+    "Oceanblock": art_oceanblock,
+    "One Chunk": art_onechunk,
+    "One Block": art_oneblock,
+    "Netherbound": art_netherbound,
+    "Lost Cities": art_lostcities,
+    "Survival": art_survival,
+    "The Gauntlet": art_gauntlet,
+    "Horror": art_horror,
+    "Creative Forge": art_creative_forge,
+    "Creative Modern": art_creative_modern,
+    "Creative Maximum": art_creative_maximum,
+    "Knock-off Hermitcraft": art_hermitcraft,
+}
+
+# (two subject colours, container background)
+THEME = {
+    "The Hub":               (("#2E2142", "#F2B33D"), "#6E49C6"),
+    "Cobblemon NeoForge":    (("#E8564C", "#F7F5F8"), "#F3E7D6"),
+    "Skyblock":              (("#5BC8F5", "#7FC24A"), "#DCF2FA"),
+    "Caveblock":             (("#8C8FA3", "#F0A93C"), "#E6E4EA"),
+    "Oceanblock":            (("#2196B0", "#EBD9A3"), "#D6EFF2"),
+    "One Chunk":             (("#7FC24A", "#A9743F"), "#EAF4DC"),
+    "One Block":             (("#B07CE8", "#3FC98B"), "#F0E8FA"),
+    "Netherbound":           (("#5A2A24", "#F2642E"), "#2E1C20"),
+    "Lost Cities":           (("#A7AFB8", "#4E8C63"), "#E4E7EA"),
+    "Survival":              (("#6BA94A", "#9A6637"), "#EDF2E2"),
+    "The Gauntlet":          (("#B8342F", "#D9A93C"), "#F2E6D2"),
+    "Horror":                (("#6B5A82", "#C0392B"), "#2A2334"),
+    "Creative Forge":        (("#E8832E", "#8C97A3"), "#EFEAE4"),
+    "Creative Modern":       (("#3D8FD6", "#FFFFFF"), "#E8EEF4"),
+    "Creative Maximum":      (("#9B6BE8", "#3FC9A5"), "#F0ECF8"),
+    "Knock-off Hermitcraft": (("#4FBF7A", "#E8B94A"), "#EAF6EC"),
+}
+DEFAULT = (("#8A8FA3", "#C9C6D6"), "#ECECEF")
+
+
+def render(name):
+    pal, bg = THEME.get(name, DEFAULT)
+    img = Image.new("RGBA", (W, W), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    cx = cy = w / 2.0
-
-    r_out = w * 0.46
-    rounding = w * 0.070
-    rounded_poly(d, hexagon(cx, cy, r_out - rounding), rounding, OUTLINE)
-    inner_r = r_out - w * 0.115
-    rounded_poly(d, hexagon(cx, cy, inner_r - rounding * 0.8), rounding * 0.8, INNER_BG)
-
-    order = [(c, colour_a) for c in ARM_A] + [(c, colour_b) for c in ARM_B]
-    order.sort(key=lambda t: (t[0][0] + t[0][1] + t[0][2]))
-
-    # Centre the arrangement by its real drawn extent rather than by eye. An isometric stack is
-    # not symmetric about its grid origin - raising one arm shifts the silhouette upward - so a
-    # hand-tuned offset only ever centres one particular arm shape. Measuring it keeps every
-    # future arrangement centred for free.
-    hw, hh, ch = HALF_W * SS, HALF_H * SS, CUBE_H * SS
-    xs, ys = [], []
-    for (gx, gy, gz), _c in order:
-        sx = (gx - gy) * hw
-        sy = (gx + gy) * hh - gz * ch
-        xs += [sx - hw, sx + hw]
-        ys += [sy - hh, sy + hh + ch]
-    bx = cx - (min(xs) + max(xs)) / 2.0
-    by = cy - (min(ys) + max(ys)) / 2.0
-
-    for (gx, gy, gz), col in order:
-        cube(d, bx, by, gx, gy, gz, col)
-    nut(d, bx, by - ch * 0.5, colour_b)
-
+    container(d, bg)
+    fn = ART.get(name)
+    if fn:
+        fn(d, pal)
     return img.resize((SIZE, SIZE), Image.LANCZOS)
 
 
 def instances():
     if not os.path.isdir(INSTANCES):
         return []
-    out = []
-    for n in sorted(os.listdir(INSTANCES)):
-        if os.path.isfile(os.path.join(INSTANCES, n, "instance.cfg")):
-            out.append(n)
-    return out
+    return [n for n in sorted(os.listdir(INSTANCES))
+            if os.path.isfile(os.path.join(INSTANCES, n, "instance.cfg"))]
 
 
 def safe_key(name):
@@ -214,24 +445,21 @@ def safe_key(name):
 def set_icon_key(inst, key):
     cfg = os.path.join(INSTANCES, inst, "instance.cfg")
     lines = io.open(cfg, encoding="utf-8").read().split("\n")
-    done = False
     for i, l in enumerate(lines):
         if l.startswith("iconKey="):
             lines[i] = "iconKey=" + key
-            done = True
             break
-    if not done:
+    else:
         for i, l in enumerate(lines):
             if l.startswith("[General]"):
                 lines.insert(i + 1, "iconKey=" + key)
-                done = True
                 break
     io.open(cfg, "w", encoding="utf-8", newline="\n").write("\n".join(lines))
-    return done
 
 
 def main():
     install = "--install" in sys.argv
+    sheet = "--sheet" in sys.argv
     only = None
     if "--only" in sys.argv:
         i = sys.argv.index("--only")
@@ -239,47 +467,49 @@ def main():
             only = sys.argv[i + 1]
 
     os.makedirs(OUT, exist_ok=True)
-    names = instances()
-    # Kewz's pack keeps its own icon. It is his, it is the reference this whole set was drawn
-    # from, and restyling it would make his instance harder to pick out rather than easier.
-    names = [n for n in names if n != "Kewz's Cobblemon"]
+    # Kewz's pack keeps its own icon: it is his, and it is the reference this set learned from.
+    names = [n for n in instances() if n != "Kewz's Cobblemon"]
     if only:
         names = [n for n in names if n == only] or [only]
     if not names:
         print("no instances found")
         return 1
 
-    # Prism rewrites instance.cfg while a game is running, so refuse to touch it then.
     if install:
         import subprocess
         try:
             tl = subprocess.run(["tasklist"], capture_output=True, text=True).stdout.lower()
             if "javaw.exe" in tl or "prismlauncher.exe" in tl:
-                print("Prism or a game is running - close both before --install, "
-                      "or instance.cfg edits get overwritten.")
+                print("Prism or a game is running - close both, or instance.cfg gets overwritten.")
                 return 1
         except Exception:
             pass
 
-    print("%-24s %-20s %s" % ("instance", "palette", "file"))
-    print("-" * 74)
+    made = []
     for name in names:
-        a, b = PALETTES.get(name, DEFAULT_PALETTE)
-        img = render(a, b)
+        img = render(name)
         key = safe_key(name)
-        path = os.path.join(OUT, key + ".png")
-        img.save(path)
-        print("%-24s %-20s %s" % (name[:24], "%s / %s" % (a, b), os.path.basename(path)))
+        img.save(os.path.join(OUT, key + ".png"))
+        made.append((name, key, img))
+        print("  %-24s %s" % (name[:24], "ok" if name in ART else "NO ART - blank container"))
         if install:
             os.makedirs(ICONS, exist_ok=True)
             img.save(os.path.join(ICONS, key + ".png"))
             set_icon_key(name, key)
 
+    if sheet and made:
+        cols = 4
+        rows = (len(made) + cols - 1) // cols
+        cs = Image.new("RGBA", (SIZE * cols, SIZE * rows), (255, 255, 255, 255))
+        for i, (_n, _k, im) in enumerate(made):
+            cs.paste(im, ((i % cols) * SIZE, (i // cols) * SIZE), im)
+        cs.resize((SIZE * cols // 2, SIZE * rows // 2), Image.LANCZOS).save(
+            os.path.join(OUT, "_contact.png"))
+        print("\ncontact sheet: tools/_icons/_contact.png")
+
     print("")
-    if install:
-        print("installed to %s and iconKey set on %d instance(s)" % (ICONS, len(names)))
-    else:
-        print("rendered to %s  (use --install to apply)" % OUT)
+    print(("installed and iconKey set on %d" % len(made)) if install
+          else ("rendered %d to %s" % (len(made), OUT)))
     return 0
 
 
