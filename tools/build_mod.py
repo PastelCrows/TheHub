@@ -210,6 +210,48 @@ def version_of():
     return re.search(r'version="([^"]+)"', toml).group(1)
 
 
+def distribute(jar):
+    """Copy a built jar into every NeoForge instance.
+
+    EXISTS BECAUSE DOING THIS BY HAND LOST THE JAR. build_mod.py wipes _build at the start of
+    every run, so a jar built under one profile does not survive the next profile's build. A
+    hand-rolled copy loop that ran after building a DIFFERENT profile found no jar, and because
+    it removed the old version before copying the new one, it uninstalled the mod from all
+    thirteen instances instead of updating it.
+
+    So the copy happens here, immediately after a verified build, from the path just produced -
+    and the old version is only removed once the new file is confirmed to exist.
+    """
+    if not os.path.exists(jar):
+        print("   nothing to distribute: %s is missing" % jar)
+        return 0
+    base = os.path.basename(jar)
+    stem = base.split("-")[0]
+    insts = os.path.join(PRISM, "instances")
+    count = 0
+    for name in sorted(os.listdir(insts)):
+        inst = os.path.join(insts, name)
+        mods = os.path.join(inst, "minecraft", "mods")
+        if not os.path.isdir(mods):
+            continue
+        if name == "Kewz's Cobblemon":
+            continue                       # read-only: his pack, analysis only
+        pack = os.path.join(inst, "mmc-pack.json")
+        try:
+            if "neoforge" not in io.open(pack, encoding="utf-8").read().lower():
+                continue
+        except Exception:
+            continue
+        shutil.copy2(jar, os.path.join(mods, base))
+        for old in os.listdir(mods):
+            if old.startswith(stem + "-") and old.endswith(".jar") and old != base:
+                os.remove(os.path.join(mods, old))
+        count += 1
+        print("   + %s" % name)
+    print("   distributed to %d NeoForge instance(s)" % count)
+    return count
+
+
 def main():
     print("%s build  ->  %s" % (PROFILE, _P["instance"]))
     cp, missing = resolve_classpath()
@@ -273,13 +315,28 @@ def main():
     print("\nVERIFY")
     z = zipfile.ZipFile(os.path.join(dest, os.path.basename(jar)))
     names = z.namelist()
-    mx = json.loads(z.read("%s.mixins.json" % PROFILE).decode("utf-8"))
-    pkg = mx["package"].replace(".", "/")
+    # Every config the mods.toml declares, not just <profile>.mixins.json. hubclientperf ships
+    # four - one required vanilla config plus three required:false ones for Cobblemon, ETF and
+    # Xaero - and checking only the first would have reported BUILD OK while silently shipping a
+    # jar whose other three configs pointed at classes that were not in it.
+    toml_text = z.read("META-INF/neoforge.mods.toml").decode("utf-8")
+    configs = re.findall(r'config="([^"]+)"', toml_text)
+    if not configs:
+        configs = ["%s.mixins.json" % PROFILE]
     ok = True
-    for m in list(mx.get("mixins", [])) + list(mx.get("client", [])):
-        present = "%s/%s.class" % (pkg, m) in names
-        print("   mixin declared and present : %-22s %s" % (m, present))
-        ok = ok and present
+    for cfg in configs:
+        if cfg not in names:
+            print("   mixin config MISSING from jar : %s" % cfg)
+            ok = False
+            continue
+        mx = json.loads(z.read(cfg).decode("utf-8"))
+        pkg = mx["package"].replace(".", "/")
+        tag = "" if mx.get("required", True) else "  (optional)"
+        print("   config %s%s" % (cfg, tag))
+        for m in list(mx.get("mixins", [])) + list(mx.get("client", [])):
+            present = "%s/%s.class" % (pkg, m) in names
+            print("      mixin declared and present : %-30s %s" % (m, present))
+            ok = ok and present
     for need in list(_P.get("expect", [])) + ["META-INF/neoforge.mods.toml"]:
         print("   %-42s %s" % (need, need in names))
         ok = ok and need in names
@@ -289,6 +346,11 @@ def main():
     z.close()
     ok = ok and vok
     print("\n   %s" % ("BUILD OK" if ok else "BUILD INCOMPLETE"))
+
+    if ok and "--distribute" in sys.argv:
+        print("\nDISTRIBUTE")
+        distribute(jar)
+
     return 0 if ok else 1
 
 

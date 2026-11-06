@@ -1,0 +1,13 @@
+{
+  "_note": "required:false - skipped where Xaero's World Map is absent.",
+  "required": false,
+  "package": "hubclientperf.mixin.xaero",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "MapLimiterMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

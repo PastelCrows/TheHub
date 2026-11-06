@@ -4,12 +4,25 @@ license="MIT"
 
 [[mods]]
 modId="hubclientperf"
-version="1.0.0"
+version="1.1.0"
 displayName="Hub Client Perf"
-description="Makes NonNullList.clear() linear instead of quadratic, which is what makes the creative inventory freeze in a large pack. Measured at 235x faster for a 50,000-entry list. Port of the vanilla half of Kewz's kewz-client-perf."
+description="Five client performance fixes ported from Kewz's kewz-client-perf. NonNullList.clear() made linear instead of quadratic (measured 235x faster at 50,000 entries), which is what makes the creative inventory freeze in a large pack; Cobblemon's resource-exists check cached and invalidated on every resource reload; ETF's per-render entity NBT cached for one client tick; Xaero's VRAM driver query rate-limited to once a second."
 
+# Four configs rather than one. The vanilla fix is required; the three mod-specific ones are
+# required:false, so this single jar installs into every instance - including the ones with no
+# Cobblemon, no ETF and no Xaero - and simply skips whatever does not apply. That split is Kewz's
+# and it is the reason one jar can be pack-agnostic.
 [[mixins]]
 config="hubclientperf.mixins.json"
+
+[[mixins]]
+config="hubclientperf.cobblemon.mixins.json"
+
+[[mixins]]
+config="hubclientperf.etf.mixins.json"
+
+[[mixins]]
+config="hubclientperf.xaero.mixins.json"
 
 [[dependencies.hubclientperf]]
 modId="neoforge"
@@ -17,3 +30,24 @@ type="required"
 versionRange="[21.1,)"
 ordering="NONE"
 side="BOTH"
+
+[[dependencies.hubclientperf]]
+modId="cobblemon"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.hubclientperf]]
+modId="entity_texture_features"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.hubclientperf]]
+modId="xaeroworldmap"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="CLIENT"

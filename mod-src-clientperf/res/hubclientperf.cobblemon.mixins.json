@@ -1,0 +1,14 @@
+{
+  "_note": "required:false so Mixin SKIPS this whole config in the twelve instances that have no Cobblemon, instead of failing to find its target class. The injectors keep defaultRequire 1, so where Cobblemon IS present a renamed method still fails loudly rather than silently disabling the cache. Same split Kewz uses.",
+  "required": false,
+  "package": "hubclientperf.mixin.cobblemon",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "ClientDistributionUtilsMixin",
+    "ReloadableResourceManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

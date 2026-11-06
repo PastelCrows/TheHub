@@ -1,0 +1,14 @@
+{
+  "_note": "required:false - skipped where Entity Texture Features is absent. MinecraftTickMixin targets vanilla but belongs here: it only clears the cache ETF fills, so without ETF there is no reason to hook the client tick.",
+  "required": false,
+  "package": "hubclientperf.mixin.etf",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "ETFEntityRenderStateMixin",
+    "MinecraftTickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
