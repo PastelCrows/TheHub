@@ -119,6 +119,30 @@ proves a world loads.** Both P0 bugs lived in the gap between those, and both we
 | 31 | `minecraft/datapacks/` is never loaded in any instance | **DIAG** | No instance has the globalpacks mod, and neither `netherbound_worldgen` nor `hub_worldgen` has EVER appeared in a log — only mod-generated packs do. Every live datapack file in these packs is under `kubejs/data`, which KubeJS does load. So `datapacks/hub_worldgen` (37 files) and `datapacks/netherbound_worldgen` are dead duplicates of content that also exists under `kubejs/data`. They should be deleted or the folder actually wired up, because right now editing them looks like it works and does nothing. |
 | 32 | Three fixed worldgen items all need NEW worlds | **OPEN** | Lost Cities, Netherbound and Oceanblock are config/worldgen fixes. Existing worlds keep their old generator — `level.dat` records it at creation. The old saves (`New World`, `test`) cannot be retrofitted. |
 
+
+## Icon subjects — agreed list (item 12)
+
+Style: `depth` (bold outline + gradient + cast/inner shadow) unless overridden.
+
+| Pack | Subject | Status |
+|---|---|---|
+| Knock-off HermitCraft | wooden lamp post | agreed, to draw |
+| The Gauntlet | shield, more detailed, **dented or broken** | agreed, to draw |
+| Survival | creeper / creeper head | agreed, to draw |
+| Skyblock | the island | keep, refine |
+| One Chunk | a single dirt/grass block but **tall/long**, so it reads as a chunk column from a distance | agreed, to draw |
+| One Block | a regular single dirt/grass block | agreed, to draw |
+| Oceanblock | the island | keep, refine |
+| Lost Cities | keep the skyline, add **faded background buildings** for depth | agreed, to draw |
+| Caveblock | better cave; **remove the light dots** — they read as ores, and ores do not spawn in Caveblock by design | agreed, to draw |
+| Cobblemon | pokeball | done, keep |
+| Netherbound | undecided — options rendered | awaiting pick |
+| Horror | undecided — options rendered (eye is current and liked) | awaiting pick |
+| Creative Forge / Modern / Maximum | undecided — options rendered | awaiting pick |
+| The Hub | undecided — options rendered, arch rejected | awaiting pick |
+
+`tools/icon_options.py` renders the candidates; `tools/_icons/_options.png` is the sheet.
+
 ## Tool debt
 
 | # | Item | Status | Notes |
